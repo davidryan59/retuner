@@ -1,0 +1,20 @@
+{
+  "name": "retuner",
+  "version": "1.0.0",
+  "description": "Making a musical instrument using JavaScript and a canvas in a web browser",
+  "main": "./client/bundle.js",
+  "scripts": {
+    "test": "mocha ./client/src/models/specs",
+    "start": "open -a 'Google Chrome' ./client/build/index.html",
+    "build": "cd ./client && webpack -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
