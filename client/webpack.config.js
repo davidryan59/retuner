@@ -1,8 +1,26 @@
-module.exports = {
-  entry: __dirname + "/src/app.js",
+config = {
+  entry: `${__dirname}/src/app.js`,
   output: {
-    filename: "bundle.js",
-    path: __dirname + "/build"
+    filename: 'bundle.js',
+    path: `${__dirname}/build`
   },
-  devtool: 'source-map'
+  devtool: "source-map",
+  resolve: {
+    extensions: [ '.js', '.jsx' ]
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        // query: {
+        //   presets: ['react']
+        // }
+      }
+    ]
+  }
+
 }
+
+module.exports = config;
