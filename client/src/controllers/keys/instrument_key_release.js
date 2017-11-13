@@ -1,7 +1,7 @@
 import keyReleaseEndsNote from "../audio/key_release_ends_note"
 import stopNote from "../audio/stop_note"
 
-const doNoteRelease = (state, key) => {
+const instrumentKeyRelease = (state, key) => {
 
   console.log("Releasing", key.keyboardCode)
 
@@ -11,4 +11,4 @@ const doNoteRelease = (state, key) => {
 
 }
 
-export default doNoteRelease
+export default instrumentKeyRelease

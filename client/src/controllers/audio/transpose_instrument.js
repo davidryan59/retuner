@@ -1,4 +1,7 @@
-const transposeFreqs = (state, transposeFactor) => {
+const transposeInstrument = (state, key) => {
+
+  const freqFactor = key.transposes.factor
+  const freqTextRelative = key.transposes.text
 
   // Get the relevant state object
   const stateFreqs = state.freqs
@@ -7,7 +10,7 @@ const transposeFreqs = (state, transposeFactor) => {
   const currentFreq = stateFreqs.currentFreq
   const maxFreq = stateFreqs.maxFreq
   // Calculate the new frequency, bounded
-  let newFreq = currentFreq * transposeFactor
+  let newFreq = currentFreq * freqFactor
   if (newFreq < minFreq) {
     newFreq = minFreq
   }
@@ -17,9 +20,10 @@ const transposeFreqs = (state, transposeFactor) => {
   // Do the change
   stateFreqs.currentFreq = newFreq
   console.log(
-    "Instrument central frequency changed from", Math.round(currentFreq*100)/100,
-    "Hz to", Math.round(newFreq*100)/100, "Hz"
+    "SPACE changed by", freqTextRelative,
+    "from", Math.round(currentFreq*100)/100, "Hz",
+    "to", Math.round(newFreq*100)/100, "Hz"
   )
 }
 
-export default transposeFreqs
+export default transposeInstrument

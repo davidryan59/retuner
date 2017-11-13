@@ -1,14 +1,17 @@
 // Each of these are called with (state, key) pair
 // when the relevant key is pressed
-
 import logState from "../controllers/keys/log_state"
 import toggleTransposing from "../controllers/keys/toggle_transposing"
 import cycleSustainOptions from "../controllers/keys/cycle_sustain_options"
 import resetToOriginalFreq from "../controllers/keys/reset_to_original_freq"
 import volumeDecrease from "../controllers/keys/volume_decrease"
 import volumeIncrease from "../controllers/keys/volume_increase"
-import doNotePress from "../controllers/keys/do_note_press"
-import doNoteRelease from "../controllers/keys/do_note_release"
+import instrumentKeyPress from "../controllers/keys/instrument_key_press"
+import instrumentKeyRelease from "../controllers/keys/instrument_key_release"
+
+// This one will (re)calculate stats relevant to each key
+// in particular the ones with frequency shifts which play notes
+import recalculateAllKeyStats from "../calculations/recalculate_all_key_stats"
 
 const setupInstrumentKeys = (state) => {
   // The musical instrument has 'keys'
@@ -67,107 +70,112 @@ const setupInstrumentKeys = (state) => {
 
   keyArray.push({
     keyboardCode: "Space",
-    transposes: {num: 1, denom: 1},
-    runOnPress: doNotePress,
-    runOnRelease: doNoteRelease,
+    transposePrimes: [],       // 1/1
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "KeyM",
-    transposes: {num: 9, denom: 8},
-    runOnPress: doNotePress,
-    runOnRelease: doNoteRelease,
+    transposePrimes: [[2, -3], [3, 2]],   // 9/8
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "KeyK",
-    transposes: {num: 6, denom: 5},
-    runOnPress: doNotePress,
-    runOnRelease: doNoteRelease,
+    transposePrimes: [[2, 1], [3, 1], [5, -1]],       // 6/5
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "KeyO",
-    transposes: {num: 5, denom: 4},
-    runOnPress: doNotePress,
-    runOnRelease: doNoteRelease,
+    transposePrimes: [[2, -2], [5, 1]],       // 5/4
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "KeyP",
-    transposes: {num: 4, denom: 3},
-    runOnPress: doNotePress,
-    runOnRelease: doNoteRelease,
+    transposePrimes: [[2, 2], [3, -1]],       // 4/3
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "BracketLeft",
-    transposes: {num: 3, denom: 2},
-    runOnPress: doNotePress,
-    runOnRelease: doNoteRelease,
+    transposePrimes: [[2, -1], [3, 1]],       // 3/2
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "BracketRight",
-    transposes: {num: 2, denom: 1},
-    runOnPress: doNotePress,
-    runOnRelease: doNoteRelease,
+    transposePrimes: [[2, 1]],       // 2/1
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "KeyV",
-    transposes: {num: 8, denom: 9},
-    runOnPress: doNotePress,
-    runOnRelease: doNoteRelease,
+    transposePrimes: [[2, 3], [3, -2]],       // 8/9
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "KeyF",
-    transposes: {num: 5, denom: 6},
-    runOnPress: doNotePress,
-    runOnRelease: doNoteRelease,
+    transposePrimes: [[2, -1], [3, -1], [5, 1]],       // 5/6
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "KeyR",
-    transposes: {num: 4, denom: 5},
-    runOnPress: doNotePress,
-    runOnRelease: doNoteRelease,
+    transposePrimes: [[2, 2], [5, -1]],       // 4/5
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "KeyE",
-    transposes: {num: 3, denom: 4},
-    runOnPress: doNotePress,
-    runOnRelease: doNoteRelease,
+    transposePrimes: [[2, -2], [3, 1]],       // 3/4
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "KeyW",
-    transposes: {num: 2, denom: 3},
-    runOnPress: doNotePress,
-    runOnRelease: doNoteRelease,
+    transposePrimes: [[2, 1], [3, -1]],       // 2/3
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "KeyQ",
-    transposes: {num: 1, denom: 2},
-    runOnPress: doNotePress,
-    runOnRelease: doNoteRelease,
+    transposePrimes: [[2, -1]],       // 1/2
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
+
+  // In some of the keys above, prime numbers were specified
+  // but the num and denom were not explicitly calculated.
+  // Do that here.
+  recalculateAllKeyStats(state)
 
   console.log("The instrument has been set up with", keyArray.length, "keys")
 }
