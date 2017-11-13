@@ -1,12 +1,12 @@
 const transposeFreqs = (state, transposeFactor) => {
-  // Get a reference for the object where all frequencies are stored
+  // Get the relevant state object
   const stateFreqs = state.freqs
-  // Need min and max to do the calc
+  // Retrieve relevant state variables
   const minFreq = stateFreqs.minFreq
+  const currentFreq = stateFreqs.currentFreq
   const maxFreq = stateFreqs.maxFreq
-  // Calculate the new frequency
-  const oldFreq = stateFreqs.oscFreq
-  let newFreq = oldFreq * transposeFactor
+  // Calculate the new frequency, bounded
+  let newFreq = currentFreq * transposeFactor
   if (newFreq < minFreq) {
     newFreq = minFreq
   }
@@ -14,11 +14,11 @@ const transposeFreqs = (state, transposeFactor) => {
     newFreq = maxFreq
   }
   // Do the change
+  stateFreqs.currentFreq = newFreq
   console.log(
-    "Frequency changed from", Math.round(oldFreq*100)/100,
+    "Frequency changed from", Math.round(currentFreq*100)/100,
     "Hz to", Math.round(newFreq*100)/100, "Hz"
   )
-  stateFreqs.oscFreq = newFreq
 }
 
 export default transposeFreqs
