@@ -1,11 +1,11 @@
 const transposeFreqs = (state, transposeFactor) => {
   const oldFreq = state.oscFreq
   const newFreq = oldFreq * transposeFactor
-  state.oscFreq = newFreq
   console.log(
-    "Frequency changed by factor of", transposeFactor,
-    "from", oldFreq, "to", newFreq
+    "Frequency changed from", Math.round(oldFreq*100)/100,
+    "Hz to", Math.round(newFreq*100)/100, "Hz"
   )
+  state.oscFreq = newFreq
 }
 
 export default transposeFreqs

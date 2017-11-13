@@ -2,12 +2,12 @@ body {
   text-align: center;
   margin: 0;
   font-family: monospace;
-  background-color: #ECA;
-  color: #417;
+  background-color: #ED8;
+  color: #156;
 }
 
 canvas {
-  border: 2px solid #984;
-  background-color: #CDE;
-  border-radius: 40px;
+  border: 1px dotted #000;
+  background-color: #CCD;
+  border-radius: 7px;
 }

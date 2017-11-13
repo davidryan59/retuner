@@ -3,7 +3,8 @@ const initialiseState = (state) => {
   state.input = {}
   state.input.keyboard = {}
 
-  state.oscFreq = 256
+  state.originalFreq = 256      // Hz
+  state.oscFreq = state.originalFreq
   console.log("State initialised to", state)
 }
 

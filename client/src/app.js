@@ -1,5 +1,5 @@
 import initialiseState from './initialise_state'
-import {keyDownHandler, keyUpHandler} from './controllers/key_handlers'
+import {keyDownHandler, keyUpHandler} from './controllers/keyboard/key_handlers'
 
 const runApp = () => {
 
