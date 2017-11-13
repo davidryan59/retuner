@@ -1,11 +1,12 @@
 const setupFrequencies = (state) => {
   state.freqs = {}
-  state.freqs.originalFreq = 2**8      // 256 Hz
-  state.freqs.minFreq = 2**-1          // 0.5 Hz
-  state.freqs.maxFreq = 2**13          // 8192 Hz
+  const stateFreqs = state.freqs
+  stateFreqs.originalFreq = 2**8      // 256 Hz
+  stateFreqs.minFreq = 2**-1          // 0.5 Hz
+  stateFreqs.maxFreq = 2**13          // 8192 Hz
   // Osc Freq is Oscillation Frequency,
   // the frequency of the last note played
-  state.freqs.oscFreq = state.freqs.originalFreq
+  stateFreqs.oscFreq = stateFreqs.originalFreq
   console.log("Frequencies initialised")
 }
 

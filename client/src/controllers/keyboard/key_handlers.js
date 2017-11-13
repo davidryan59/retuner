@@ -10,8 +10,8 @@ const keyDownHandler = (state, event) => {
     // Make the code 2 after key press is dealt with
     // This means that if key held down it only gets dealt with once.
     console.log("Key Down", keyDownCode)
+    keyDowns(state, keyDownCode)
   }
-  keyDowns(state, keyDownCode)
 }
 
 const keyUpHandler = (state, event) => {
