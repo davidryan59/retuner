@@ -3,17 +3,32 @@
 // APP INITIALISATION, OR PLAYING THE NOTE
 
 
+// // THIS HAS ALL MOVED TO THE 'play note' METHOD...
+// // Create an oscillator node and gain node
+// const oscillator = state.audioContext.createOscillator();
+// const gainNode = state.audioContext.createGain();
+// // Specify the oscillator type from state
+// oscillator.type = state.waveform.type
+// // Specify the oscillator frequency
+// // oscillator.frequency.setValueAtTime(state.freqs.originalFreq, state.audioContext.currentTime)  // Alternative way
+// oscillator.frequency.setValue(state.freqs.oscFreq)
+// // Setup the gain node amplitude
+// gainNode.gain.value = state.amps.initialAmp
+// // Connect the nodes to the audio context
+// oscillator.connect(gainNode)
+// gainNode.connect(state.audioContext.destination)
+// // Play the note for 1 second
+// oscillator.start(0.00)
+// oscillator.stop(1.00)
+// oscillator.onended = function() {
+//   console.log("Note finished")
+// }
 
-// create Oscillator and gain node
-var oscillator = state.audioContext.createOscillator();
-var delayNode = state.audioContext.createDelay(5.0);
-var gainNode = state.audioContext.createGain();
+// var delayNode = state.audioContext.createDelay(5.0);
 
 // connect oscillator to gain node to speakers
 
 // Without delay
-oscillator.connect(gainNode);
-gainNode.connect(state.audioContext.destination);
 //
 // // With delay
 // oscillator.connect(delayNode);
@@ -26,31 +41,21 @@ gainNode.connect(state.audioContext.destination);
 var WIDTH = window.innerWidth;
 var HEIGHT = window.innerHeight;
 
-// Standard values are "sine", "square", "sawtooth", "triangle"
-// and "custom". The default is "sine"
-var waveform = "square"
 
 var minFreq = 120
 var maxFreq = 600;
-var minVol = 0.005;
-var maxVol = 0.8;
 var freqFactor = maxFreq/minFreq
-var volFactor = maxVol/minVol
+var volFactor = maxAmp/minAmp
 
-var initialFreq = 440;
-var initialVol = 0.01;
 
 // set options for the oscillator
 
-oscillator.type = waveform
-oscillator.detune.value = 0; // value in cents
-oscillator.start(0);
-
+oscillator.start(0)
+oscillator.stop(1)
 oscillator.onended = function() {
-  console.log('Your tone has now stopped playing!');
+  console.log("Note finished")
 }
 
-gainNode.gain.value = initialVol;
 
 // Mouse pointer coordinates
 
@@ -76,10 +81,10 @@ function updatePage(e) {
       minFreq + Math.round((maxFreq-minFreq)*(CurX/WIDTH)/minFreq)*minFreq,
       state.audioContext.currentTime
     );
-    gainNode.gain.value = minVol * (volFactor**(CurY/HEIGHT));
+    gainNode.gain.value = minAmp * (volFactor**(CurY/HEIGHT));
 
     // oscillator.frequency.value = (CurX/WIDTH) * maxFreq;
-    // gainNode.gain.value = (CurY/HEIGHT) * maxVol;
+    // gainNode.gain.value = (CurY/HEIGHT) * maxAmp;
 
     canvasDraw();
 }
@@ -123,13 +128,13 @@ function canvasDraw() {
     rX = CurX;
     rY = CurY;
   }
-  rC = Math.floor((gainNode.gain.value/maxVol)*30);
+  rC = Math.floor((gainNode.gain.value/maxAmp)*30);
 
   canvasCtx.globalAlpha = 0.2;
 
   for(i=1;i<=15;i=i+2) {
     canvasCtx.beginPath();
-    canvasCtx.fillStyle = 'rgb(' + 100+(i*10) + ',' + Math.floor((gainNode.gain.value/maxVol)*255) + ',' + Math.floor((oscillator.frequency.value/maxFreq)*255) + ')';
+    canvasCtx.fillStyle = 'rgb(' + 100+(i*10) + ',' + Math.floor((gainNode.gain.value/maxAmp)*255) + ',' + Math.floor((oscillator.frequency.value/maxFreq)*255) + ')';
     canvasCtx.arc(rX+random(0,50),rY+random(0,50),rC/2+i,(Math.PI/180)*0,(Math.PI/180)*360,false);
     canvasCtx.fill();
     canvasCtx.closePath();
@@ -193,10 +198,10 @@ body.onkeydown = function(e) {
   };
 
   oscillator.frequency.value = (KeyX/WIDTH) * maxFreq;
-  gainNode.gain.value = (KeyY/HEIGHT) * maxVol;
+  gainNode.gain.value = (KeyY/HEIGHT) * maxAmp;
   //
   // oscillator.frequency.value = (KeyX/WIDTH) * maxFreq;
-  // gainNode.gain.value = (KeyY/HEIGHT) * maxVol;
+  // gainNode.gain.value = (KeyY/HEIGHT) * maxAmp;
 
   canvasDraw();
 }
