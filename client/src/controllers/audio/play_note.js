@@ -1,6 +1,4 @@
-const playNote = (state, freqFactor=1) => {
-  // 2nd parameter allows dynamic retuning of notes
-  // away from the currentFreq, if desired
+const playNote = (state, key) => {
 
   // Retrieve relevant state objects
   const audioContext = state.audioContext
@@ -10,28 +8,38 @@ const playNote = (state, freqFactor=1) => {
 
   // Implement note playing here
 
-  // Create an oscillator node and gain node
-  const oscillator = audioContext.createOscillator();
-  const gainNode = audioContext.createGain();
-  // Specify the oscillator type from state
-  oscillator.type = waveform.type
-  // Specify the oscillator frequency
+  // Create oscillator and gain nodes, and connect them to audio context
+  const nodeOscillator = audioContext.createOscillator();
+  const nodeGain = audioContext.createGain();
+  nodeOscillator.connect(nodeGain)
+  nodeGain.connect(audioContext.destination)
+
+  // Specify the oscillator frequency and type
   const currentTime = audioContext.currentTime
-  const theFreq = stateFreqs.currentFreq * freqFactor
-  oscillator.frequency.setValueAtTime(theFreq, currentTime)  // Alternative way
+  const theFreq = stateFreqs.currentFreq
+  nodeOscillator.frequency.setValueAtTime(theFreq, currentTime)
+  nodeOscillator.type = waveform.type
+
   // Setup the gain node amplitude
-  gainNode.gain.value = stateAmps.currentAmp
-  // Connect the nodes to the audio context
-  oscillator.connect(gainNode)
-  gainNode.connect(audioContext.destination)
+  nodeGain.gain.value = stateAmps.currentAmp
+
   // Play the note for 1 second
-  oscillator.start(currentTime)
-  oscillator.stop(currentTime + 1.00)
+  nodeOscillator.start(currentTime)
+  nodeOscillator.stop(currentTime + 1.00)
+  // *** IMPROVE: Use an ADSR ***
+
   // Provide logging
   const theFreqText = Math.round(theFreq*100)/100
   console.log("Playing note at", theFreqText, "Hz")
-  oscillator.onended = function() {
-    console.log("Note at", theFreqText, "Hz finished")
+  nodeOscillator.onended = function() {
+    console.log("Note at", theFreqText, "Hz ended")
+  }
+
+  if (key) {
+    key.currentNote = nodeOscillator
+    // console.log("New note stored on", key.keyboardCode)
+  } else {
+    console.log("*** Note storage FAILED ***")
   }
 
 }

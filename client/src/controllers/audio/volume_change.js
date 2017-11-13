@@ -1,4 +1,4 @@
-const changeAmplitude = (state, unitsToIncrease) => {
+const volumeChange = (state, unitsToIncrease) => {
   // Increase the amplitude of the overall system
   // by (factor ** units)
   // Normally units is +1 or -1
@@ -23,9 +23,10 @@ const changeAmplitude = (state, unitsToIncrease) => {
   // Do the change
   stateAmps.currentAmp = newAmp
   console.log(
-    "Amplitude changed from", Math.round(currentAmp*1000)/1000,
+    "Volume change",
+    " - amplitude changed from", Math.round(currentAmp*1000)/1000,
     "to", Math.round(newAmp*1000)/1000
   )
 }
 
-export default changeAmplitude
+export default volumeChange

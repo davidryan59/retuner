@@ -1,4 +1,14 @@
-const transposeFreqs = (state, transposeFactor) => {
+const transposeFreqs = (state, key) => {
+
+  // Get the amount to transpose by, from the key
+  const keyTransposes = key.transposes
+  let transposeFactor = 1
+  if (keyTransposes) {
+    const transposeNum = key.transposes.num || 1
+    const transposeDenom = key.transposes.denom || 1
+    transposeFactor = transposeNum / transposeDenom
+  }
+
   // Get the relevant state object
   const stateFreqs = state.freqs
   // Retrieve relevant state variables
@@ -16,7 +26,7 @@ const transposeFreqs = (state, transposeFactor) => {
   // Do the change
   stateFreqs.currentFreq = newFreq
   console.log(
-    "Frequency changed from", Math.round(currentFreq*100)/100,
+    "Instrument central frequency changed from", Math.round(currentFreq*100)/100,
     "Hz to", Math.round(newFreq*100)/100, "Hz"
   )
 }
