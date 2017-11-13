@@ -1,3 +1,4 @@
+import calculateFreqFactor from '../audio/calculate_freq_factor'
 import stopNote from "../audio/stop_note"
 import transposingSuspended from "../audio/transposing_suspended"
 import transposeInstrument from "../audio/transpose_freqs"
@@ -7,11 +8,14 @@ const doNotePress = (state, key) => {
 
   // console.log("Running a note key")
 
-  // stopNote(state, key)
+  const freqFactor = calculateFreqFactor(state, key)
+  stopNote(state, key)
   if (!transposingSuspended(state, key)) {
-    transposeInstrument(state, key)
+    transposeInstrument(state, freqFactor)
+    playNote(state, key)
+  } else {
+    playNote(state, key, freqFactor)
   }
-  playNote(state, key)
 
 }
 

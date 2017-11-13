@@ -1,7 +1,6 @@
 const transposingSuspended = (state, key) => {
   // console.log("Running 'transposing suspended'")
-  return false
-  // Might want to add a modifier key which temporarily prevents transposing
+  return !state.freqs.transposing
 }
 
 export default transposingSuspended

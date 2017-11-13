@@ -1,4 +1,8 @@
+// Each of these are called with (state, key) pair
+// when the relevant key is pressed
+
 import logState from "../controllers/keys/log_state"
+import toggleTransposing from "../controllers/keys/toggle_transposing"
 import resetToOriginalFreq from "../controllers/keys/reset_to_original_freq"
 import volumeDecrease from "../controllers/keys/volume_decrease"
 import volumeIncrease from "../controllers/keys/volume_increase"
@@ -33,6 +37,12 @@ const setupInstrumentKeys = (state) => {
   keyArray.push({
     keyboardCode: "Digit7",
     runOnPress: resetToOriginalFreq,
+    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+  })
+
+  keyArray.push({
+    keyboardCode: "Digit8",
+    runOnPress: toggleTransposing,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 

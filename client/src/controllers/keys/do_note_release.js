@@ -4,7 +4,7 @@ const doNoteRelease = (state, key) => {
 
   console.log("Lifting a note key")
 
-  stopNote(state, key)
+  // stopNote(state, key)
 
 }
 

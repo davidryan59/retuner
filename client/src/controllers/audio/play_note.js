@@ -1,4 +1,6 @@
-const playNote = (state, key) => {
+const playNote = (state, key, extraFreqFactor=1) => {
+  // Extra frequency factor used in some cases,
+  // e.g. if transposition is switched off
 
   // Retrieve relevant state objects
   const audioContext = state.audioContext
@@ -16,7 +18,7 @@ const playNote = (state, key) => {
 
   // Specify the oscillator frequency and type
   const currentTime = audioContext.currentTime
-  const theFreq = stateFreqs.currentFreq
+  const theFreq = stateFreqs.currentFreq * extraFreqFactor
   nodeOscillator.frequency.setValueAtTime(theFreq, currentTime)
   nodeOscillator.type = waveform.type
 

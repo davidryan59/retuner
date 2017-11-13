@@ -1,13 +1,4 @@
-const transposeFreqs = (state, key) => {
-
-  // Get the amount to transpose by, from the key
-  const keyTransposes = key.transposes
-  let transposeFactor = 1
-  if (keyTransposes) {
-    const transposeNum = key.transposes.num || 1
-    const transposeDenom = key.transposes.denom || 1
-    transposeFactor = transposeNum / transposeDenom
-  }
+const transposeFreqs = (state, transposeFactor) => {
 
   // Get the relevant state object
   const stateFreqs = state.freqs
