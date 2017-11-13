@@ -1,10 +1,13 @@
+import keyReleaseEndsNote from "../audio/key_release_ends_note"
 import stopNote from "../audio/stop_note"
 
 const doNoteRelease = (state, key) => {
 
-  console.log("Lifting a note key")
+  console.log("Releasing", key.keyboardCode)
 
-  // stopNote(state, key)
+  if (keyReleaseEndsNote(state, key)) {
+    stopNote(state, key)
+  }
 
 }
 
