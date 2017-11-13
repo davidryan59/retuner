@@ -2,25 +2,23 @@
 // OTHER PLACES, SUCH AS FUNCTIONS CALLED FROM
 // APP INITIALISATION, OR PLAYING THE NOTE
 
-// create web audio api context
-var AudioContext = window.AudioContext || window.webkitAudioContext;
-var audioCtx = new AudioContext();
+
 
 // create Oscillator and gain node
-var oscillator = audioCtx.createOscillator();
-var delayNode = audioCtx.createDelay(5.0);
-var gainNode = audioCtx.createGain();
+var oscillator = state.audioContext.createOscillator();
+var delayNode = state.audioContext.createDelay(5.0);
+var gainNode = state.audioContext.createGain();
 
 // connect oscillator to gain node to speakers
 
 // Without delay
 oscillator.connect(gainNode);
-gainNode.connect(audioCtx.destination);
+gainNode.connect(state.audioContext.destination);
 //
 // // With delay
 // oscillator.connect(delayNode);
 // delayNode.connect(gainNode);
-// gainNode.connect(audioCtx.destination);
+// gainNode.connect(state.audioContext.destination);
 // delayNode.delayTime.value = 3.0;
 
 // create initial theremin frequency and volumn values
@@ -76,7 +74,7 @@ function updatePage(e) {
     // This version is instant step changes in frequency. Much better!
     oscillator.frequency.setValueAtTime(
       minFreq + Math.round((maxFreq-minFreq)*(CurX/WIDTH)/minFreq)*minFreq,
-      audioCtx.currentTime
+      state.audioContext.currentTime
     );
     gainNode.gain.value = minVol * (volFactor**(CurY/HEIGHT));
 
@@ -92,11 +90,11 @@ var mute = document.querySelector('.mute');
 
 mute.onclick = function() {
   if(mute.getAttribute('data-muted') === 'false') {
-    gainNode.disconnect(audioCtx.destination);
+    gainNode.disconnect(state.audioContext.destination);
     mute.setAttribute('data-muted', 'true');
     mute.innerHTML = "Unmute";
   } else {
-    gainNode.connect(audioCtx.destination);
+    gainNode.connect(state.audioContext.destination);
     mute.setAttribute('data-muted', 'false');
     mute.innerHTML = "Mute";
   };

@@ -1,13 +1,13 @@
 import stopNote from "../../audio/stop_note"
 
 const digit6 = (state) => {
-  const newFreq = state.originalFreq
+  const origFreq = state.freqs.originalFreq
   console.log(
     "Stopping note and resetting frequency to original value of",
-    Math.round(newFreq*100)/100, "Hz"
+    Math.round(origFreq*100)/100, "Hz"
   )
   stopNote(state)
-  state.oscFreq = newFreq
+  state.freqs.oscFreq = origFreq
 }
 
 export default digit6
