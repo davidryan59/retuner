@@ -6,7 +6,7 @@ import playNote from "../audio/play_note"
 
 const instrumentKeyPress = (state, key) => {
 
-  console.log("Pressing", key.keyboardCode)
+  // console.log("Pressing", key.keyboardCode)
 
   if (keyEndsPreviousPress(state, key)) {
     stopNote(state, key)
