@@ -1,28 +1,5 @@
 # TO DO LIST
 
-## Alex advice
-Write down MVP
-Write down which technologies
-Write down the challenges faced during it (for presentation) and how I tackled those.
-
-## Firebase
-Do a ‘Hello World’ Firebase tutorial
-Set up Firebase for free. Give it index.html and it will host it on HTTPS (No databases)
-
-
-
-
-## Waveform
-Want to be able to cycle through at least sawtooth / square / triangle / sine, and maybe add a few periodic waves too. Default to square.
-
-## Amplitudes
-Redo in decibels everywhere. Ideally want it to display from 0 to 100 in dB, and most of the time to be around the 80 (default) mark.
-Work out max decibels amplitude 1, min decibels lowest that can be heard (and go a bit lower, my speakers not the best)
-(If 100 dB is amplitude 1, then 80, 60, 50, 40, 20, 0 dB are 0.1, 0.01, 0.00316, 0.001, 0.0001, 0.00001 respectively.)
-Might be best to have a system with dB value from -30dB = 0.00316 to +20dB = 1.00000, with a default value of 0dB = 0.10000
-Slider - volume knob - therefore -30 to +20
-Can allow sound to distort at high dB, that's OK, its a feature not a bug!
-
 ## Notes
 Finish implementing the minor 5-limit notes
 Also implement a few 2-3-7-limit notes (e.g. 7/4 7/6, 8/7, 9/7 and their inverses)
@@ -47,11 +24,6 @@ Want individual notes to be played in stereo. Possibly move them around dependin
 
 ## Scoring
 Need a new type of score which converts absolute note melody into relative melody.  (A simple way would be to put key name and fraction factor on each note.) Do this for a few simple melodies so people can play something familiar.
-
-## App/Hosting
-- App to be hosted on a well known website
-- App to be updated frequently, from master branch of Github
-- App to be downloadable and playable offline.
 
 ## Canvas Resizing
 Canvas should resize with the browser window.
@@ -155,6 +127,9 @@ From most important to least important:
 - If any integer can be inputted, recalculate set of primes across keyboard
 - Might need to switch off toggling to prime exponent vector [2 0... 1] if higher than 7 limit
 - If higher than 7 limit, might want to be able to toggle the RCN notation between variants DR, SAG, (KG1), KG2
+
+## Waveform
+Add any periodic waves?
 
 ## Non-commutative keyboard
 (Bug or feature? :)

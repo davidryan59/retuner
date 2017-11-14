@@ -1,31 +1,26 @@
 const volumeChange = (state, unitsToIncrease) => {
-  // Increase the amplitude of the overall system
-  // by (factor ** units)
-  // Normally units is +1 or -1
-  // The recommended volume unit is 0.5 dB which is around 1.06
-  // which is set in the state.
 
   // Get the relevant state object
-  const stateAmps = state.amps
+  const stateDB = state.dB
   // Retrieve relevant state variables
-  const minAmp = stateAmps.minAmp
-  const currentAmp = stateAmps.currentAmp
-  const maxAmp = stateAmps.maxAmp
-  const ampChangeFactor = stateAmps.ampChangeFactor
+  const minDB = stateDB.min
+  const currentDB = stateDB.current
+  const stepDB = stateDB.step
+  const maxDB = stateDB.max
   // Make a new volume, bounded
-  let newAmp = currentAmp * (ampChangeFactor ** unitsToIncrease)
-  if (newAmp < minAmp) {
-    newAmp = minAmp
+  let newDB = currentDB + stepDB * unitsToIncrease
+  if (newDB < minDB) {
+    newDB = minDB
   }
-  if (maxAmp < newAmp) {
-    newAmp = maxAmp
+  if (maxDB < newDB) {
+    newDB = maxDB
   }
   // Do the change
-  stateAmps.currentAmp = newAmp
+  stateDB.current = newDB
   console.log(
     "Volume change",
-    " - amplitude changed from", Math.round(currentAmp*1000)/1000,
-    "to", Math.round(newAmp*1000)/1000
+    " - decibels changed from", Math.round(currentDB*10)/10,
+    "to", Math.round(newDB*10)/10
   )
 }
 

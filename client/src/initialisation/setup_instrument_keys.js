@@ -3,6 +3,7 @@
 import logState from "../controllers/keys/log_state"
 import toggleTransposing from "../controllers/keys/toggle_transposing"
 import cycleSustainOptions from "../controllers/keys/cycle_sustain_options"
+import cycleWaveform from "../controllers/keys/cycle_waveform"
 import resetToOriginalFreq from "../controllers/keys/reset_to_original_freq"
 import volumeDecrease from "../controllers/keys/volume_decrease"
 import volumeIncrease from "../controllers/keys/volume_increase"
@@ -35,6 +36,12 @@ const setupInstrumentKeys = (state) => {
   keyArray.push({
     keyboardCode: "KeyS",
     runOnPress: logState,
+    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+  })
+
+  keyArray.push({
+    keyboardCode: "KeyH",
+    runOnPress: cycleWaveform,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 

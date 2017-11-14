@@ -11,7 +11,7 @@ of their speakers. The notes should retune with every key press! This means
 that music is played by intervals between subsequent notes, and not by
 absolute position / pitch of note.
 
-# Tools I used
+# Technologies I used
 Javascript (ES6)
 Babel
 ndm

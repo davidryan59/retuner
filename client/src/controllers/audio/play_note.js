@@ -1,3 +1,5 @@
+import decibelToAmplitude from "./decibel_to_amplitude"
+
 const playNote = (state, key, extraFreqFactor=1) => {
   // Extra frequency factor used in some cases,
   // e.g. if transposition is switched off
@@ -6,7 +8,6 @@ const playNote = (state, key, extraFreqFactor=1) => {
   const audioContext = state.audioContext
   const waveform = state.waveform
   const stateFreqs = state.freqs
-  const stateAmps = state.amps
 
   // Implement note playing here
 
@@ -20,10 +21,10 @@ const playNote = (state, key, extraFreqFactor=1) => {
   const currentTime = audioContext.currentTime
   const theFreq = stateFreqs.currentFreq * extraFreqFactor
   nodeOscillator.frequency.setValueAtTime(theFreq, currentTime)
-  nodeOscillator.type = waveform.type
+  nodeOscillator.type = waveform.type(state)
 
   // Setup the gain node amplitude
-  nodeGain.gain.value = stateAmps.currentAmp
+  nodeGain.gain.value = decibelToAmplitude(state.dB.current)
 
   // Play the note for 1 second
   nodeOscillator.start(currentTime)

@@ -16,7 +16,8 @@ const setupWaveform = (state) => {
   // Standard values are "sine", "square", "sawtooth", "triangle"
   // and "custom". The default is "sine"
   // If using "custom", also need a PeriodicWave
-  const waveformType = "square"
+  const waveformTypes = ["square", "sine", "triangle", "sawtooth"]
+  const waveformIndex = 0      // Start with Square
 
   // Save them into the state
   state.waveform = {}
@@ -27,8 +28,10 @@ const setupWaveform = (state) => {
   stateWaveform.releaseTime = releaseTime
   stateWaveform.peakLevel = peakLevel
   stateWaveform.sustainLevel = sustainLevel
-  stateWaveform.type = waveformType
-  console.log("Waveform initialised to", waveformType, "with various parameters")
+  stateWaveform.types = waveformTypes
+  stateWaveform.index = waveformIndex
+  stateWaveform.type = state => state.waveform.types[state.waveform.index]
+  console.log("Waveform initialised to", stateWaveform.type(state), "with various parameters")
 }
 
 export default setupWaveform
