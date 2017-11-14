@@ -1,5 +1,17 @@
 # TO DO LIST
 
+## Alex advice
+Write down MVP
+Write down which technologies
+Write down the challenges faced during it (for presentation) and how I tackled those.
+
+## Firebase
+Do a ‘Hello World’ Firebase tutorial
+Set up Firebase for free. Give it index.html and it will host it on HTTPS (No databases)
+
+
+
+
 ## Waveform
 Want to be able to cycle through at least sawtooth / square / triangle / sine, and maybe add a few periodic waves too. Default to square.
 

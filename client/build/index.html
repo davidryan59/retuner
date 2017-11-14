@@ -2,8 +2,21 @@
 <html>
   <head>
     <title>Retuner</title>
-    <script src='bundle.js'></script>
     <link rel='stylesheet' type='text/css' href='main.css'>
+    <script src='bundle.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAMef3ZdU8h7Wu4zPTYv3Zr5Y90tnqXv8U",
+        authDomain: "retuner-bdf49.firebaseapp.com",
+        databaseURL: "https://retuner-bdf49.firebaseio.com",
+        projectId: "retuner-bdf49",
+        storageBucket: "",
+        messagingSenderId: "930324786761"
+      };
+      firebase.initializeApp(config);
+    </script>
   </head>
   <body>
     <h1>Retuner</h1>
