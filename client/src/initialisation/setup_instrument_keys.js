@@ -222,7 +222,9 @@ const setupInstrumentKeys = (state) => {
 
   keyArray.push({
     keyboardCode: "KeyG",
-    runOnPress: keyDoesNothing,
+    transposePrimes: [[2, -1], [3, 2], [5, -1]],       // 9/10
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
@@ -234,7 +236,9 @@ const setupInstrumentKeys = (state) => {
 
   keyArray.push({
     keyboardCode: "KeyJ",
-    runOnPress: keyDoesNothing,
+    transposePrimes: [[2, 1], [3, -2], [5, 1]],       // 10/9
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
@@ -309,7 +313,9 @@ const setupInstrumentKeys = (state) => {
 
   keyArray.push({
     keyboardCode: "KeyT",
-    runOnPress: keyDoesNothing,
+    transposePrimes: [[2, -3], [5, 1]],       // 5/8
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
@@ -329,7 +335,9 @@ const setupInstrumentKeys = (state) => {
 
   keyArray.push({
     keyboardCode: "KeyI",
-    runOnPress: keyDoesNothing,
+    transposePrimes: [[2, 3], [5, -1]],       // 8/5
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
@@ -387,25 +395,33 @@ const setupInstrumentKeys = (state) => {
 
   keyArray.push({
     keyboardCode: "Digit2",
-    runOnPress: keyDoesNothing,
+    transposePrimes: [[2, 3], [3, -1], [5, -1]],       // 8/15
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "Digit3",
-    runOnPress: keyDoesNothing,
+    transposePrimes: [[3, -2], [5, 1]],       // 5/9
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "Digit4",
-    runOnPress: keyDoesNothing,
+    transposePrimes: [[2, -4], [3, 2]],       // 9/16
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "Digit5",
-    runOnPress: keyDoesNothing,
+    transposePrimes: [[3, 1], [5, -1]],       // 3/5
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
@@ -429,25 +445,33 @@ const setupInstrumentKeys = (state) => {
 
   keyArray.push({
     keyboardCode: "Digit9",
-    runOnPress: keyDoesNothing,
+    transposePrimes: [[3, -1], [5, 1]],       // 5/3
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "Digit0",
-    runOnPress: keyDoesNothing,
+    transposePrimes: [[2, 4], [3, -2]],       // 16/9
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "Minus",
-    runOnPress: keyDoesNothing,
+    transposePrimes: [[3, 2], [5, -1]],       // 9/5
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 
   keyArray.push({
     keyboardCode: "Equal",
-    runOnPress: keyDoesNothing,
+    transposePrimes: [[2, -3], [3, 1], [5, 1]],       // 15/8
+    runOnPress: instrumentKeyPress,
+    runOnRelease: instrumentKeyRelease,
     canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
   })
 

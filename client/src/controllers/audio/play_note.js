@@ -33,7 +33,7 @@ const playNote = (state, key, extraFreqFactor=1) => {
 
   // Provide logging
   const theFreqText = Math.round(theFreq*100)/100
-  console.log("Playing note at", theFreqText, "Hz")
+  console.log("Playing note", key.transposes.text, "at", theFreqText, "Hz")
   nodeOscillator.onended = function() {
     console.log("Note at", theFreqText, "Hz ended")
   }
