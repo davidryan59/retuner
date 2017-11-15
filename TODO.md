@@ -1,9 +1,9 @@
 # TO DO LIST
 
-## Notes
-Finish implementing the minor 5-limit notes
-Also implement a few 2-3-7-limit notes (e.g. 7/4 7/6, 8/7, 9/7 and their inverses)
-Might want to hold off on 11/8 and 13/8 since that will make prime vectors too long. But 7-limit should be OK.
+## Supporting info on screen
+- Buttons for sharing hosting page via Facebook Twitter etc. (maybe 3 buttons is enough? which are the 3 most popular sites?)
+- GitHub link for app
+- Link to the RCN paper
 
 ## Read up on methods for Context to help me draw better graphics
 (Find a link and follow it)
@@ -35,14 +35,6 @@ Button text should get bigger or smaller, with less important items disappearing
 - Might want a slider to control how long or short the plotted time range is
 
 
-## Supporting info on screen
-- Name of app (is Retuner the best name? is it already used?)
-- Can be a link to hosting page (which should therefore stay on same page, or maybe refresh/restart the page)
-- Author name, can be a link to bio elsewhere e.g. LinkedIn
-- Version number (start 1.0.0)
-- Buttons for sharing hosting page via Facebook Twitter etc. (maybe 3 buttons is enough? which are the 3 most popular sites?)
-- GitHub link for app
-- Link to the RCN paper
 
 ## GitHub
 - Make the source code in GitHub publicly accessible
