@@ -133,3 +133,7 @@ Is there any way around this?
 Or is this a basic feature of an automatically transposing instrument,
 which means it lends itself to melody, instead of harmony
 (although harmonic arpeggios are very easy to do)?
+
+## X
+Currently using 'x' for HTML elements to substitute
+Is there a more official tag for 'general tag'?

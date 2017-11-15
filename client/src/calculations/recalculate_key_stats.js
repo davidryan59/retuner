@@ -1,5 +1,11 @@
 const recalculateKeyStats = (key) => {
 
+  // Make sure key is setup to display and to run physics
+  key.physicsSwitchedOn = true
+  // Might occasionally want some keys to not display,
+  // then set this to false.
+
+
   // Firstly, set numerator and denominator if necessary
   // Secondly, calculate stats from these
 
