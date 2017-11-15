@@ -36,25 +36,25 @@ const setupInstrumentKeys = (state) => {
   keyArray.push({
     keyboardCode: "Function",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 10, y: 10, r:7}
   })
 
   keyArray.push({
     keyboardCode: "ControlLeft",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 20, y: 10, r:7}
   })
 
   keyArray.push({
     keyboardCode: "AltLeft",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 30, y: 10, r:7}
   })
 
   keyArray.push({
     keyboardCode: "MetaLeft",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 42, y: 10, r:8}
   })
 
   keyArray.push({
@@ -62,55 +62,55 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [],       // 1/1
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 72, y: 12, r:12}
   })
 
   keyArray.push({
     keyboardCode: "MetaRight",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 103, y: 10, r:8}
   })
 
   keyArray.push({
     keyboardCode: "AltRight",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 115, y: 10, r:7}
   })
 
   keyArray.push({
     keyboardCode: "ArrowLeft",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 125, y: 10, r:5}
   })
 
   keyArray.push({
     keyboardCode: "ArrowUp",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 135, y: 13, r:5}
   })
 
   keyArray.push({
     keyboardCode: "ArrowDown",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 135, y: 17, r:5}
   })
 
   keyArray.push({
     keyboardCode: "ArrowRight",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 145, y: 10, r:5}
   })
 
   keyArray.push({
     keyboardCode: "ShiftLeft",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 12, y: 20, r:7}
   })
 
   keyArray.push({
     keyboardCode: "IntlBackslash",
     runOnPress: logState,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 23, y: 20, r:7}
   })
 
   keyArray.push({
@@ -118,7 +118,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 3], [13, -1]],   // 8/13
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 33, y: 20, r:7}
   })
 
   keyArray.push({
@@ -126,7 +126,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 3], [11, -1]],   // 8/11
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 43, y: 20, r:7}
   })
 
   keyArray.push({
@@ -134,7 +134,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -3], [7, 1]],   // 7/8
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 53, y: 20, r:7}
   })
 
   keyArray.push({
@@ -142,7 +142,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 3], [3, -2]],       // 8/9
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 63, y: 20, r:10}
   })
 
   keyArray.push({
@@ -150,7 +150,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -4], [3, 1], [5, 1]],   // 15/16
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 73, y: 20, r:7}
   })
 
   keyArray.push({
@@ -158,7 +158,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 4], [3, -1], [5, -1]],   // 16/15
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 83, y: 20, r:7}
   })
 
   keyArray.push({
@@ -166,7 +166,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -3], [3, 2]],   // 9/8
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 93, y: 20, r:10}
   })
 
   keyArray.push({
@@ -174,7 +174,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 3], [7, -1]],   // 8/7
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 103, y: 20, r:7}
   })
 
   keyArray.push({
@@ -182,7 +182,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -3], [11, 1]],   // 11/8
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 113, y: 20, r:7}
   })
 
   keyArray.push({
@@ -190,19 +190,19 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -3], [13, 1]],   // 13/8
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 123, y: 20, r:7}
   })
 
   keyArray.push({
     keyboardCode: "ShiftRight",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 138, y: 20, r:10}
   })
 
   keyArray.push({
     keyboardCode: "CapsLock",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 15, y: 30, r:7}
   })
 
   keyArray.push({
@@ -210,7 +210,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 2], [7, -1]],   // 4/7
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 28, y: 30, r:7}
   })
 
   keyArray.push({
@@ -218,7 +218,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[3, -2], [7, 1]],   // 7/9
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 38, y: 30, r:7}
   })
 
   keyArray.push({
@@ -226,7 +226,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 1], [3, 1], [7, -1]],   // 6/7
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 48, y: 30, r:7}
   })
 
   keyArray.push({
@@ -234,7 +234,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -1], [3, -1], [5, 1]],       // 5/6
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 58, y: 30, r:10}
   })
 
 
@@ -243,13 +243,13 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -1], [3, 2], [5, -1]],       // 9/10
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 68, y: 30, r:7}
   })
 
   keyArray.push({
     keyboardCode: "KeyH",
     runOnPress: cycleWaveform,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 78, y: 30, r:7}
   })
 
   keyArray.push({
@@ -257,7 +257,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 1], [3, -2], [5, 1]],       // 10/9
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 88, y: 30, r:7}
   })
 
   keyArray.push({
@@ -265,7 +265,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 1], [3, 1], [5, -1]],       // 6/5
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 98, y: 30, r:10}
   })
 
   keyArray.push({
@@ -273,7 +273,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -1], [3, -1], [7, 1]],   // 7/6
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 108, y: 30, r:7}
   })
 
   keyArray.push({
@@ -281,7 +281,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[3, 2], [7, -1]],   // 9/7
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 118, y: 30, r:7}
   })
 
   keyArray.push({
@@ -289,19 +289,19 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -2], [7, 1]],   // 7/4
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 128, y: 30, r:7}
   })
 
   keyArray.push({
     keyboardCode: "Backslash",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 138, y: 30, r:7}
   })
 
   keyArray.push({
     keyboardCode: "Tab",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 13, y: 40, r:8}
   })
 
   keyArray.push({
@@ -309,7 +309,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -1]],       // 1/2
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 25, y: 40, r:10}
   })
 
   keyArray.push({
@@ -317,14 +317,14 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 1], [3, -1]],       // 2/3
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 35, y: 40, r:10}
   })
   keyArray.push({
     keyboardCode: "KeyE",
     transposePrimes: [[2, -2], [3, 1]],       // 3/4
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 45, y: 40, r:10}
   })
 
   keyArray.push({
@@ -332,7 +332,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 2], [5, -1]],       // 4/5
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 55, y: 40, r:10}
   })
 
   keyArray.push({
@@ -340,21 +340,19 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -3], [5, 1]],       // 5/8
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 65, y: 40, r:7}
   })
-
-
 
   keyArray.push({
     keyboardCode: "KeyY",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 75, y: 40, r:7}
   })
 
   keyArray.push({
     keyboardCode: "KeyU",
     runOnPress: keyDoesNothing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 85, y: 40, r:7}
   })
 
   keyArray.push({
@@ -362,7 +360,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 3], [5, -1]],       // 8/5
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 95, y: 40, r:7}
   })
 
   keyArray.push({
@@ -370,7 +368,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -2], [5, 1]],       // 5/4
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 105, y: 40, r:10}
   })
 
   keyArray.push({
@@ -378,7 +376,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 2], [3, -1]],       // 4/3
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 115, y: 40, r:10}
   })
 
   keyArray.push({
@@ -386,7 +384,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -1], [3, 1]],       // 3/2
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 125, y: 40, r:10}
   })
 
   keyArray.push({
@@ -394,25 +392,25 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 1]],       // 2/1
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 135, y: 40, r:10}
   })
 
   keyArray.push({
     keyboardCode: "Enter",
     runOnPress: volumeIncrease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 145, y: 36, r:10}
   })
 
   keyArray.push({
     keyboardCode: "Backquote",
     runOnPress: volumeDecrease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 10, y: 50, r:7}
   })
 
   keyArray.push({
     keyboardCode: "Digit1",
     runOnPress: volumeDecrease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 20, y: 50, r:7}
   })
 
   keyArray.push({
@@ -420,7 +418,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 3], [3, -1], [5, -1]],       // 8/15
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 30, y: 50, r:7}
   })
 
   keyArray.push({
@@ -428,7 +426,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[3, -2], [5, 1]],       // 5/9
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 40, y: 50, r:7}
   })
 
   keyArray.push({
@@ -436,7 +434,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -4], [3, 2]],       // 9/16
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 50, y: 50, r:7}
   })
 
   keyArray.push({
@@ -444,25 +442,25 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[3, 1], [5, -1]],       // 3/5
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 60, y: 50, r:7}
   })
 
   keyArray.push({
     keyboardCode: "Digit6",
     runOnPress: cycleSustainOptions,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 70, y: 50, r:7}
   })
 
   keyArray.push({
     keyboardCode: "Digit7",
     runOnPress: resetToOriginalFreq,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 80, y: 50, r:7}
   })
 
   keyArray.push({
     keyboardCode: "Digit8",
     runOnPress: toggleTransposing,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 90, y: 50, r:7}
   })
 
   keyArray.push({
@@ -470,7 +468,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[3, -1], [5, 1]],       // 5/3
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 100, y: 50, r:7}
   })
 
   keyArray.push({
@@ -478,7 +476,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, 4], [3, -2]],       // 16/9
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 110, y: 50, r:7}
   })
 
   keyArray.push({
@@ -486,7 +484,7 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[3, 2], [5, -1]],       // 9/5
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 120, y: 50, r:7}
   })
 
   keyArray.push({
@@ -494,13 +492,13 @@ const setupInstrumentKeys = (state) => {
     transposePrimes: [[2, -3], [3, 1], [5, 1]],       // 15/8
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 130, y: 50, r:7}
   })
 
   keyArray.push({
     keyboardCode: "Backspace",
     runOnPress: volumeIncrease,
-    canvas: {x: 0, y: 0, w: 80, h: 60, r: 10, col: 0}
+    canvas: {x: 145, y: 50, r:7}
   })
 
 
