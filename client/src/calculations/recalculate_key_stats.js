@@ -7,6 +7,13 @@ const recalculateKeyStats = (key) => {
   // Might occasionally want some keys to not display,
   // then set this to false.
 
+  // Record the original size and position
+  // to be used in animation later
+  key.anchors = {}
+  key.anchors.x = key.location.x
+  key.anchors.y = key.location.y
+  key.location.r += 0.1 * Math.random()  // SORT BY RADIUS = RANDOM, LATER!
+  key.anchors.r = key.location.r
 
   // Firstly, set numerator and denominator if necessary
   // Secondly, calculate stats from these

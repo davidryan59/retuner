@@ -4,7 +4,7 @@ const animateInstrumentKey = (state, key) => {
 
   key.location.x += randomEffect * (-0.5 + Math.random())
   key.location.y += randomEffect * (-0.5 + Math.random())
-  key.location.r += 0.1
+  key.location.r *= 1.5
 
 }
 
