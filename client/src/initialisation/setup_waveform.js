@@ -17,7 +17,7 @@ const setupWaveform = (state) => {
   // and "custom". The default is "sine"
   // If using "custom", also need a PeriodicWave
   const waveformTypes = ["triangle", "square", "sawtooth", "sine"]
-  const waveformIndex = 0      // Start with Triangle
+  const waveformIndex = 1
 
   // Save them into the state
   state.waveform = {}

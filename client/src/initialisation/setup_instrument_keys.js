@@ -31,27 +31,27 @@ const setupInstrumentKeys = (state) => {
   const keyArray = state.keys
 
   keyArray.push({
-    keyboardCode: "Function",
+    keyboardCode: "",           // Function - doesn't trap key properly
     runOnPress: keyDoesNothing,
-    location: {x: 10, y: 10, r:7}
+    location: {x: 10, y: 10, r:2}
   })
 
   keyArray.push({
     keyboardCode: "ControlLeft",
     runOnPress: keyDoesNothing,
-    location: {x: 20, y: 10, r:7}
+    location: {x: 20, y: 10, r:5}
   })
 
   keyArray.push({
     keyboardCode: "AltLeft",
     runOnPress: keyDoesNothing,
-    location: {x: 30, y: 10, r:7}
+    location: {x: 30, y: 10, r:5}
   })
 
   keyArray.push({
     keyboardCode: "MetaLeft",
     runOnPress: keyDoesNothing,
-    location: {x: 42, y: 10, r:8}
+    location: {x: 42, y: 10, r:5}
   })
 
   keyArray.push({
@@ -65,43 +65,43 @@ const setupInstrumentKeys = (state) => {
   keyArray.push({
     keyboardCode: "MetaRight",
     runOnPress: keyDoesNothing,
-    location: {x: 105, y: 10, r:8}
+    location: {x: 105, y: 10, r:5}
   })
 
   keyArray.push({
     keyboardCode: "AltRight",
     runOnPress: keyDoesNothing,
-    location: {x: 115, y: 10, r:7}
+    location: {x: 115, y: 10, r:5}
   })
 
   keyArray.push({
     keyboardCode: "ArrowLeft",
     runOnPress: keyDoesNothing,
-    location: {x: 126, y: 10, r:7}
+    location: {x: 126, y: 10, r:5}
   })
 
   keyArray.push({
     keyboardCode: "ArrowUp",
     runOnPress: keyDoesNothing,
-    location: {x: 135, y: 13, r:6}
+    location: {x: 135, y: 13, r:5}
   })
 
   keyArray.push({
     keyboardCode: "ArrowDown",
     runOnPress: keyDoesNothing,
-    location: {x: 135, y: 7, r:6}
+    location: {x: 135, y: 7, r:5}
   })
 
   keyArray.push({
     keyboardCode: "ArrowRight",
     runOnPress: keyDoesNothing,
-    location: {x: 144, y: 10, r:7}
+    location: {x: 144, y: 10, r:5}
   })
 
   keyArray.push({
     keyboardCode: "ShiftLeft",
     runOnPress: keyDoesNothing,
-    location: {x: 12, y: 20, r:7}
+    location: {x: 12, y: 20, r:5}
   })
 
   keyArray.push({
@@ -193,13 +193,13 @@ const setupInstrumentKeys = (state) => {
   keyArray.push({
     keyboardCode: "ShiftRight",
     runOnPress: keyDoesNothing,
-    location: {x: 143, y: 20, r:10}
+    location: {x: 143, y: 20, r:5}
   })
 
   keyArray.push({
-    keyboardCode: "CapsLock",
+    keyboardCode: "",          // CapsLock - doesn't trap key properly
     runOnPress: keyDoesNothing,
-    location: {x: 15, y: 30, r:7}
+    location: {x: 15, y: 30, r:5}
   })
 
   keyArray.push({
@@ -292,13 +292,13 @@ const setupInstrumentKeys = (state) => {
   keyArray.push({
     keyboardCode: "Backslash",
     runOnPress: keyDoesNothing,
-    location: {x: 138, y: 30, r:7}
+    location: {x: 138, y: 30, r:5}
   })
 
   keyArray.push({
-    keyboardCode: "Tab",
+    keyboardCode: "",      // Tab - doesn't trap key properly
     runOnPress: keyDoesNothing,
-    location: {x: 13, y: 40, r:8}
+    location: {x: 13, y: 40, r:2}
   })
 
   keyArray.push({
@@ -343,13 +343,13 @@ const setupInstrumentKeys = (state) => {
   keyArray.push({
     keyboardCode: "KeyY",
     runOnPress: keyDoesNothing,
-    location: {x: 75, y: 40, r:7}
+    location: {x: 75, y: 40, r:5}
   })
 
   keyArray.push({
     keyboardCode: "KeyU",
     runOnPress: keyDoesNothing,
-    location: {x: 85, y: 40, r:7}
+    location: {x: 85, y: 40, r:5}
   })
 
   keyArray.push({
