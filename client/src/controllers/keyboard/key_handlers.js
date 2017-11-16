@@ -1,4 +1,5 @@
 import findKeyByKeyboardCode from './find_key_by_keyboard_code'
+import animateInstrumentKey from '../../views/animate_instrument_key'
 
 const keyDownHandler = (state, event) => {
   const keyDownCode = event.code
@@ -15,6 +16,7 @@ const keyDownHandler = (state, event) => {
       if (keyDownFunction) {
         keyDownFunction(state, keyDown)
       }
+      animateInstrumentKey(state, keyDown)
     }
   }
 }
