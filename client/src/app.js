@@ -1,3 +1,7 @@
+
+// DEBUG
+import freqToRGBA from './calculations/freq_to_rgba'
+
 import initialiseState from './initialisation/initialise_state'
 import {keyDownHandler, keyUpHandler} from './controllers/keyboard/key_handlers'
 import doTiming from './controllers/general/do_timing'
@@ -29,11 +33,14 @@ const runApp = () => {
     }
 
     state.control.loopCount++
-    doTiming(state, timeLoopStart)
-    drawCanvas(state)
-    updateTextInHtml(state)
-    const timeRenderEnd = window.performance.now()
-    state.control.timing.renderTimeMS = timeRenderEnd - timeLoopStart
+    // Only render every 13 frames
+    if (state.control.loopCount % state.control.renderFrameGap === 0) {
+      doTiming(state, timeLoopStart)
+      drawCanvas(state)
+      updateTextInHtml(state)
+      const timeRenderEnd = window.performance.now()
+      state.control.timing.renderTimeMS = timeRenderEnd - timeLoopStart
+    }
 
   }
   window.requestAnimationFrame(mainLoop)
@@ -42,3 +49,8 @@ const runApp = () => {
 }
 
 window.addEventListener('DOMContentLoaded', runApp)
+
+// DEBUG
+const freq = 0.5
+const result = freqToRGBA(freq, 0.5)
+console.log("freqToRGBA turns", freq, "into", result)

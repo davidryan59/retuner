@@ -5,7 +5,7 @@ const setupDecibels = (state) => {
 
   // Setup some default parameters
   const minDB = -40
-  const initialDB = 0
+  const initialDB = 4
   const stepDB = 2
   const maxDB = 20
   // Assign them into state

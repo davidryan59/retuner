@@ -13,8 +13,8 @@ const drawInstrumentKeys = (state) => {
       const y = key.location.y * coordFactor
       const r = key.location.r * radiusFactor
       // context.fillStyle = key.getBgColour(state, key)
-      context.fillStyle = 'rgba(200, 120, 0, 0.3)'
-      context.strokeStyle = 'rgba(0, 80, 0, 0.6)'
+      context.fillStyle = key.bgColour(state, key)
+      context.strokeStyle = 'rgba(20, 20, 20, 0.6)'
       context.lineWidth = 4
       context.beginPath()
       context.arc(x, canvasHeight-y, r, 0, 2*Math.PI);

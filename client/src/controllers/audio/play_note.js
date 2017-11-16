@@ -1,4 +1,14 @@
-import decibelToAmplitude from "./decibel_to_amplitude"
+import ADSREnvelope from "adsr-envelope"
+import decibelToAmplitude from "../../calculations/decibel_to_amplitude"
+
+const adsr = new ADSREnvelope({
+  attackTime: 0.02,
+  decayTime: 0.2,
+  sustainLevel: 0.7,
+  gateTime: 0.4,
+  releaseTime: 2,
+  releaseCurve: "exp"
+})
 
 const playNote = (state, key, extraFreqFactor=1) => {
   // Extra frequency factor used in some cases,
@@ -13,9 +23,11 @@ const playNote = (state, key, extraFreqFactor=1) => {
 
   // Create oscillator and gain nodes, and connect them to audio context
   const nodeOscillator = audioContext.createOscillator();
-  const nodeGain = audioContext.createGain();
-  nodeOscillator.connect(nodeGain)
-  nodeGain.connect(audioContext.destination)
+  const nodeGainADSR = audioContext.createGain();
+  const nodeGainVolControl = audioContext.createGain();
+  nodeOscillator.connect(nodeGainADSR)
+  nodeGainADSR.connect(nodeGainVolControl)
+  nodeGainVolControl.connect(audioContext.destination)
 
   // Specify the oscillator frequency and type
   const currentTime = audioContext.currentTime
@@ -24,11 +36,14 @@ const playNote = (state, key, extraFreqFactor=1) => {
   nodeOscillator.type = waveform.type(state)
 
   // Setup the gain node amplitude
-  nodeGain.gain.value = decibelToAmplitude(state.dB.current)
+  nodeGainVolControl.gain.value = decibelToAmplitude(state.dB.current)
+
+  // Apply the ADSR envelope
+  adsr.applyTo(nodeGainADSR.gain, currentTime)
 
   // Play the note for 1 second
   nodeOscillator.start(currentTime)
-  nodeOscillator.stop(currentTime + 1.00)
+  nodeOscillator.stop(currentTime + adsr.duration)
   // *** IMPROVE: Use an ADSR ***
 
   // Provide logging

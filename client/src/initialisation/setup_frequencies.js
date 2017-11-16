@@ -4,8 +4,8 @@ const setupFrequencies = (state) => {
   const originalFreq = 2**8      // 256 Hz
   const maxFreq = 2**12          // 4096 Hz
   const transposing = true            // false disables transposing every key press
-  const keyReleaseEndsNote = true     // false means keys are sustained
-  const keyEndsPreviousPress = true   // false means one key can generate multiple tones
+  const keyReleaseEndsNote = false     // false means keys are sustained
+  const keyEndsPreviousPress = false   // false means one key can generate multiple tones
   // Save them into the state
   state.freqs = {}
   const stateFreqs = state.freqs

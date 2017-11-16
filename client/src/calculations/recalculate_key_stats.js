@@ -1,3 +1,5 @@
+import freqToRGBA from "../calculations/freq_to_rgba"
+
 const recalculateKeyStats = (key) => {
 
   // Make sure key is setup to display and to run physics
@@ -36,6 +38,18 @@ const recalculateKeyStats = (key) => {
     const denom = key.transposes.denom
     key.transposes.factor = num / denom
     key.transposes.text = num + "/" + denom
+  }
+
+  if (key.transposes) {
+    key.bgColour = (state, key) => {
+      const keyFreq = key.transposes.factor
+      const baseFreq = state.freqs.currentFreq
+      return freqToRGBA(keyFreq*baseFreq, 0.8)
+    }
+  } else {
+    key.bgColour = (state, key) => {
+      return 'rgba(220, 220, 220, 0.5)'
+    }
   }
 
 }

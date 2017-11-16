@@ -17,6 +17,7 @@
     "webpack": "^3.8.1"
   },
   "dependencies": {
+    "adsr-envelope": "^1.0.0",
     "express": "^4.16.2"
   }
 }

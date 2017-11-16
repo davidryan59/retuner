@@ -1,22 +1,5 @@
 # TO DO LIST
 
-## Supporting info on screen
-- Buttons for sharing hosting page via Facebook Twitter etc. (maybe 3 buttons is enough? which are the 3 most popular sites?)
-- GitHub link for app
-- Link to the RCN paper
-
-## Read up on methods for Context to help me draw better graphics
-(Find a link and follow it)
-
-## Envelope / ADSR
-Using the plug-in, implement an ADSR.
-May need to tweak my start / stop scripts.
-Use: https://github.com/mohayonao/adsr-envelope
-
-## Web Audio API
-Read about Web Audio API tutorials:
-https://modernweb.com/creating-sound-with-the-web-audio-api-and-oscillators/
-
 ## Stereo/Reverb/Delay
 Function to add reverb or at least one or two delays
 Want to output two channels in stereo
@@ -34,7 +17,9 @@ Button text should get bigger or smaller, with less important items disappearing
 - Want a graphical display of the sound output waveform.
 - Might want a slider to control how long or short the plotted time range is
 
-
+## Stopping note
+Currently note is cut off instantly (if sustain not on)
+Get it so that note cuts off over say 0.05 seconds
 
 ## GitHub
 - Make the source code in GitHub publicly accessible
@@ -137,3 +122,14 @@ which means it lends itself to melody, instead of harmony
 ## X
 Currently using 'x' for HTML elements to substitute
 Is there a more official tag for 'general tag'?
+
+## Links to social media
+- Buttons for sharing hosting page via Facebook Twitter etc. (maybe 3 buttons is enough? which are the 3 most popular sites?)
+
+## Reference section
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
