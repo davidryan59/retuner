@@ -1,6 +1,6 @@
 # TO DO LIST
 
-PUT A LICENCE FILE INTO THE GITHUB!
+Make sure Develop branch is working properly
 
 Bounding Box
 - Find out the bounds of all the keys (in their unexpanded states)
