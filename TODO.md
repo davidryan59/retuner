@@ -1,5 +1,15 @@
 # TO DO LIST
 
+PUT A LICENCE FILE INTO THE GITHUB!
+
+Bounding Box
+- Find out the bounds of all the keys (in their unexpanded states)
+- Make sure that this fits within the canvas
+
+Ask an instructor about the GitHub
+- if others want to help me develop it, how to go about managing that?
+- is the Master branch locked down at all?
+
 All drawing methods needs to be assigned to the keys themselves.
 Keys need to be assigned shorter names, which display at the top
 Keys need to be assigned a function (if they are not a note)
@@ -11,6 +21,9 @@ Keys should know what next frequency they represent.
 - It should be capped by the min/max freqs so when you approach the limit
 - all the keys on one side are red (1/1)
 
+Redo the key radiuses based on:
+1) Prime limit (lower is bigger), and
+2) Tenney height (lower is bigger)
 
 ## Stereo/Reverb/Delay
 Function to add reverb or at least one or two delays
@@ -88,16 +101,17 @@ Each key should:
 ## Primes
 App should keep track of all primes on all keys.
 
-
+## ADSR
+- Its set up in the waveform initialisation
+- Its set up in playNote function
+- But these are completely disconnected!
+- Set up properly. Probably a new ADSR envelope for each new note
+- Also might want to put a few aspects of ADSR on sliders.
 
 ## Button Presses
 - Should expand a few px when pressed
 - Should go back to (nearly) original size when released
 - Might want to make this a ripple effect to expand, and a ripple effect to contract after keyup
-
-## Testing
-- If buttons / keys are a class, can they be tested?
-- Going to want some serious user interface testing too.
 
 
 ## Button text
@@ -147,3 +161,10 @@ https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_st
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
+
+
+## Testing
+- If buttons / keys are a class, can they be tested?
+- Going to want some serious user interface testing too.
+(Classes and model tests have been removed 17th Nov,
+since in ES6 Mocha doesn't seem to work...)
