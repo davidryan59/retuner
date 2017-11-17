@@ -2,7 +2,6 @@ import initialiseState from './initialisation/initialise_state'
 import {keyDownHandler, keyUpHandler} from './controllers/keyboard/key_handlers'
 import doTiming from './controllers/general/do_timing'
 import moveKeys from './controllers/general/move_keys'
-// import reSortKeys from './controllers/general/re_sort_keys'
 import drawCanvas from './views/draw_canvas'
 import updateTextInHtml from './views/update_text_in_html'
 
@@ -35,7 +34,6 @@ const runApp = () => {
     if (state.control.loopCount % state.control.renderFrameGap === 0) {
       doTiming(state, timeLoopStart)
       moveKeys(state)
-      // reSortKeys(state)
       drawCanvas(state)
       updateTextInHtml(state)
       const timeRenderEnd = window.performance.now()

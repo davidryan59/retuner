@@ -11,7 +11,8 @@ const drawInstrumentKeys = (state) => {
   const baseFreq = state.freqs.currentFreq
   // Can also use 'rgba(100, 200, 255, 0.5)'
   // for alpha transparency!
-  for (const key of state.keys) {
+  for (const keyIndex of state.keyOrderArray) {
+    const key = state.keys[keyIndex]
     if (key.physicsSwitchedOn) {
       const x = key.location.x * coordFactor
       const y = canvasHeight - key.location.y * coordFactor
@@ -20,7 +21,7 @@ const drawInstrumentKeys = (state) => {
       // context.fillStyle = key.getBgColour(state, key)
       context.fillStyle = key.bgColour(state, key)
       context.strokeStyle = 'rgba(20, 20, 20, 0.6)'
-      context.lineWidth = (key.transposes) ? 2 ** (2 / key.transposes.factor) : 3
+      context.lineWidth = (key.transposes) ? 4 * (2 / key.transposes.factor) : 3
       context.beginPath()
       context.arc(x, y, r, 0, 2*Math.PI);
       context.stroke();

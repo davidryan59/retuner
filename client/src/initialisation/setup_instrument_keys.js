@@ -199,7 +199,7 @@ const setupInstrumentKeys = (state) => {
   keyArray.push({
     keyboardCode: "",          // CapsLock - doesn't trap key properly
     runOnPress: keyDoesNothing,
-    location: {x: 15, y: 30, r:5}
+    location: {x: 15, y: 30, r:2}
   })
 
   keyArray.push({

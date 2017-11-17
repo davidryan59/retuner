@@ -16,6 +16,7 @@ const keyDownHandler = (state, event) => {
       if (keyDownFunction) {
         keyDownFunction(state, keyDown)
       }
+      state.keyLastPressed = keyDown
       animateInstrumentKey(state, keyDown)
     }
   }

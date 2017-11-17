@@ -1,3 +1,5 @@
+import movePressedButtonToTop from "./move_pressed_button_to_top"
+
 const restoreFactor = 0.01
 const restoreFactorR = 0.07
 
@@ -16,6 +18,8 @@ const moveKeys = (state) => {
     key.location.y -= restoreFactor * (currentY - anchorY)
     key.location.r -= restoreFactorR * (currentR - anchorR)
   }
+
+  movePressedButtonToTop(state)
 }
 
 export default moveKeys

@@ -1,5 +1,17 @@
 # TO DO LIST
 
+All drawing methods needs to be assigned to the keys themselves.
+Keys need to be assigned shorter names, which display at the top
+Keys need to be assigned a function (if they are not a note)
+Keys which have a function should be a darker colour than those which don't.
+Note text needs to be actually centred vertically and horizontally
+Ideally, note text can expand and contract with the radius of the key
+Keys should know what next frequency they represent.
+- This should link directly to the colour they display.
+- It should be capped by the min/max freqs so when you approach the limit
+- all the keys on one side are red (1/1)
+
+
 ## Stereo/Reverb/Delay
 Function to add reverb or at least one or two delays
 Want to output two channels in stereo
@@ -30,7 +42,9 @@ Get it so that note cuts off over say 0.05 seconds
 
 ## Sliders
 Implement mouse-controlled and keyboard-controlled sliders for:
-- Volume
+- Volume (already on scale of -40dB to +20dB)
+- Vividness of colour (0 = greyscale, 10 = psychedelic)
+- How big the circles get (0 = no bigger, 10 = x1.5)
 - Time range of waveform plot
 - Distance between keys (especially affects mouse operation)
 
