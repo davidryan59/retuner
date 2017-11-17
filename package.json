@@ -4,7 +4,6 @@
   "description": "Making a musical instrument using JavaScript and a canvas in a web browser",
   "main": "./client/bundle.js",
   "scripts": {
-    "test": "mocha ./client/src/models/specs",
     "start": "open -a 'Google Chrome' ./client/build/index.html",
     "build": "cd ./client && webpack -w"
   },
@@ -13,7 +12,6 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "mocha": "^4.0.1",
     "webpack": "^3.8.1"
   },
   "dependencies": {

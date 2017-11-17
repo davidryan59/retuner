@@ -1,5 +1,5 @@
-GitHub source code: https://github.com/daveryan23/retuner_musical_instrument
-Firebase live app: https://retuner-bdf49.firebaseapp.com/
+- Firebase live app: https://retuner-bdf49.firebaseapp.com/
+- GitHub source code: https://github.com/daveryan23/retuner_musical_instrument
 
 # Brief / Scope of Project
 Making a new musical instrument in a web browser
@@ -18,7 +18,6 @@ ndm
 Nodemon
 Express
 Webpack
-Mocha
 Firebase
 
 # Result
