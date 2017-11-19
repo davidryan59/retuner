@@ -28,7 +28,10 @@ const drawInstrumentKeys = (state) => {
       context.fill()
       // Draw button labels
       context.fillStyle = 'rgb(0, 0, 0)'
-      const buttonTextArray = [key.keyboardCode]
+      const buttonTextArray = [key.symbol || key.keyboardCode]
+      if (key.functionLabel) {
+        buttonTextArray.push(key.functionLabel)
+      }
       if (key.transposes) {
         const freq = baseFreq * key.transposes.factor
         const freqText = Math.round(freq*10)/10 + "Hz"

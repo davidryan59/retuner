@@ -4,6 +4,7 @@ import doTiming from './controllers/general/do_timing'
 import moveKeys from './controllers/general/move_keys'
 import drawCanvas from './views/draw_canvas'
 import updateTextInHtml from './views/update_text_in_html'
+import recordRenderTime from './views/record_render_time'
 
 const runApp = () => {
   console.log("The app has started")
@@ -37,11 +38,7 @@ const runApp = () => {
       moveKeys(state)
       drawCanvas(state)
       updateTextInHtml(state)
-      const timeRenderEnd = window.performance.now()
-      state.control.timing.maxRenderTimeMS = Math.max(
-        timeRenderEnd - timeLoopStart,
-        state.control.timing.maxRenderTimeMS
-      )
+      recordRenderTime(state, timeLoopStart)
     }
 
   }

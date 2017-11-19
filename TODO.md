@@ -1,5 +1,7 @@
 # TO DO LIST
 
+Sans-serif font
+
 Bounding Box
 - Find out the bounds of all the keys (in their unexpanded states)
 - Make sure that this fits within the canvas

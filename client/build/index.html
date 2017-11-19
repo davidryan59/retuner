@@ -41,28 +41,28 @@
         </p>
         <p>
           Total time <x id='total-time-s'>0</x>s,
-          frame renders in <x id='render-time-ms'>0</x>ms
+          frame renders in between <x id='render-time-min-ms'>0</x>ms and <x id='render-time-max-ms'>0</x>ms
         </p>
-        <div style="font-size:16px;margin:0 auto;" class="blockchain-btn"
-         data-address="1933phfhK3ZgFQNLGSDXvqCn32k2buXY8a"
-         data-shared="false">
-            <p class="donation">Enjoyed this musical instrument? Please consider donating Bitcoin to aid development.</p>
-            <div class="blockchain stage-begin">
-                <img id="donate-logo" src="https://blockchain.info/Resources/buttons/donate_64.png"/>
-            </div>
-            <div class="blockchain stage-loading" style="text-align:center">
-                <img src="https://blockchain.info/Resources/loading-large.gif"/>
-            </div>
-            <div class="blockchain stage-ready">
-                 <p align="center">Please Donate To Bitcoin Address: <b>[[address]]</b></p>
-                 <p align="center" class="qr-code"></p>
-            </div>
-            <div class="blockchain stage-paid">
-                 Donation of <b>[[value]] BTC</b> Received. Thank You.
-            </div>
-            <div class="blockchain stage-error">
-                <font color="red">[[error]]</font>
-            </div>
+        <div class="blockchain-btn"
+             data-address="1933phfhK3ZgFQNLGSDXvqCn32k2buXY8a"
+             data-shared="false">
+          <div class="blockchain stage-begin">
+            <p>Enjoyed this musical instrument? Please consider donating Bitcoin to aid development:</p>
+            <img id="donate-logo" src="https://blockchain.info/Resources/buttons/donate_64.png"/>
+          </div>
+          <div class="blockchain stage-loading" style="text-align:center">
+            <img src="https://blockchain.info/Resources/loading-large.gif"/>
+          </div>
+          <div class="blockchain stage-ready">
+            <p align="center">Please donate to Bitcoin address: <b>[[address]]</b></p>
+            <p align="center" class="qr-code"></p>
+          </div>
+          <div class="blockchain stage-paid">
+            Donation of <b>[[value]] BTC</b> received. Thank you!
+          </div>
+          <div class="blockchain stage-error">
+            <font color="red">[[error]]</font>
+          </div>
         </div>
       </div>
     </div>

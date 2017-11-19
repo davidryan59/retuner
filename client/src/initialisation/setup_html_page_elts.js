@@ -4,7 +4,8 @@ const setupHtmlPageElts = (state) => {
   pageElts.canvas = document.querySelector("#main-canvas")
   pageElts.versionNumber = document.querySelector("#version-number")
   pageElts.totalTimeS = document.querySelector("#total-time-s")
-  pageElts.renderTimeMS = document.querySelector("#render-time-ms")
+  pageElts.renderTimeMinMS = document.querySelector("#render-time-min-ms")
+  pageElts.renderTimeMaxMS = document.querySelector("#render-time-max-ms")
   console.log("DOM page elements initialised")
 }
 

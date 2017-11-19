@@ -16,7 +16,8 @@ const setupControl = (state) => {
   stateTiming.prevLoopStart = 0
   stateTiming.thisLoopStart = 0
   stateTiming.loopTimeMS = 0
-  stateTiming.maxRenderTimeMS = 0
+  stateTiming.renderTimeMinMS = 10000
+  stateTiming.renderTimeMaxMS = 0
   stateTiming.totalTimeS = 0
   console.log("Control state initialised")
 }

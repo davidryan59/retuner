@@ -36,9 +36,11 @@ img#donate-logo {
   height: 40px;
 }
 
-.donation {
+.blockchain-btn {
   font-size: 85%;
   color: #4B0;
+  /*font-size:12px;
+  margin:0 auto;*/
 }
 
 div#whole-page {
