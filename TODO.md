@@ -1,5 +1,17 @@
 # TO DO LIST
 
+Need to model button radius properly.
+Might depend on any or all of these things:
+- Basic button size (e.g. 3px)
+- +2px for having a function on it
+- +2px for being a musical note
+- +0px to +5px for having a low complexity
+- +2px for being currently pressed
+- +0px to +5px for being pressed a lot in button history (maybe anything above 20% is 5px)
+All the above should affect the basic button size.
+The basic button size should push nearby buttons out of the way.
+- extra factor for being recently pressed, should not push nearby buttons out of the way
+
 Check that Bitcoin donation works as expected.
 
 Bounding Box
@@ -30,7 +42,7 @@ Want individual notes to be played in stereo. Possibly move them around dependin
 Need a new type of score which converts absolute note melody into relative melody.  (A simple way would be to put key name and fraction factor on each note.) Do this for a few simple melodies so people can play something familiar.
 
 ## Canvas Resizing
-Canvas should resize with the browser window.
+Canvas should resize with the browser window. At the moment its going off the right hand edge!
 Buttons (instrument keys) should resize and pack into the space available.
 Button text should get bigger or smaller, with less important items disappearing if too small.
 
@@ -118,6 +130,9 @@ From most important to least important:
 - Absolute frequency in Hertz '320 Hz'
 - Prime factorisation '2^-2 5^1' but using superscripts
 - This might be toggled to [-2 0 1] or [-2 0 1 0] if keys are all 5 or 7 limit. Any higher limit, don't allow the toggle.
+
+## HTML text
+Want the displayed timing info to be to EXACTLY one decimal place. Otherwise text jumps around.
 
 ## Customising keyboard / locales / frequency
 - Could open up full customisation of the keyboard

@@ -16,7 +16,7 @@ const drawInstrumentKeys = (state) => {
     if (key.physicsSwitchedOn) {
       const x = key.location.x * coordFactor
       const y = canvasHeight - key.location.y * coordFactor
-      const r = key.location.r * radiusFactor
+      const r = key.location.r * key.location.extraR * radiusFactor
 
       // context.fillStyle = key.getBgColour(state, key)
       context.fillStyle = key.bgColour(state, key)

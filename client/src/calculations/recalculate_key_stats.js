@@ -7,12 +7,22 @@ const recalculateKeyStats = (key) => {
   // Might occasionally want some keys to not display,
   // then set this to false.
 
+  // Slightly randomise the radius,
+  // don't want any radii being exactly equal
+  // since this variable gets sorted on later
+  key.location.r += 0.1 * Math.random()
+
+  // When button is pressed it gets bigger. Record that in this factor
+  key.location.extraR = 1
+
+  // Count number of times a key is pressed
+  key.countPresses = 0  
+
   // Record the original size and position
   // to be used in animation later
   key.anchors = {}
   key.anchors.x = key.location.x
   key.anchors.y = key.location.y
-  key.location.r += 0.1 * Math.random()  // SORT BY RADIUS = RANDOM, LATER!
   key.anchors.r = key.location.r
 
   // Firstly, set numerator and denominator if necessary

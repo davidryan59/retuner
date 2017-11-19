@@ -16,6 +16,8 @@ const keyDownHandler = (state, event) => {
       if (keyDownFunction) {
         keyDownFunction(state, keyDown)
       }
+      state.control.totalKeyPresses++
+      keyDown.countPresses++
       state.keyLastPressed = keyDown
       animateInstrumentKey(state, keyDown)
     }
@@ -33,7 +35,6 @@ const keyUpHandler = (state, event) => {
     if (keyUpFunction) {
       keyUpFunction(state, keyUp)
     }
-
   }
 }
 
