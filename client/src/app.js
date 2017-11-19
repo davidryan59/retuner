@@ -10,6 +10,7 @@ const runApp = () => {
 
   // Have a central place where all app state is stored
   const state = {}
+  state.versionNumber = "v1.0.0"     // 19th Nov 2017
   initialiseState(state)
 
   // Make window respond to key presses
@@ -37,7 +38,10 @@ const runApp = () => {
       drawCanvas(state)
       updateTextInHtml(state)
       const timeRenderEnd = window.performance.now()
-      state.control.timing.renderTimeMS = timeRenderEnd - timeLoopStart
+      state.control.timing.maxRenderTimeMS = Math.max(
+        timeRenderEnd - timeLoopStart,
+        state.control.timing.maxRenderTimeMS
+      )
     }
 
   }

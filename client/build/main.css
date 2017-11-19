@@ -2,29 +2,29 @@ body {
   text-align: center;
   margin: 0;
   font-family: serif;
-  background-color: #FFF;
-  color: #222;
+  background-color: #EEE;
+  color: #444;
 }
 
 canvas {
-  border: 2px dotted #555;
-  background-color: #EEE;
-  border-radius: 7px;
-}
-
-.donation {
-  font-size: 85%;
-  color: #670;
+  border: 2px dotted #999;
+  background-color: #DDD;
+  border-radius: 10px;
+  margin: 3px;
 }
 
 a {
   text-decoration: none;
-  color: #D53;
+  color: #F0A;
 }
 
 p {
   margin: 5px;
 
+}
+
+x {
+  color: #F70;
 }
 
 img#main-logo {
@@ -33,5 +33,22 @@ img#main-logo {
 }
 
 img#donate-logo {
-  width: 180px;
+  height: 40px;
+}
+
+.donation {
+  font-size: 85%;
+  color: #4B0;
+}
+
+div#whole-page {
+  padding: 5px;
+  background-color: #EEE;
+}
+
+div#inner-page {
+  border: 4px dashed #666;
+  background-color: #FFF;
+  padding: 10px;
+  border-radius: 50px;
 }

@@ -15,7 +15,9 @@ import instrumentKeyRelease from "../controllers/keys/instrument_key_release"
 // in particular the ones with frequency shifts which play notes
 import recalculateAllKeyStats from "../calculations/recalculate_all_key_stats"
 
-const keyDoesNothing = (state, key)=>{console.log("Key does nothing", key)}
+const keyDoesNothing = (state, key)=>{
+  // console.log("Key does nothing", key)
+}
 
 const setupInstrumentKeys = (state) => {
   // The musical instrument has 'keys'
