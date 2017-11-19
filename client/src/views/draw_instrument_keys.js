@@ -35,8 +35,8 @@ const drawInstrumentKeys = (state) => {
       if (key.transposes) {
         const freq = baseFreq * key.transposes.factor
         const freqText = Math.round(freq*10)/10 + "Hz"
-        buttonTextArray.unshift(key.transposes.text)
         buttonTextArray.push(freqText)
+        buttonTextArray.push(key.transposes.text)
       }
       const maxI = buttonTextArray.length
       for (const i in buttonTextArray) {

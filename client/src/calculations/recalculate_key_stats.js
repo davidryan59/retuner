@@ -43,8 +43,17 @@ const recalculateKeyStats = (key) => {
   if (key.transposes) {
     const num = key.transposes.num
     const denom = key.transposes.denom
+    // IMPROVE: Check GCD / HCF of num and denom is 1
+    // Otherwise divide out any common factors
     key.transposes.factor = num / denom
     key.transposes.text = num + "/" + denom
+    key.transposes.complexity = num * denom
+
+    // Make sure radius of transposing keys is related to
+    // their musical importance, which means low complexity
+    const theFactor = 10
+    key.anchors.r = 7 + 5 * theFactor * (1 / (theFactor + key.transposes.complexity));
+    key.location.r = key.anchors.r
   }
 
   if (key.transposes) {
