@@ -1,14 +1,8 @@
 # TO DO LIST
 
-Make sure Develop branch is working properly
-
 Bounding Box
 - Find out the bounds of all the keys (in their unexpanded states)
 - Make sure that this fits within the canvas
-
-Ask an instructor about the GitHub
-- if others want to help me develop it, how to go about managing that?
-- is the Master branch locked down at all?
 
 All drawing methods needs to be assigned to the keys themselves.
 Keys need to be assigned shorter names, which display at the top

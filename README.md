@@ -12,13 +12,13 @@ that music is played by intervals between subsequent notes, and not by
 absolute position / pitch of note.
 
 # Technologies I used
-Javascript (ES6)
-Babel
-ndm
-Nodemon
-Express
-Webpack
-Firebase
+- Javascript (ES6)
+- Babel
+- ndm
+- Nodemon
+- Express
+- Webpack
+- Firebase
 
 # Result
 Some melodies become a lot easier to play, e.g. arpeggios, since all that is

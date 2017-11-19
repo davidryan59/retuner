@@ -1,13 +1,37 @@
 body {
   text-align: center;
   margin: 0;
-  font-family: monospace;
-  background-color: #BBB;
+  font-family: serif;
+  background-color: #FFF;
   color: #222;
 }
 
 canvas {
-  border: 1px dotted #000;
-  background-color: #888;
+  border: 2px dotted #555;
+  background-color: #EEE;
   border-radius: 7px;
+}
+
+.donation {
+  font-size: 85%;
+  color: #670;
+}
+
+a {
+  text-decoration: none;
+  color: #D53;
+}
+
+p {
+  margin: 5px;
+
+}
+
+img#main-logo {
+  margin: 2px;
+  height: 150px;
+}
+
+img#donate-logo {
+  width: 180px;
 }
