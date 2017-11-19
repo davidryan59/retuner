@@ -1,6 +1,6 @@
 # TO DO LIST
 
-Sans-serif font
+Check that Bitcoin donation works as expected.
 
 Bounding Box
 - Find out the bounds of all the keys (in their unexpanded states)

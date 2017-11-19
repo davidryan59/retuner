@@ -1,16 +1,28 @@
 body {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #444;
   text-align: center;
   margin: 0;
-  font-family: serif;
   background-color: #EEE;
-  color: #444;
+}
+
+div#whole-page {
+  background-color: #EEE;
+  padding: 5px;
+}
+
+div#inner-page {
+  border: 4px dashed #666;
+  border-radius: 40px;
+  background-color: #FFF;
+  padding: 10px;
 }
 
 canvas {
   border: 2px dotted #999;
+  border-radius: 15px;
   background-color: #DDD;
-  border-radius: 10px;
-  margin: 3px;
 }
 
 a {
@@ -18,9 +30,13 @@ a {
   color: #F0A;
 }
 
+a:hover {
+  text-decoration: underline;
+  color: #C0E;
+}
+
 p {
   margin: 5px;
-
 }
 
 x {
@@ -36,21 +52,14 @@ img#donate-logo {
   height: 40px;
 }
 
-.blockchain-btn {
-  font-size: 85%;
-  color: #4B0;
-  /*font-size:12px;
-  margin:0 auto;*/
-}
-
-div#whole-page {
+.text-block {
+  margin: 10px;
+  border: 1px dotted #BBB;
+  border-radius: 25px;
+  background-color: #F8F8F8;
   padding: 5px;
-  background-color: #EEE;
 }
 
-div#inner-page {
-  border: 4px dashed #666;
-  background-color: #FFF;
-  padding: 10px;
-  border-radius: 50px;
+.blockchain-btn {
+  color: #4B0;
 }

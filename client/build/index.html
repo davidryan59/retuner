@@ -24,26 +24,34 @@
   <body>
     <div id="whole-page">
       <div id="inner-page">
-        <div>
+        <div class="">
           <a href='https://retuner-bdf49.firebaseapp.com/'>
             <img id="main-logo" src="logo.png" />
           </a>
         </div>
-        <canvas id="main-canvas" width="960" height="360"></canvas>
-        <p>
-          A musical instrument in Just Intonation where each key represents a pure musical interval.
-        </p>
-        <p>
-          This app was created by <a href='https://soundcloud.com/daveryan23/tracks'>David Ryan</a>
-          and is at <x id='version-number'>v0.0.0</x>,
-          here are links to the <a href='https://github.com/daveryan23/retuner_musical_instrument'>GitHub project</a>
-          and a <a href='https://arxiv.org/abs/1612.01860'>paper on JI musical notation (RCN)</a>.
-        </p>
-        <p>
-          Total time <x id='total-time-s'>0</x>s,
-          frame renders in between <x id='render-time-min-ms'>0</x>ms and <x id='render-time-max-ms'>0</x>ms
-        </p>
-        <div class="blockchain-btn"
+        <div class="">
+          <canvas id="main-canvas" width="960" height="360"></canvas>
+        </div>
+        <div class="text-block">
+          <p>
+            A musical instrument in Just Intonation where each key represents a pure musical interval.
+          </p>
+          <p>
+            Here are links to the
+            <a href='https://arxiv.org/abs/1612.01860'>paper on JI musical notation (RCN)</a>
+            and the
+            <a href='https://github.com/daveryan23/retuner_musical_instrument'>source code on GitHub</a>.
+          </p>
+          <p>
+            This app was created by <a href='https://soundcloud.com/daveryan23/tracks'>David Ryan</a>
+            and is at <x id='version-number'>v0.0.0</x>.
+          </p>
+          <p>
+            Total time <x id='total-time-s'>0</x>s,
+            frame renders between <x id='render-time-min-ms'>0</x>ms and <x id='render-time-max-ms'>0</x>ms.
+          </p>
+        </div>
+        <div class="text-block blockchain-btn"
              data-address="1933phfhK3ZgFQNLGSDXvqCn32k2buXY8a"
              data-shared="false">
           <div class="blockchain stage-begin">
