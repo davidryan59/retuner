@@ -1,10 +1,12 @@
 import recalculateKeyStats from './recalculate_key_stats'
+import recalculateNeighbours from './recalculate_neighbours'
 
 const recalculateAllKeyStats = (state) => {
 
   for (const key of state.keys) {
     recalculateKeyStats(key)
   }
+  recalculateNeighbours(state)
 
   state.keyLastPressed = null
   state.keyOrderArray = []

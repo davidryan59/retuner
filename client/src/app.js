@@ -1,5 +1,6 @@
 import initialiseState from './initialisation/initialise_state'
 import {keyDownHandler, keyUpHandler} from './controllers/keyboard/key_handlers'
+import windowResizeHandler from './views/window_resize_handler'
 import doTiming from './controllers/general/do_timing'
 import moveKeys from './controllers/general/move_keys'
 import drawCanvas from './views/draw_canvas'
@@ -17,6 +18,9 @@ const runApp = () => {
   // Make window respond to key presses
   window.addEventListener('keydown', event => {keyDownHandler(state, event)})
   window.addEventListener('keyup', event => {keyUpHandler(state, event)})
+
+  // If window resizes, may need to change canvas
+  window.addEventListener('resize', event => {windowResizeHandler(state, event)})
 
   window.mainLoop = timeLoopStart => {
     // timeLoopStart is a decimal number, a time precise to 0.005ms :)

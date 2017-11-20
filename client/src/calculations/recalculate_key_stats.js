@@ -16,7 +16,13 @@ const recalculateKeyStats = (key) => {
   key.location.extraR = 1
 
   // Count number of times a key is pressed
-  key.countPresses = 0  
+  key.countPresses = 0
+
+  // Record which keys are near each other, so they can exert force on each other
+  key.force = {}
+  key.force.neighbours = []
+  key.force.x = 0
+  key.force.y = 0
 
   // Record the original size and position
   // to be used in animation later

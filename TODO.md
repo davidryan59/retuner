@@ -1,18 +1,33 @@
 # TO DO LIST
 
+
+## Canvas Resizing
+Got a window resize handler working
+BUT
+Some flickering. Is there any way to get the canvas automatically resizing in the window?
+Also need to implement some type of zoom feature.
+Actually, its probably best for the keyboard to dynamically place in the centre of the canvas
+
+Buttons (instrument keys) should resize and pack into the space available.
+Button text should get bigger or smaller, with less important items disappearing if too small.
+
+Get the Firebase webpage a proper hosting. How about https://www.retun.er?
+
 Need to model button radius properly.
 Might depend on any or all of these things:
 - Basic button size (e.g. 3px)
 - +2px for having a function on it
 - +2px for being a musical note
-- +0px to +5px for having a low complexity
+- +0px to +5px for having a low complexity AND low prime limit. (Penalise otherwise)
 - +2px for being currently pressed
 - +0px to +5px for being pressed a lot in button history (maybe anything above 20% is 5px)
 All the above should affect the basic button size.
 The basic button size should push nearby buttons out of the way.
 - extra factor for being recently pressed, should not push nearby buttons out of the way
 
-Check that Bitcoin donation works as expected.
+If there is no internet connection, might want to disable Firebase and Bitcoin sections.
+
+Check that Bitcoin donation works as expected, when online. Send a small amount to it as a test, what happens?
 
 Bounding Box
 - Find out the bounds of all the keys (in their unexpanded states)
@@ -29,10 +44,6 @@ Keys should know what next frequency they represent.
 - It should be capped by the min/max freqs so when you approach the limit
 - all the keys on one side are red (1/1)
 
-Redo the key radiuses based on:
-1) Prime limit (lower is bigger), and
-2) Tenney height (lower is bigger)
-
 ## Stereo/Reverb/Delay
 Function to add reverb or at least one or two delays
 Want to output two channels in stereo
@@ -40,11 +51,6 @@ Want individual notes to be played in stereo. Possibly move them around dependin
 
 ## Scoring
 Need a new type of score which converts absolute note melody into relative melody.  (A simple way would be to put key name and fraction factor on each note.) Do this for a few simple melodies so people can play something familiar.
-
-## Canvas Resizing
-Canvas should resize with the browser window. At the moment its going off the right hand edge!
-Buttons (instrument keys) should resize and pack into the space available.
-Button text should get bigger or smaller, with less important items disappearing if too small.
 
 ## Graphical Display
 - Want a graphical display of the sound output waveform.
