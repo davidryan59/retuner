@@ -10,6 +10,8 @@ import volumeDecrease from "../controllers/keys/volume_decrease"
 import volumeIncrease from "../controllers/keys/volume_increase"
 import instrumentKeyPress from "../controllers/keys/instrument_key_press"
 import instrumentKeyRelease from "../controllers/keys/instrument_key_release"
+import playPrevNote from "../controllers/keys/play_prev_note"
+import playNextNote from "../controllers/keys/play_next_note"
 
 // This one will (re)calculate stats relevant to each key
 // in particular the ones with frequency shifts which play notes
@@ -431,16 +433,16 @@ const setupInstrumentKeys = (state) => {
   keyArray.push({
     keyboardCode: "KeyY",
     symbol: "Y",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
+    functionLabel: "PREV N/N",
+    runOnPress: playPrevNote,
     location: {x: 75, y: 40, r:5}
   })
 
   keyArray.push({
     keyboardCode: "KeyU",
     symbol: "U",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
+    functionLabel: "Next N/N",
+    runOnPress: playNextNote,
     location: {x: 85, y: 40, r:5}
   })
 

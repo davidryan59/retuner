@@ -1,9 +1,20 @@
 # TO DO LIST
 
+## History
+Maintain a forwards and backwards history list.
+If stuff is available in that list, play it on keys Y and U
+If stuff is not available, repeat the same note (without altering frequency)
+(This has been started, however not quite finished.
+Record note has been implemented on the key press.)
+
+## Domain
+www.retuner.co.uk and www.retuner.uk are available.
+Log in, and link them to the Firebase account
 
 ## Canvas Resizing
 Got a window resize handler working
 BUT
+When window first starts, resize handler needs to run once.
 Some flickering. Is there any way to get the canvas automatically resizing in the window?
 Also need to implement some type of zoom feature.
 Actually, its probably best for the keyboard to dynamically place in the centre of the canvas

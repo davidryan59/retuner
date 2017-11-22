@@ -1,3 +1,6 @@
+// Note that this doesn't appear to work, there are
+// 65 neighbours for every key, so the distance filtering isn't working...
+
 const recalculateNeighbours = (state) => {
 
   const keyArray = state.keys

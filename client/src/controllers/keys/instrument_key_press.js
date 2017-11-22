@@ -3,6 +3,7 @@ import stopNote from "../audio/stop_note"
 import isTransposing from "../audio/is_transposing"
 import transposeInstrument from "../audio/transpose_instrument"
 import playNote from "../audio/play_note"
+import recordNote from "../audio/record_note"
 
 const instrumentKeyPress = (state, key) => {
 
@@ -18,6 +19,7 @@ const instrumentKeyPress = (state, key) => {
     const freqFactor = key.transposes.factor
     playNote(state, key, freqFactor)
   }
+  recordNote(state, key)
 
 }
 
