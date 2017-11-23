@@ -8,7 +8,6 @@ const setupControl = (state) => {
   // DEBUG only: app will stop animating after this number of loops/frames!
   // Approx 50 frames a second, and N seconds later it stops.
   stateControl.maxLoops = 50 * 600
-  stateControl.renderFrameGap = 2
   stateControl.totalKeyPresses = 0
 
   // Timing control

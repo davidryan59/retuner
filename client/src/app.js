@@ -2,7 +2,9 @@ import initialiseState from './initialisation/initialise_state'
 import {keyDownHandler, keyUpHandler} from './controllers/keyboard/key_handlers'
 import windowResizeHandler from './views/window_resize_handler'
 import doTiming from './controllers/general/do_timing'
+import calculateForces from './physics/calculate_forces'
 import moveKeys from './controllers/general/move_keys'
+import recalculateNeighbours from './calculations/recalculate_neighbours'
 import findViewObjectBounds from './controllers/general/find_view_object_bounds'
 import updateCanvasCoords from './views/update_canvas_coords'
 import drawCanvas from './views/draw_canvas'
@@ -39,9 +41,15 @@ const runApp = () => {
 
     state.control.loopCount++
     doTiming(state, timeLoopStart)
+    calculateForces(state)
     moveKeys(state)
+    // Recalculate the neighbours not every loop since
+    // there are 65 * 64 / 2 = 2080 pairs to check
+    if (state.control.loopCount % 23 === 0) {
+      recalculateNeighbours(state)
+    }
     // Only do graphics every N frames
-    if (state.control.loopCount % state.control.renderFrameGap === 0) {
+    if (state.control.loopCount % 2 === 0) {
       findViewObjectBounds(state)
       updateCanvasCoords(state)
       drawCanvas(state)

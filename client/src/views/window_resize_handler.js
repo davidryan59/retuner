@@ -1,3 +1,6 @@
+// const heightToWidthRatio = 0.375   // Original value
+const heightToWidthRatio = 0.5
+
 const windowResizeHandler = (state, event) => {
   // 'event' is not used, since window info can be
   // retrieved directly from 'window' and this works
@@ -12,7 +15,7 @@ const windowResizeHandler = (state, event) => {
     const canvasAmendWidthRatio = proposedCanvasWidth / currentCanvasWidth
     // Only resize if window has changed size enough
     if (canvasAmendWidthRatio < 0.97 || 1.10 < canvasAmendWidthRatio) {
-      const proposedCanvasHeight = Math.round(0.375 * proposedCanvasWidth)
+      const proposedCanvasHeight = Math.round(heightToWidthRatio * proposedCanvasWidth)
       const canvasElt = state.pageElts.canvas
       canvasElt.width = proposedCanvasWidth
       canvasElt.height = proposedCanvasHeight
