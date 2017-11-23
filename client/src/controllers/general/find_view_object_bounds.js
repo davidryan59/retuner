@@ -33,7 +33,7 @@ const findViewObjectBounds = (state) => {
   state.graphics.viewObjects.sizeX = viewObjectsRight - viewObjectsLeft
   state.graphics.viewObjects.sizeY = viewObjectsUp - viewObjectsDown
 
-  state.graphics.viewObjects.overallZoom = Math.min(
+  state.graphics.viewObjects.zoom = Math.min(
     state.graphics.viewObjects.sizeX,
     state.graphics.viewObjects.sizeY
   )
