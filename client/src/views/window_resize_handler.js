@@ -1,6 +1,10 @@
 const windowResizeHandler = (state, event) => {
+  // 'event' is not used, since window info can be
+  // retrieved directly from 'window' and this works
+  // even when an event is not supplied, e.g. on initialisation
+
   const currentCanvasWidth = state.graphics.boundRight   // boundLeft is always zero
-  const newWindowWidth = event.currentTarget.innerWidth
+  const newWindowWidth = window.innerWidth
   const proposedCanvasWidth = newWindowWidth - 100
 
   // Don't allow a canvas less than 100 pixels wide
@@ -16,9 +20,8 @@ const windowResizeHandler = (state, event) => {
       state.graphics.boundDown = proposedCanvasHeight
       console.log(`Successful resize ${proposedCanvasWidth}, ${proposedCanvasHeight}`)
     }
-
   }
-  console.log(`RResize event ${event.currentTarget.innerWidth}`)
+
 }
 
 export default windowResizeHandler

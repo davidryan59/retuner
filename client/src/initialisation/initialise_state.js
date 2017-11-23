@@ -7,9 +7,11 @@ import setupRecording from './setup_recording'
 import setupWaveform from './setup_waveform'
 import setupDecibels from './setup_decibels'
 import setupAudioContext from './setup_audio_context'
+import windowResizeHandler from '../views/window_resize_handler'
 
 const initialiseState = (state) => {
 
+  // Setup state
   setupControl(state)
   setupHtmlPageElts(state)
   setupGraphicsContext(state)
@@ -19,6 +21,9 @@ const initialiseState = (state) => {
   setupWaveform(state)
   setupDecibels(state)
   setupAudioContext(state)
+
+  // Setup window
+  windowResizeHandler(state)
 
   console.log("State initialisation complete:")
   console.dir(state)
