@@ -16,8 +16,24 @@ const windowResizeHandler = (state, event) => {
       const canvasElt = state.pageElts.canvas
       canvasElt.width = proposedCanvasWidth
       canvasElt.height = proposedCanvasHeight
-      state.graphics.boundRight = proposedCanvasWidth
+
+      // For canvas, (0, 0) is in top left corner
+      state.graphics.boundUp = 0
       state.graphics.boundDown = proposedCanvasHeight
+      state.graphics.boundLeft = 0
+      state.graphics.boundRight = proposedCanvasWidth
+
+      state.graphics.centreX = 0.5 * (state.graphics.boundUp + state.graphics.boundDown)
+      state.graphics.centreY = 0.5 * (state.graphics.boundLeft + state.graphics.boundRight)
+
+      state.graphics.sizeX = state.graphics.boundDown - state.graphics.boundUp
+      state.graphics.sizeY = state.graphics.boundRight - state.graphics.boundLeft
+
+      state.graphics.zoom = Math.min (
+        state.graphics.sizeX,
+        state.graphics.sizeY
+      )
+
       console.log(`Successful resize ${proposedCanvasWidth}, ${proposedCanvasHeight}`)
     }
   }

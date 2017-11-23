@@ -2,21 +2,38 @@ const drawInstrumentKeys = (state) => {
 
   const context = state.graphics.context
   const loops = state.control.loopCount
-  const canvasHeight = state.graphics.boundDown
-  const coordFactor = 6.1
-  const radiusFactor = 4.6
+  // const canvasHeight = state.graphics.boundDown
+  // const coordFactor = 6.1
+  // const radiusFactor = 4.6
+  const radiusFactor = 1
   const textLengthFactor = 2.5
   const indexFactor = 12
   const verticalShift = 7
   const baseFreq = state.freqs.currentFreq
+
+  const canvasCentreX = state.graphics.centreX
+  const canvasCentreY = state.graphics.centreY
+  const canvasZoom = state.graphics.zoom
+
+  const viewObjectCentreX = state.graphics.viewObjects.centreX
+  const viewObjectCentreY = state.graphics.viewObjects.centreY
+  const viewObjectZoom = state.graphics.viewObjects.overallZoom
   // Can also use 'rgba(100, 200, 255, 0.5)'
   // for alpha transparency!
   for (const keyIndex of state.keyOrderArray) {
     const key = state.keys[keyIndex]
     if (key.physicsSwitchedOn) {
-      const x = key.location.x * coordFactor
-      const y = canvasHeight - key.location.y * coordFactor
-      const r = key.location.r * key.location.extraR * radiusFactor
+      // const x = key.location.x * coordFactor
+      // const y = canvasHeight - key.location.y * coordFactor
+      // const r = key.location.r * key.location.extraR * radiusFactor
+
+      const xRel = ( key.location.x - viewObjectCentreX ) / viewObjectZoom
+      const yRel = ( key.location.y - viewObjectCentreY ) / viewObjectZoom
+      const rRel = key.location.r / viewObjectZoom
+
+      const x = canvasCentreX + 0.1 * canvasZoom * xRel
+      const y = canvasCentreY - 0.1 * canvasZoom * yRel
+      const r = canvasZoom * rRel * key.location.extraR * radiusFactor
 
       // context.fillStyle = key.getBgColour(state, key)
       context.fillStyle = key.bgColour(state, key)
