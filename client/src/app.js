@@ -3,6 +3,7 @@ import {keyDownHandler, keyUpHandler} from './controllers/keyboard/key_handlers'
 import windowResizeHandler from './views/window_resize_handler'
 import doTiming from './controllers/general/do_timing'
 import moveKeys from './controllers/general/move_keys'
+import findViewObjectBounds from './controllers/general/find_view_object_bounds'
 import drawCanvas from './views/draw_canvas'
 import updateTextInHtml from './views/update_text_in_html'
 import recordRenderTime from './views/record_render_time'
@@ -40,6 +41,7 @@ const runApp = () => {
     if (state.control.loopCount % state.control.renderFrameGap === 0) {
       doTiming(state, timeLoopStart)
       moveKeys(state)
+      findViewObjectBounds(state)
       drawCanvas(state)
       updateTextInHtml(state)
       recordRenderTime(state, timeLoopStart)
