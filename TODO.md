@@ -1,5 +1,12 @@
 # TO DO LIST
 
+## Page Loading
+Some elements on index.html can be slow to load
+- Bitcoin stuff
+- Possibly Firebase stuff too
+This slows down the page starting up. Run these off a different place
+after the main app has started.
+
 ## History
 Maintain a forwards and backwards history list.
 If stuff is available in that list, play it on keys Y and U

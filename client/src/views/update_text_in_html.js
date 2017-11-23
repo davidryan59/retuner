@@ -1,7 +1,7 @@
 let drawnVersionNumber = false;
 
 const updateTextInHtml = (state) => {
-  // Only update this every 10 frames
+  // Only update this every N frames
   const pageElts = state.pageElts
   if (state.control.loopCount % 7 === 0) {
     const stateTiming = state.control.timing

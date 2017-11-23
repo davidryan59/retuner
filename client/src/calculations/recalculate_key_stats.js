@@ -31,6 +31,12 @@ const recalculateKeyStats = (key) => {
   key.anchors.y = key.location.y
   key.anchors.r = key.location.r
 
+  // Make somewhere to put canvas coords of instrument keys
+  key.canvas = {}
+  key.canvas.x = 0
+  key.canvas.y = 0
+  key.canvas.r = 0
+
   // Firstly, set numerator and denominator if necessary
   // Secondly, calculate stats from these
 

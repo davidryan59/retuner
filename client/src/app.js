@@ -4,6 +4,7 @@ import windowResizeHandler from './views/window_resize_handler'
 import doTiming from './controllers/general/do_timing'
 import moveKeys from './controllers/general/move_keys'
 import findViewObjectBounds from './controllers/general/find_view_object_bounds'
+import updateCanvasCoords from './views/update_canvas_coords'
 import drawCanvas from './views/draw_canvas'
 import updateTextInHtml from './views/update_text_in_html'
 import recordRenderTime from './views/record_render_time'
@@ -37,15 +38,16 @@ const runApp = () => {
     }
 
     state.control.loopCount++
-    // Only render every 13 frames
+    doTiming(state, timeLoopStart)
+    moveKeys(state)
+    // Only do graphics every N frames
     if (state.control.loopCount % state.control.renderFrameGap === 0) {
-      doTiming(state, timeLoopStart)
-      moveKeys(state)
       findViewObjectBounds(state)
+      updateCanvasCoords(state)
       drawCanvas(state)
-      updateTextInHtml(state)
-      recordRenderTime(state, timeLoopStart)
     }
+    updateTextInHtml(state)
+    recordRenderTime(state, timeLoopStart)
 
   }
   window.requestAnimationFrame(mainLoop)

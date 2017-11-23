@@ -23,8 +23,8 @@ const windowResizeHandler = (state, event) => {
       state.graphics.boundLeft = 0
       state.graphics.boundRight = proposedCanvasWidth
 
-      state.graphics.centreX = 0.5 * (state.graphics.boundUp + state.graphics.boundDown)
-      state.graphics.centreY = 0.5 * (state.graphics.boundLeft + state.graphics.boundRight)
+      state.graphics.centreX = 0.5 * (state.graphics.boundLeft + state.graphics.boundRight)
+      state.graphics.centreY = 0.5 * (state.graphics.boundUp + state.graphics.boundDown)
 
       state.graphics.sizeX = state.graphics.boundDown - state.graphics.boundUp
       state.graphics.sizeY = state.graphics.boundRight - state.graphics.boundLeft
