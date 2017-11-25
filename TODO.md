@@ -1,5 +1,10 @@
 # TO DO LIST
 
+
+## Stopping note
+Currently note is cut off instantly (if sustain not on)
+Get it so that note cuts off over say 0.05 seconds - use a Stop Note ADSR
+
 ## Links to social media
 - Buttons for sharing hosting page via Facebook Twitter etc. (maybe 3 buttons is enough? which are the 3 most popular sites?)
 - Look at Night Out App for how to do this
@@ -9,8 +14,8 @@
 Some elements on index.html can be slow to load
 - Bitcoin stuff
 - Possibly Firebase stuff too
-This slows down the page starting up. Run these off a different place
-after the main app has started.
+- This slows down the page starting up. Run these off a different place after the main app has started.
+- Don't run them at all if not connected to the internet
 
 ## History
 Maintain a forwards and backwards history list.
@@ -20,67 +25,32 @@ If stuff is not available, repeat the same note (without altering frequency)
 Record note has been implemented on the key press.)
 
 ## Domain
-www.retuner.co.uk and www.retuner.uk are available.
-Log in, and link them to the Firebase account
+- www.retuner.co.uk and www.retuner.uk have been registered
+- Log in, and link them to the Firebase account (will do, however having problems accessing them from abroad)
 
-## Canvas Resizing
-Got a window resize handler working
-BUT
-When window first starts, resize handler needs to run once.
-Some flickering. Is there any way to get the canvas automatically resizing in the window?
-Also need to implement some type of zoom feature.
-Actually, its probably best for the keyboard to dynamically place in the centre of the canvas
-
-Buttons (instrument keys) should resize and pack into the space available.
-Button text should get bigger or smaller, with less important items disappearing if too small.
-
-Get the Firebase webpage a proper hosting. How about https://www.retun.er?
-
-Need to model button radius properly.
-Might depend on any or all of these things:
+# Button Radius
+- Need to model button radius properly.
+- Might depend on any or all of these things:
 - Basic button size (e.g. 3px)
 - +2px for having a function on it
 - +2px for being a musical note
 - +0px to +5px for having a low complexity AND low prime limit. (Penalise otherwise)
 - +2px for being currently pressed
 - +0px to +5px for being pressed a lot in button history (maybe anything above 20% is 5px)
-All the above should affect the basic button size.
-The basic button size should push nearby buttons out of the way.
+- All the above should affect the basic button size.
+- The basic button size should push nearby buttons out of the way.
 - extra factor for being recently pressed, should not push nearby buttons out of the way
 
-If there is no internet connection, might want to disable Firebase and Bitcoin sections.
-
-Check that Bitcoin donation works as expected, when online. Send a small amount to it as a test, what happens?
-
-Bounding Box
-- Find out the bounds of all the keys (in their unexpanded states)
-- Make sure that this fits within the canvas
-
-All drawing methods needs to be assigned to the keys themselves.
-Keys need to be assigned shorter names, which display at the top
-Keys need to be assigned a function (if they are not a note)
-Keys which have a function should be a darker colour than those which don't.
-Note text needs to be actually centred vertically and horizontally
-Ideally, note text can expand and contract with the radius of the key
-Keys should know what next frequency they represent.
-- This should link directly to the colour they display.
-- It should be capped by the min/max freqs so when you approach the limit
-- all the keys on one side are red (1/1)
-
 ## Stereo/Reverb/Delay
-Function to add reverb or at least one or two delays
 Want to output two channels in stereo
+Function to add reverb or at least one or two delays
 Want individual notes to be played in stereo. Possibly move them around depending on their position on the keyboard. Possibly alter the reverb delays based on how far they are from the 2 edges!
 
 ## Scoring
 Need a new type of score which converts absolute note melody into relative melody.  (A simple way would be to put key name and fraction factor on each note.) Do this for a few simple melodies so people can play something familiar.
 
-## Graphical Display
+## Graphical Display of Waveform
 - Want a graphical display of the sound output waveform.
-
-## Stopping note
-Currently note is cut off instantly (if sustain not on)
-Get it so that note cuts off over say 0.05 seconds - use a Stop Note ADSR
 
 ## GitHub
 - Feature branches - anyone can do these
@@ -96,31 +66,31 @@ Implement mouse-controlled and keyboard-controlled sliders for:
 - Distance/whitespace between keys (especially affects mouse operation)
 - Time range of waveform plot
 - Various aspects of the ADSR for play note (and possibly stop note)
+- Contrast ratio between keys with simpler notes and more complex notes (see Tenney Height affecting key colour brightness)
 
 ## Repeating buttons
 Some buttons (such as volume sliders) want to keep going up or down as they are held down. Need different keyboard handling for this? Might also want to set up a keyboard repeat period which is independent of the operating system repeat period, and happens at a constant rate (rather than with a gap at front)
 
 ## Buttons / (Instrument) Keys
+- All drawing methods needs to be assigned to the keys themselves.
+- Keys need to be assigned a function (if they are not a note)
 - Keys which don't work (FN, CAPS LOCK, TAB) should be a different colour, e.g. greyed out
-Each key should:
+- Keys which have a function should be a darker colour than those which don't.
+- Note text needs to be actually centred vertically and horizontally
+- Ideally, note text can expand and contract (text resizes) with the radius of the key
+- If note text doesn't fit, hide less important elements (which ones? how?)-
+- Keys should know what next frequency they represent.
+- - This should link directly to the colour they display.
+- - It should be capped by the min/max freqs so when you approach the limit
+- - all the keys on one side are red (1/1)
+
 - calculate every statistic of importance
 - have a default importance (e.g. 100 for 3/2, 90 for 9/8, etc. Make it related to the stats derived earlier.)
 - have a current importance, increasing when button is pressed more
 - button radius increases with current importance
 
-
-## Button highlighting and colouring
-- Highlight when pressed, maybe border getting wider, background color darkening
-- Highlight when closer to base frequency so user can see this and navigate back. This can be done via Tenney height of fraction.
-- Rainbow coloured depending on where in octave: maybe red 1/1 green 4/3 blue 3/2 red 2/1. (Probably want to set 7 different points in octave for 6 colours. Make sure that 4/3, 3/2 have decently strong colours)
-
-## Right mouse clicks
-- Might change right mouse clicks to be press and hold, and a second click for release and hold? Is this a good idea? Alternatively, could hold a key (e.g. either SHIFT) to be like a sustain pedal with mouse clicks?
-
-## Keyboard
-- All function should be accessible by keyboard alone.
-- Only obscure functions should require modifiers
-- Might want Shift / Alt / Command to be the same modifier? Esp windows/mac compatibility. Or maybe Shift is one, Alt is another, Ctrl/Command a third.
+## Button colours
+- Highlight (brighter colours?) keys with simpler prime vector. E.g. when 3/2 has been pressed, 2/3 will have the most vivid colour, others less so. Can use the Tenney Height of each of the keys to calculate which keys are brighter and less bright.
 
 ## Primes
 App should keep track of all primes on all keys.
@@ -177,3 +147,13 @@ https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_wi
 - Going to want some serious user interface testing too.
 (Classes and model tests have been removed 17th Nov,
 since in ES6 Mocha doesn't seem to work...)
+
+
+## Right mouse clicks
+- Might change right mouse clicks to be press and hold, and a second click for release and hold? Is this a good idea? Alternatively, could hold a key (e.g. either SHIFT) to be like a sustain pedal with mouse clicks?
+
+
+## Keyboard
+- All functions should be accessible by keyboard alone.
+- Only obscure functions should require modifiers (or possibly sliders too)
+- Might want Shift / Alt / Command to be the same modifier? Esp windows/mac compatibility. Or maybe Shift is one, Alt is another, Ctrl/Command a third.
