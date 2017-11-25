@@ -9,9 +9,7 @@ const playNote = (state, key, extraFreqFactor=1) => {
   const audioContext = state.audioContext
   const waveform = state.waveform
   const stateFreqs = state.freqs
-  const adsr = state.waveform.adsrOnPressNote
-
-  // Implement note playing here
+  const adsrPress = state.waveform.adsrOnPressNote
 
   // Create oscillator and gain nodes, and connect them to audio context
   const nodeOscillator = audioContext.createOscillator();
@@ -31,12 +29,11 @@ const playNote = (state, key, extraFreqFactor=1) => {
   nodeGainVolControl.gain.value = decibelToAmplitude(state.dB.current)
 
   // Apply the ADSR envelope
-  adsr.applyTo(nodeGainADSR.gain, currentTime)
+  adsrPress.applyTo(nodeGainADSR.gain, currentTime)
 
   // Play the note for 1 second
   nodeOscillator.start(currentTime)
-  nodeOscillator.stop(currentTime + adsr.duration)
-  // *** IMPROVE: Use an ADSR ***
+  nodeOscillator.stop(currentTime + adsrPress.duration)
 
   // Provide logging
   const theFreqText = Math.round(theFreq*100)/100
@@ -46,7 +43,8 @@ const playNote = (state, key, extraFreqFactor=1) => {
   }
 
   if (key) {
-    key.currentNote = nodeOscillator
+    key.currentOscNode = nodeOscillator
+    key.currentAdsrGainNode = nodeGainADSR
     // console.log("New note stored on", key.keyboardCode)
   } else {
     console.log("*** Note storage FAILED ***")

@@ -14,15 +14,6 @@ const setupWaveform = (state) => {
     releaseCurve: "exp"
   })
 
-  const adsrOnReleaseNote = new ADSREnvelope({
-    attackTime: 0.001,
-    decayTime: 0.001,
-    sustainLevel: 0.99,
-    gateTime: 0.003,
-    releaseTime: 0.4,        // Main parameter here
-    releaseCurve: "exp"
-  })
-
   // 'waveformType' is the oscillator type
   // Standard values are "sine", "square", "sawtooth", "triangle"
   // and "custom". The default is "sine"
@@ -34,13 +25,6 @@ const setupWaveform = (state) => {
   state.waveform = {}
   const stateWaveform = state.waveform
   stateWaveform.adsrOnPressNote = adsrOnPressNote
-  stateWaveform.adsrOnReleaseNote = adsrOnReleaseNote
-  // stateWaveform.attackTime = attackTime
-  // stateWaveform.decayTime = decayTime
-  // stateWaveform.sustainTime = sustainTime
-  // stateWaveform.releaseTime = releaseTime
-  // stateWaveform.peakLevel = peakLevel
-  // stateWaveform.sustainLevel = sustainLevel
   stateWaveform.types = waveformTypes
   stateWaveform.index = waveformIndex
   stateWaveform.type = state => state.waveform.types[state.waveform.index]

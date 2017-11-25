@@ -1,13 +1,15 @@
 const stopNote = (state, key) => {
-  let prevNote = key.currentNote
-  const adsr = state.waveform.adsrOnReleaseNote
+  let prevOscNode = key.currentOscNode
+  let prevAdsrGainNode = key.currentAdsrGainNode
+  const currentTime = state.audioContext.currentTime
+  const delayStoppingTime = 0.05
+  const minAmplitude = 0.03
 
-  // SEE HOW ADSR is applied to Play note
-  // Do the same here for Release Note
-
-  if (prevNote) {
-    prevNote.stop(0)
-    prevNote = null
+  if (prevOscNode) {
+    prevOscNode.stop(currentTime + delayStoppingTime)
+    prevAdsrGainNode.gain.exponentialRampToValueAtTime(minAmplitude, currentTime + delayStoppingTime)
+    prevOscNode = null
+    prevAdsrGainNode = null
   }
 }
 

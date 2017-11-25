@@ -1,9 +1,5 @@
 # TO DO LIST
 
-## Stopping note
-Currently note is cut off instantly (if sustain not on)
-Get it so that note cuts off over say 0.05 seconds - use a Stop Note ADSR
-
 ## Page Loading
 Some elements on index.html can be slow to load
 - Bitcoin stuff
