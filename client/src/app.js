@@ -1,5 +1,5 @@
 import initialiseState from './initialisation/initialise_state'
-import {keyDownHandler, keyUpHandler} from './controllers/key_handlers'
+import {keyboardDownHandler, keyboardUpHandler} from './controllers/keyboard_handlers'
 import {mouseDownHandler, mouseUpHandler} from './controllers/mouse_handlers'
 import windowResizeHandler from './views/window_resize_handler'
 import updateTimingInfo from './calculations/update_timing_info'
@@ -21,8 +21,8 @@ const runApp = () => {
   initialiseState(state)
 
   // Make window respond to key presses
-  window.addEventListener('keydown', event => {keyDownHandler(state, event)})
-  window.addEventListener('keyup', event => {keyUpHandler(state, event)})
+  window.addEventListener('keydown', event => {keyboardDownHandler(state, event)})
+  window.addEventListener('keyup', event => {keyboardUpHandler(state, event)})
 
   // Make window respond to mouse presses
   // window.addEventListener('mousedown', event => {mouseDownHandler(state, event)})
