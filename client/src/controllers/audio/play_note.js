@@ -9,7 +9,7 @@ const playNote = (state, key, extraFreqFactor=1) => {
   const audioContext = state.audioContext
   const waveform = state.waveform
   const stateFreqs = state.freqs
-  const adsr = state.waveform.adsrOnPlayNote
+  const adsr = state.waveform.adsrOnPressNote
 
   // Implement note playing here
 

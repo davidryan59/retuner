@@ -1,14 +1,8 @@
 # TO DO LIST
 
-
 ## Stopping note
 Currently note is cut off instantly (if sustain not on)
 Get it so that note cuts off over say 0.05 seconds - use a Stop Note ADSR
-
-## Links to social media
-- Buttons for sharing hosting page via Facebook Twitter etc. (maybe 3 buttons is enough? which are the 3 most popular sites?)
-- Look at Night Out App for how to do this
-
 
 ## Page Loading
 Some elements on index.html can be slow to load
@@ -17,12 +11,19 @@ Some elements on index.html can be slow to load
 - This slows down the page starting up. Run these off a different place after the main app has started.
 - Don't run them at all if not connected to the internet
 
+## Page Layout
+- Logo takes up too much room.
+- Use just the 'R' bit and make it half the height
+- Put 'Retuner - a musical instrument where...' to the right
+- Use flexbox for layout of these things
+- Ideally get it all on the same page
+- Add buttons for sharing hosting page via Facebook Twitter etc. (maybe 3 buttons is enough? which are the 3 most popular sites?) - look at Night Out App for how to do this.
+
 ## History
-Maintain a forwards and backwards history list.
-If stuff is available in that list, play it on keys Y and U
-If stuff is not available, repeat the same note (without altering frequency)
-(This has been started, however not quite finished.
-Record note has been implemented on the key press.)
+- (This has been started, however not quite finished. Record note has been implemented on the key press. This is a slightly tricky feature, and makes me wonder if the earlier things are implemented correctly...)
+- Maintain a forwards and backwards history list for instrument notes played.
+- If stuff is available in that list, play it on keys Y and U
+- If stuff is not available, repeat the same note (without altering frequency)
 
 ## Domain
 - www.retuner.co.uk and www.retuner.uk have been registered
@@ -83,7 +84,6 @@ Some buttons (such as volume sliders) want to keep going up or down as they are 
 - - This should link directly to the colour they display.
 - - It should be capped by the min/max freqs so when you approach the limit
 - - all the keys on one side are red (1/1)
-
 - calculate every statistic of importance
 - have a default importance (e.g. 100 for 3/2, 90 for 9/8, etc. Make it related to the stats derived earlier.)
 - have a current importance, increasing when button is pressed more
@@ -141,19 +141,21 @@ https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
 
-
 ## Testing
 - If buttons / keys are a class, can they be tested?
 - Going to want some serious user interface testing too.
 (Classes and model tests have been removed 17th Nov,
 since in ES6 Mocha doesn't seem to work...)
 
-
 ## Right mouse clicks
 - Might change right mouse clicks to be press and hold, and a second click for release and hold? Is this a good idea? Alternatively, could hold a key (e.g. either SHIFT) to be like a sustain pedal with mouse clicks?
-
 
 ## Keyboard
 - All functions should be accessible by keyboard alone.
 - Only obscure functions should require modifiers (or possibly sliders too)
 - Might want Shift / Alt / Command to be the same modifier? Esp windows/mac compatibility. Or maybe Shift is one, Alt is another, Ctrl/Command a third.
+
+## Timeout
+- Timeout currently set at 10 minutes
+- It should probably be around 10 hours, and un-time-out upon pressing Pause again
+- In other words, a graphics time out is the same as a Pause
