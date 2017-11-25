@@ -3,7 +3,7 @@
 
 const neighbourFactor = 1.3
 
-const recalculateNeighbours = (state) => {
+const calculateNeighbouringKeys = (state) => {
 
   const keyArray = state.keys
   const maxKeys = keyArray.length
@@ -41,4 +41,4 @@ const recalculateNeighbours = (state) => {
 
 }
 
-export default recalculateNeighbours
+export default calculateNeighbouringKeys

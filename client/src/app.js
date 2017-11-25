@@ -5,12 +5,12 @@ import windowResizeHandler from './views/window_resize_handler'
 import updateTimingInfo from './calculations/update_timing_info'
 import calculateForces from './physics/calculate_forces'
 import moveKeys from './physics/move_keys'
-import recalculateNeighbours from './physics/recalculate_neighbours'
+import calculateNeighbouringKeys from './physics/calculate_neighbouring_keys'
 import findViewObjectBounds from './calculations/find_view_object_bounds'
-import updateCanvasCoords from './views/update_canvas_coords'
+import storeModelToCanvasCoords from './calculations/convert_coords/store_model_to_canvas_coords'
 import drawCanvas from './views/draw_canvas'
 import updateTextInHtml from './views/update_text_in_html'
-import recordRenderTime from './views/record_render_time'
+import recordRenderTime from './calculations/record_render_time'
 
 const runApp = () => {
   console.log("The app has started")
@@ -53,12 +53,12 @@ const runApp = () => {
     // Recalculate the neighbours not every loop since
     // there are 65 * 64 / 2 = 2080 pairs to check
     if (state.control.loopCount % 47 === 0) {
-      recalculateNeighbours(state)
+      calculateNeighbouringKeys(state)
     }
     // Only do graphics every N frames
     if (state.control.loopCount % 2 === 0) {
       findViewObjectBounds(state)
-      updateCanvasCoords(state)
+      storeModelToCanvasCoords(state)
       drawCanvas(state)
     }
     updateTextInHtml(state)

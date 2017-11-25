@@ -1,12 +1,12 @@
 import initialiseAKey from './initialise_a_key'
-import recalculateNeighbours from '../../physics/recalculate_neighbours'
+import calculateNeighbouringKeys from '../../physics/calculate_neighbouring_keys'
 
 const initialiseKeys = (state) => {
 
   for (const key of state.keys) {
     initialiseAKey(key)
   }
-  recalculateNeighbours(state)
+  calculateNeighbouringKeys(state)
 
   state.keyLastPressed = null
   state.keyOrderArray = []

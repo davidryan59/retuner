@@ -1,26 +1,31 @@
-const findKeyByMousePosition = (canvasX, canvasY) => {
+import convertCanvasToModelCoords from './convert_coords/convert_canvas_to_model_coords'
 
-  // Need to go through keys from front-most to rear-most
-  // which is the reverse order of the order they are drawn
+const findKeyByMousePosition = (state, canvasX, canvasY) => {
 
-  // const keyArray = state.keys
-  // // When page is loading, this might be undefined
-  // // Exit gracefully and quietly
-  // if (!keyArray) {
-  //   return null
-  // }
-  //
-  // for (const key of keyArray) {
-  //   if (key.keyboardCode === keyboardCode) {
-  //     // console.log("Matched", keyboardCode)
-  //     return key
-  //   }
-  // }
-  //
-  // // console.log("Didn't match", keyboardCode)
+  const {modelX, modelY} = convertCanvasToModelCoords(state, canvasX, canvasY)
 
-  // Want to return a key, or null if there isn't a key
+  const keyIndices = state.keyOrderArray
+  const numKeys = keyIndices.length
 
+  for (let i=0; i<numKeys; i++) {
+    // Need to test keys for mouse in opposite order to drawing order
+    const keyIndex = keyIndices[numKeys-i-1]
+    const key = state.keys[keyIndex]
+
+    const keyX = key.location.x
+    const keyY = key.location.y
+    const keyR = key.location.r
+    const keyExtraR = key.location.extraR
+    const totalR2 = (keyR * keyExtraR) ** 2
+
+    const mouseDistance2 = (modelX-keyX)**2 + (modelY-keyY)**2
+
+    if (mouseDistance2 < totalR2) {
+      return key
+    }
+  }
+
+  // Mouse click was not over any of the keys
   return null
 }
 

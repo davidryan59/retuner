@@ -4,7 +4,7 @@ import {instrumentKeyDownHandler, instrumentKeyUpHandler} from './instrument_key
 const mouseDownHandler = (state, event) => {
   const canvasX = event.offsetX
   const canvasY = event.offsetY
-  const keyDown = findKeyByMousePosition(canvasX, canvasY)
+  const keyDown = findKeyByMousePosition(state, canvasX, canvasY)
   if (keyDown) {
     state.keyLastMoused = keyDown
     instrumentKeyDownHandler(state, keyDown)
