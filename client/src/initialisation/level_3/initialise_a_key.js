@@ -1,6 +1,6 @@
-import freqToRGBA from "../calculations/freq_to_rgba"
+import freqToRGBA from "../../calculations/freq_to_rgba"
 
-const recalculateKeyStats = (key) => {
+const initialiseAKey = (key) => {
 
   // Make sure key is setup to display and to run physics
   key.physicsSwitchedOn = true
@@ -92,4 +92,4 @@ const recalculateKeyStats = (key) => {
 
 }
 
-export default recalculateKeyStats
+export default initialiseAKey

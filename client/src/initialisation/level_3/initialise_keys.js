@@ -1,10 +1,10 @@
-import recalculateKeyStats from './recalculate_key_stats'
-import recalculateNeighbours from './recalculate_neighbours'
+import initialiseAKey from './initialise_a_key'
+import recalculateNeighbours from '../../physics/recalculate_neighbours'
 
-const recalculateAllKeyStats = (state) => {
+const initialiseKeys = (state) => {
 
   for (const key of state.keys) {
-    recalculateKeyStats(key)
+    initialiseAKey(key)
   }
   recalculateNeighbours(state)
 
@@ -23,4 +23,4 @@ const recalculateAllKeyStats = (state) => {
 
 }
 
-export default recalculateAllKeyStats
+export default initialiseKeys

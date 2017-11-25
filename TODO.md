@@ -1,5 +1,10 @@
 # TO DO LIST
 
+## Links to social media
+- Buttons for sharing hosting page via Facebook Twitter etc. (maybe 3 buttons is enough? which are the 3 most popular sites?)
+- Look at Night Out App for how to do this
+
+
 ## Page Loading
 Some elements on index.html can be slow to load
 - Bitcoin stuff
@@ -189,9 +194,6 @@ Fix this. Make it display gracefully.
 ## X
 Currently using 'x' for HTML elements to substitute
 Is there a more official tag for 'general tag'?
-
-## Links to social media
-- Buttons for sharing hosting page via Facebook Twitter etc. (maybe 3 buttons is enough? which are the 3 most popular sites?)
 
 ## Reference section
 https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API

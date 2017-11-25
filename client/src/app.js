@@ -1,11 +1,12 @@
 import initialiseState from './initialisation/initialise_state'
-import {keyDownHandler, keyUpHandler} from './controllers/keyboard/key_handlers'
+import {keyDownHandler, keyUpHandler} from './controllers/key_handlers'
+import {mouseDownHandler, mouseUpHandler} from './controllers/mouse_handlers'
 import windowResizeHandler from './views/window_resize_handler'
-import doTiming from './controllers/general/do_timing'
+import updateTimingInfo from './calculations/update_timing_info'
 import calculateForces from './physics/calculate_forces'
-import moveKeys from './controllers/general/move_keys'
-import recalculateNeighbours from './calculations/recalculate_neighbours'
-import findViewObjectBounds from './controllers/general/find_view_object_bounds'
+import moveKeys from './physics/move_keys'
+import recalculateNeighbours from './physics/recalculate_neighbours'
+import findViewObjectBounds from './calculations/find_view_object_bounds'
 import updateCanvasCoords from './views/update_canvas_coords'
 import drawCanvas from './views/draw_canvas'
 import updateTextInHtml from './views/update_text_in_html'
@@ -22,6 +23,12 @@ const runApp = () => {
   // Make window respond to key presses
   window.addEventListener('keydown', event => {keyDownHandler(state, event)})
   window.addEventListener('keyup', event => {keyUpHandler(state, event)})
+
+  // Make window respond to mouse presses
+  // window.addEventListener('mousedown', event => {mouseDownHandler(state, event)})
+  // window.addEventListener('mouseup', event => {mouseUpHandler(state, event)})
+  state.pageElts.canvas.addEventListener('mousedown', event => {mouseDownHandler(state, event)})
+  state.pageElts.canvas.addEventListener('mouseup', event => {mouseUpHandler(state, event)})
 
   // If window resizes, may need to change canvas
   window.addEventListener('resize', event => {windowResizeHandler(state, event)})
@@ -40,12 +47,12 @@ const runApp = () => {
     }
 
     state.control.loopCount++
-    doTiming(state, timeLoopStart)
+    updateTimingInfo(state, timeLoopStart)
     calculateForces(state)
     moveKeys(state)
     // Recalculate the neighbours not every loop since
     // there are 65 * 64 / 2 = 2080 pairs to check
-    if (state.control.loopCount % 23 === 0) {
+    if (state.control.loopCount % 47 === 0) {
       recalculateNeighbours(state)
     }
     // Only do graphics every N frames

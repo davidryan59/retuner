@@ -3,7 +3,7 @@ let drawnVersionNumber = false;
 const updateTextInHtml = (state) => {
   // Only update this every N frames
   const pageElts = state.pageElts
-  if (state.control.loopCount % 7 === 0) {
+  if (state.control.loopCount % 13 === 0) {
     const stateTiming = state.control.timing
     pageElts.totalTimeS.innerText = Math.round(stateTiming.totalTimeS*10)/10
     pageElts.renderTimeMinMS.innerText = Math.round(stateTiming.renderTimeMinMS*10)/10

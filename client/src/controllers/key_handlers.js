@@ -1,5 +1,5 @@
-import findKeyByKeyboardCode from './find_key_by_keyboard_code'
-import animateInstrumentKey from '../../views/animate_instrument_key'
+import findKeyByKeyboardCode from '../calculations/find_key_by_keyboard_code'
+import animateInstrumentKey from '../physics/animate_instrument_key'
 
 const keyDownHandler = (state, event) => {
   const keyDownCode = event.code

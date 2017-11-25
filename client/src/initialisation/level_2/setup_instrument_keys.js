@@ -1,21 +1,21 @@
 // Each of these are called with (state, key) pair
 // when the relevant key is pressed
-import pauseApp from "../controllers/keys/pause_app"
-import logState from "../controllers/keys/log_state"
-import toggleTransposing from "../controllers/keys/toggle_transposing"
-import cycleSustainOptions from "../controllers/keys/cycle_sustain_options"
-import cycleWaveform from "../controllers/keys/cycle_waveform"
-import resetToOriginalFreq from "../controllers/keys/reset_to_original_freq"
-import volumeDecrease from "../controllers/keys/volume_decrease"
-import volumeIncrease from "../controllers/keys/volume_increase"
-import instrumentKeyPress from "../controllers/keys/instrument_key_press"
-import instrumentKeyRelease from "../controllers/keys/instrument_key_release"
-import playPrevNote from "../controllers/keys/play_prev_note"
-import playNextNote from "../controllers/keys/play_next_note"
+import pauseApp from "../../controllers/keys/pause_app"
+import logState from "../../controllers/keys/log_state"
+import toggleTransposing from "../../controllers/keys/toggle_transposing"
+import cycleSustainOptions from "../../controllers/keys/cycle_sustain_options"
+import cycleWaveform from "../../controllers/keys/cycle_waveform"
+import resetToOriginalFreq from "../../controllers/keys/reset_to_original_freq"
+import volumeDecrease from "../../controllers/keys/volume_decrease"
+import volumeIncrease from "../../controllers/keys/volume_increase"
+import instrumentKeyPress from "../../controllers/keys/instrument_key_press"
+import instrumentKeyRelease from "../../controllers/keys/instrument_key_release"
+import playPrevNote from "../../controllers/keys/play_prev_note"
+import playNextNote from "../../controllers/keys/play_next_note"
 
 // This one will (re)calculate stats relevant to each key
 // in particular the ones with frequency shifts which play notes
-import recalculateAllKeyStats from "../calculations/recalculate_all_key_stats"
+import initialiseKeys from "../level_3/initialise_keys"
 
 const keyDoesNothing = (state, key)=>{
   // console.log("Key does nothing", key)
@@ -648,7 +648,7 @@ const setupInstrumentKeys = (state) => {
   // In some of the keys above, prime numbers were specified
   // but the num and denom were not explicitly calculated.
   // Do that here.
-  recalculateAllKeyStats(state)
+  initialiseKeys(state)
 
   console.log("The instrument has been set up with", keyArray.length, "keys")
 }
