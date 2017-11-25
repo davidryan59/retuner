@@ -1,15 +1,6 @@
 import ADSREnvelope from "adsr-envelope"
 import decibelToAmplitude from "../../calculations/decibel_to_amplitude"
 
-const adsr = new ADSREnvelope({
-  attackTime: 0.02,
-  decayTime: 0.2,
-  sustainLevel: 0.7,
-  gateTime: 0.4,
-  releaseTime: 2,
-  releaseCurve: "exp"
-})
-
 const playNote = (state, key, extraFreqFactor=1) => {
   // Extra frequency factor used in some cases,
   // e.g. if transposition is switched off
@@ -18,6 +9,7 @@ const playNote = (state, key, extraFreqFactor=1) => {
   const audioContext = state.audioContext
   const waveform = state.waveform
   const stateFreqs = state.freqs
+  const adsr = state.waveform.adsrOnPlayNote
 
   // Implement note playing here
 

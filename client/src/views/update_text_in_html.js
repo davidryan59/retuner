@@ -5,9 +5,9 @@ const updateTextInHtml = (state) => {
   const pageElts = state.pageElts
   if (state.control.loopCount % 13 === 0) {
     const stateTiming = state.control.timing
-    pageElts.totalTimeS.innerText = Math.round(stateTiming.totalTimeS*10)/10
-    pageElts.renderTimeMinMS.innerText = Math.round(stateTiming.renderTimeMinMS*10)/10
-    pageElts.renderTimeMaxMS.innerText = Math.round(stateTiming.renderTimeMaxMS*10)/10
+    pageElts.totalTimeS.innerText = stateTiming.totalTimeS.toFixed(1)
+    pageElts.renderTimeMinMS.innerText = stateTiming.renderTimeMinMS.toFixed(1)
+    pageElts.renderTimeMaxMS.innerText = stateTiming.renderTimeMaxMS.toFixed(1)
     stateTiming.renderTimeMinMS = 10000
     stateTiming.renderTimeMaxMS = 0
   }

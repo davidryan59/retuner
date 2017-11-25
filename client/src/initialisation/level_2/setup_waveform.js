@@ -1,16 +1,26 @@
+import ADSREnvelope from "adsr-envelope"
+
 const setupWaveform = (state) => {
 
   // Set up some parameters here
 
   // Naming of this set as per ADSR envelope module
   // https://github.com/mohayonao/adsr-envelope/blob/master/README.md
-  const attackTime = 0.01
-  const decayTime = 0.3
-  const sustainTime = 1       // In future, leave this out and make on keyup!
-  const releaseTime = 0.5
-  const peakLevel = 1
-  const sustainLevel = 0.708  // Drop of 3dB from peak to sustain
-  // Could also use exponential release curve? Defaults are linear.
+  const attackTime = 0.02
+  const decayTime = 0.20
+  const sustainLevel = 0.70  // Drop of approx 3dB from peak to sustain
+  const gateTime = 0.40      // This is attack + decay + sustain time
+  const releaseTime = 2.00
+  const releaseCurve = "exp"
+
+  const adsr = new ADSREnvelope({
+    attackTime: attackTime,
+    decayTime: decayTime,
+    sustainLevel: sustainLevel,
+    gateTime: gateTime,
+    releaseTime: releaseTime,
+    releaseCurve: releaseCurve
+  })
 
   // 'waveformType' is the oscillator type
   // Standard values are "sine", "square", "sawtooth", "triangle"
@@ -22,12 +32,14 @@ const setupWaveform = (state) => {
   // Save them into the state
   state.waveform = {}
   const stateWaveform = state.waveform
-  stateWaveform.attackTime = attackTime
-  stateWaveform.decayTime = decayTime
-  stateWaveform.sustainTime = sustainTime
-  stateWaveform.releaseTime = releaseTime
-  stateWaveform.peakLevel = peakLevel
-  stateWaveform.sustainLevel = sustainLevel
+  stateWaveform.adsrOnPlayNote = adsr
+  stateWaveform.adsrOnStopNote = null        // TO BE IMPLEMENTED
+  // stateWaveform.attackTime = attackTime
+  // stateWaveform.decayTime = decayTime
+  // stateWaveform.sustainTime = sustainTime
+  // stateWaveform.releaseTime = releaseTime
+  // stateWaveform.peakLevel = peakLevel
+  // stateWaveform.sustainLevel = sustainLevel
   stateWaveform.types = waveformTypes
   stateWaveform.index = waveformIndex
   stateWaveform.type = state => state.waveform.types[state.waveform.index]

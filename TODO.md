@@ -77,46 +77,36 @@ Need a new type of score which converts absolute note melody into relative melod
 
 ## Graphical Display
 - Want a graphical display of the sound output waveform.
-- Might want a slider to control how long or short the plotted time range is
 
 ## Stopping note
 Currently note is cut off instantly (if sustain not on)
-Get it so that note cuts off over say 0.05 seconds
+Get it so that note cuts off over say 0.05 seconds - use a Stop Note ADSR
 
 ## GitHub
-- Make the source code in GitHub publicly accessible
-- Make sure master branch is locked down
-- Add a develop branch
-- Do a few features on branches
-- Allow other developers to make push requests to develop
+- Feature branches - anyone can do these
+- Develop branch - anyone can make a pull request from a feature, only an authorised developer can do the merge
+- Master branch - only authorised developers can merge from develop to master
+(How to authorise particular developers?)
 
 ## Sliders
 Implement mouse-controlled and keyboard-controlled sliders for:
 - Volume (already on scale of -40dB to +20dB)
 - Vividness of colour (0 = greyscale, 10 = psychedelic)
 - How big the circles get (0 = no bigger, 10 = x1.5)
+- Distance/whitespace between keys (especially affects mouse operation)
 - Time range of waveform plot
-- Distance between keys (especially affects mouse operation)
+- Various aspects of the ADSR for play note (and possibly stop note)
 
 ## Repeating buttons
 Some buttons (such as volume sliders) want to keep going up or down as they are held down. Need different keyboard handling for this? Might also want to set up a keyboard repeat period which is independent of the operating system repeat period, and happens at a constant rate (rather than with a gap at front)
 
 ## Buttons / (Instrument) Keys
-- Should InstrumentKey be a class / model?
-- Every button on the computer keyboard should be represented, except function key row. Each button should have an anchor position of its approximate place on a normal-ish keyboard. Buttons that won't respond (Fn / Caps Lock / Tab) should be greyed out. Any button which is different between Mac and PC should not be usable.
-- Is there one class (yes!) or many classes? (Use one class, use composition / callbacks for varying behaviour.)
+- Keys which don't work (FN, CAPS LOCK, TAB) should be a different colour, e.g. greyed out
 Each key should:
-- be graphically represented as a round button (round for now, collision detection much easier!)
 - calculate every statistic of importance
 - have a default importance (e.g. 100 for 3/2, 90 for 9/8, etc. Make it related to the stats derived earlier.)
-- count how many times its been pressed this session
 - have a current importance, increasing when button is pressed more
 - button radius increases with current importance
-- button is pressed upon by surrounding buttons and moves correspondingly
-- button has a restoring force equal to (possibly the square of) the distance from anchor point, so it never goes too far.
-- Buttons can't go off-canvas - large force
-- Buttons should have 3 to 5 pixels between keys, which might be produced by the force.
-- Extension - have pixels / whitespace between buttons modifiable by a slider
 
 
 ## Button highlighting and colouring
@@ -124,32 +114,16 @@ Each key should:
 - Highlight when closer to base frequency so user can see this and navigate back. This can be done via Tenney height of fraction.
 - Rainbow coloured depending on where in octave: maybe red 1/1 green 4/3 blue 3/2 red 2/1. (Probably want to set 7 different points in octave for 6 colours. Make sure that 4/3, 3/2 have decently strong colours)
 
-## Canvas properties
-- Canvas walls are solid (read: large force on buttons). Canvas is bounding box for keys providing compression.
-- Canvas to be responsive to left mouse clicks and releases for press and release
-- Canvas to be responsive to right mouse click for press and hold, release and hold.
+## Right mouse clicks
+- Might change right mouse clicks to be press and hold, and a second click for release and hold? Is this a good idea? Alternatively, could hold a key (e.g. either SHIFT) to be like a sustain pedal with mouse clicks?
 
 ## Keyboard
 - All function should be accessible by keyboard alone.
 - Only obscure functions should require modifiers
 - Might want Shift / Alt / Command to be the same modifier? Esp windows/mac compatibility. Or maybe Shift is one, Alt is another, Ctrl/Command a third.
 
-
 ## Primes
 App should keep track of all primes on all keys.
-
-## ADSR
-- Its set up in the waveform initialisation
-- Its set up in playNote function
-- But these are completely disconnected!
-- Set up properly. Probably a new ADSR envelope for each new note
-- Also might want to put a few aspects of ADSR on sliders.
-
-## Button Presses
-- Should expand a few px when pressed
-- Should go back to (nearly) original size when released
-- Might want to make this a ripple effect to expand, and a ripple effect to contract after keyup
-
 
 ## Button text
 From most important to least important:
@@ -159,9 +133,6 @@ From most important to least important:
 - Absolute frequency in Hertz '320 Hz'
 - Prime factorisation '2^-2 5^1' but using superscripts
 - This might be toggled to [-2 0 1] or [-2 0 1 0] if keys are all 5 or 7 limit. Any higher limit, don't allow the toggle.
-
-## HTML text
-Want the displayed timing info to be to EXACTLY one decimal place. Otherwise text jumps around.
 
 ## Customising keyboard / locales / frequency
 - Could open up full customisation of the keyboard
@@ -188,12 +159,9 @@ which means it lends itself to melody, instead of harmony
 (although harmonic arpeggios are very easy to do)?
 
 ## Internet
-If internet is disconnected, the page breaks (Bitcoin, Firebase)
-Fix this. Make it display gracefully.
-
-## X
-Currently using 'x' for HTML elements to substitute
-Is there a more official tag for 'general tag'?
+- If internet is disconnected, the page breaks (Bitcoin, Firebase)
+- Fix this. Make it display gracefully.
+- In particular, make it start up fast, and subsequently query external services after important parts of page have loaded.
 
 ## Reference section
 https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API

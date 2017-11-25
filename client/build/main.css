@@ -25,6 +25,10 @@ canvas {
   background-color: #DDD;
 }
 
+p {
+  margin: 5px;
+}
+
 a {
   text-decoration: none;
   color: #F0A;
@@ -35,11 +39,7 @@ a:hover {
   color: #C0E;
 }
 
-p {
-  margin: 5px;
-}
-
-x {
+.js-output {
   color: #F70;
 }
 
