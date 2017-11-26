@@ -1,7 +1,8 @@
 /*Flexible column widths*/
 
-.f03 {flex: 0.3;}
-.f05 {flex: 0.5;}
+.f02 {flex: 0.2;}
+.f07 {flex: 0.7;}
+.f08 {flex: 0.8;}
 .f10 {flex: 1.0;}   /* Dummy! */
-.f15 {flex: 1.5;}
-.f27 {flex: 2.7;}
+.f17 {flex: 1.7;}
+.f19 {flex: 1.9;}

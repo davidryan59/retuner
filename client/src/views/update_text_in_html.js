@@ -13,6 +13,7 @@ const updateTextInHtml = (state) => {
   }
   if (!drawnVersionNumber) {
     pageElts.versionNumber.innerText = state.versionNumber
+    pageElts.versionDate.innerText = state.versionDate
     drawnVersionNumber = true
   }
 }

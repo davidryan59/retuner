@@ -6,10 +6,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
     <link rel="stylesheet" type="text/css" href="./styles/main.css" />
     <link rel="stylesheet" type="text/css" href="./styles/grid.css" />
-    <link rel="stylesheet" type="text/css" href="./styles/grid_cell.css" />
-    <link rel="stylesheet" type="text/css" href="./styles/grid_form.css" />
     <link rel="stylesheet" type="text/css" href="./styles/grid_flex.css" />
-    <title>Retuner</title>
+    <title>ReTuner</title>
     <script src='bundle.js'></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
     <!-- Initialize Firebase hosting -->
@@ -32,84 +30,128 @@
     <div id="whole-page">
       <div id="inner-page">
         <div class="grid">
-          <div class="grid-row grid-row-md">
-              <div class="cell text-block f03">
+          <div class="grid-row row-top">
+            <div class="cell text-block f02">
+              <p class="align-left">
                 <a href='https://retuner-bdf49.firebaseapp.com/'>
-                  <img id="main-logo" src="logo.png" />
+                  <img alt="ReTuner" title="ReTuner" id="main-logo" src="./images/logo.png" />
                 </a>
-              </div>
-              <div class="cell text-block f10">
-                <p class="page-title">
-                  ReTuner
-                </p>
-              </div>
-            <div class="cell text-block f27">
+              </p>
+            </div>
+            <div class="cell text-block f08">
+              <p class="page-title align-left">
+                ReTuner
+              </p>
+            </div>
+            <div class="cell text-block f19">
               <p class="page-subtitle">
-                A musical instrument in Just Intonation where each key represents a pure musical interval.
+                A musical instrument in Just Intonation where
+                <br />
+                each key plays a pure musical interval
+              </p>
+            </div>
+            <div class="cell text-block page-sharing f10">
+              <p class="align-right">
+                <iframe
+                  src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fretuner-bdf49.firebaseapp.com%2F&layout=button&size=small&mobile_iframe=true&width=59&height=20&appId"
+                  allowTransparency="true"
+                  frameborder="0"
+                  scrolling="no"
+                  width="59"
+                  height="20"
+                  style="border:none;overflow:hidden">
+                  Facebook
+                </iframe>
+                <iframe
+                  src="http://platform.twitter.com/widgets/tweet_button.html?via=DaveRyan71&amp;url=https%3A%2F%2Fretuner-bdf49.firebaseapp.com%2F&amp;text=ReTuner%2C%20a%20musical%20instrument%20in%20Just%20Intonation%20where%20each%20button%20plays%20a%20pure%20musical%20interval.&amp;count=horizontal"
+                  id="tweet-button"
+                  allowtransparency="true"
+                  frameborder="0"
+                  scrolling="no"
+                  style="width:63px; height:20px;">
+                  Twitter
+                </iframe>
               </p>
             </div>
           </div>
-          <div class="grid-row grid-row-sm">
+          <div class="grid-row">
             <div class="cell canvas-block f10">
               <canvas id="main-canvas" width="480" height="240"></canvas>
             </div>
           </div>
-          <div class="grid-row grid-row-lg">
-            <div class="cell text-block f15">
-              <p>
-                Here are links to the
-                <a href='https://arxiv.org/abs/1612.01860'>paper on JI musical notation (RCN)</a>
-                <br />
-                and the
-                <a href='https://github.com/daveryan23/retuner_musical_instrument'>source code on GitHub</a>.
-              </p>
-            </div>
-            <div class="cell text-block f10">
-              <p>
-                This app was created by
-                <br />
-                <a href='https://soundcloud.com/daveryan23/tracks'>David Ryan</a>
-                and is at <span class="js-output" id='version-number'>v0.0.0</span>.
-              </p>
-            </div>
-            <div class="cell text-block f15">
-              <p>
+          <div class="grid-row row-below">
+            <div class="cell text-block f07">
+              <p class="dev-stats">
                 Total time <span class="js-output" id='total-time-s'>0</span>s,
-                frame rendering
+                each frame
                 <br />
-                takes between <span class="js-output" id='render-time-min-ms'>0</span>ms
-                and <span class="js-output" id='render-time-max-ms'>0</span>ms.
+                takes <span class="js-output" id='render-time-min-ms'>0</span>ms
+                to <span class="js-output" id='render-time-max-ms'>0</span>ms
               </p>
             </div>
-            <div class="cell text-block f05">
-              <p class="disclaimer">
-                DISCLAIMER: Don't put the volume too loud! If you hit the 8 Hz
-                <a href="https://en.wikipedia.org/wiki/Brown_note">brown note</a>
-                or otherwise
-                <a href="http://bitly.com/98K8eH">blow up your speakers</a>
-                then its on you :)
+            <div class="cell text-block f17">
+              <p>
+                App created by
+                <a href='https://soundcloud.com/daveryan23/tracks'>David Ryan</a>
+                <br />
+                Updated to
+                <span class="js-output" id='version-number'>v0.0.0</span>
+                on
+                <span class="js-output" id='version-date'>1st Jan 2000</span>
               </p>
             </div>
-          </div>
-          <div class="grid-row grid-row-sm">
-            <div class="cell f10 text-block blockchain-btn" data-address="1CiWbU6dvDYBTemxyserBeNfcuJ6sUGNDt" data-shared="false">
+            <div class="cell text-block blockchain-btn f07" data-address="1CiWbU6dvDYBTemxyserBeNfcuJ6sUGNDt" data-shared="false">
               <div class="blockchain stage-begin">
-                <p>Enjoyed this musical instrument? Please consider donating Bitcoin to aid hosting and development:</p>
-                <img id="donate-logo" src="https://blockchain.info/Resources/buttons/donate_64.png"/>
+                <img
+                  alt="Donate Bitcoin"
+                  title="Enjoyed this musical instrument? Please consider donating Bitcoin to aid hosting and development."
+                  id="donate-logo"
+                  src="https://blockchain.info/Resources/buttons/donate_64.png" />
               </div>
               <div class="blockchain stage-loading" style="text-align:center">
                 <img src="https://blockchain.info/Resources/loading-large.gif"/>
               </div>
               <div class="blockchain stage-ready">
-                <p align="center">Please donate to Bitcoin address: <b>[[address]]</b></p>
+                <p align="center">
+                  Please donate to Bitcoin address:
+                  <br />
+                  <b>[[address]]</b>
+                </p>
                 <p align="center" class="qr-code"></p>
               </div>
               <div class="blockchain stage-paid">
-                Donation of <b>[[value]] BTC</b> received. Thank you!
+                Donation of <b>[[value]] BTC</b> received.
+                <br />
+                Thank you!
               </div>
               <div class="blockchain stage-error">
                 <font color="red">[[error]]</font>
               </div>
+            </div>
+            <div class="cell text-block f17">
+              <p>
+                App
+                <a href='https://github.com/daveryan23/retuner_musical_instrument'>source code</a>
+                on GitHub
+                <br />
+                <a href='https://arxiv.org/abs/1612.01860'>Paper</a>
+                on JI musical notation (RCN)
+              </p>
+            </div>
+            <div class="cell text-block f07">
+              <p class="disclaimer">
+                DISCLAIMER:
+                <br />
+                Don't put the volume too loud!
+                <br />
+                If you hit the 8 Hz
+                <a href="https://en.wikipedia.org/wiki/Brown_note">brown note</a>
+                <br />
+                or
+                <a href="http://bitly.com/98K8eH">blow up your speakers</a>
+                <br />
+                then its on you :)
+              </p>
             </div>
           </div>
         </div>

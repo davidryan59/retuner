@@ -7,20 +7,19 @@
   align-items: center;
 }
 
-@media (min-width: 480px) {
-  .grid-row-sm {
-    flex-direction: row;
-  }
+.cell {
+  flex: 1.0;
+  text-align: center;
 }
 
 @media (min-width: 720px) {
-  .grid-row-md {
+  .row-top {
     flex-direction: row;
   }
 }
 
-@media (min-width: 840px) {
-  .grid-row-lg {
+@media (min-width: 810px) {
+  .row-below {
     flex-direction: row;
   }
 }
