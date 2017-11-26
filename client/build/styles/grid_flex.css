@@ -1,0 +1,7 @@
+/*Flexible column widths*/
+
+.f03 {flex: 0.3;}
+.f05 {flex: 0.5;}
+.f10 {flex: 1.0;}   /* Dummy! */
+.f15 {flex: 1.5;}
+.f27 {flex: 2.7;}
