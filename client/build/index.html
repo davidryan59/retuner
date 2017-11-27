@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab" /> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|IM+Fell+DW+Pica" />
     <link rel="stylesheet" type="text/css" href="./styles/main.css" />
     <link rel="stylesheet" type="text/css" href="./styles/grid.css" />
     <link rel="stylesheet" type="text/css" href="./styles/grid_flex.css" />
@@ -31,26 +32,29 @@
       <div id="inner-page">
         <div class="grid">
           <div class="grid-row row-top">
-            <div class="cell text-div f02">
+            <div class="cell text-div f-spacer">
+              <!-- Spacer on left -->
+            </div>
+            <div class="cell text-div f-logo">
               <p class="align-left">
                 <a href='https://retuner-bdf49.firebaseapp.com/'>
                   <img alt="ReTuner" title="ReTuner" id="main-logo" src="./images/logo.png" />
                 </a>
               </p>
             </div>
-            <div class="cell text-div page-title-div f08">
+            <div class="cell text-div page-title-div f-title">
               <p class="align-left">
-                ReTuner
+                Re Tuner
               </p>
             </div>
-            <div class="cell text-div page-subtitle-div f19">
+            <div class="cell text-div page-subtitle-div f-subtitle">
               <p>
                 A musical instrument in Just Intonation where
                 <br />
                 each key plays a pure musical interval
               </p>
             </div>
-            <div class="cell text-div page-sharing-div f10">
+            <div class="cell text-div page-sharing-div f-sharing">
               <p class="align-right">
                 <iframe
                   src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fretuner-bdf49.firebaseapp.com%2F&layout=button&size=small&mobile_iframe=true&width=59&height=20&appId"
@@ -73,14 +77,17 @@
                 </iframe>
               </p>
             </div>
+            <div class="cell text-div f-spacer">
+              <!-- Spacer on right -->
+            </div>
           </div>
           <div class="grid-row">
-            <div class="cell canvas-div f10">
+            <div class="cell canvas-div f-canvas">
               <canvas id="main-canvas" width="480" height="240"></canvas>
             </div>
           </div>
           <div class="grid-row row-below">
-            <div class="cell text-div dev-stats-div f07">
+            <div class="cell text-div dev-stats-div f-bottom-corner">
               <p>
                 Total time <span class="js-output-stats" id='total-time-s'>0</span>s,
                 each frame
@@ -89,7 +96,7 @@
                 to <span class="js-output-stats" id='render-time-max-ms'>0</span>ms
               </p>
             </div>
-            <div class="cell text-div f17">
+            <div class="cell text-div f-bottom-text">
               <p>
                 App created by
                 <a href='https://soundcloud.com/daveryan23/tracks'>David Ryan</a>
@@ -100,7 +107,7 @@
                 <span class="js-output-stats" id='version-date'>1st Jan 2000</span>
               </p>
             </div>
-            <div class="cell text-div blockchain-btn f07" data-address="1CiWbU6dvDYBTemxyserBeNfcuJ6sUGNDt" data-shared="false">
+            <div class="cell text-div blockchain-btn f-bottom-middle" data-address="1CiWbU6dvDYBTemxyserBeNfcuJ6sUGNDt" data-shared="false">
               <div class="blockchain stage-begin">
                 <img
                   alt="Donate Bitcoin"
@@ -128,7 +135,7 @@
                 <font color="red">[[error]]</font>
               </div>
             </div>
-            <div class="cell text-div f17">
+            <div class="cell text-div f-bottom-text">
               <p>
                 App
                 <a href='https://github.com/daveryan23/retuner_musical_instrument'>source code</a>
@@ -138,7 +145,7 @@
                 on JI musical notation (RCN)
               </p>
             </div>
-            <div class="cell text-div disclaimer-div f07">
+            <div class="cell text-div disclaimer-div f-bottom-corner">
               <p>
                 DISCLAIMER:
                 <br />

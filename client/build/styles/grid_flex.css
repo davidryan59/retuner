@@ -1,8 +1,10 @@
-/*Flexible column widths*/
+.f-spacer {flex: 0.01;}
+.f-logo {flex: 0.2;}
+.f-title {flex: 1.0;}
+.f-subtitle {flex: 1.9;}
+.f-sharing {flex: 1.2;}
 
-.f02 {flex: 0.2;}
-.f07 {flex: 0.7;}
-.f08 {flex: 0.8;}
-.f10 {flex: 1.0;}   /* Dummy! */
-.f17 {flex: 1.7;}
-.f19 {flex: 1.9;}
+.f-canvas {flex: 1.0;}
+.f-bottom-corner {flex: 0.7;}
+.f-bottom-text {flex: 1.7;}
+.f-bottom-middle {flex: 0.7;}
