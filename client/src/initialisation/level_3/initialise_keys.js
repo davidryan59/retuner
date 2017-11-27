@@ -14,12 +14,12 @@ const initialiseKeys = (state) => {
   for (const i in state.keys) {
     indexArray.push(i)
   }
-  console.log(`Original key order ${indexArray}`)
+  // console.log(`Original key order ${indexArray}`)
 
   indexArray.sort((i1, i2) => {
     return ( state.keys[i1].location.r - state.keys[i2].location.r )
   })
-  console.log(`Index array after sorting is ${indexArray}`)
+  // console.log(`Index array after sorting is ${indexArray}`)
 
 }
 

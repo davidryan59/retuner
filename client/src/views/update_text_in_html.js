@@ -12,8 +12,8 @@ const updateTextInHtml = (state) => {
     stateTiming.renderTimeMaxMS = 0
   }
   if (!drawnVersionNumber) {
-    pageElts.versionNumber.innerText = state.versionNumber
-    pageElts.versionDate.innerText = state.versionDate
+    pageElts.versionNumber.innerText = state.version.number
+    pageElts.versionDate.innerText = state.version.date
     drawnVersionNumber = true
   }
 }

@@ -7,24 +7,6 @@ body {
   background-color: #EEE;
 }
 
-div#whole-page {
-  background-color: #EEE;
-  padding: 5px;
-}
-
-div#inner-page {
-  border: 4px dotted #BBB;
-  border-radius: 40px;
-  background-color: #FFF;
-  padding: 5px 10px;
-}
-
-canvas {
-  border: 1px dotted #999;
-  border-radius: 15px;
-  background-color: #DDD;
-}
-
 p {
   margin: 0;
 }
@@ -39,9 +21,22 @@ a:hover {
   color: #C0E;
 }
 
-.js-output {
-  color: #66B;
-  color: #777;
+div#whole-page {
+  background-color: #EEE;
+  padding: 5px;
+}
+
+div#inner-page {
+  border: 4px dotted #BBB;
+  border-radius: 40px;
+  background-color: #FFF;
+  padding: 5px 10px;
+}
+
+canvas#main-canvas {
+  border: 1px dotted #999;
+  border-radius: 15px;
+  background-color: #DDD;
 }
 
 img#main-logo {
@@ -54,31 +49,23 @@ img#donate-logo {
   margin: 4px;
 }
 
-.text-block {
+div.text-div {
   margin: 12px 4px;
   /*For testing only:*/
   /*border: 1px solid #F88;*/
 }
 
-.canvas-block {
+div.canvas-div {
 }
 
-.page-title {
+div.page-title-div {
   font-size: 250%;
   color: #2AE;
   font-weight: bold;
   letter-spacing: 0.15em;
 }
 
-.align-left {
-  text-align: left;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.page-subtitle {
+div.page-subtitle-div {
   font-family: serif;
   font-size: 120%;
   color: #777;
@@ -86,19 +73,32 @@ img#donate-logo {
   letter-spacing: 0.05em;
 }
 
-.page-sharing {
+div.page-sharing-div {
   text-align: right;
 }
 
-.blockchain-btn {
+div.blockchain-btn {
   font-size: 75%;
   color: #777;
 }
 
-.dev-stats {
+div.dev-stats-div {
   font-size: 50%;
 }
 
-.disclaimer {
+div.disclaimer-div {
   font-size: 50%;
+}
+
+p.align-left {
+  text-align: left;
+}
+
+p.align-right {
+  text-align: right;
+}
+
+span.js-output-stats {
+  color: #66B;
+  color: #777;
 }

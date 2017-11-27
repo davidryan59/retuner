@@ -17,8 +17,6 @@ const runApp = () => {
 
   // Have a central place where all app state is stored
   const state = {}
-  state.versionNumber = "v1.0.1"
-  state.versionDate = "26th Nov 2017"
   initialiseState(state)
 
   // Make window respond to key presses

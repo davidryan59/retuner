@@ -1,3 +1,5 @@
+import setupVersionInfo from '../_version/version_info'
+
 import setupControl from './level_2/setup_control'
 import setupHtmlPageElts from './level_2/setup_html_page_elts'
 import setupGraphicsContext from './level_2/setup_graphics_context'
@@ -7,9 +9,16 @@ import setupRecording from './level_2/setup_recording'
 import setupWaveform from './level_2/setup_waveform'
 import setupDecibels from './level_2/setup_decibels'
 import setupAudioContext from './level_2/setup_audio_context'
+
 import windowResizeHandler from '../views/window_resize_handler'
 
+
 const initialiseState = (state) => {
+
+  // Setup version info
+  // Held in first src subdir
+  // for ease of access
+  setupVersionInfo(state)
 
   // Setup state
   setupControl(state)
