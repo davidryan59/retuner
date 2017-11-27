@@ -11,14 +11,6 @@ Some elements on index.html can be slow to load
 - This slows down the page starting up. Run these off a different place after the main app has started.
 - Don't run them at all if not connected to the internet
 
-## Page Layout
-- Logo takes up too much room.
-- Use just the 'R' bit and make it half the height
-- Put 'Retuner - a musical instrument where...' to the right
-- Use flexbox for layout of these things
-- Ideally get it all on the same page
-- Add buttons for sharing hosting page via Facebook Twitter etc. (maybe 3 buttons is enough? which are the 3 most popular sites?) - look at Night Out App for how to do this.
-
 ## History
 - (This has been started, however not quite finished. Record note has been implemented on the key press. This is a slightly tricky feature, and makes me wonder if the earlier things are implemented correctly...)
 - Maintain a forwards and backwards history list for instrument notes played.
