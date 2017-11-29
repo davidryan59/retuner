@@ -15,6 +15,7 @@ const drawInstrumentKeys = (state) => {
       const x = canvasCoords.x
       const y = canvasCoords.y
       const r = canvasCoords.r
+      let freq = 
 
       // context.fillStyle = key.getBgColour(state, key)
       context.fillStyle = key.bgColour(state, key)
