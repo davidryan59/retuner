@@ -1,9 +1,5 @@
 # TO DO LIST
 
-## Math.round
-- In many cases, Math.round should be a fixed number of decimal places.
-- See the update HTML element script for this.
-
 ## App parameters
 - Factor out app parameters into extra file already started.
 - e.g. loops per frame, loops per page elt update, etc.

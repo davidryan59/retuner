@@ -32,7 +32,7 @@ const drawInstrumentKeys = (state) => {
       }
       if (key.transposes) {
         const freq = baseFreq * key.transposes.factor
-        const freqText = Math.round(freq*10)/10 + "Hz"
+        const freqText = freq.toFixed(2) + "Hz"
         buttonTextArray.push(freqText)
         buttonTextArray.push(key.transposes.text)
       }

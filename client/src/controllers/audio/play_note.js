@@ -36,7 +36,7 @@ const playNote = (state, key, extraFreqFactor=1) => {
   nodeOscillator.stop(currentTime + adsrPress.duration)
 
   // Provide logging
-  const theFreqText = Math.round(theFreq*100)/100
+  // const theFreqText = theFreq.toFixed(2)
   // console.log("Playing note", key.transposes.text, "at", theFreqText, "Hz")
   nodeOscillator.onended = function() {
     // console.log("Note at", theFreqText, "Hz ended")

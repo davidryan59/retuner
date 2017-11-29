@@ -3,7 +3,7 @@ const resetToOriginalFreq = (state, key) => {
   const originalFreq = stateFreqs.originalFreq
   console.log(
     "Resetting instrument centre frequency to original value of",
-    Math.round(originalFreq*100)/100, "Hz"
+    originalFreq.toFixed(2), "Hz"
   )
   stateFreqs.currentFreq = originalFreq
 }

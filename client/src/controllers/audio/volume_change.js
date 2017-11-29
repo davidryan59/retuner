@@ -19,8 +19,8 @@ const volumeChange = (state, unitsToIncrease) => {
   stateDB.current = newDB
   console.log(
     "Volume change",
-    " - decibels changed from", Math.round(currentDB*10)/10,
-    "to", Math.round(newDB*10)/10
+    " - decibels changed from", currentDB.toFixed(1),
+    "dB to", newDB.toFixed(1), "dB"
   )
 }
 

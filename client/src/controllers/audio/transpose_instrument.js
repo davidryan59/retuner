@@ -21,8 +21,8 @@ const transposeInstrument = (state, key) => {
   stateFreqs.currentFreq = newFreq
   console.log(
     "SPACE changed by", freqTextRelative,
-    "from", Math.round(currentFreq*100)/100, "Hz",
-    "to", Math.round(newFreq*100)/100, "Hz"
+    "from", currentFreq.toFixed(2), "Hz",
+    "to", newFreq.toFixed(2), "Hz"
   )
 }
 
