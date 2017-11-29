@@ -51,11 +51,11 @@ const runApp = () => {
     moveKeys(state)
     // Recalculate the neighbours not every loop since
     // there are 65 * 64 / 2 = 2080 pairs to check
-    if (state.control.loopCount % 47 === 0) {
+    if (state.control.loopCount % state.params.recalcNeighbours === 0) {  
       calculateNeighbouringKeys(state)
     }
     // Only do graphics every N frames
-    if (state.control.loopCount % 2 === 0) {
+    if (state.control.loopCount % state.params.redrawCanvas === 0) {
       findViewObjectBounds(state)
       storeModelToCanvasCoords(state)
       drawCanvas(state)

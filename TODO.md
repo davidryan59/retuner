@@ -1,5 +1,9 @@
 # TO DO LIST
 
+## Math.round
+- In many cases, Math.round should be a fixed number of decimal places.
+- See the update HTML element script for this.
+
 ## App parameters
 - Factor out app parameters into extra file already started.
 - e.g. loops per frame, loops per page elt update, etc.
@@ -151,3 +155,20 @@ since in ES6 Mocha doesn't seem to work...)
 - Timeout currently set at 10 minutes
 - It should probably be around 10 hours, and un-time-out upon pressing Pause again
 - In other words, a graphics time out is the same as a Pause
+
+## Note naming options (for chord only? for this sequencer?)
+- Note names using commas
+- Whole numbers
+- Reciprocal whole numbers
+- Fractions with specified note as 1/1
+
+## Do we want to specify notes using a text language?
+- Also look at text languages.
+- Some kind of 'Music ML'? Have operations to generate and modify music?
+- Specify harmonics in a melody or a chord?
+- Transformations to time reverse rhythm, frequencies, or both? Frequency inversion about a centre point?
+- Operations to split a note, remove a subnote
+- Generally, given a section of music, how to specify its subparts (e.g. for duplication or deletion)? Fractal tree structure?
+- Need to be able to translate a section through time, or though frequency (transpose)
+- Engraving of scores has been done well elsewhere so don't want to develop a scoring system from scratch, want to patch an existing system.
+- Don't know how well these operations sit with the online scoring system I'll need to patch.

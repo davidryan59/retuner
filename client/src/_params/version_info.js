@@ -2,7 +2,7 @@ const setupVersionInfo = (state) => {
 
   state.version = {}
   state.version.number = "v1.0.3"
-  state.version.date = "27th Nov 2017"
+  state.version.date = "29th Nov 2017"
   console.log("Retrieved version info")
 
 }
