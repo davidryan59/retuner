@@ -34,10 +34,11 @@ const runApp = () => {
 
   window.mainLoop = timeLoopStart => {
     // timeLoopStart is a decimal number, a time precise to 0.005ms :)
-    if (
-      state.control.loopCount < state.control.maxLoops
-      && !state.control.stopMainLoop
-    ) {
+    if (state.control.timeoutAfterLoops < state.control.loopsSinceTimeout ) {
+      console.log("App timed out")
+      state.control.stopMainLoop = true
+    }
+    if (!state.control.stopMainLoop) {
       window.requestAnimationFrame(mainLoop)
       // This makes mainLoop run once per browser frame
     } else {
@@ -45,23 +46,23 @@ const runApp = () => {
       console.dir(state)
     }
 
-    state.control.loopCount++
     updateTimingInfo(state, timeLoopStart)
     calculateForces(state)
     moveKeys(state)
     // Recalculate the neighbours not every loop since
     // there are 65 * 64 / 2 = 2080 pairs to check
-    if (state.control.loopCount % state.params.recalcNeighbours === 0) {  
+    if (state.control.loopsSinceTimeout % state.params.recalcNeighbours === 0) {
       calculateNeighbouringKeys(state)
     }
     // Only do graphics every N frames
-    if (state.control.loopCount % state.params.redrawCanvas === 0) {
+    if (state.control.loopsSinceTimeout % state.params.redrawCanvas === 0) {
       findViewObjectBounds(state)
       storeModelToCanvasCoords(state)
       drawCanvas(state)
     }
     updateTextInHtml(state)
     recordRenderTime(state, timeLoopStart)
+    state.control.loopsSinceTimeout++
 
   }
   window.requestAnimationFrame(mainLoop)

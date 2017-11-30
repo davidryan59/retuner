@@ -4,6 +4,7 @@ const pauseApp = (state, key) => {
     console.log("Paused app")
   } else {
     state.control.stopMainLoop = false
+    state.control.loopsSinceTimeout = 0
     state.control.timing.thisLoopStart = window.performance.now()  // Make total time correct
     console.log("Resumed app")
     window.requestAnimationFrame(mainLoop)

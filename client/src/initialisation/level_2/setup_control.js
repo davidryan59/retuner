@@ -1,14 +1,17 @@
 const setupControl = (state) => {
+
+  // Input vars
+  const stateParams = state.params
+  const secondsToTimeout = stateParams.secondsToTimeout
+  const approxBrowserFrameRate = stateParams.approxBrowserFrameRate
+
   // General control
   state.control = {}
   const stateControl = state.control
-  stateControl.loopCount = 0
-  stateControl.stopMainLoop = false
-
-  // DEBUG only: app will stop animating after this number of loops/frames!
-  // Approx 50 frames a second, and N seconds later it stops.
-  stateControl.maxLoops = 50 * 600
   stateControl.totalKeyPresses = 0
+  stateControl.stopMainLoop = false
+  stateControl.loopsSinceTimeout = 0
+  stateControl.timeoutAfterLoops = secondsToTimeout * approxBrowserFrameRate
 
   // Timing control
   stateControl.timing = {}
@@ -19,7 +22,7 @@ const setupControl = (state) => {
   stateTiming.renderTimeMinMS = 10000
   stateTiming.renderTimeMaxMS = 0
   stateTiming.totalTimeS = 0
-  console.log("Control state initialised")
+  console.log("Control state and timing initialised")
 }
 
 export default setupControl

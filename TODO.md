@@ -1,23 +1,15 @@
 # TO DO LIST
 
-## Page Loading
-Some elements on index.html can be slow to load
-- Bitcoin stuff
-- Possibly Firebase stuff too
-- This slows down the page starting up. Run these off a different place after the main app has started.
-- Don't run them at all if not connected to the internet
+## Note naming options (for chord only? for this sequencer?)
+- Note names using commas
+- Whole numbers
+- Reciprocal whole numbers
+- Fractions with specified note as 1/1
 
-## History
-- (This has been started, however not quite finished. Record note has been implemented on the key press. This is a slightly tricky feature, and makes me wonder if the earlier things are implemented correctly...)
-- Maintain a forwards and backwards history list for instrument notes played.
-- If stuff is available in that list, play it on keys Y and U
-- If stuff is not available, repeat the same note (without altering frequency)
-
-## Domain
-- www.retuner.co.uk and www.retuner.uk have been registered
-- Log in, and link them to the Firebase account (will do, however having problems accessing them from abroad)
-
-# Button Radius
+# Buttons
+- Need all button calculations to be installed on buttons as callbacks
+- The definitions are currently in the initialise_a_key directory,
+- factor them out onto subdirectories, e.g. Key Setup
 - Need to model button radius properly.
 - Might depend on any or all of these things:
 - Basic button size (e.g. 3px)
@@ -29,6 +21,58 @@ Some elements on index.html can be slow to load
 - All the above should affect the basic button size.
 - The basic button size should push nearby buttons out of the way.
 - extra factor for being recently pressed, should not push nearby buttons out of the way
+
+## Page Loading
+- Make the app start up fast, and only query external services after important parts of page have loaded.
+- Some elements on index.html can be slow to load:
+- Facebook / Twitter shares
+- Bitcoin stuff
+- Possibly Firebase stuff too
+- This slows down the page starting up. Run these off a different place after the main app has started.
+- Don't run them at all if not connected to the internet
+
+## Browser testing
+- Tested in: Mac Safari, Mac Chrome
+- Not tested in: (others)
+
+## History
+- (This has been started, however not quite finished. Record note has been implemented on the key press. This is a slightly tricky feature, and makes me wonder if the earlier things are implemented correctly...)
+- Maintain a forwards and backwards history list for instrument notes played.
+- If stuff is available in that list, play it on keys Y and U
+- If stuff is not available, repeat the same note (without altering frequency)
+
+## Domain
+- Do www.retuner...
+- suffixes: .uk .co.uk .net .org
+- Make .net the main one
+- Log in, and link them to the Firebase account
+
+## Voice button
+- Its (currently) got 4 states
+- Show these states graphically on the button
+- Have some accompanying text, e.g. SQ, SAW, SINE, TRI
+- Use callbacks
+
+## Sustain button
+- Its got 3 states
+- Show these states graphically on the button
+- Use callbacks
+
+## Transpose button
+- Its got 2 states
+- Show these states graphically on the button
+- Use callbacks
+
+## Volume buttons
+- They have around 20 to 40 states
+- Figure out how to do a slider for that. Also where to put the slider.
+- Show these states graphically on the button
+- Use callbacks
+
+## Pause button
+- If app is paused (or timed out) need to highlight this key
+- Then user knows to restart the app
+- Probably want to draw 1 more animation frame after stopping main loop, so this highlighting is visible.
 
 ## Stereo/Reverb/Delay
 Want to output two channels in stereo
@@ -102,7 +146,7 @@ From most important to least important:
 - Might need to switch off toggling to prime exponent vector [2 0... 1] if higher than 7 limit
 - If higher than 7 limit, might want to be able to toggle the RCN notation between variants DR, SAG, (KG1), KG2
 
-## Waveform
+## Waveform / choice of voices
 Add any periodic waves?
 
 ## Non-commutative keyboard
@@ -116,11 +160,6 @@ Or is this a basic feature of an automatically transposing instrument,
 which means it lends itself to melody, instead of harmony
 (although harmonic arpeggios are very easy to do)?
 
-## Internet
-- If internet is disconnected, the page breaks (Bitcoin, Firebase)
-- Fix this. Make it display gracefully.
-- In particular, make it start up fast, and subsequently query external services after important parts of page have loaded.
-
 ## Reference section
 https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
 https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial
@@ -130,12 +169,13 @@ https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_A
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
 
 ## Testing
-- If buttons / keys are a class, can they be tested?
-- Going to want some serious user interface testing too.
-(Classes and model tests have been removed 17th Nov,
-since in ES6 Mocha doesn't seem to work...)
+- What to test?
+- How to test?
+- Whether to turn anything into classes? The obvious choice would be 'instrument key'
+- Main problem was that Mocha works on ES5, but not on ES6...
 
 ## Right mouse clicks
+- Do we want a right mouse click to do anything different to a left mouse click?
 - Might change right mouse clicks to be press and hold, and a second click for release and hold? Is this a good idea? Alternatively, could hold a key (e.g. either SHIFT) to be like a sustain pedal with mouse clicks?
 
 ## Keyboard
@@ -143,17 +183,10 @@ since in ES6 Mocha doesn't seem to work...)
 - Only obscure functions should require modifiers (or possibly sliders too)
 - Might want Shift / Alt / Command to be the same modifier? Esp windows/mac compatibility. Or maybe Shift is one, Alt is another, Ctrl/Command a third.
 
-## Timeout
-- Timeout currently set at 10 minutes
-- It should probably be around 10 hours, and un-time-out upon pressing Pause again
-- In other words, a graphics time out is the same as a Pause
 
-## Note naming options (for chord only? for this sequencer?)
-- Note names using commas
-- Whole numbers
-- Reciprocal whole numbers
-- Fractions with specified note as 1/1
-
+------------
+PROBABLY DIFFERENT PROJECT FROM HERE...
+------------
 ## Do we want to specify notes using a text language?
 - Also look at text languages.
 - Some kind of 'Music ML'? Have operations to generate and modify music?
