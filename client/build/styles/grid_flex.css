@@ -1,10 +1,9 @@
 .f-spacer {flex: 0.01;}
-.f-logo {flex: 0.2;}
-.f-title {flex: 1.0;}
-.f-subtitle {flex: 1.9;}
-.f-sharing {flex: 1.2;}
+.f-top-corner {flex: 1.0;}
+.f-top-middle {flex: 1.6;}
 
 .f-canvas {flex: 1.0;}
+
 .f-bottom-corner {flex: 0.7;}
 .f-bottom-text {flex: 1.7;}
 .f-bottom-middle {flex: 0.7;}

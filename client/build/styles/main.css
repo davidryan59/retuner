@@ -58,16 +58,6 @@ div.text-div {
 div.canvas-div {
 }
 
-div.page-title-div {
-  /*font-family: "Roboto Slab", serif;*/
-  font-family: "IM Fell DW Pica", serif;
-  word-spacing: -0.27em;
-  font-size: 250%;
-  color: #2AE;
-  font-weight: bold;
-  letter-spacing: 0.15em;
-}
-
 div.page-subtitle-div {
   font-family: serif;
   font-size: 120%;

@@ -12,7 +12,7 @@
   text-align: center;
 }
 
-@media (min-width: 780px) {
+@media (min-width: 680px) {
   .row-top {
     flex-direction: row;
   }
