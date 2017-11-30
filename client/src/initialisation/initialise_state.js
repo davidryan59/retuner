@@ -1,5 +1,5 @@
-import setupVersionInfo from '../_params/version_info'
-import setupAppParams from '../_params/app_params'
+import setupCurrentVersion from '../_params/current_version'
+import setupImportantParameters from '../_params/important_parameters'
 
 import setupControl from './level_2/setup_control'
 import setupHtmlPageElts from './level_2/setup_html_page_elts'
@@ -19,8 +19,8 @@ const initialiseState = (state) => {
   // Setup version info
   // Held in first src subdir
   // for ease of access
-  setupVersionInfo(state)
-  setupAppParams(state)
+  setupCurrentVersion(state)
+  setupImportantParameters(state)
 
   // Setup state
   setupControl(state)

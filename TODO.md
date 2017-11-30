@@ -1,9 +1,5 @@
 # TO DO LIST
 
-## App parameters
-- Factor out app parameters into extra file already started.
-- e.g. loops per frame, loops per page elt update, etc.
-
 ## Page Loading
 Some elements on index.html can be slow to load
 - Bitcoin stuff
