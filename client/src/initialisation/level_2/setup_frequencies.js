@@ -1,6 +1,6 @@
 const setupFrequencies = (state) => {
   // Setup some default parameters
-  const minFreq = 2**3           // 8 Hz
+  const minFreq = 4.5            // 4.5 Hz. Previously 2**3 = 8 Hz
   const originalFreq = 2**8      // 256 Hz
   const maxFreq = 2**12          // 4096 Hz
   const transposing = true            // false disables transposing every key press

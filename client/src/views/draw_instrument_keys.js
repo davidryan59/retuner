@@ -15,9 +15,7 @@ const drawInstrumentKeys = (state) => {
       const x = canvasCoords.x
       const y = canvasCoords.y
       const r = canvasCoords.r
-      let freq = 
 
-      // context.fillStyle = key.getBgColour(state, key)
       context.fillStyle = key.bgColour(state, key)
       context.strokeStyle = 'rgba(20, 20, 20, 0.6)'
       context.lineWidth = (key.transposes) ? 4 * (2 / key.transposes.factor) : 3
@@ -32,7 +30,7 @@ const drawInstrumentKeys = (state) => {
         buttonTextArray.push(key.functionLabel)
       }
       if (key.transposes) {
-        const freq = baseFreq * key.transposes.factor
+        const freq = key.nextFreq(state, key)
         const freqText = freq.toFixed(2) + "Hz"
         buttonTextArray.push(freqText)
         buttonTextArray.push(key.transposes.text)

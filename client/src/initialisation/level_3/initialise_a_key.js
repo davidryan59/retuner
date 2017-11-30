@@ -79,10 +79,19 @@ const initialiseAKey = (key) => {
   }
 
   if (key.transposes) {
-    key.bgColour = (state, key) => {
+    key.nextFreq = (state, key) => {
+      // Things like bounding by min and max are done here.
       const keyFreq = key.transposes.factor
       const baseFreq = state.freqs.currentFreq
-      return freqToRGBA(keyFreq*baseFreq, 0.8)
+      const maxFreq = state.freqs.maxFreq
+      const minFreq = state.freqs.minFreq
+      let actualNextFreq = keyFreq * baseFreq
+      actualNextFreq = Math.min(maxFreq, actualNextFreq)
+      actualNextFreq = Math.max(minFreq, actualNextFreq)
+      return actualNextFreq
+    }
+    key.bgColour = (state, key) => {
+      return freqToRGBA(key.nextFreq(state, key), 0.8)
     }
   } else {
     key.bgColour = (state, key) => {
