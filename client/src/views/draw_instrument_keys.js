@@ -5,7 +5,7 @@ const drawInstrumentKeys = (state) => {
   const textLengthFactor = 2.5
   const indexFactor = 12
   const verticalShift = 7
-  const baseFreq = state.freqs.currentFreq
+  // const baseFreq = state.freqs.current.freq
 
   for (const keyIndex of state.keyOrderArray) {
     const key = state.keys[keyIndex]
@@ -30,7 +30,7 @@ const drawInstrumentKeys = (state) => {
         buttonTextArray.push(key.functionLabel)
       }
       if (key.transposes) {
-        const freq = key.nextFreq(state, key)
+        const freq = key.nextFreqAbsHz(state, key)
         const freqText = freq.toFixed(2) + "Hz"
         buttonTextArray.push(freqText)
         buttonTextArray.push(key.transposes.text)

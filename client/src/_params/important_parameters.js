@@ -3,6 +3,9 @@ const setupImportantParameters = (state) => {
   state.params = {}
   const stateParams = state.params
 
+  // Tuning of the whole instrument
+  stateParams.baseFrequencyHz = 256
+
   // Every N loops (var = N) do the following:
   stateParams.redrawCanvas = 2         // Redraw frame
   stateParams.recalcNeighbours = 47    // Recalculate which neighbours are buttons

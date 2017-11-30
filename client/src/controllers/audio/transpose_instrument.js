@@ -7,7 +7,7 @@ const transposeInstrument = (state, key) => {
   const stateFreqs = state.freqs
   // Retrieve relevant state variables
   const minFreq = stateFreqs.minFreq
-  const currentFreq = stateFreqs.currentFreq
+  const currentFreq = stateFreqs.current.freq
   const maxFreq = stateFreqs.maxFreq
   // Calculate the new frequency, bounded
   let newFreq = currentFreq * freqFactor
@@ -18,7 +18,7 @@ const transposeInstrument = (state, key) => {
     newFreq = maxFreq
   }
   // Do the change
-  stateFreqs.currentFreq = newFreq
+  stateFreqs.current.freq = newFreq
   console.log(
     "SPACE changed by", freqTextRelative,
     "from", currentFreq.toFixed(2), "Hz",

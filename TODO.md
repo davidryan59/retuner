@@ -1,5 +1,9 @@
 # TO DO LIST
 
+## Getting RCN installed in ReTuner
+
+
+
 ## Note naming options (for chord only? for this sequencer?)
 - Note names using commas
 - Whole numbers

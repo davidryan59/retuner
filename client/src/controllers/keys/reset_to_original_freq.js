@@ -5,7 +5,7 @@ const resetToOriginalFreq = (state, key) => {
     "Resetting instrument centre frequency to original value of",
     originalFreq.toFixed(2), "Hz"
   )
-  stateFreqs.currentFreq = originalFreq
+  stateFreqs.current.freq = originalFreq
 }
 
 export default resetToOriginalFreq

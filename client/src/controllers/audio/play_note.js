@@ -21,7 +21,9 @@ const playNote = (state, key, extraFreqFactor=1) => {
 
   // Specify the oscillator frequency and type
   const currentTime = audioContext.currentTime
-  const theFreq = stateFreqs.currentFreq * extraFreqFactor
+  const baseFreqHz = state.params.baseFrequencyHz
+  const instrumentFreq = stateFreqs.current.freq
+  const theFreq = baseFreqHz * instrumentFreq * extraFreqFactor
   nodeOscillator.frequency.setValueAtTime(theFreq, currentTime)
   nodeOscillator.type = waveform.type(state)
 
