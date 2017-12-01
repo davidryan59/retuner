@@ -10,10 +10,24 @@
 .cell {
   flex: 1.0;
   text-align: center;
+  /*For testing only:*/
+  /*border: 1px solid #F88;*/
 }
 
 @media (min-width: 680px) {
   .row-top {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 50px) {
+  .row-canvas {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 670px) {
+  .row-sliders {
     flex-direction: row;
   }
 }

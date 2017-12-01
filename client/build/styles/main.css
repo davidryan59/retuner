@@ -51,11 +51,6 @@ img#donate-logo {
 
 div.text-div {
   margin: 12px 4px;
-  /*For testing only:*/
-  /*border: 1px solid #F88;*/
-}
-
-div.canvas-div {
 }
 
 div.page-subtitle-div {
@@ -68,6 +63,22 @@ div.page-subtitle-div {
 
 div.page-sharing-div {
   text-align: right;
+}
+
+div.row-sliders {
+  margin-top: 6px;
+  font-family: monospace;
+  /*Testing*/
+  /*border: 1px solid yellow;*/
+}
+
+div.slider-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /*Testing*/
+  /*border: 1px solid green;*/
 }
 
 div.blockchain-btn {
@@ -83,15 +94,15 @@ div.disclaimer-div {
   font-size: 50%;
 }
 
+span.js-output-stats {
+  color: #66B;
+  color: #777;
+}
+
 p.align-left {
   text-align: left;
 }
 
 p.align-right {
   text-align: right;
-}
-
-span.js-output-stats {
-  color: #66B;
-  color: #777;
 }
