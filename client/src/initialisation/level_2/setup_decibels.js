@@ -16,6 +16,7 @@ const setupDecibels = (state) => {
   stateDB.current = initialDB
   stateDB.step = stepDB
   stateDB.max = maxDB
+  stateDB.updated = true
   // Log the success
   console.log(
     "Decibels initialised. Min", minDB,

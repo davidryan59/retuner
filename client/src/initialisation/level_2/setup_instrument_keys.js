@@ -5,7 +5,7 @@ import logState from "../../controllers/keys/log_state"
 import toggleTransposing from "../../controllers/keys/toggle_transposing"
 import cycleSustainOptions from "../../controllers/keys/cycle_sustain_options"
 import cycleWaveform from "../../controllers/keys/cycle_waveform"
-import resetToOriginalFreq from "../../controllers/keys/reset_to_original_freq"
+import resetCentralFreq from "../../controllers/keys/reset_central_freq"
 import volumeDecrease from "../../controllers/keys/volume_decrease"
 import volumeIncrease from "../../controllers/keys/volume_increase"
 import instrumentKeyPress from "../../controllers/keys/instrument_key_press"
@@ -572,7 +572,7 @@ const setupInstrumentKeys = (state) => {
     keyboardCode: "Digit7",
     symbol: "7",
     functionLabel: "Reset Freq",
-    runOnPress: resetToOriginalFreq,
+    runOnPress: resetCentralFreq,
     location: {x: 80, y: 50, r:7}
   })
 

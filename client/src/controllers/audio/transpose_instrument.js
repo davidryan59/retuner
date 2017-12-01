@@ -19,10 +19,12 @@ const transposeInstrument = (state, key) => {
   }
   // Do the change
   stateFreqs.current.freq = newFreq
+  // Logging
+  const baseFreqHz = state.params.baseFrequencyHz
   console.log(
-    "SPACE changed by", freqTextRelative,
-    "from", currentFreq.toFixed(2), "Hz",
-    "to", newFreq.toFixed(2), "Hz"
+    "Instrument central frequency changed by", freqTextRelative,
+    "from", (baseFreqHz*currentFreq).toFixed(2), "Hz",
+    "to", (baseFreqHz*newFreq).toFixed(2), "Hz"
   )
 }
 

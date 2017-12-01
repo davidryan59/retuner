@@ -1,6 +1,7 @@
 import initialiseState from './initialisation/initialise_state'
 import {keyboardDownHandler, keyboardUpHandler} from './controllers/keyboard_handlers'
 import {mouseDownHandler, mouseUpHandler} from './controllers/mouse_handlers'
+import {volumeSliderHandler, contrastSliderHandler, spacingSliderHandler} from './controllers/slider_handlers'
 import windowResizeHandler from './views/window_resize_handler'
 import updateTimingInfo from './calculations/update_timing_info'
 import calculateForces from './physics/calculate_forces'
@@ -31,6 +32,11 @@ const runApp = () => {
 
   // If window resizes, may need to change canvas
   window.addEventListener('resize', event => {windowResizeHandler(state, event)})
+
+  // Put event listeners on sliders
+  state.pageElts.sliders.volume.slider.addEventListener('change', event => {volumeSliderHandler(state, event)})
+  state.pageElts.sliders.contrast.slider.addEventListener('change', event => {contrastSliderHandler(state, event)})
+  state.pageElts.sliders.spacing.slider.addEventListener('change', event => {spacingSliderHandler(state, event)})
 
   window.mainLoop = timeLoopStart => {
     // timeLoopStart is a decimal number, a time precise to 0.005ms :)

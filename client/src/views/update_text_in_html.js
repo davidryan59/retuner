@@ -16,6 +16,12 @@ const updateTextInHtml = (state) => {
     pageElts.versionDate.innerText = state.version.date
     drawnVersionNumber = true
   }
+  if (state.dB.updated) {
+    const currentDB = state.dB.current
+    pageElts.sliders.volume.slider.value = currentDB
+    pageElts.sliders.volume.display.innerText = currentDB
+    state.dB.updated = false
+  }
 }
 
 export default updateTextInHtml

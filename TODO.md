@@ -1,10 +1,5 @@
 # TO DO LIST
 
-## Sliders project!
-- Get some sliders installed
-- Get them labelled up and nice looking
-- Use them for various things
-
 
 ## Getting RCN installed in ReTuner
 - How to do it?
@@ -103,10 +98,11 @@ Need a new type of score which converts absolute note melody into relative melod
 (How to authorise particular developers?)
 
 ## Sliders
-Implement mouse-controlled and keyboard-controlled sliders for:
-- Volume (already on scale of -40dB to +20dB)
-- Vividness of colour (0 = greyscale, 10 = psychedelic)
-- How big the circles get (0 = no bigger, 10 = x1.5)
+- Want the text to be FIXED number of characters, e.g. 3 for volume, 2 for some others
+- Want the slider setup to be generated from Javascript, not HTML
+- Implement the contrast slider (0 = greyscale, 10 = psychedelic)
+- Implement the spacing slider (0 = no bigger, 10 = x1.5)
+### OTHERS:
 - Distance/whitespace between keys (especially affects mouse operation)
 - Time range of waveform plot
 - Various aspects of the ADSR for play note (and possibly stop note)

@@ -82,58 +82,40 @@
           </div>
           <div class="grid-row row-sliders">
             <div class="cell slider-div f-slider">
-              <label for="contrast-input">Contrast</label>&nbsp;
+              <label for="contrast-slider">Contrast</label>&nbsp;
               <input
-                id="contrast-input"
+                id="contrast-slider"
                 type="range"
                 min="0"
                 max="10"
                 value="8"
                 step="1"
-                onchange="contrastSliderChanged(this.value)"
               />&nbsp;
-              <span id="contrast-value">8</span>
-              <script type="text/javascript">
-                function contrastSliderChanged(newValue) {
-                	document.getElementById("contrast-value").innerHTML=newValue;
-                }
-              </script>
+              <span id="contrast-display">8</span>
             </div>
             <div class="cell slider-div f-slider">
-              <label for="vol-input">Volume</label>&nbsp;
+              <label for="vol-slider">Volume</label>&nbsp;
               <input
-              id="vol-input"
+              id="vol-slider"
               type="range"
               min="-40"
               max="20"
               value="0"
-              step="4"
-              onchange="volumeSliderChanged(this.value)"
+              step="2"
               />&nbsp;
-              <span id="vol-value">0</span>&nbsp;dB
-              <script type="text/javascript">
-              function volumeSliderChanged(newValue) {
-                document.getElementById("vol-value").innerHTML=newValue;
-              }
-              </script>
+              <span id="vol-display">0</span>&nbsp;dB
             </div>
             <div class="cell slider-div f-slider">
-              <label for="spacing-input">Spacing</label>&nbsp;
+              <label for="spacing-slider">Spacing</label>&nbsp;
               <input
-                id="spacing-input"
+                id="spacing-slider"
                 type="range"
                 min="0"
                 max="10"
                 value="2"
                 step="1"
-                onchange="spacingSliderChanged(this.value)"
               />&nbsp;
-              <span id="spacing-value">2</span>
-              <script type="text/javascript">
-                function spacingSliderChanged(newValue) {
-                	document.getElementById("spacing-value").innerHTML=newValue;
-                }
-              </script>
+              <span id="spacing-display">2</span>
             </div>
           </div>
           <div class="grid-row row-below">
