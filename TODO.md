@@ -1,5 +1,11 @@
 # TO DO LIST
 
+## Key colour contrast
+- Vary key background contrast depending on slider (model) value
+
+## Key spacing
+- Vary key spacing depending on slider (model) value
+
 
 ## Getting RCN installed in ReTuner
 - How to do it?
@@ -52,6 +58,7 @@
 - suffixes: .uk .co.uk .net .org
 - Make .net the main one
 - Log in, and link them to the Firebase account
+- Also update the README at this point.
 
 ## Voice button
 - Its (currently) got 4 states
@@ -91,17 +98,15 @@ Need a new type of score which converts absolute note melody into relative melod
 - Master branch - only authorised developers can merge from develop to master
 (How to authorise particular developers?)
 
-## Sliders
-- Want the text to be FIXED number of characters, e.g. 3 for volume, 2 for some others
-- Implement the contrast slider (0 = greyscale, 10 = psychedelic)
-- Implement the spacing slider (0 = no bigger, 10 = x1.5)
-### OTHERS:
+## Other potential sliders
 - Distance/whitespace between keys (especially affects mouse operation)
 - Time range of waveform plot
 - Various aspects of the ADSR for play note (and possibly stop note)
 - Contrast ratio between keys with simpler notes and more complex notes (see Tenney Height affecting key colour brightness)
 
 ## Repeating buttons
+(This is relevant to the 3 sliders already implemented,
+in particular the volume slider which has a keyboard shortcut)
 Some buttons (such as volume sliders) want to keep going up or down as they are held down. Need different keyboard handling for this? Might also want to set up a keyboard repeat period which is independent of the operating system repeat period, and happens at a constant rate (rather than with a gap at front)
 
 ## Buttons / (Instrument) Keys

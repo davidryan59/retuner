@@ -1,3 +1,5 @@
+import numToFixedTotalLength from '../calculations/num_to_fixed_total_length'
+
 let drawnVersionNumber = false;
 
 const updateTextInHtml = (state) => {
@@ -26,7 +28,7 @@ const updateTextInHtml = (state) => {
   if (source.updated) {
     currentValue = source.current
     sliderObj.slider.value = currentValue
-    sliderObj.display.innerText = currentValue
+    sliderObj.display.innerText = numToFixedTotalLength(currentValue, 3)
     source.updated = false
   }
   // Key colour contrast slider
@@ -35,7 +37,7 @@ const updateTextInHtml = (state) => {
   if (source.updated) {
     currentValue = source.current
     sliderObj.slider.value = currentValue
-    sliderObj.display.innerText = currentValue
+    sliderObj.display.innerText = numToFixedTotalLength(currentValue, 2)
     source.updated = false
   }
   // Key spacing slider
@@ -44,7 +46,7 @@ const updateTextInHtml = (state) => {
   if (source.updated) {
     currentValue = source.current
     sliderObj.slider.value = currentValue
-    sliderObj.display.innerText = currentValue
+    sliderObj.display.innerText = numToFixedTotalLength(currentValue, 2)
     source.updated = false
   }
 }
