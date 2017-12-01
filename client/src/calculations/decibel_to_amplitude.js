@@ -1,10 +1,10 @@
 const decibelToAmplitude = (decibelValue) => {
 
-  // +20 dB is amplitude 1
-  // 0 dB is amplitude 0.1
-  // -20 dB is amplitude 0.01
-  // -40 dB is amplitude 0.001
-  return 10 ** ((decibelValue-20)/20)
+  // +11 dB is amplitude 1
+  // +1 dB is amplitude 0.3 (approx)
+  // -9 dB is amplitude 0.1
+  // -29 dB is amplitude 0.01
+  return 10 ** ((decibelValue-11)/20)
 
 }
 

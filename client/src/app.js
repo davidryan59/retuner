@@ -34,9 +34,10 @@ const runApp = () => {
   window.addEventListener('resize', event => {windowResizeHandler(state, event)})
 
   // Put event listeners on sliders
-  state.pageElts.sliders.volume.slider.addEventListener('change', event => {volumeSliderHandler(state, event)})
-  state.pageElts.sliders.contrast.slider.addEventListener('change', event => {contrastSliderHandler(state, event)})
-  state.pageElts.sliders.spacing.slider.addEventListener('change', event => {spacingSliderHandler(state, event)})
+  state.pageElts.sliders.volume.slider.addEventListener('input', event => {volumeSliderHandler(state, event)})
+  state.pageElts.sliders.contrast.slider.addEventListener('input', event => {contrastSliderHandler(state, event)})
+  state.pageElts.sliders.spacing.slider.addEventListener('input', event => {spacingSliderHandler(state, event)})
+  // (Previously 'change' listeners, now 'input' listeners. 1st Dec 2017)
 
   window.mainLoop = timeLoopStart => {
     // timeLoopStart is a decimal number, a time precise to 0.005ms :)

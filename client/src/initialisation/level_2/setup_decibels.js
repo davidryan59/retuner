@@ -1,12 +1,13 @@
 const setupDecibels = (state) => {
-  // +20dB, 0dB, -20dB, -40dB
+  // +11dB, -9dB
   // correspond to amplitudes of
-  // 1, 0.1, 0.01, 0.001 respectively
+  // 1, 0.1 respectively
+  // (Can extend this on a log scale)
 
   // Setup some default parameters
-  const minDB = -40
-  const initialDB = -6
-  const stepDB = 1
+  const minDB = -21
+  const initialDB = 1
+  const stepDB = 2
   const maxDB = 11
   // Assign them into state
   state.dB = {}
