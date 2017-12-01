@@ -1,4 +1,4 @@
-import volumeSet from './volume_set'
+import setVolumeDB from '../sliders/set_volume_db'
 
 const volumeChange = (state, unitsToIncrease) => {
 
@@ -9,8 +9,8 @@ const volumeChange = (state, unitsToIncrease) => {
 
   const newDB = currentDB + stepDB * unitsToIncrease
 
-  console.log(`Changing volume from ${currentDB.toFixed(1)} dB to ${newDB.toFixed(1)} dB`)
-  volumeSet(state, newDB)
+  // console.log(`Changing volume from ${currentDB.toFixed(1)} dB to ${newDB.toFixed(1)} dB`)
+  setVolumeDB(state, newDB)
 
 }
 

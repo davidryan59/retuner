@@ -3,6 +3,8 @@ import setupImportantParameters from '../_params/important_parameters'
 
 import setupControl from './level_2/setup_control'
 import setupDecibels from './level_2/setup_decibels'
+import setupKeyColourContrast from './level_2/setup_key_colour_contrast'
+import setupKeySpacing from './level_2/setup_key_spacing'
 import setupHtmlPageElts from './level_2/setup_html_page_elts'
 import setupGraphicsContext from './level_2/setup_graphics_context'
 import setupInstrumentKeys from './level_2/setup_instrument_keys'
@@ -25,6 +27,8 @@ const initialiseState = (state) => {
   // Setup state
   setupControl(state)
   setupDecibels(state)
+  setupKeyColourContrast(state)
+  setupKeySpacing(state)
   setupHtmlPageElts(state)
   setupGraphicsContext(state)
   setupInstrumentKeys(state)

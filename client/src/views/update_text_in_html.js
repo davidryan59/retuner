@@ -16,11 +16,36 @@ const updateTextInHtml = (state) => {
     pageElts.versionDate.innerText = state.version.date
     drawnVersionNumber = true
   }
-  if (state.dB.updated) {
-    const currentDB = state.dB.current
-    pageElts.sliders.volume.slider.value = currentDB
-    pageElts.sliders.volume.display.innerText = currentDB
-    state.dB.updated = false
+  // Do sliders
+  let source = null
+  let sliderObj = null
+  let currentValue = null
+  // Volume slider
+  source = state.dB
+  sliderObj = pageElts.sliders.volume
+  if (source.updated) {
+    currentValue = source.current
+    sliderObj.slider.value = currentValue
+    sliderObj.display.innerText = currentValue
+    source.updated = false
+  }
+  // Key colour contrast slider
+  source = state.keyColourContrast
+  sliderObj = pageElts.sliders.contrast
+  if (source.updated) {
+    currentValue = source.current
+    sliderObj.slider.value = currentValue
+    sliderObj.display.innerText = currentValue
+    source.updated = false
+  }
+  // Key spacing slider
+  source = state.keySpacing
+  sliderObj = pageElts.sliders.spacing
+  if (source.updated) {
+    currentValue = source.current
+    sliderObj.slider.value = currentValue
+    sliderObj.display.innerText = currentValue
+    source.updated = false
   }
 }
 

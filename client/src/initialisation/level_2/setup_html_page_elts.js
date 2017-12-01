@@ -13,28 +13,48 @@ const setupHtmlPageElts = (state) => {
   pageElts.sliders = {}
   const pageEltSliders = pageElts.sliders
 
+  // Setup sliders. Use 2 temporary variables, which will reassign
+  let slider = null
+  let source = null
+
+  // Setup the volume slider
   pageEltSliders.volume = {}
   pageEltSliders.volume.slider = document.querySelector("#vol-slider")
   pageEltSliders.volume.display = document.querySelector("#vol-display")
 
-  const slider = pageEltSliders.volume.slider
-  const source = state.dB
+  slider = pageEltSliders.volume.slider
+  source = state.dB
+
   slider.min = source.min
   slider.step = source.step
   slider.max = source.max
   slider.value = source.current
 
+  // Setup the key contrast slider
   pageEltSliders.contrast = {}
   pageEltSliders.contrast.slider = document.querySelector("#contrast-slider")
   pageEltSliders.contrast.display = document.querySelector("#contrast-display")
 
-  // Not yet implemented - setup from state
+  slider = pageEltSliders.contrast.slider
+  source = state.keyColourContrast
 
+  slider.min = source.min
+  slider.step = source.step
+  slider.max = source.max
+  slider.value = source.current
+
+  // Setup the key spacing slider
   pageEltSliders.spacing = {}
   pageEltSliders.spacing.slider = document.querySelector("#spacing-slider")
   pageEltSliders.spacing.display = document.querySelector("#spacing-display")
 
-  // Not yet implemented - setup from state
+  slider = pageEltSliders.spacing.slider
+  source = state.keySpacing
+
+  slider.min = source.min
+  slider.step = source.step
+  slider.max = source.max
+  slider.value = source.current
 
   console.log("DOM page elements initialised")
 }
