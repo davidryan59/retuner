@@ -69,12 +69,6 @@
 - Show these states graphically on the button
 - Use callbacks
 
-## Volume buttons
-- They have around 20 to 40 states
-- Figure out how to do a slider for that. Also where to put the slider.
-- Show these states graphically on the button
-- Use callbacks
-
 ## Pause button
 - If app is paused (or timed out) need to highlight this key
 - Then user knows to restart the app
@@ -99,7 +93,6 @@ Need a new type of score which converts absolute note melody into relative melod
 
 ## Sliders
 - Want the text to be FIXED number of characters, e.g. 3 for volume, 2 for some others
-- Want the slider setup to be generated from Javascript, not HTML
 - Implement the contrast slider (0 = greyscale, 10 = psychedelic)
 - Implement the spacing slider (0 = no bigger, 10 = x1.5)
 ### OTHERS:
