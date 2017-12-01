@@ -1,7 +1,13 @@
 # TO DO LIST
 
-## Getting RCN installed in ReTuner
+## Sliders project!
+- Get some sliders installed
+- Get them labelled up and nice looking
+- Use them for various things
 
+
+## Getting RCN installed in ReTuner
+- How to do it?
 
 
 ## Note naming options (for chord only? for this sequencer?)
@@ -11,6 +17,7 @@
 - Fractions with specified note as 1/1
 
 # Buttons
+- The relative fraction is very important. Probably display it in larger font as (e.g.) 'x4/3' or 'x 4/3' (can I find the ASCII character for x?)
 - Need all button calculations to be installed on buttons as callbacks
 - The definitions are currently in the initialise_a_key directory,
 - factor them out onto subdirectories, e.g. Key Setup
