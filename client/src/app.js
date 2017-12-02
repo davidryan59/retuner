@@ -20,14 +20,15 @@ const runApp = () => {
   console.log("The app has started")
 
   // // DEBUG ONLY
-  // const slider = new Slider({
+  // let slider = new Slider({
   //   name: "Test slider",
+  //   unit: "",
   //   min: 3,
   //   step: 4,
   //   max: 20,
-  //   initial: 16,
-  //   notUsed: "doesn't matter"
+  //   initial: 16
   // })
+  // slider = new Slider()
   // console.log(`${slider}`)
   // console.log(slider)
   // console.dir(slider)

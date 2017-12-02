@@ -1,18 +1,25 @@
 class Slider {
   constructor(options) {
 
-    this.name = options.name
-    this.min = options.min
-    this.step = options.step
-    this.max = options.max
-    this.initial = options.initial
+    if (!options) {
+      options = {}
+    }
 
-    this.current = options.initial
+    this.name = options.name       || "Generic slider"
+    this.min = options.min         || 0
+    this.step = options.step       || 1
+    this.max = options.max         || 9
+    this.initial = options.initial || 5
+    this.unit = options.unit       || ""
+
+    this.current = this.initial
     this.updated = true
   }
 
   toString() {
-    return `Slider ${this.name} is at position ${this.getCurrent().toFixed(1)}, `
+    const unitText = (this.unit) ? " " + this.unit : ""
+    return `Slider ${this.name} is at position `
+      + `${this.getCurrent().toFixed(1)}${unitText}, `
       + `fraction ${this.getFraction().toFixed(3)}`
   }
 
