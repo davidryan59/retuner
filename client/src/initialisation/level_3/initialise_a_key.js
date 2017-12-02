@@ -97,7 +97,7 @@ const initialiseAKey = (key) => {
       return baseFreqHz * nextFreqRel
     }
     key.bgColour = (state, key) => {
-      const contrast = state.keyColourContrast.fraction
+      const contrast = state.keyColourContrast.getFraction()
       return freqToRGBA(key.nextFreqRel(state, key), 0.8, contrast)
     }
   } else {

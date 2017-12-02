@@ -1,23 +1,28 @@
-import setVolumeDB from './sliders/set_volume_db'
-import setKeyColourContrast from './sliders/set_key_colour_contrast'
-import setKeySpacing from './sliders/set_key_spacing'
+const updateSliderModelFromView = (model, view) => {
+  model.setCurrent(parseFloat(view.value))
+}
+
 
 const volumeSliderHandler = (state, event) => {
-  const slider = state.pageElts.sliders.volume.slider
-  const newValue = parseFloat(slider.value)
-  setVolumeDB(state, newValue)
+  updateSliderModelFromView(
+    state.dB,
+    state.pageElts.sliders.volume.slider
+  )
 }
 
 const spacingSliderHandler = (state, event) => {
-  const slider = state.pageElts.sliders.spacing.slider
-  const newValue = parseFloat(slider.value)
-  setKeySpacing(state, newValue)
+  updateSliderModelFromView(
+    state.keySpacing,
+    state.pageElts.sliders.spacing.slider
+  )
 }
 
 const contrastSliderHandler = (state, event) => {
-  const slider = state.pageElts.sliders.contrast.slider
-  const newValue = parseFloat(slider.value)
-  setKeyColourContrast(state, newValue)
+  updateSliderModelFromView(
+    state.keyColourContrast,
+    state.pageElts.sliders.contrast.slider
+  )
 }
+
 
 export {volumeSliderHandler, spacingSliderHandler, contrastSliderHandler}

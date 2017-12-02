@@ -13,12 +13,12 @@ class Slider {
     this.unit = options.unit       || ""
 
     this.current = this.initial
-    this.updated = true
+    this.redraw = true
   }
 
   toString() {
     const unitText = (this.unit) ? " " + this.unit : ""
-    return `Slider ${this.name} is at position `
+    return `${this.name} is at position `
       + `${this.getCurrent().toFixed(1)}${unitText}, `
       + `fraction ${this.getFraction().toFixed(3)}`
   }
@@ -29,7 +29,8 @@ class Slider {
 
   setCurrent(newValue) {
     this.current = newValue
-    this.updated = true
+    this.redraw = true
+    console.log(`${this}`)
   }
 
   getFraction() {

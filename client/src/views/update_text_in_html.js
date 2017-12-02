@@ -19,35 +19,35 @@ const updateTextInHtml = (state) => {
     drawnVersionNumber = true
   }
   // Do sliders
-  let source = null
-  let sliderObj = null
+  let sliderModel = null
+  let sliderView = null
   let currentValue = null
   // Volume slider
-  source = state.dB
-  sliderObj = pageElts.sliders.volume
-  if (source.updated) {
-    currentValue = source.current
-    sliderObj.slider.value = currentValue
-    sliderObj.display.innerText = numToFixedTotalLength(currentValue, 3)
-    source.updated = false
+  sliderModel = state.dB
+  sliderView = pageElts.sliders.volume
+  if (sliderModel.redraw) {
+    currentValue = sliderModel.current
+    sliderView.slider.value = currentValue
+    sliderView.display.innerText = numToFixedTotalLength(currentValue, 3)
+    sliderModel.redraw = false
   }
   // Key colour contrast slider
-  source = state.keyColourContrast
-  sliderObj = pageElts.sliders.contrast
-  if (source.updated) {
-    currentValue = source.current
-    sliderObj.slider.value = currentValue
-    sliderObj.display.innerText = numToFixedTotalLength(currentValue, 2)
-    source.updated = false
+  sliderModel = state.keyColourContrast
+  sliderView = pageElts.sliders.contrast
+  if (sliderModel.redraw) {
+    currentValue = sliderModel.current
+    sliderView.slider.value = currentValue
+    sliderView.display.innerText = numToFixedTotalLength(currentValue, 2)
+    sliderModel.redraw = false
   }
   // Key spacing slider
-  source = state.keySpacing
-  sliderObj = pageElts.sliders.spacing
-  if (source.updated) {
-    currentValue = source.current
-    sliderObj.slider.value = currentValue
-    sliderObj.display.innerText = numToFixedTotalLength(currentValue, 2)
-    source.updated = false
+  sliderModel = state.keySpacing
+  sliderView = pageElts.sliders.spacing
+  if (sliderModel.redraw) {
+    currentValue = sliderModel.current
+    sliderView.slider.value = currentValue
+    sliderView.display.innerText = numToFixedTotalLength(currentValue, 2)
+    sliderModel.redraw = false
   }
 }
 
