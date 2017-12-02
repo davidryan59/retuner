@@ -60,6 +60,9 @@
 - Log in, and link them to the Firebase account
 - Also update the README at this point.
 
+## External links
+- Perhaps should open in a new tab? Don't really want people navigating away from the page :)
+
 ## Voice button
 - Its (currently) got 4 states
 - Show these states graphically on the button
