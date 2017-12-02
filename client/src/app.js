@@ -1,5 +1,5 @@
 // DEBUG ONLY
-// (import a file to test here)
+// import Slider from './models/slider'
 
 import initialiseState from './initialisation/initialise_state'
 import {keyboardDownHandler, keyboardUpHandler} from './controllers/keyboard_handlers'
@@ -19,9 +19,20 @@ import recordRenderTime from './calculations/record_render_time'
 const runApp = () => {
   console.log("The app has started")
 
-  // DEBUG ONLY
-  // (console log the file to be tested)
-  // console.dir("Nothing to test")
+  // // DEBUG ONLY
+  // const slider = new Slider({
+  //   name: "Test slider",
+  //   min: 3,
+  //   step: 4,
+  //   max: 20,
+  //   initial: 16,
+  //   notUsed: "doesn't matter"
+  // })
+  // console.log(`${slider}`)
+  // console.log(slider)
+  // console.dir(slider)
+  // // (console log the file to be tested)
+  // // console.dir("Nothing to test")
 
   // Have a central place where all app state is stored
   const state = {}

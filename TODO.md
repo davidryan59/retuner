@@ -188,6 +188,11 @@ https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_wi
 - Only obscure functions should require modifiers (or possibly sliders too)
 - Might want Shift / Alt / Command to be the same modifier? Esp windows/mac compatibility. Or maybe Shift is one, Alt is another, Ctrl/Command a third.
 
+## Exports
+- Allow people to export their live playing by MP3
+- Allow people to export the sequence of button presses
+- Export and import sequence of button presses - sequencer!!
+
 
 ------------
 PROBABLY DIFFERENT PROJECT FROM HERE...
