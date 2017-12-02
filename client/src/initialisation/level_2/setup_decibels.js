@@ -7,7 +7,7 @@ const setupDecibels = (state) => {
     unit: "dB",
     initial: 1,
     min: -21,
-    step: 2,
+    step: 1,
     max: 11
   })
 
