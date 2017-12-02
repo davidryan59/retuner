@@ -1,9 +1,9 @@
 const setupKeySpacing = (state) => {
 
-  const min = 1
+  const min = 0
   const step = 1
   const max = 11
-  const initial = 3
+  const initial = 10
 
   state.keySpacing = {}
   const source = state.keySpacing

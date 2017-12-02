@@ -11,6 +11,8 @@ const storeModelToCanvasCoords = (state) => {
   const viewObjectCentreY = state.graphics.viewObjects.centreY
   const viewObjectZoom = state.graphics.viewObjects.zoom
 
+  const spacingR = 0.5 * (1 + state.keySpacing.fraction)
+
   for (const keyIndex of state.keyOrderArray) {
 
     const key = state.keys[keyIndex]
@@ -22,7 +24,7 @@ const storeModelToCanvasCoords = (state) => {
 
     const x = canvasCentreX + canvasZoom * xRel
     const y = canvasCentreY - canvasZoom * yRel
-    const r = canvasZoom * rRel * key.location.extraR
+    const r = canvasZoom * rRel * key.location.extraR * spacingR
 
     canvasCoords.x = x
     canvasCoords.y = y
