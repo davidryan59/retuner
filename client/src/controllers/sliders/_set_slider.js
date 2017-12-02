@@ -1,7 +1,5 @@
 const setSlider = (state, newValue, sourceObj, description, unit) => {
 
-
-
   // Get bounds
   const minValue = sourceObj.min
   const maxValue = sourceObj.max
@@ -17,6 +15,7 @@ const setSlider = (state, newValue, sourceObj, description, unit) => {
 
   // Do the update
   sourceObj.current = newCheckedValue
+  sourceObj.fraction = (newCheckedValue - minValue) / (maxValue - minValue)
   sourceObj.updated = true
 
   // Get texts

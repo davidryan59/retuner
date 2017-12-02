@@ -27,6 +27,8 @@ const arraysContrastZero = [
 
 const contrastToColourArray = (contrast) => {
   // Contrast: Number between 0 (greyscale) and 1 (vivid colour)
+  // Note: these outputs are usually floats, not integers!
+  // (Need to parseInt at time of rgb or rgba construction)
 
   let theContrast = Math.max(0, Math.min(1, parseFloat(contrast)))
   let arrayLowContrast = null

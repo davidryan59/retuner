@@ -4,26 +4,27 @@ const setupDecibels = (state) => {
   // 1, 0.1 respectively
   // (Can extend this on a log scale)
 
-  // Setup some default parameters
-  const minDB = -21
-  const initialDB = 1
-  const stepDB = 2
-  const maxDB = 11
-  // Assign them into state
+  const min = -21
+  const step = 2
+  const max = 11
+  const initial = 1
+
   state.dB = {}
-  const stateDB = state.dB
-  stateDB.min = minDB
-  stateDB.initial = initialDB
-  stateDB.current = initialDB
-  stateDB.step = stepDB
-  stateDB.max = maxDB
-  stateDB.updated = true
-  // Log the success
+  const source = state.dB
+
+  source.min = min
+  source.step = step
+  source.max = max
+  source.initial = initial
+  source.current = initial
+  source.fraction = (initial - min) / (max - min)
+  source.updated = true
+
   console.log(
-    "Decibels initialised. Min", minDB,
-    "initially", initialDB,
-    "step", stepDB,
-    "max", maxDB
+    "Decibels initialised. Min", min,
+    "initially", initial,
+    "step", step,
+    "max", max
   )
 }
 

@@ -13,6 +13,7 @@ const setupKeySpacing = (state) => {
   source.max = max
   source.initial = initial
   source.current = initial
+  source.fraction = (initial - min) / (max - min)
   source.updated = true
 
   console.log(

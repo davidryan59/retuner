@@ -1,9 +1,9 @@
 const setupKeyColourContrast = (state) => {
 
-  const min = 1
+  const min = -9
   const step = 1
   const max = 11
-  const initial = 9
+  const initial = 10
 
   state.keyColourContrast = {}
   const source = state.keyColourContrast
@@ -13,6 +13,7 @@ const setupKeyColourContrast = (state) => {
   source.max = max
   source.initial = initial
   source.current = initial
+  source.fraction = (initial - min) / (max - min)
   source.updated = true
 
   console.log(

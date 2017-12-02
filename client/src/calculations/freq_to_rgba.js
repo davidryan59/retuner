@@ -1,3 +1,5 @@
+import contrastToColourArray from './contrast_to_colour_array'
+
 const b1 = 1200 * Math.log2(16/15)
 const b2 = 1200 * Math.log2(9/8)
 const b3 = 1200 * Math.log2(5/4)
@@ -10,14 +12,6 @@ const d3 = b4 - b3
 const d4 = b5 - b4
 const d5 = 1200 - b5
 
-// OBSELETE! Use the Contrast to Colour Array function
-const array1 = [255, 0, 0]
-const array2 = [255, 0, 255]
-const array3 = [0, 0, 255]
-const array4 = [0, 255, 255]
-const array5 = [0, 255, 0]
-const array6 = [255, 255, 0]
-
 const freqToRGBA = (freq, alpha, contrast) => {
   // Frequencies
   // 1/1 = 1.000 is RED
@@ -27,11 +21,12 @@ const freqToRGBA = (freq, alpha, contrast) => {
   // 4/3 = 1.333 is GREEN
   // 3/2 = 1.500 is YELLOW
   // 2/1 = 2.000 is RED again
+  // (See the imported function for how these colours are constructed)
 
   // Alpha: Number between 0 (transparent) and 1 (opaque)
 
   // Contrast: Number between 0 (greyscale) and 1 (vivid colour)
-  // (NOT YET IMPLEMENTED)
+  const colourArray = contrastToColourArray(contrast)
 
   const pitch = Math.log2(65536 * freq) % 1
   // 65536 because % misbehaves for negative inputs
@@ -39,33 +34,34 @@ const freqToRGBA = (freq, alpha, contrast) => {
 
   // Exact value of these initialisations doesn't matter, they get overwritten
   let endFactor = 0
-  let [startR, startG, startB] = array1
-  let [endR, endG, endB] = array1
+  let [startR, startG, startB] = colourArray[0]
+  let [endR, endG, endB] = colourArray[0]
 
+  // Refactor - repeated else if statements
   if (cents < b1) {
     endFactor = cents/b1;
-    [startR, startG, startB] = array1;
-    [endR, endG, endB] = array2;
+    [startR, startG, startB] = colourArray[0];
+    [endR, endG, endB] = colourArray[1];
   } else if (cents < b2) {
     endFactor = (cents-b1)/d1;
-    [startR, startG, startB] = array2;
-    [endR, endG, endB] = array3;
+    [startR, startG, startB] = colourArray[1];
+    [endR, endG, endB] = colourArray[2];
   } else if (cents < b3) {
     endFactor = (cents-b2)/d2;
-    [startR, startG, startB] = array3;
-    [endR, endG, endB] = array4;
+    [startR, startG, startB] = colourArray[2];
+    [endR, endG, endB] = colourArray[3];
   } else if (cents < b4) {
     endFactor = (cents-b3)/d3;
-    [startR, startG, startB] = array4;
-    [endR, endG, endB] = array5;
+    [startR, startG, startB] = colourArray[3];
+    [endR, endG, endB] = colourArray[4];
   } else if (cents < b5) {
     endFactor = (cents-b4)/d4;
-    [startR, startG, startB] = array5;
-    [endR, endG, endB] = array6;
+    [startR, startG, startB] = colourArray[4];
+    [endR, endG, endB] = colourArray[5];
   } else {
     endFactor = (cents-b5)/d5;
-    [startR, startG, startB] = array6;
-    [endR, endG, endB] = array1;
+    [startR, startG, startB] = colourArray[5];
+    [endR, endG, endB] = colourArray[0];
   }
 
   const startFactor = 1 - endFactor
