@@ -10,6 +10,7 @@ const d3 = b4 - b3
 const d4 = b5 - b4
 const d5 = 1200 - b5
 
+// OBSELETE! Use the Contrast to Colour Array function
 const array1 = [255, 0, 0]
 const array2 = [255, 0, 255]
 const array3 = [0, 0, 255]
@@ -17,7 +18,8 @@ const array4 = [0, 255, 255]
 const array5 = [0, 255, 0]
 const array6 = [255, 255, 0]
 
-const freqToRGBA = (freq, alpha) => {
+const freqToRGBA = (freq, alpha, contrast) => {
+  // Frequencies
   // 1/1 = 1.000 is RED
   // 16/15 = 1.067 is MAGENTA
   // 9/8 = 1.125 is BLUE
@@ -25,6 +27,11 @@ const freqToRGBA = (freq, alpha) => {
   // 4/3 = 1.333 is GREEN
   // 3/2 = 1.500 is YELLOW
   // 2/1 = 2.000 is RED again
+
+  // Alpha: Number between 0 (transparent) and 1 (opaque)
+
+  // Contrast: Number between 0 (greyscale) and 1 (vivid colour)
+  // (NOT YET IMPLEMENTED)
 
   const pitch = Math.log2(65536 * freq) % 1
   // 65536 because % misbehaves for negative inputs

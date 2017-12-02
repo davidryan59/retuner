@@ -1,3 +1,6 @@
+// DEBUG ONLY
+// (import a file to test here)
+
 import initialiseState from './initialisation/initialise_state'
 import {keyboardDownHandler, keyboardUpHandler} from './controllers/keyboard_handlers'
 import {mouseDownHandler, mouseUpHandler} from './controllers/mouse_handlers'
@@ -15,6 +18,10 @@ import recordRenderTime from './calculations/record_render_time'
 
 const runApp = () => {
   console.log("The app has started")
+
+  // DEBUG ONLY
+  // (console log the file to be tested)
+  // console.dir("Nothing to test")
 
   // Have a central place where all app state is stored
   const state = {}
