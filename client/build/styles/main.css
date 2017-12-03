@@ -99,6 +99,11 @@ span.js-output-stats {
   color: #777;
 }
 
+span.bitcoin-address {
+  font-weight: bold;
+  font-size: 115%;
+}
+
 p.align-left {
   text-align: left;
 }

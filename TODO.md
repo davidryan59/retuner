@@ -1,9 +1,5 @@
 # TO DO LIST
 
-## IMPORTANT
-- Get a 'InstrumentKey' class set up
-- Delegate a large number of functions to it.
-
 ## Getting RCN installed in ReTuner
 - How to do it?
 
@@ -14,6 +10,7 @@
 - Fractions with specified note as 1/1
 
 # Buttons
+- Button setup is still a bit flaky. Probably ought to have keys which are transposing/playing keys having a separate setup method later.
 - The relative fraction is very important. Probably display it in larger font as (e.g.) 'x4/3' or 'x 4/3' (can I find the ASCII character for x?)
 - Need all button calculations to be installed on buttons as callbacks
 - The definitions are currently in the initialise_a_key directory,
@@ -188,7 +185,6 @@ https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_wi
 ## Testing
 - What to test?
 - How to test?
-- Whether to turn anything into classes? The obvious choice would be 'instrument key'
 - Main problem was that Mocha works on ES5, but not on ES6...
 
 ## Right mouse clicks
