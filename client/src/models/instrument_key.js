@@ -92,13 +92,11 @@ class InstrumentKey {
       this.transposes.text = num + "/" + denom
       this.transposes.complexity = num * denom
 
-      // FIX THIS BIT
-
-      // // Make sure radius of transposing keys is related to
-      // // their musical importance, which means low complexity
-      // const theFactor = 10
-      // this.anchors.r = 7 + 5 * theFactor * (1 / (theFactor + this.transposes.complexity));
-      // modelCoords.current.r = this.anchors.r
+      // Make sure radius of transposing keys is related to
+      // their musical importance, which means low complexity
+      const theFactor = 10
+      anchorCoords.r = 7 + 5 * theFactor * (1 / (theFactor + this.transposes.complexity));
+      currentCoords.r = anchorCoords.r
     }
 
     if (this.transposes) {
