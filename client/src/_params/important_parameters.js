@@ -1,6 +1,8 @@
 const setupImportantParameters = (state) => {
 
   state.context = {}
+  state.slider = {}
+  state.slider.array = []
 
   state.params = {}
   const stateParams = state.params

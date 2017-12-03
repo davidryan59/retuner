@@ -23,7 +23,7 @@ const updateTextInHtml = (state) => {
   let sliderView = null
   let currentValue = null
   // Volume slider
-  sliderModel = state.dB
+  sliderModel = state.slider.volume
   sliderView = pageElts.sliders.volume
   if (sliderModel.redraw) {
     currentValue = sliderModel.current
@@ -32,7 +32,7 @@ const updateTextInHtml = (state) => {
     sliderModel.redraw = false
   }
   // Key colour contrast slider
-  sliderModel = state.keyColourContrast
+  sliderModel = state.slider.keyColourContrast
   sliderView = pageElts.sliders.contrast
   if (sliderModel.redraw) {
     currentValue = sliderModel.current
@@ -41,7 +41,7 @@ const updateTextInHtml = (state) => {
     sliderModel.redraw = false
   }
   // Key spacing slider
-  sliderModel = state.keySpacing
+  sliderModel = state.slider.keySpacing
   sliderView = pageElts.sliders.spacing
   if (sliderModel.redraw) {
     currentValue = sliderModel.current

@@ -1,3 +1,9 @@
+// // Refactor out the code repeated 3 times below
+// // into a function like this...
+// const sliderSetup = (sliderElt, displayText, view, model) => {
+//
+// }
+
 const setupHtmlPageElts = (state) => {
 
   state.pageElts = {}
@@ -14,47 +20,47 @@ const setupHtmlPageElts = (state) => {
   const pageEltSliders = pageElts.sliders
 
   // Setup sliders. Use 2 temporary variables, which will reassign
-  let slider = null
-  let source = null
+  let sliderView = null
+  let sliderModel = null
 
   // Setup the volume slider
   pageEltSliders.volume = {}
   pageEltSliders.volume.slider = document.querySelector("#vol-slider")
   pageEltSliders.volume.display = document.querySelector("#vol-display")
 
-  slider = pageEltSliders.volume.slider
-  source = state.dB
+  sliderView = pageEltSliders.volume.slider
+  sliderModel = state.slider.volume
 
-  slider.min = source.min
-  slider.step = source.step
-  slider.max = source.max
-  slider.value = source.current
+  sliderView.min = sliderModel.min
+  sliderView.step = sliderModel.step
+  sliderView.max = sliderModel.max
+  sliderView.value = sliderModel.current
 
   // Setup the key contrast slider
   pageEltSliders.contrast = {}
   pageEltSliders.contrast.slider = document.querySelector("#contrast-slider")
   pageEltSliders.contrast.display = document.querySelector("#contrast-display")
 
-  slider = pageEltSliders.contrast.slider
-  source = state.keyColourContrast
+  sliderView = pageEltSliders.contrast.slider
+  sliderModel = state.slider.keyColourContrast
 
-  slider.min = source.min
-  slider.step = source.step
-  slider.max = source.max
-  slider.value = source.current
+  sliderView.min = sliderModel.min
+  sliderView.step = sliderModel.step
+  sliderView.max = sliderModel.max
+  sliderView.value = sliderModel.current
 
   // Setup the key spacing slider
   pageEltSliders.spacing = {}
   pageEltSliders.spacing.slider = document.querySelector("#spacing-slider")
   pageEltSliders.spacing.display = document.querySelector("#spacing-display")
 
-  slider = pageEltSliders.spacing.slider
-  source = state.keySpacing
+  sliderView = pageEltSliders.spacing.slider
+  sliderModel = state.slider.keySpacing
 
-  slider.min = source.min
-  slider.step = source.step
-  slider.max = source.max
-  slider.value = source.current
+  sliderView.min = sliderModel.min
+  sliderView.step = sliderModel.step
+  sliderView.max = sliderModel.max
+  sliderView.value = sliderModel.current
 
   console.log("DOM page elements initialised")
 }

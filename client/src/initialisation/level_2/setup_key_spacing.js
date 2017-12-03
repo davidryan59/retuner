@@ -2,7 +2,7 @@ import Slider from '../../models/slider'
 
 const setupKeySpacing = (state) => {
 
-  state.keySpacing = new Slider({
+  const slider = new Slider({
     name: "Button size",
     unit: "",
     initial: 10,
@@ -11,7 +11,10 @@ const setupKeySpacing = (state) => {
     max: 11
   })
 
-  console.log(`${state.keySpacing}`)
+  state.slider.array.push(slider)
+  state.slider.keySpacing = slider
+  
+  console.log(`${slider}`)
 }
 
 export default setupKeySpacing

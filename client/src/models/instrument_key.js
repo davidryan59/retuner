@@ -118,7 +118,7 @@ class InstrumentKey {
         return baseFreqHz * nextFreqRel
       }
       this.bgColour = (state, key) => {
-        const contrast = state.keyColourContrast.getFraction()
+        const contrast = state.slider.keyColourContrast.getFraction()
         return freqToRGBA(key.nextFreqRel(state, key), 0.8, contrast)
       }
     } else {

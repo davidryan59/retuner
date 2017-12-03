@@ -28,9 +28,13 @@ class Slider {
   }
 
   setCurrent(newValue) {
-    this.current = newValue
-    this.redraw = true
-    console.log(`${this}`)
+    const oldValue = this.current
+    const checkedNewValue = Math.max(this.min, Math.min(this.max, newValue))
+    if (checkedNewValue !== oldValue) {
+      this.current = checkedNewValue
+      this.redraw = true
+      console.log(`${this}`)
+    }
   }
 
   getFraction() {

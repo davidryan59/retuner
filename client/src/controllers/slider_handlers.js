@@ -5,21 +5,21 @@ const updateSliderModelFromView = (model, view) => {
 
 const volumeSliderHandler = (state, event) => {
   updateSliderModelFromView(
-    state.dB,
+    state.slider.volume,
     state.pageElts.sliders.volume.slider
   )
 }
 
 const spacingSliderHandler = (state, event) => {
   updateSliderModelFromView(
-    state.keySpacing,
+    state.slider.keySpacing,
     state.pageElts.sliders.spacing.slider
   )
 }
 
 const contrastSliderHandler = (state, event) => {
   updateSliderModelFromView(
-    state.keyColourContrast,
+    state.slider.keyColourContrast,
     state.pageElts.sliders.contrast.slider
   )
 }

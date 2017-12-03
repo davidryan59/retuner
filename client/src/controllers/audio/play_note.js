@@ -28,7 +28,7 @@ const playNote = (state, key, extraFreqFactor=1) => {
   nodeOscillator.type = waveform.type(state)
 
   // Setup the gain node amplitude
-  nodeGainVolControl.gain.value = decibelToAmplitude(state.dB.current)
+  nodeGainVolControl.gain.value = decibelToAmplitude(state.slider.volume.current)
 
   // Apply the ADSR envelope
   adsrPress.applyTo(nodeGainADSR.gain, currentTime)

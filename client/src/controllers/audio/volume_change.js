@@ -1,6 +1,6 @@
 const volumeChange = (state, unitsToIncrease) => {
 
-  const sliderModel = state.dB
+  const sliderModel = state.slider.volume
 
   const currentValue = sliderModel.current
   const stepValue = sliderModel.step

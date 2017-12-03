@@ -2,7 +2,7 @@ import Slider from '../../models/slider'
 
 const setupDecibels = (state) => {
 
-  state.dB = new Slider({
+  const slider = new Slider({
     name: "Volume",
     unit: "dB",
     initial: 1,
@@ -11,7 +11,10 @@ const setupDecibels = (state) => {
     max: 11
   })
 
-  console.log(`${state.dB}`)
+  state.slider.array.push(slider)
+  state.slider.volume = slider
+
+  console.log(`${slider}`)
 
   // SETUP NOTES
   // +11dB, -9dB
