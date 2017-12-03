@@ -15,10 +15,6 @@ import instrumentKeyRelease from "../../controllers/keys/instrument_key_release"
 import playPrevNote from "../../controllers/keys/play_prev_note"
 import playNextNote from "../../controllers/keys/play_next_note"
 
-// This one will (re)calculate stats relevant to each key
-// in particular the ones with frequency shifts which play notes
-import initialiseKeys from "../level_3/initialise_keys"
-
 const keyDoesNothing = (state, key)=>{
   // console.log("Key does nothing", key)
 }
@@ -36,39 +32,39 @@ const setupInstrumentKeys = (state) => {
   state.keys = []
   const keyArray = state.keys
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "",           // Function - doesn't trap key properly
     symbol: "FN",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 10, y: 10, r:3}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "ControlLeft",
     symbol: "CTRL-L",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 20, y: 10, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "AltLeft",
     symbol: "ALT-L",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 30, y: 10, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "MetaLeft",
     symbol: "APP-L",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 42, y: 10, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Space",
     symbol: "SPACE",
     functionLabel: "",
@@ -76,73 +72,73 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 78, y: 12, r:12}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "MetaRight",
     symbol: "APP-R",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 105, y: 10, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "AltRight",
     symbol: "ALT-R",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 115, y: 10, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "ArrowLeft",
     symbol: "Left",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 126, y: 10, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "ArrowUp",
     symbol: "Up",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 135, y: 13, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "ArrowDown",
     symbol: "Down",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 135, y: 7, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "ArrowRight",
     symbol: "Right",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 144, y: 10, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "ShiftLeft",
     symbol: "SH-L",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 12, y: 20, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "IntlBackslash",
     symbol: "` ~",
     functionLabel: "Log State",
     runOnPress: logState,
     location: {x: 23, y: 20, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyZ",
     symbol: "Z",
     functionLabel: "",
@@ -150,9 +146,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 33, y: 20, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyX",
     symbol: "X",
     functionLabel: "",
@@ -160,9 +156,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 43, y: 20, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyC",
     symbol: "C",
     functionLabel: "",
@@ -170,9 +166,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 53, y: 20, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyV",
     symbol: "V",
     functionLabel: "",
@@ -180,23 +176,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 63, y: 20, r:10}
-  })
+  }))
 
-
-
-  // console.log(new InstrumentKey({
-  //   keyboardCode: "KeyV",
-  //   symbol: "V",
-  //   functionLabel: "",
-  //   transposePrimes: [[2, 3], [3, -2]],       // 8/9
-  //   runOnPress: instrumentKeyPress,
-  //   runOnRelease: instrumentKeyRelease,
-  //   location: {x: 63, y: 20, r:10}
-  // }))
-
-
-
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyB",
     symbol: "B",
     functionLabel: "",
@@ -204,9 +186,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 73, y: 20, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyN",
     symbol: "N",
     functionLabel: "",
@@ -214,9 +196,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 83, y: 20, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyM",
     symbol: "M",
     functionLabel: "",
@@ -224,9 +206,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 93, y: 20, r:10}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Comma",
     symbol: ", <",
     functionLabel: "",
@@ -234,9 +216,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 103, y: 20, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Period",
     symbol: ". >",
     functionLabel: "",
@@ -244,9 +226,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 113, y: 20, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Slash",
     symbol: "/ ?",
     functionLabel: "",
@@ -254,25 +236,25 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 123, y: 20, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "ShiftRight",
     symbol: "SH-R",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 143, y: 20, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "",          // CapsLock - doesn't trap key properly
     symbol: "CAPS",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 10, y: 28, r:3}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyA",
     symbol: "A",
     functionLabel: "",
@@ -280,9 +262,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 28, y: 30, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyS",
     symbol: "S",
     functionLabel: "",
@@ -290,9 +272,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 38, y: 30, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyD",
     symbol: "D",
     functionLabel: "",
@@ -300,9 +282,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 48, y: 30, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyF",
     symbol: "F",
     functionLabel: "",
@@ -310,10 +292,10 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 58, y: 30, r:10}
-  })
+  }))
 
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyG",
     symbol: "G",
     functionLabel: "",
@@ -321,17 +303,17 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 68, y: 30, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyH",
     symbol: "H",
     functionLabel: "Voice",
     runOnPress: cycleWaveform,
     location: {x: 78, y: 30, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyJ",
     symbol: "J",
     functionLabel: "",
@@ -339,9 +321,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 88, y: 30, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyK",
     symbol: "K",
     functionLabel: "",
@@ -349,9 +331,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 98, y: 30, r:10}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyL",
     symbol: "L",
     functionLabel: "",
@@ -359,9 +341,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 108, y: 30, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Semicolon",
     symbol: "; :",
     functionLabel: "",
@@ -369,9 +351,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 118, y: 30, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Quote",
     symbol: "' \"",
     functionLabel: "",
@@ -379,25 +361,25 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 128, y: 30, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Backslash",
     symbol: "\\ |",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 138, y: 30, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "",      // Tab - doesn't trap key properly
     symbol: "TAB",
     functionLabel: "",
     runOnPress: keyDoesNothing,
     location: {x: 10, y: 35, r:3}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyQ",
     symbol: "Q",
     functionLabel: "",
@@ -405,9 +387,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 25, y: 40, r:10}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyW",
     symbol: "W",
     functionLabel: "",
@@ -415,8 +397,8 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 35, y: 40, r:10}
-  })
-  keyArray.push({
+  }))
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyE",
     symbol: "E",
     functionLabel: "",
@@ -424,9 +406,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 45, y: 40, r:10}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyR",
     symbol: "R",
     functionLabel: "",
@@ -434,9 +416,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 55, y: 40, r:10}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyT",
     symbol: "T",
     functionLabel: "",
@@ -444,25 +426,25 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 65, y: 40, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyY",
     symbol: "Y",
     functionLabel: "PREV N/N",
     runOnPress: playPrevNote,
     location: {x: 75, y: 40, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyU",
     symbol: "U",
     functionLabel: "Next N/N",
     runOnPress: playNextNote,
     location: {x: 85, y: 40, r:5}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyI",
     symbol: "I",
     functionLabel: "",
@@ -470,9 +452,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 95, y: 40, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyO",
     symbol: "O",
     functionLabel: "",
@@ -480,9 +462,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 105, y: 40, r:10}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "KeyP",
     symbol: "P",
     functionLabel: "",
@@ -490,9 +472,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 115, y: 40, r:10}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "BracketLeft",
     symbol: "[ {",
     functionLabel: "",
@@ -500,9 +482,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 125, y: 40, r:10}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "BracketRight",
     symbol: "] }",
     functionLabel: "",
@@ -510,33 +492,33 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 135, y: 40, r:10}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Enter",
     symbol: "ENTER",
     functionLabel: "Vol Up",
     runOnPress: volumeIncrease,
     location: {x: 145, y: 38, r:10}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Backquote",
     symbol: "- +",
     functionLabel: "Vol Down",
     runOnPress: volumeDecrease,
     location: {x: 10, y: 44, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Digit1",
     symbol: "1",
     functionLabel: "Vol Down",
     runOnPress: volumeDecrease,
     location: {x: 20, y: 48, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Digit2",
     symbol: "2",
     functionLabel: "",
@@ -544,9 +526,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 30, y: 48.8, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Digit3",
     symbol: "3",
     functionLabel: "",
@@ -554,9 +536,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 40, y: 49.5, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Digit4",
     symbol: "4",
     functionLabel: "",
@@ -564,9 +546,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 50, y: 50, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Digit5",
     symbol: "5",
     functionLabel: "",
@@ -574,33 +556,33 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 60, y: 50, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Digit6",
     symbol: "6",
     functionLabel: "Sustain",
     runOnPress: cycleSustainOptions,
     location: {x: 70, y: 50, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Digit7",
     symbol: "7",
     functionLabel: "Reset Freq",
     runOnPress: resetCentralFreq,
     location: {x: 80, y: 50, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Digit8",
     symbol: "8",
     functionLabel: "Transpose",
     runOnPress: toggleTransposing,
     location: {x: 90, y: 50, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Digit9",
     symbol: "9",
     functionLabel: "",
@@ -608,9 +590,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 100, y: 50, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Digit0",
     symbol: "0",
     functionLabel: "",
@@ -618,9 +600,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 110, y: 50, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Minus",
     symbol: "- _",
     functionLabel: "",
@@ -628,9 +610,9 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 120, y: 50, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Equal",
     symbol: "+ =",
     functionLabel: "",
@@ -638,33 +620,23 @@ const setupInstrumentKeys = (state) => {
     runOnPress: instrumentKeyPress,
     runOnRelease: instrumentKeyRelease,
     location: {x: 130, y: 50, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Backspace",
     symbol: "BACK",
     functionLabel: "Vol Up",
     runOnPress: volumeIncrease,
     location: {x: 145, y: 50, r:7}
-  })
+  }))
 
-  keyArray.push({
+  keyArray.push(new InstrumentKey({
     keyboardCode: "Escape",
     symbol: "Esc",
     functionLabel: "Pause",
     runOnPress: pauseApp,
     location: {x: 10, y: 52, r:9}
-  })
-
-
-
-
-
-
-  // In some of the keys above, prime numbers were specified
-  // but the num and denom were not explicitly calculated.
-  // Do that here.
-  initialiseKeys(state)
+  }))
 
   console.log("The instrument has been set up with", keyArray.length, "keys")
 }

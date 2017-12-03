@@ -7,7 +7,10 @@ const windowResizeHandler = (state, event) => {
   // retrieved directly from 'window' and this works
   // even when an event is not supplied, e.g. on initialisation
 
-  const currentCanvasWidth = state.graphics.boundRight   // boundLeft is always zero
+  const stateGraphics = state.graphics
+  const canvasStats = stateGraphics.canvasInfo
+
+  const currentCanvasWidth = canvasStats.boundRight   // boundLeft is always zero
   const newWindowWidth = window.innerWidth
   const proposedCanvasWidth = newWindowWidth - 100
 
@@ -22,20 +25,20 @@ const windowResizeHandler = (state, event) => {
       canvasElt.height = proposedCanvasHeight
 
       // For canvas, (0, 0) is in top left corner
-      state.graphics.boundUp = 0
-      state.graphics.boundDown = proposedCanvasHeight
-      state.graphics.boundLeft = 0
-      state.graphics.boundRight = proposedCanvasWidth
+      canvasStats.boundUp = 0
+      canvasStats.boundDown = proposedCanvasHeight
+      canvasStats.boundLeft = 0
+      canvasStats.boundRight = proposedCanvasWidth
 
-      state.graphics.centreX = 0.5 * (state.graphics.boundLeft + state.graphics.boundRight)
-      state.graphics.centreY = 0.5 * (state.graphics.boundUp + state.graphics.boundDown)
+      canvasStats.centreX = 0.5 * (canvasStats.boundLeft + canvasStats.boundRight)
+      canvasStats.centreY = 0.5 * (canvasStats.boundUp + canvasStats.boundDown)
 
-      state.graphics.sizeX = state.graphics.boundDown - state.graphics.boundUp
-      state.graphics.sizeY = state.graphics.boundRight - state.graphics.boundLeft
+      canvasStats.sizeX = canvasStats.boundDown - canvasStats.boundUp
+      canvasStats.sizeY = canvasStats.boundRight - canvasStats.boundLeft
 
-      state.graphics.zoom = Math.min (
-        state.graphics.sizeX,
-        state.graphics.sizeY
+      canvasStats.zoom = Math.min (
+        canvasStats.sizeX,
+        canvasStats.sizeY
       )
 
       console.log(`Successful resize ${proposedCanvasWidth}, ${proposedCanvasHeight}`)

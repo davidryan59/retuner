@@ -1,11 +1,7 @@
-import initialiseAKey from './initialise_a_key'
 import calculateNeighbouringKeys from '../../physics/calculate_neighbouring_keys'
 
-const initialiseKeys = (state) => {
+const setupInstrumentKeysMore = (state) => {
 
-  for (const key of state.keys) {
-    initialiseAKey(key)
-  }
   calculateNeighbouringKeys(state)
 
   state.keyLastPressed = null
@@ -17,10 +13,15 @@ const initialiseKeys = (state) => {
   // console.log(`Original key order ${indexArray}`)
 
   indexArray.sort((i1, i2) => {
-    return ( state.keys[i1].location.r - state.keys[i2].location.r )
+    return (
+      state.keys[i1].coords.model.current.r
+      - state.keys[i2].coords.model.current.r
+    )
   })
   // console.log(`Index array after sorting is ${indexArray}`)
 
+  console.log('Instrument key set setup some more')
+
 }
 
-export default initialiseKeys
+export default setupInstrumentKeysMore

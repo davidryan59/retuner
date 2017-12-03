@@ -11,7 +11,7 @@ const drawInstrumentKeys = (state) => {
     const key = state.keys[keyIndex]
     if (key.physicsSwitchedOn) {
 
-      const canvasCoords = key.canvas
+      const canvasCoords = key.coords.canvas
       const x = canvasCoords.x
       const y = canvasCoords.y
       const r = canvasCoords.r

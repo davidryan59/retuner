@@ -8,21 +8,26 @@ const moveKeys = (state) => {
 
   for (const key of state.keys) {
 
+    // Identify the relevant bits of the state
+    const keyAnchor = key.coords.model.anchor
+    const keyLocation = key.coords.model.current
+    const keyForce = key.coords.model.force
+
     // Deal with forces affecting x and y
-    key.location.x += key.force.x
-    key.location.y += key.force.y
+    keyLocation.x += keyForce.x
+    keyLocation.y += keyForce.y
 
     // Deal with radius specific factors
-    const currentR = key.location.r
-    const anchorR = key.anchors.r
+    const currentR = keyLocation.r
+    const anchorR = keyAnchor.r
     const keyPresses = key.countPresses
     const totalPresses = state.control.totalKeyPresses
     const keyPressFactor = pxFromPress * ( keyPresses / (100 + totalPresses))
-    key.location.r -= restoreFactorR * (currentR - (anchorR+keyPressFactor))
+    keyLocation.r -= restoreFactorR * (currentR - (anchorR + keyPressFactor))
 
     // Deal with extra radius factor - only release when key lifted
     if (key.keyState === 0) {
-      key.location.extraR = key.location.extraR ** (1-restoreFactorExtraR)
+      keyLocation.extraR = keyLocation.extraR ** (1 - restoreFactorExtraR)
     }
   }
 

@@ -8,6 +8,7 @@ import setupKeySpacing from './level_2/setup_key_spacing'
 import setupHtmlPageElts from './level_2/setup_html_page_elts'
 import setupGraphicsContext from './level_2/setup_graphics_context'
 import setupInstrumentKeys from './level_2/setup_instrument_keys'
+import setupInstrumentKeysMore from './level_2/setup_instrument_keys_more'
 import setupFrequencies from './level_2/setup_frequencies'
 import setupRecording from './level_2/setup_recording'
 import setupWaveform from './level_2/setup_waveform'
@@ -32,6 +33,8 @@ const initialiseState = (state) => {
   setupHtmlPageElts(state)
   setupGraphicsContext(state)
   setupInstrumentKeys(state)
+  console.dir(state.keys[16])       // Log the 'V' key
+  setupInstrumentKeysMore(state)
   setupFrequencies(state)
   setupRecording(state)
   setupWaveform(state)

@@ -1,12 +1,16 @@
 const convertCanvasToModelCoords = (state, canvasX, canvasY) => {
 
-  const canvasCentreX = state.graphics.centreX
-  const canvasCentreY = state.graphics.centreY
-  const canvasZoom = state.graphics.zoom
+  const stateGraphics = state.graphics
+  const canvasStats = stateGraphics.canvasInfo
+  const modelStats = stateGraphics.modelInfo
 
-  const viewObjectCentreX = state.graphics.viewObjects.centreX
-  const viewObjectCentreY = state.graphics.viewObjects.centreY
-  const viewObjectZoom = state.graphics.viewObjects.zoom
+  const canvasCentreX = canvasStats.centreX
+  const canvasCentreY = canvasStats.centreY
+  const canvasZoom = canvasStats.zoom
+
+  const viewObjectCentreX = modelStats.centreX
+  const viewObjectCentreY = modelStats.centreY
+  const viewObjectZoom = modelStats.zoom
 
   const xRel = ( canvasX - canvasCentreX ) / canvasZoom
   const yRel = ( canvasY - canvasCentreY ) / canvasZoom

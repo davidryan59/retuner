@@ -10,7 +10,7 @@ import updateTimingInfo from './calculations/update_timing_info'
 import calculateForces from './physics/calculate_forces'
 import moveKeys from './physics/move_keys'
 import calculateNeighbouringKeys from './physics/calculate_neighbouring_keys'
-import findViewObjectBounds from './calculations/find_view_object_bounds'
+import findModelCoordBounds from './calculations/find_model_coord_bounds'
 import storeModelToCanvasCoords from './calculations/convert_coords/store_model_to_canvas_coords'
 import drawCanvas from './views/draw_canvas'
 import updateTextInHtml from './views/update_text_in_html'
@@ -20,18 +20,6 @@ const runApp = () => {
   console.log("The app has started")
 
   // // DEBUG ONLY
-  // let slider = new Slider({
-  //   name: "Test slider",
-  //   unit: "",
-  //   min: 3,
-  //   step: 4,
-  //   max: 20,
-  //   initial: 16
-  // })
-  // slider = new Slider()
-  // console.log(`${slider}`)
-  // console.log(slider)
-  // console.dir(slider)
   // // (console log the file to be tested)
   // // console.dir("Nothing to test")
 
@@ -82,7 +70,7 @@ const runApp = () => {
     }
     // Only do graphics every N frames
     if (state.control.loopsSinceTimeout % state.params.redrawCanvas === 0) {
-      findViewObjectBounds(state)
+      findModelCoordBounds(state)
       storeModelToCanvasCoords(state)
       drawCanvas(state)
     }

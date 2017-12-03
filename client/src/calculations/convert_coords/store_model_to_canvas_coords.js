@@ -3,28 +3,33 @@ const storeModelToCanvasCoords = (state) => {
   // Currently only the instrument keys
   // If other elements to calculate, split into multiple methods
 
-  const canvasCentreX = state.graphics.centreX
-  const canvasCentreY = state.graphics.centreY
-  const canvasZoom = state.graphics.zoom
+  const stateGraphics = state.graphics
+  const canvasStats = stateGraphics.canvasInfo
+  const modelStats = stateGraphics.modelInfo
 
-  const viewObjectCentreX = state.graphics.viewObjects.centreX
-  const viewObjectCentreY = state.graphics.viewObjects.centreY
-  const viewObjectZoom = state.graphics.viewObjects.zoom
+  const canvasCentreX = canvasStats.centreX
+  const canvasCentreY = canvasStats.centreY
+  const canvasZoom = canvasStats.zoom
+
+  const viewObjectCentreX = modelStats.centreX
+  const viewObjectCentreY = modelStats.centreY
+  const viewObjectZoom = modelStats.zoom
 
   const spacingR = 0.5 * (1 + state.keySpacing.getFraction())
 
   for (const keyIndex of state.keyOrderArray) {
 
     const key = state.keys[keyIndex]
-    const canvasCoords = key.canvas
+    const canvasCoords = key.coords.canvas
+    const keyLocation = key.coords.model.current
 
-    const xRel = ( key.location.x - viewObjectCentreX ) / viewObjectZoom
-    const yRel = ( key.location.y - viewObjectCentreY ) / viewObjectZoom
-    const rRel = key.location.r / viewObjectZoom
+    const xRel = ( keyLocation.x - viewObjectCentreX ) / viewObjectZoom
+    const yRel = ( keyLocation.y - viewObjectCentreY ) / viewObjectZoom
+    const rRel = keyLocation.r / viewObjectZoom
 
     const x = canvasCentreX + canvasZoom * xRel
-    const y = canvasCentreY - canvasZoom * yRel
-    const r = canvasZoom * rRel * key.location.extraR * spacingR
+    const y = canvasCentreY - canvasZoom * yRel       // y inverted here
+    const r = canvasZoom * rRel * keyLocation.extraR * spacingR
 
     canvasCoords.x = x
     canvasCoords.y = y

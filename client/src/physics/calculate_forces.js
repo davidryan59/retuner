@@ -1,61 +1,63 @@
-
-
 const anchorForceFactor = 0.001
 const neighbourForceFactor = 0.01
-// const restoreFactorR = 0.08
-// const restoreFactorExtraR = 0.05
-// const pxFromPress = 30       // Distributed across all keys, via press
 
 const calculateForces = (state) => {
 
   // Reset forces first
   for (const key of state.keys) {
-    key.force.x = 0
-    key.force.y = 0
+    const theForce = key.coords.model.force
+    theForce.x = 0
+    theForce.y = 0
+    // May the Force be with you!
   }
 
   for (const key of state.keys) {
-
+    // Get relevant objects
+    const keyAnchor = key.coords.model.anchor
+    const keyLocation = key.coords.model.current
+    const keyForce = key.coords.model.force
     // Start by adding force from anchoring
-    const currentX = key.location.x
-    const currentY = key.location.y
-    const anchorX = key.anchors.x
-    const anchorY = key.anchors.y
+    const currentX = keyLocation.x
+    const currentY = keyLocation.y
+    const anchorX = keyAnchor.x
+    const anchorY = keyAnchor.y
 
     const dAX = anchorX - currentX
     const dAY = anchorY - currentY
-    const anchDist = (dAX * dAX + dAY * dAY) ** 0.5
-    key.force.x += anchorForceFactor * anchDist * dAX
-    key.force.y += anchorForceFactor * anchDist * dAY
+    const anchorDistance = (dAX * dAX + dAY * dAY) ** 0.5
+    keyForce.x += anchorForceFactor * anchorDistance * dAX
+    keyForce.y += anchorForceFactor * anchorDistance * dAY
 
     // Add any force from neighbours
     // Note that the neighbour is only recorded on 1 out of 2,
     // and needs to produce equal and opposite forces on both
-    const currentR = key.location.r
-    for (const neighbourKeyIndex of key.force.neighbours) {
+    const currentR = keyLocation.r
+    for (const neighbourKeyIndex of keyForce.neighbours) {
       const nearbyKey = state.keys[neighbourKeyIndex]
-      const neighbourX = nearbyKey.location.x
-      const neighbourY = nearbyKey.location.y
-      const neighbourR = nearbyKey.location.r
+      const nearbyKeyLocation = nearbyKey.coords.model.current
+      const nearbyKeyForce = nearbyKey.coords.model.force
+      const neighbourX = nearbyKeyLocation.x
+      const neighbourY = nearbyKeyLocation.y
+      const neighbourR = nearbyKeyLocation.r
 
-      const radiuses = currentR + neighbourR
-      const r2 = radiuses * radiuses
+      const radiusSum = currentR + neighbourR
+      const rSumSq = radiusSum * radiusSum
 
       const dX = neighbourX-currentX
       const dY = neighbourY-currentY
-      const d2 = dX * dX + dY * dY
+      const distSq = dX * dX + dY * dY
 
-      if (d2 < r2) {
+      if (distSq < rSumSq) {
         // Perform a force between the two keys which pushes them apart
-        const forceLaw = (r2-d2)/d2
+        const forceLaw = (rSumSq - distSq) / distSq
         // Force law is like a spring here
-        const forceX = forceLaw * neighbourForceFactor * dX
-        const forceY = forceLaw * neighbourForceFactor * dY
+        const forceX = neighbourForceFactor * forceLaw * dX
+        const forceY = neighbourForceFactor * forceLaw * dY
 
-        key.force.x += -forceX
-        key.force.y += -forceY
-        nearbyKey.force.x += forceX
-        nearbyKey.force.y += forceY
+        keyForce.x -= forceX
+        keyForce.y -= forceY
+        nearbyKeyForce.x += forceX
+        nearbyKeyForce.y += forceY
       }
     }
   }

@@ -4,9 +4,11 @@ const animateInstrumentKey = (state, key) => {
 
   // Called on any key press,
   // independent of any other function of key
-  key.location.x += randomEffect * (-0.5 + Math.random())
-  key.location.y += randomEffect * (-0.5 + Math.random())
-  key.location.extraR *= 1.5
+
+  const keyLocation = key.coords.model.current
+  keyLocation.x += randomEffect * (-0.5 + Math.random())
+  keyLocation.y += randomEffect * (-0.5 + Math.random())
+  keyLocation.extraR *= 1.5
 
 }
 
