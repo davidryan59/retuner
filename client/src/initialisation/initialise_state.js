@@ -33,6 +33,7 @@ const initialiseState = (state) => {
   setupHtmlPageElts(state)
   setupGraphicsContext(state)
   setupInstrumentKeys(state)
+  console.log("Here is a sample key:")
   console.dir(state.key.array[16])       // Log the 'V' key
   setupInstrumentKeysMore(state)
   setupFrequencies(state)

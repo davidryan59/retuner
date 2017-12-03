@@ -20,7 +20,7 @@ const setupInstrumentKeysMore = (state) => {
   })
   // console.log(`Index array after sorting is ${indexArray}`)
 
-  console.log('Instrument key set setup some more')
+  console.log('Instrument keys have neighbours calculated and are sorted')
 
 }
 
