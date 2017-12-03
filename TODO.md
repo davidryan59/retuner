@@ -1,15 +1,11 @@
 # TO DO LIST
 
-## Key colour contrast
-- Vary key background contrast depending on slider (model) value
-
-## Key spacing
-- Vary key spacing depending on slider (model) value
-
+## IMPORTANT
+- Get a 'InstrumentKey' class set up
+- Delegate a large number of functions to it.
 
 ## Getting RCN installed in ReTuner
 - How to do it?
-
 
 ## Note naming options (for chord only? for this sequencer?)
 - Note names using commas
@@ -33,6 +29,9 @@
 - All the above should affect the basic button size.
 - The basic button size should push nearby buttons out of the way.
 - extra factor for being recently pressed, should not push nearby buttons out of the way
+
+## Graphical Display of Waveform
+- Want a graphical display of the sound output waveform.
 
 ## Page Loading
 - Make the app start up fast, and only query external services after important parts of page have loaded.
@@ -89,11 +88,17 @@ Want to output two channels in stereo
 Function to add reverb or at least one or two delays
 Want individual notes to be played in stereo. Possibly move them around depending on their position on the keyboard. Possibly alter the reverb delays based on how far they are from the 2 edges!
 
+
+## Top Quote
+- Half the time, have the instrument text.
+- At other times, alternate 20 to 50 quotes at random (Andrew's idea!)
+
+## Menu system
+- Need to be able to hide and control all of the less important options from some kind of menu.
+- How to do this? Don’t want main screen to be too cluttered.
+
 ## Scoring
 Need a new type of score which converts absolute note melody into relative melody.  (A simple way would be to put key name and fraction factor on each note.) Do this for a few simple melodies so people can play something familiar.
-
-## Graphical Display of Waveform
-- Want a graphical display of the sound output waveform.
 
 ## GitHub
 - Feature branches - anyone can do these
@@ -101,16 +106,20 @@ Need a new type of score which converts absolute note melody into relative melod
 - Master branch - only authorised developers can merge from develop to master
 (How to authorise particular developers?)
 
-## Other potential sliders
-- Distance/whitespace between keys (especially affects mouse operation)
+## Sliders
+- Different step size for continuous slider and button operation
+- Make all the text generated from the State (e.g. the ‘Volume’ and the ‘-13 dB’)
+- Other sliders:
+- Reverb
+- Number of delays
+- Stereo depth…
 - Time range of waveform plot
 - Various aspects of the ADSR for play note (and possibly stop note)
 - Contrast ratio between keys with simpler notes and more complex notes (see Tenney Height affecting key colour brightness)
+- …May be 10 to 20 in total. Want to be able to display 3. And swap them in and out. And control them all from the keyboard.
 
-## Repeating buttons
-(This is relevant to the 3 sliders already implemented,
-in particular the volume slider which has a keyboard shortcut)
-Some buttons (such as volume sliders) want to keep going up or down as they are held down. Need different keyboard handling for this? Might also want to set up a keyboard repeat period which is independent of the operating system repeat period, and happens at a constant rate (rather than with a gap at front)
+## Slider keyboard handling
+- Some buttons (such as volume sliders) want to keep going up or down as they are held down. Need different keyboard handling for this? Might also want to set up a keyboard repeat period which is independent of the operating system repeat period, and happens at a constant rate (rather than with a gap at front)
 
 ## Buttons / (Instrument) Keys
 - All drawing methods needs to be assigned to the keys themselves.
