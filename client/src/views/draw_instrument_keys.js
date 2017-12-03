@@ -1,6 +1,6 @@
 const drawInstrumentKeys = (state) => {
 
-  const context = state.graphics.context
+  const context = state.context.graphics
   const stateKey = state.key
 
   const textLengthFactor = 2.5

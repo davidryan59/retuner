@@ -4,8 +4,8 @@ const clearCanvas = (state) => {
   const canvasStats = stateGraphics.canvasInfo
 
   // Set up clearing canvas
-  
-  const context = stateGraphics.context
+
+  const context = state.context.graphics
 
   const canvasLeft = canvasStats.boundLeft
   const canvasRight = canvasStats.boundRight

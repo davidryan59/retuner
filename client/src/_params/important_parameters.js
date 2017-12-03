@@ -1,5 +1,7 @@
 const setupImportantParameters = (state) => {
 
+  state.context = {}
+
   state.params = {}
   const stateParams = state.params
 

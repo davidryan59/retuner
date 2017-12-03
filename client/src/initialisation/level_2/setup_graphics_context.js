@@ -1,19 +1,21 @@
 const setupGraphicsContext = (state) => {
-  // Get variables
+
+  // Context
   const canvasElt = state.pageElts.canvas
   const context = canvasElt.getContext('2d')
+  state.context.graphics = context
+
+  // Graphics info
   const boundLeft = 0
   const boundRight = canvasElt.width
   const boundUp = 0
   const boundDown = canvasElt.height
 
-  // Store them in state
   state.graphics = {}
   const stateGraphics = state.graphics
-  stateGraphics.context = context
 
   stateGraphics.modelInfo = {}
-  
+
   stateGraphics.canvasInfo = {}
   const canvasStats = stateGraphics.canvasInfo
   canvasStats.boundLeft = boundLeft
@@ -21,7 +23,7 @@ const setupGraphicsContext = (state) => {
   canvasStats.boundUp = boundUp
   canvasStats.boundDown = boundDown
 
-  console.log("Graphics context initialised")
+  console.log("Graphics context initialised for canvas")
 }
 
 export default setupGraphicsContext

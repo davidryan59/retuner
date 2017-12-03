@@ -1,7 +1,7 @@
 const setupAudioContext = (state) => {
   // Create web audio api context
   const AudioContext = window.AudioContext || window.webkitAudioContext
-  state.audioContext = new AudioContext()
+  state.context.audio = new AudioContext()
   console.log("Audio context initialised")
 }
 

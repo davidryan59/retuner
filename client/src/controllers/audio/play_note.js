@@ -6,7 +6,7 @@ const playNote = (state, key, extraFreqFactor=1) => {
   // e.g. if transposition is switched off
 
   // Retrieve relevant state objects
-  const audioContext = state.audioContext
+  const audioContext = state.context.audio
   const waveform = state.waveform
   const stateFreqs = state.freqs
   const adsrPress = state.waveform.adsrOnPressNote
