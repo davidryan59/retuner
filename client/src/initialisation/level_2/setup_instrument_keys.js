@@ -1,3 +1,5 @@
+import InstrumentKey from '../../models/instrument_key'
+
 // Each of these are called with (state, key) pair
 // when the relevant key is pressed
 import pauseApp from "../../controllers/keys/pause_app"
@@ -179,6 +181,20 @@ const setupInstrumentKeys = (state) => {
     runOnRelease: instrumentKeyRelease,
     location: {x: 63, y: 20, r:10}
   })
+
+
+
+  // console.log(new InstrumentKey({
+  //   keyboardCode: "KeyV",
+  //   symbol: "V",
+  //   functionLabel: "",
+  //   transposePrimes: [[2, 3], [3, -2]],       // 8/9
+  //   runOnPress: instrumentKeyPress,
+  //   runOnRelease: instrumentKeyRelease,
+  //   location: {x: 63, y: 20, r:10}
+  // }))
+
+
 
   keyArray.push({
     keyboardCode: "KeyB",
