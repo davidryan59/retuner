@@ -6,7 +6,7 @@ const findModelCoordBounds = (state) => {
   let modelDown = +1000000
 
   // Iterate over keys, and any other view objects, here
-  for (const key of state.keys) {
+  for (const key of state.key.array) {
 
     const keyLocation = key.coords.model.current
 

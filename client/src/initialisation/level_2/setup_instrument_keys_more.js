@@ -4,18 +4,18 @@ const setupInstrumentKeysMore = (state) => {
 
   calculateNeighbouringKeys(state)
 
-  state.keyLastPressed = null
-  state.keyOrderArray = []
-  const indexArray = state.keyOrderArray
-  for (const i in state.keys) {
+  const stateKey = state.key
+  const indexArray = stateKey.indexOrderArray
+  const keyArray = stateKey.array
+  for (const i in keyArray) {
     indexArray.push(i)
   }
   // console.log(`Original key order ${indexArray}`)
 
   indexArray.sort((i1, i2) => {
     return (
-      state.keys[i1].coords.model.current.r
-      - state.keys[i2].coords.model.current.r
+      keyArray[i1].coords.model.current.r
+      - keyArray[i2].coords.model.current.r
     )
   })
   // console.log(`Index array after sorting is ${indexArray}`)

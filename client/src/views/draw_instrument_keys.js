@@ -1,14 +1,15 @@
 const drawInstrumentKeys = (state) => {
 
   const context = state.graphics.context
+  const stateKey = state.key
 
   const textLengthFactor = 2.5
   const indexFactor = 12
   const verticalShift = 7
   // const baseFreq = state.freqs.current.freq
 
-  for (const keyIndex of state.keyOrderArray) {
-    const key = state.keys[keyIndex]
+  for (const keyIndex of stateKey.indexOrderArray) {
+    const key = stateKey.array[keyIndex]
     if (key.physicsSwitchedOn) {
 
       const canvasCoords = key.coords.canvas

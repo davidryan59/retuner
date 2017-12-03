@@ -6,7 +6,7 @@ const pxFromPress = 30       // Distributed across all keys, via press
 
 const moveKeys = (state) => {
 
-  for (const key of state.keys) {
+  for (const key of state.key.array) {
 
     // Identify the relevant bits of the state
     const keyAnchor = key.coords.model.anchor

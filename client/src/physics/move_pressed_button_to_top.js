@@ -1,26 +1,29 @@
 const movePressedButtonToTop = (state) => {
 
-  const key = state.keyLastPressed
+  const stateKey = state.key
+  const keyIndexArray = stateKey.indexOrderArray
+  const keyArray = stateKey.array
+  const keyLastPressed = stateKey.lastPressed
   let matchIndex = null
 
   // If key has been pressed,
   // find the index which references it in keyOrderArray
   // and move that index to the end
-  if (key) {
-    for (const i in state.keyOrderArray) {
-      const theKeyIndex = state.keyOrderArray[i]
-      const theKey = state.keys[theKeyIndex]
-      if (key === theKey) {
+  if (keyLastPressed) {
+    for (const i in keyIndexArray) {
+      const theKeyIndex = keyIndexArray[i]
+      const theKey = keyArray[theKeyIndex]
+      if (keyLastPressed === theKey) {
         matchIndex = i
       }
     }
   }
 
   if (matchIndex) {
-    const j = state.keyOrderArray.splice(matchIndex, 1)
-    state.keyOrderArray.push(j)
+    const j = keyIndexArray.splice(matchIndex, 1)
+    keyIndexArray.push(j)
   }
-  state.keyLastPressed = null
+  stateKey.lastPressed = null
 
 }
 

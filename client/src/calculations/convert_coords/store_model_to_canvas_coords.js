@@ -3,6 +3,7 @@ const storeModelToCanvasCoords = (state) => {
   // Currently only the instrument keys
   // If other elements to calculate, split into multiple methods
 
+  const stateKey = state.key
   const stateGraphics = state.graphics
   const canvasStats = stateGraphics.canvasInfo
   const modelStats = stateGraphics.modelInfo
@@ -17,9 +18,9 @@ const storeModelToCanvasCoords = (state) => {
 
   const spacingR = 0.5 * (1 + state.keySpacing.getFraction())
 
-  for (const keyIndex of state.keyOrderArray) {
+  for (const keyIndex of stateKey.indexOrderArray) {
 
-    const key = state.keys[keyIndex]
+    const key = stateKey.array[keyIndex]
     const canvasCoords = key.coords.canvas
     const keyLocation = key.coords.model.current
 

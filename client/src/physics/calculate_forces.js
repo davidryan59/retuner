@@ -3,15 +3,17 @@ const neighbourForceFactor = 0.01
 
 const calculateForces = (state) => {
 
+  const keyArray = state.key.array
+
   // Reset forces first
-  for (const key of state.keys) {
+  for (const key of keyArray) {
     const theForce = key.coords.model.force
     theForce.x = 0
     theForce.y = 0
     // May the Force be with you!
   }
 
-  for (const key of state.keys) {
+  for (const key of keyArray) {
     // Get relevant objects
     const keyAnchor = key.coords.model.anchor
     const keyLocation = key.coords.model.current
@@ -33,7 +35,7 @@ const calculateForces = (state) => {
     // and needs to produce equal and opposite forces on both
     const currentR = keyLocation.r
     for (const neighbourKeyIndex of keyForce.neighbours) {
-      const nearbyKey = state.keys[neighbourKeyIndex]
+      const nearbyKey = keyArray[neighbourKeyIndex]
       const nearbyKeyLocation = nearbyKey.coords.model.current
       const nearbyKeyForce = nearbyKey.coords.model.force
       const neighbourX = nearbyKeyLocation.x

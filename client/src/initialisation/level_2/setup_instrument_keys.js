@@ -29,8 +29,13 @@ const setupInstrumentKeys = (state) => {
   // - It displays to a specific part of the canvas in a button-like format
 
   // Make somewhere to store the instrument keys
-  state.keys = []
-  const keyArray = state.keys
+  state.key = {}
+  const stateKey = state.key
+  stateKey.lastPressed = null
+  stateKey.lastMoused = null
+  stateKey.indexOrderArray = []
+  stateKey.array = []
+  const keyArray = stateKey.array
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "",           // Function - doesn't trap key properly

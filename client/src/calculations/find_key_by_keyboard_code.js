@@ -1,6 +1,6 @@
 const findKeyByKeyboardCode = (state, keyboardCode) => {
 
-  const keyArray = state.keys
+  const keyArray = state.key.array
   // When page is loading, this might be undefined
   // Exit gracefully and quietly
   if (!keyArray) {

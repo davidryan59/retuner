@@ -4,18 +4,20 @@ const findKeyByMousePosition = (state, canvasX, canvasY) => {
 
   const {modelX, modelY} = convertCanvasToModelCoords(state, canvasX, canvasY)
 
-  const keyIndices = state.keyOrderArray
+  const stateKey = state.key
+  const keyIndices = stateKey.indexOrderArray
   const numKeys = keyIndices.length
 
   for (let i=0; i<numKeys; i++) {
     // Need to test keys for mouse in opposite order to drawing order
     const keyIndex = keyIndices[numKeys-i-1]
-    const key = state.keys[keyIndex]
+    const key = stateKey.array[keyIndex]
 
-    const keyX = key.location.x
-    const keyY = key.location.y
-    const keyR = key.location.r
-    const keyExtraR = key.location.extraR
+    const keyLocation = key.coords.model.current
+    const keyX = keyLocation.x
+    const keyY = keyLocation.y
+    const keyR = keyLocation.r
+    const keyExtraR = keyLocation.extraR
     const totalR2 = (keyR * keyExtraR) ** 2
 
     const mouseDistance2 = (modelX-keyX)**2 + (modelY-keyY)**2
