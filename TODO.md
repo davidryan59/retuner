@@ -1,5 +1,8 @@
 # TO DO LIST
 
+## Bitcoin
+- Does it work if TWO payments are made in a row? to the same address? Worst case scenario, the 2nd person to try and donate sees a message saying 'thank you for your donation'!
+
 ## Getting RCN installed in ReTuner
 - How to do it?
 
