@@ -204,6 +204,13 @@ https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_wi
 - Allow people to export the sequence of button presses
 - Export and import sequence of button presses - sequencer!!
 
+## UI feedback:
+- Struggle to understand the concept.
+- Perhaps a short video with what this could do would help?
+- Or maybe a demo?
+- You could probably program one in.
+- Or do one on YouTube!
+
 
 ------------
 PROBABLY DIFFERENT PROJECT FROM HERE...
