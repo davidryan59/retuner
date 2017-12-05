@@ -9,13 +9,14 @@ const setupImportantParameters = (state) => {
   state.params = {}
   const stateParams = state.params
 
-  // JS file in JSON format.
-  // Maps from key presses to screen position and function
-  stateKey.file = "./keymaps/en-gb_macbook_chrome.js"
-  // There should be different maps for different locales, computers and browsers
-  // Note this is NOT YET IMPLEMENTED
-  // since the file name is hard coded in the setup instrument keys...
-  // ... some problems with importing JSON on WebPack.
+  // // DOESN'T YET WORK - VARYING KEYMAP BASED ON LOCALE ETC...
+  // // JS file in JSON format.
+  // // Maps from key presses to screen position and function
+  // stateKey.file = "./keymaps/en-gb_macbook_chrome.js"
+  // // There should be different maps for different locales, computers and browsers
+  // // Note this is NOT YET IMPLEMENTED
+  // // since the file name is hard coded in the setup instrument keys...
+  // // ... some problems with importing JSON on WebPack.
 
   // Tuning of the whole instrument
   stateParams.baseFrequencyHz = 256

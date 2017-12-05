@@ -1,4 +1,6 @@
 {
+   "play_note":{
+   },
    "log_state":{
       "functionLabel":"Log State"
    },
@@ -22,5 +24,10 @@
    },
    "pause":{
       "functionLabel":"Pause"
+   },
+   "not_used":{
+   },
+   "trapping_key_fails":{
+     "incrementRadius":-2
    }
 }

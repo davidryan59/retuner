@@ -1,4 +1,4 @@
-import Slider from '../../models/slider'
+import Slider from '../models/slider'
 
 const setupKeySpacing = (state) => {
 
@@ -13,7 +13,7 @@ const setupKeySpacing = (state) => {
 
   state.slider.array.push(slider)
   state.slider.keySpacing = slider
-  
+
   console.log(`${slider}`)
 }
 

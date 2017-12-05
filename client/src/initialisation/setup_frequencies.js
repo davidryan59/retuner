@@ -19,9 +19,6 @@ const setupFrequencies = (state) => {
   stateFreqs.current = {}
   stateFreqs.current.freq = 1
 
-  stateFreqs.current.transposePrimes = [[2, 0], [3, 0]]
-  // DUMMY! Fix this later. Not sure how primes will be stored.
-
   console.log("Frequencies initialised")
 }
 

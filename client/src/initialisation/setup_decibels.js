@@ -1,4 +1,4 @@
-import Slider from '../../models/slider'
+import Slider from '../models/slider'
 
 const setupDecibels = (state) => {
 

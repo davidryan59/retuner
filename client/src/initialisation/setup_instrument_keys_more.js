@@ -1,4 +1,4 @@
-import calculateNeighbouringKeys from '../../physics/calculate_neighbouring_keys'
+import calculateNeighbouringKeys from '../physics/calculate_neighbouring_keys'
 
 const setupInstrumentKeysMore = (state) => {
 
