@@ -16,12 +16,21 @@ const defaultLineWidth = (state, key) => {
   return 4 * (2 / key.transposes.factor)
 }
 
+const defaultTextColour = (state, key) => {
+  return 'rgba(30, 0, 30, 0.95)'
+}
+
+const defaultFont = (state, key) => {
+  return '9px sans-serif'
+}
+
 const setupNotePlayingInstrumentKey = (state, key, options) => {
 
   key.fillStyle = null                  // its defined below
   key.strokeStyle = defaultStrokeStyle
   key.lineWidth = defaultLineWidth
-
+  key.textColour = defaultTextColour
+  key.font = defaultFont
 
   const fractionObject = options.fraction
 

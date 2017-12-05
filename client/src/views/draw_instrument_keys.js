@@ -25,7 +25,8 @@ const drawInstrumentKeys = (state) => {
       context.stroke();
       context.fill()
       // Draw button labels
-      context.fillStyle = 'rgb(0, 0, 0)'
+      context.font = key.font(state, key)
+      context.fillStyle = key.textColour(state, key)
       const buttonTextArray = [key.symbol || key.keyboardCode]
       if (key.functionLabel) {
         buttonTextArray.push(key.functionLabel)

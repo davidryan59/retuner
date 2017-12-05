@@ -29,6 +29,18 @@ const defaultLineWidth = (state, key) => {
   return 3
 }
 
+const defaultTextColour = (state, key) => {
+  if (key.keyState) {
+    return 'rgba(0, 255, 0, 0.6)'
+  } else {
+    return 'rgba(0, 70, 0, 0.9)'
+  }
+}
+
+const defaultFont = (state, key) => {
+  return '10px sans-serif'
+}
+
 const setupGeneralInstrumentKey = (state, key, options) => {
 
   const type = options.type
@@ -36,6 +48,8 @@ const setupGeneralInstrumentKey = (state, key, options) => {
   key.fillStyle = defaultFillStyle
   key.strokeStyle = defaultStrokeStyle
   key.lineWidth = defaultLineWidth
+  key.textColour = defaultTextColour
+  key.font = defaultFont
 
   // Set key function on pressing
   switch (type) {
