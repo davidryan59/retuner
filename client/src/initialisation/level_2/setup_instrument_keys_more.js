@@ -2,8 +2,11 @@ import calculateNeighbouringKeys from '../../physics/calculate_neighbouring_keys
 
 const setupInstrumentKeysMore = (state) => {
 
+  // Keys interact with nearby keys
   calculateNeighbouringKeys(state)
 
+  // Keys are not drawn directly, but via a separate permutation array
+  // which might get reordered
   const stateKey = state.key
   const indexArray = stateKey.indexOrderArray
   const keyArray = stateKey.array
@@ -12,6 +15,7 @@ const setupInstrumentKeysMore = (state) => {
   }
   // console.log(`Original key order ${indexArray}`)
 
+  // Keys have a sort order depending (at the moment) on radius
   indexArray.sort((i1, i2) => {
     return (
       keyArray[i1].coords.model.current.r
