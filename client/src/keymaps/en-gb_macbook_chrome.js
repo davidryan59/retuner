@@ -1,4 +1,4 @@
-{
+const keymap = {
    "locale": "en-gb",
    "computer": "MacBook",
    "browser": "Chrome",
@@ -689,3 +689,5 @@
       }
    }
 }
+
+export default keymap

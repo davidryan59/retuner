@@ -1,11 +1,21 @@
 const setupImportantParameters = (state) => {
 
+  // Some important state object structure
   state.context = {}
   state.slider = {}
   state.slider.array = []
-
+  state.key = {}
+  const stateKey = state.key
   state.params = {}
   const stateParams = state.params
+
+  // JS file in JSON format.
+  // Maps from key presses to screen position and function
+  stateKey.file = "./keymaps/en-gb_macbook_chrome.js"
+  // There should be different maps for different locales, computers and browsers
+  // Note this is NOT YET IMPLEMENTED
+  // since the file name is hard coded in the setup instrument keys...
+  // ... some problems with importing JSON on WebPack.
 
   // Tuning of the whole instrument
   stateParams.baseFrequencyHz = 256
