@@ -37,8 +37,21 @@ const defaultTextColour = (state, key) => {
   }
 }
 
+const defaultFontHeight = (state, key) => {
+  return 11
+}
+
 const defaultFont = (state, key) => {
-  return '10px sans-serif'
+  const fontHeight = defaultFontHeight(state, key)
+  return `${fontHeight}px sans-serif`
+}
+
+const defaultLabelArray = (state, key) => {
+  const buttonTextArray = [key.symbol || key.keyboardCode]
+  if (key.functionLabel) {
+    buttonTextArray.push(key.functionLabel)
+  }
+  return buttonTextArray
 }
 
 const setupGeneralInstrumentKey = (state, key, options) => {
@@ -49,7 +62,9 @@ const setupGeneralInstrumentKey = (state, key, options) => {
   key.strokeStyle = defaultStrokeStyle
   key.lineWidth = defaultLineWidth
   key.textColour = defaultTextColour
+  key.fontHeight = defaultFontHeight
   key.font = defaultFont
+  key.labelArray = defaultLabelArray
 
   // Set key function on pressing
   switch (type) {

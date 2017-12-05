@@ -58,7 +58,7 @@ class InstrumentKey {
       anchorCoords.x = currentCoords.x = location.x
       anchorCoords.y = currentCoords.y = location.y
       // Start radius as slightly randomised, due to sorting on r later
-      anchorCoords.r = currentCoords.r = 6 + incrementRadius + 0.01 * Math.random()
+      anchorCoords.r = currentCoords.r = 6.5 + incrementRadius + 0.01 * Math.random()
       currentCoords.extraR = 1
     }
 
@@ -77,9 +77,9 @@ class InstrumentKey {
   //   return `Not yet implemented`
   // }
 
-  aMethod(input) {
-    return 42 + input
-  }
+  // aMethod(input) {
+  //   return 42 + input
+  // }
 }
 
 export default InstrumentKey

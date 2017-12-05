@@ -240,7 +240,7 @@
          "type":"not_used"
       },
       "CapsLock*":{
-         "symbol":"CAPS",
+         "symbol":"CAP",
          "location":{
             "x":10,
             "y":28

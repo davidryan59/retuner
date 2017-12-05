@@ -20,22 +20,38 @@ const defaultTextColour = (state, key) => {
   return 'rgba(30, 0, 30, 0.95)'
 }
 
+const defaultFontHeight = (state, key) => {
+  return 10
+}
+
 const defaultFont = (state, key) => {
-  return '9px sans-serif'
+  const fontHeight = defaultFontHeight(state, key)
+  return `${fontHeight}px sans-serif`
+}
+
+const defaultLabelArray = (state, key) => {
+  const buttonTextArray = [key.symbol || key.keyboardCode]
+  const freq = key.nextFreqAbsHz(state, key)
+  const freqText = freq.toFixed(2) + "Hz"
+  buttonTextArray.push(freqText)
+  buttonTextArray.push(key.transposes.text)
+  return buttonTextArray
 }
 
 const setupNotePlayingInstrumentKey = (state, key, options) => {
 
-  key.fillStyle = null                  // its defined below
+  key.runOnPress = instrumentKeyPress
+  key.runOnRelease = instrumentKeyRelease
+
+  key.fillStyle = null                // its defined below based on the fraction
   key.strokeStyle = defaultStrokeStyle
   key.lineWidth = defaultLineWidth
   key.textColour = defaultTextColour
+  key.fontHeight = defaultFontHeight
   key.font = defaultFont
+  key.labelArray = defaultLabelArray
 
   const fractionObject = options.fraction
-
-  key.runOnPress = instrumentKeyPress
-  key.runOnRelease = instrumentKeyRelease
 
   key.transposes = {}
   const [num, denom] = reduceFraction(fractionObject.num, fractionObject.denom)
