@@ -41,607 +41,512 @@ const setupInstrumentKeys = (state) => {
   keyArray.push(new InstrumentKey({
     keyboardCode: "",           // Function - doesn't trap key properly
     symbol: "FN",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 10, y: 10}
+    location: {x: 10, y: 10},
+    type: "key_fails",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "ControlLeft",
     symbol: "CTRL-L",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 20, y: 10}
+    location: {x: 20, y: 10},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "AltLeft",
     symbol: "ALT-L",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 30, y: 10}
+    location: {x: 30, y: 10},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "MetaLeft",
     symbol: "APP-L",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 42, y: 10}
+    location: {x: 42, y: 10},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Space",
     symbol: "SPACE",
-    functionLabel: "",
-    transposePrimes: [],       // 1/1
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 78, y: 12}
+    type: "play_note",
+    location: {x: 78, y: 12},
+    fraction: {num: 1, denom: 1},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "MetaRight",
     symbol: "APP-R",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 105, y: 10}
+    location: {x: 105, y: 10},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "AltRight",
     symbol: "ALT-R",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 115, y: 10}
+    location: {x: 115, y: 10},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "ArrowLeft",
     symbol: "Left",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 126, y: 10}
+    location: {x: 126, y: 10},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "ArrowUp",
     symbol: "Up",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 135, y: 13}
+    location: {x: 135, y: 13},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "ArrowDown",
     symbol: "Down",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 135, y: 7}
+    location: {x: 135, y: 7},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "ArrowRight",
     symbol: "Right",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 144, y: 10}
+    location: {x: 144, y: 10},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "ShiftLeft",
     symbol: "SH-L",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 12, y: 20}
+    location: {x: 12, y: 20},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "IntlBackslash",
     symbol: "` ~",
+    location: {x: 23, y: 20},
+    type: "log_state",
     functionLabel: "Log State",
-    runOnPress: logState,
-    location: {x: 23, y: 20}
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyZ",
     symbol: "Z",
-    functionLabel: "",
-    transposePrimes: [[2, 3], [13, -1]],   // 8/13
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 33, y: 20}
+    location: {x: 33, y: 20},
+    type: "play_note",
+    fraction: {num: 8, denom: 13},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyX",
     symbol: "X",
-    functionLabel: "",
-    transposePrimes: [[2, 3], [11, -1]],   // 8/11
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 43, y: 20}
+    location: {x: 43, y: 20},
+    type: "play_note",
+    fraction: {num: 8, denom: 11},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyC",
     symbol: "C",
-    functionLabel: "",
-    transposePrimes: [[2, -3], [7, 1]],   // 7/8
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 53, y: 20}
+    location: {x: 53, y: 20},
+    type: "play_note",
+    fraction: {num: 7, denom: 8},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyV",
     symbol: "V",
-    functionLabel: "",
-    transposePrimes: [[2, 3], [3, -2]],       // 8/9
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 63, y: 20}
+    location: {x: 63, y: 20},
+    type: "play_note",
+    fraction: {num: 8, denom: 9},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyB",
     symbol: "B",
-    functionLabel: "",
-    transposePrimes: [[2, -4], [3, 1], [5, 1]],   // 15/16
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 73, y: 20}
+    location: {x: 73, y: 20},
+    type: "play_note",
+    fraction: {num: 15, denom: 16},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyN",
     symbol: "N",
-    functionLabel: "",
-    transposePrimes: [[2, 4], [3, -1], [5, -1]],   // 16/15
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 83, y: 20}
+    location: {x: 83, y: 20},
+    type: "play_note",
+    fraction: {num: 16, denom: 15},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyM",
     symbol: "M",
-    functionLabel: "",
-    transposePrimes: [[2, -3], [3, 2]],   // 9/8
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 93, y: 20}
+    location: {x: 93, y: 20},
+    type: "play_note",
+    fraction: {num: 9, denom: 8},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Comma",
     symbol: ", <",
-    functionLabel: "",
-    transposePrimes: [[2, 3], [7, -1]],   // 8/7
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 103, y: 20}
+    location: {x: 103, y: 20},
+    type: "play_note",
+    fraction: {num: 8, denom: 7},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Period",
     symbol: ". >",
-    functionLabel: "",
-    transposePrimes: [[2, -3], [11, 1]],   // 11/8
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 113, y: 20}
+    location: {x: 113, y: 20},
+    type: "play_note",
+    fraction: {num: 11, denom: 8},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Slash",
     symbol: "/ ?",
-    functionLabel: "",
-    transposePrimes: [[2, -3], [13, 1]],   // 13/8
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 123, y: 20}
+    location: {x: 123, y: 20},
+    type: "play_note",
+    fraction: {num: 13, denom: 8},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "ShiftRight",
     symbol: "SH-R",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 143, y: 20}
+    location: {x: 143, y: 20},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "",          // CapsLock - doesn't trap key properly
     symbol: "CAPS",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 10, y: 28}
+    location: {x: 10, y: 28},
+    type: "key_fails",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyA",
     symbol: "A",
-    functionLabel: "",
-    transposePrimes: [[2, 2], [7, -1]],   // 4/7
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 28, y: 30}
+    location: {x: 28, y: 30},
+    type: "play_note",
+    fraction: {num: 4, denom: 7},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyS",
     symbol: "S",
-    functionLabel: "",
-    transposePrimes: [[3, -2], [7, 1]],   // 7/9
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 38, y: 30}
+    location: {x: 38, y: 30},
+    type: "play_note",
+    fraction: {num: 7, denom: 9},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyD",
     symbol: "D",
-    functionLabel: "",
-    transposePrimes: [[2, 1], [3, 1], [7, -1]],   // 6/7
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 48, y: 30}
+    location: {x: 48, y: 30},
+    type: "play_note",
+    fraction: {num: 6, denom: 7},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyF",
     symbol: "F",
-    functionLabel: "",
-    transposePrimes: [[2, -1], [3, -1], [5, 1]],       // 5/6
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 58, y: 30}
+    location: {x: 58, y: 30},
+    type: "play_note",
+    fraction: {num: 5, denom: 6},
   }))
 
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyG",
     symbol: "G",
-    functionLabel: "",
-    transposePrimes: [[2, -1], [3, 2], [5, -1]],       // 9/10
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 68, y: 30}
+    location: {x: 68, y: 30},
+    type: "play_note",
+    fraction: {num: 9, denom: 10},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyH",
     symbol: "H",
+    location: {x: 78, y: 30},
+    type: "cycle_waveform",
     functionLabel: "Voice",
-    runOnPress: cycleWaveform,
-    location: {x: 78, y: 30}
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyJ",
     symbol: "J",
-    functionLabel: "",
-    transposePrimes: [[2, 1], [3, -2], [5, 1]],       // 10/9
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 88, y: 30}
+    location: {x: 88, y: 30},
+    type: "play_note",
+    fraction: {num: 10, denom: 9},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyK",
     symbol: "K",
-    functionLabel: "",
-    transposePrimes: [[2, 1], [3, 1], [5, -1]],       // 6/5
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 98, y: 30}
+    location: {x: 98, y: 30},
+    type: "play_note",
+    fraction: {num: 6, denom: 5},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyL",
     symbol: "L",
-    functionLabel: "",
-    transposePrimes: [[2, -1], [3, -1], [7, 1]],   // 7/6
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 108, y: 30}
+    location: {x: 108, y: 30},
+    type: "play_note",
+    fraction: {num: 7, denom: 6},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Semicolon",
     symbol: "; :",
-    functionLabel: "",
-    transposePrimes: [[3, 2], [7, -1]],   // 9/7
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 118, y: 30}
+    location: {x: 118, y: 30},
+    type: "play_note",
+    fraction: {num: 9, denom: 7},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Quote",
     symbol: "' \"",
-    functionLabel: "",
-    transposePrimes: [[2, -2], [7, 1]],   // 7/4
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 128, y: 30}
+    location: {x: 128, y: 30},
+    type: "play_note",
+    fraction: {num: 7, denom: 4},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Backslash",
     symbol: "\\ |",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 138, y: 30}
+    location: {x: 138, y: 30},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "",      // Tab - doesn't trap key properly
     symbol: "TAB",
-    functionLabel: "",
-    runOnPress: keyDoesNothing,
-    location: {x: 10, y: 35}
+    location: {x: 10, y: 35},
+    type: "key_fails",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyQ",
     symbol: "Q",
-    functionLabel: "",
-    transposePrimes: [[2, -1]],       // 1/2
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 25, y: 40}
+    location: {x: 25, y: 40},
+    type: "play_note",
+    fraction: {num: 1, denom: 2},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyW",
     symbol: "W",
-    functionLabel: "",
-    transposePrimes: [[2, 1], [3, -1]],       // 2/3
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 35, y: 40}
+    location: {x: 35, y: 40},
+    type: "play_note",
+    fraction: {num: 2, denom: 3},
   }))
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyE",
     symbol: "E",
-    functionLabel: "",
-    transposePrimes: [[2, -2], [3, 1]],       // 3/4
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 45, y: 40}
+    location: {x: 45, y: 40},
+    type: "play_note",
+    fraction: {num: 3, denom: 4},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyR",
     symbol: "R",
-    functionLabel: "",
-    transposePrimes: [[2, 2], [5, -1]],       // 4/5
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 55, y: 40}
+    location: {x: 55, y: 40},
+    type: "play_note",
+    fraction: {num: 4, denom: 5},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyT",
     symbol: "T",
-    functionLabel: "",
-    transposePrimes: [[2, -3], [5, 1]],       // 5/8
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 65, y: 40}
+    location: {x: 65, y: 40},
+    type: "play_note",
+    fraction: {num: 5, denom: 8},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyY",
     symbol: "Y",
-    functionLabel: "PREV N/N",
-    runOnPress: playPrevNote,
-    location: {x: 75, y: 40}
+    location: {x: 75, y: 40},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyU",
     symbol: "U",
-    functionLabel: "Next N/N",
-    runOnPress: playNextNote,
-    location: {x: 85, y: 40}
+    location: {x: 85, y: 40},
+    type: "not_used",
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyI",
     symbol: "I",
-    functionLabel: "",
-    transposePrimes: [[2, 3], [5, -1]],       // 8/5
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 95, y: 40}
+    location: {x: 95, y: 40},
+    type: "play_note",
+    fraction: {num: 8, denom: 5},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyO",
     symbol: "O",
-    functionLabel: "",
-    transposePrimes: [[2, -2], [5, 1]],       // 5/4
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 105, y: 40}
+    location: {x: 105, y: 40},
+    type: "play_note",
+    fraction: {num: 5, denom: 4},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "KeyP",
     symbol: "P",
-    functionLabel: "",
-    transposePrimes: [[2, 2], [3, -1]],       // 4/3
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 115, y: 40}
+    location: {x: 115, y: 40},
+    type: "play_note",
+    fraction: {num: 4, denom: 3},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "BracketLeft",
     symbol: "[ {",
-    functionLabel: "",
-    transposePrimes: [[2, -1], [3, 1]],       // 3/2
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 125, y: 40}
+    location: {x: 125, y: 40},
+    type: "play_note",
+    fraction: {num: 3, denom: 2},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "BracketRight",
     symbol: "] }",
-    functionLabel: "",
-    transposePrimes: [[2, 1]],       // 2/1
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 135, y: 40}
+    location: {x: 135, y: 40},
+    type: "play_note",
+    fraction: {num: 2, denom: 1},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Enter",
     symbol: "ENTER",
+    location: {x: 145, y: 38},
+    type: "increase_volume",
     functionLabel: "Vol Up",
-    runOnPress: volumeIncrease,
-    location: {x: 145, y: 38}
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Backquote",
     symbol: "- +",
+    location: {x: 10, y: 44},
+    type: "decrease_volume",
     functionLabel: "Vol Down",
-    runOnPress: volumeDecrease,
-    location: {x: 10, y: 44}
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Digit1",
     symbol: "1",
+    location: {x: 20, y: 48},
+    type: "decrease_volume",
     functionLabel: "Vol Down",
-    runOnPress: volumeDecrease,
-    location: {x: 20, y: 48}
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Digit2",
     symbol: "2",
-    functionLabel: "",
-    transposePrimes: [[2, 3], [3, -1], [5, -1]],       // 8/15
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 30, y: 48.8}
+    location: {x: 30, y: 48.8},
+    type: "play_note",
+    fraction: {num: 8, denom: 15},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Digit3",
     symbol: "3",
-    functionLabel: "",
-    transposePrimes: [[3, -2], [5, 1]],       // 5/9
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 40, y: 49.5}
+    location: {x: 40, y: 49.5},
+    type: "play_note",
+    fraction: {num: 5, denom: 9},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Digit4",
     symbol: "4",
-    functionLabel: "",
-    transposePrimes: [[2, -4], [3, 2]],       // 9/16
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 50, y: 50}
+    location: {x: 50, y: 50},
+    type: "play_note",
+    fraction: {num: 9, denom: 16},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Digit5",
     symbol: "5",
-    functionLabel: "",
-    transposePrimes: [[3, 1], [5, -1]],       // 3/5
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 60, y: 50}
+    location: {x: 60, y: 50},
+    type: "play_note",
+    fraction: {num: 3, denom: 5},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Digit6",
     symbol: "6",
+    location: {x: 70, y: 50},
+    type: "cycle_sustain_options",
     functionLabel: "Sustain",
-    runOnPress: cycleSustainOptions,
-    location: {x: 70, y: 50}
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Digit7",
     symbol: "7",
+    location: {x: 80, y: 50},
+    type: "reset_central_freq",
     functionLabel: "Reset Freq",
-    runOnPress: resetCentralFreq,
-    location: {x: 80, y: 50}
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Digit8",
     symbol: "8",
+    location: {x: 90, y: 50},
+    type: "toggle_transposing",
     functionLabel: "Transpose",
-    runOnPress: toggleTransposing,
-    location: {x: 90, y: 50}
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Digit9",
     symbol: "9",
-    functionLabel: "",
-    transposePrimes: [[3, -1], [5, 1]],       // 5/3
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 100, y: 50}
+    location: {x: 100, y: 50},
+    type: "play_note",
+    fraction: {num: 5, denom: 3},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Digit0",
     symbol: "0",
-    functionLabel: "",
-    transposePrimes: [[2, 4], [3, -2]],       // 16/9
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 110, y: 50}
+    location: {x: 110, y: 50},
+    type: "play_note",
+    fraction: {num: 16, denom: 9},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Minus",
     symbol: "- _",
-    functionLabel: "",
-    transposePrimes: [[3, 2], [5, -1]],       // 9/5
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 120, y: 50}
+    location: {x: 120, y: 50},
+    type: "play_note",
+    fraction: {num: 9, denom: 5},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Equal",
     symbol: "+ =",
-    functionLabel: "",
-    transposePrimes: [[2, -3], [3, 1], [5, 1]],       // 15/8
-    runOnPress: instrumentKeyPress,
-    runOnRelease: instrumentKeyRelease,
-    location: {x: 130, y: 50}
+    location: {x: 130, y: 50},
+    type: "play_note",
+    fraction: {num: 15, denom: 8},
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Backspace",
     symbol: "BACK",
+    location: {x: 145, y: 50},
+    type: "increase_volume",
     functionLabel: "Vol Up",
-    runOnPress: volumeIncrease,
-    location: {x: 145, y: 50}
   }))
 
   keyArray.push(new InstrumentKey({
     keyboardCode: "Escape",
     symbol: "Esc",
+    location: {x: 10, y: 52},
+    type: "pause_app",
     functionLabel: "Pause",
-    runOnPress: pauseApp,
-    location: {x: 10, y: 52}
   }))
 
   console.log("The instrument has been set up with", keyArray.length, "keys")

@@ -1,0 +1,26 @@
+{
+   "log_state":{
+      "functionLabel":"Log State"
+   },
+   "change_voice":{
+      "functionLabel":"Voice"
+   },
+   "change_sustain_option":{
+      "functionLabel":"Sustain"
+   },
+   "increase_volume":{
+      "functionLabel":"Vol Up"
+   },
+   "decrease_volume":{
+      "functionLabel":"Vol Down"
+   },
+   "reset_central_freq":{
+      "functionLabel":"Reset Freq"
+   },
+   "change_transposing_option":{
+      "functionLabel":"Transpose"
+   },
+   "pause":{
+      "functionLabel":"Pause"
+   }
+}
