@@ -9,16 +9,33 @@ import resetCentralFreq from "../../controllers/keys/reset_central_freq"
 import volumeDecrease from "../../controllers/keys/volume_decrease"
 import volumeIncrease from "../../controllers/keys/volume_increase"
 
-const generalBgColour = (state, key) => {
-  return 'rgba(220, 220, 220, 0.5)'
+const defaultFillStyle = (state, key) => {
+  if (key.keyState) {
+    return 'rgba(0, 0, 0, 0.7)'
+  } else {
+    return 'rgba(120, 120, 120, 0.3)'
+  }
+}
+
+const defaultStrokeStyle = (state, key) => {
+  if (key.keyState) {
+    return 'rgba(255, 255, 255, 0.6)'
+  } else {
+    return 'rgba(0, 0, 0, 0.55)'
+  }
+}
+
+const defaultLineWidth = (state, key) => {
+  return 3
 }
 
 const setupGeneralInstrumentKey = (state, key, options) => {
 
   const type = options.type
 
-  // Set key background colour
-  key.bgColour = generalBgColour
+  key.fillStyle = defaultFillStyle
+  key.strokeStyle = defaultStrokeStyle
+  key.lineWidth = defaultLineWidth
 
   // Set key function on pressing
   switch (type) {

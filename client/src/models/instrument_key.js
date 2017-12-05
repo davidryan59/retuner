@@ -58,7 +58,7 @@ class InstrumentKey {
       anchorCoords.x = currentCoords.x = location.x
       anchorCoords.y = currentCoords.y = location.y
       // Start radius as slightly randomised, due to sorting on r later
-      anchorCoords.r = currentCoords.r = 5 + incrementRadius + 0.01 * Math.random()
+      anchorCoords.r = currentCoords.r = 6 + incrementRadius + 0.01 * Math.random()
       currentCoords.extraR = 1
     }
 

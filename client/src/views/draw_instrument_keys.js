@@ -17,9 +17,9 @@ const drawInstrumentKeys = (state) => {
       const y = canvasCoords.y
       const r = canvasCoords.r
 
-      context.fillStyle = key.bgColour(state, key)
-      context.strokeStyle = 'rgba(20, 20, 20, 0.6)'
-      context.lineWidth = (key.transposes) ? 4 * (2 / key.transposes.factor) : 3
+      context.fillStyle = key.fillStyle(state, key)
+      context.strokeStyle = key.strokeStyle(state, key)
+      context.lineWidth = key.lineWidth(state, key)
       context.beginPath()
       context.arc(x, y, r, 0, 2*Math.PI);
       context.stroke();

@@ -4,7 +4,24 @@ import instrumentKeyRelease from "../../controllers/keys/instrument_key_release"
 import reduceFraction from "../../maths/reduce_fraction"
 import freqToRGBA from "../../calculations/freq_to_rgba"
 
+const defaultStrokeStyle = (state, key) => {
+  if (key.keyState) {
+    return 'rgba(170, 20, 20, 0.9)'
+  } else {
+    return 'rgba(20, 20, 120, 0.7)'
+  }
+}
+
+const defaultLineWidth = (state, key) => {
+  return 4 * (2 / key.transposes.factor)
+}
+
 const setupNotePlayingInstrumentKey = (state, key, options) => {
+
+  key.fillStyle = null                  // its defined below
+  key.strokeStyle = defaultStrokeStyle
+  key.lineWidth = defaultLineWidth
+
 
   const fractionObject = options.fraction
 
@@ -46,7 +63,7 @@ const setupNotePlayingInstrumentKey = (state, key, options) => {
     return baseFreqHz * nextFreqRel
   }
 
-  key.bgColour = (state, key) => {
+  key.fillStyle = (state, key) => {
     const contrast = state.slider.keyColourContrast.getFraction()
     return freqToRGBA(key.nextFreqRel(state, key), 0.8, contrast)
   }

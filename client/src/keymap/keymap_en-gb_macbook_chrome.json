@@ -3,7 +3,7 @@
    "computer": "MacBook",
    "browser": "Chrome",
    "map":{
-      "Function":{
+      "Function*":{
          "symbol":"FN",
          "location":{
             "x":10,
@@ -239,7 +239,7 @@
          },
          "type":"not_used"
       },
-      "CapsLock":{
+      "CapsLock*":{
          "symbol":"CAPS",
          "location":{
             "x":10,
@@ -383,7 +383,7 @@
          },
          "type":"not_used"
       },
-      "Tab":{
+      "Tab*":{
          "symbol":"TAB",
          "location":{
             "x":10,
