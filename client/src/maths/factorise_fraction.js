@@ -1,5 +1,5 @@
 import primeList from './primesTo126.json'
-const maxIndex = primeList.length
+const maxIndex = primeList.length 
 
 const factoriseFraction = (num, denom) => {
   // Output array of [prime, exponent]
@@ -15,7 +15,6 @@ const factoriseFraction = (num, denom) => {
   let currentPrimeHeight = 0
   let prime = null
   while (residualNum * residualDenom > 1 && primeIndex < maxIndex) {
-    console.log(residualNum, residualDenom)
     prime = primeList[primeIndex]
     let primeUsed = false
     if (residualNum % prime === 0) {

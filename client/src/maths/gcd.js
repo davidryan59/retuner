@@ -1,5 +1,6 @@
 const gcd = (a, b) => {
-  if (a * b === 0) {
+  if (!a) {
+    // This copes with the 0/0 case, and returns something sensible!
     return 1
   }
   if (!b) {
