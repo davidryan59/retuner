@@ -29,6 +29,16 @@ const checkPrimeInfo = (state) => {
     }
     state.prime.commas = commaObject
 
+    // Now we have all primes and commas,
+    // its possible to update key notations
+    for (const key of state.key.array) {
+      if (key.transposes) {
+        if (!key.transposes.notation) {
+          key.transposes.updateNotation(state, key)
+        }
+      }
+    }
+
     state.prime.upToDate = true
   }
 

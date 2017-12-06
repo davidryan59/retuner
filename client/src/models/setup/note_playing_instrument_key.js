@@ -3,6 +3,7 @@ import instrumentKeyRelease from "../../controllers/keys/instrument_key_release"
 
 import reduceFraction from "../../maths/reduce_fraction"
 import factoriseFraction from "../../maths/factorise_fraction"
+import updateNotation from "../../maths/commas/update_notation"
 import freqToRGBA from "../../calculations/freq_to_rgba"
 
 const setNumDenom = (state, key, inputNum, inputDenom) => {
@@ -22,6 +23,7 @@ const setNumDenom = (state, key, inputNum, inputDenom) => {
 
   // Invalidate the global primes list, forcing a recalculation on next loop
   state.prime.upToDate = false
+  keyTransposes.notation = null  // Do this after state.prime is updated
 }
 
 const defaultNextFreqRel = (state, key) => {
@@ -106,6 +108,7 @@ const setupNotePlayingInstrumentKey = (state, key, options) => {
   key.transposes = {}
   const keyTransposes = key.transposes
   keyTransposes.set = setNumDenom
+  keyTransposes.updateNotation = updateNotation
   // This function carries out all checking of input
   // and setting of various cached variables
   // and invalidating the global prime list
