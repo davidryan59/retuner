@@ -14,6 +14,13 @@ const setNumDenom = (state, key, inputNum, inputDenom) => {
   keyTransposes.text = num + "/" + denom
   keyTransposes.complexity = num * denom
   keyTransposes.factors = factoriseFraction(num, denom)
+
+  // Redefine anchor radius of transposing keys in terms of
+  // their musical importance, which means low complexity
+  const c = 10
+  key.coords.model.anchor.r = 7.5 + 4 * c * (1 / (c + keyTransposes.complexity))
+
+  // Invalidate the global primes list, forcing a recalculation on next loop
   state.prime.upToDate = false
 }
 
@@ -72,7 +79,7 @@ const defaultLabelArray = (state, key) => {
   const freq = key.nextFreqAbsHz(state, key)
   const freqText = freq.toFixed(2) + "Hz"
   buttonTextArray.push(freqText)
-  buttonTextArray.push(key.transposes.text)
+  buttonTextArray.push("\u00d7 " + key.transposes.text) // Multiplication symbol
   return buttonTextArray
 }
 
@@ -103,14 +110,6 @@ const setupNotePlayingInstrumentKey = (state, key, options) => {
   // and setting of various cached variables
   // and invalidating the global prime list
   keyTransposes.set(state, key, inputNum, inputDenom)
-
-  // Make sure radius of transposing keys is related to
-  // their musical importance, which means low complexity
-  const anchorCoords = key.coords.model.anchor
-  const currentCoords = key.coords.model.current
-  const theFactor = 10
-  currentCoords.r += 1 + 4 * theFactor * (1 / (theFactor + keyTransposes.complexity))
-  anchorCoords.r = currentCoords.r
 
 }
 

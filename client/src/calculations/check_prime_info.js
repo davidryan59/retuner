@@ -24,7 +24,7 @@ const checkPrimeInfo = (state) => {
         const [a, b] = commaRcnDr(prime)
         const num = prime * (2 ** Math.max(0, a)) * (3 ** Math.max(0, b))
         const denom = (2 ** Math.max(0, -a)) * (3 ** Math.max(0, -b))
-        commaObject[prime] = [num, denom, b]
+        commaObject[prime] = [num, denom, prime, a, b]
       }
     }
     state.prime.commas = commaObject

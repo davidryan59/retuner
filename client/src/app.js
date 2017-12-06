@@ -65,12 +65,9 @@ const runApp = () => {
     calculateForces(state)
     moveKeys(state)
     checkPrimeInfo(state)
-    // Recalculate the neighbours not every loop since
-    // there are 65 * 64 / 2 = 2080 pairs to check
     if (state.control.loopsSinceTimeout % state.params.recalcNeighbours === 0) {
       calculateNeighbouringKeys(state)
     }
-    // Only do graphics every N frames
     if (state.control.loopsSinceTimeout % state.params.redrawCanvas === 0) {
       findModelCoordBounds(state)
       storeModelToCanvasCoords(state)
