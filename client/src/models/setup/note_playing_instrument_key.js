@@ -2,6 +2,7 @@ import instrumentKeyPress from "../../controllers/keys/instrument_key_press"
 import instrumentKeyRelease from "../../controllers/keys/instrument_key_release"
 
 import reduceFraction from "../../maths/reduce_fraction"
+import factoriseFraction from "../../maths/factorise_fraction"
 import freqToRGBA from "../../calculations/freq_to_rgba"
 
 const defaultStrokeStyle = (state, key) => {
@@ -54,24 +55,26 @@ const setupNotePlayingInstrumentKey = (state, key, options) => {
   const fractionObject = options.fraction
 
   key.transposes = {}
+  const keyTransposes = key.transposes
   const [num, denom] = reduceFraction(fractionObject.num, fractionObject.denom)
-  key.transposes.num = num
-  key.transposes.denom = denom
-  key.transposes.factor = num / denom
-  key.transposes.text = num + "/" + denom
-  key.transposes.complexity = num * denom
+  keyTransposes.num = num
+  keyTransposes.denom = denom
+  keyTransposes.factor = num / denom
+  keyTransposes.text = num + "/" + denom
+  keyTransposes.complexity = num * denom
+  keyTransposes.factors = factoriseFraction(num, denom)
 
   // Make sure radius of transposing keys is related to
   // their musical importance, which means low complexity
   const anchorCoords = key.coords.model.anchor
   const currentCoords = key.coords.model.current
   const theFactor = 10
-  currentCoords.r += 1 + 4 * theFactor * (1 / (theFactor + key.transposes.complexity))
+  currentCoords.r += 1 + 4 * theFactor * (1 / (theFactor + keyTransposes.complexity))
   anchorCoords.r = currentCoords.r
 
   key.nextFreqRel = (state, key) => {
     // Things like bounding by min and max are done here.
-    const keyFreq = key.transposes.factor
+    const keyFreq = keyTransposes.factor
     const baseFreqHz = state.params.baseFrequencyHz
     const instrumentFreq = state.freqs.current.freq
     const maxFreq = state.freqs.maxFreq
