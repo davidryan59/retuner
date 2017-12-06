@@ -1,4 +1,5 @@
 import extractAllPrimeFactors from './extract_all_prime_factors'
+import commaRcnDr from '../maths/commas/rcn_dr'
 
 const checkPrimeInfo = (state) => {
 
@@ -15,8 +16,20 @@ const checkPrimeInfo = (state) => {
 
     const primeArray = extractAllPrimeFactors(fractionFactorArray)
     state.prime.array = primeArray
+    console.log(`Primes now ${primeArray}`)
+
+    const commaObject = {}
+    for (const prime of primeArray) {
+      if (prime > 3) {
+        const [a, b] = commaRcnDr(prime)
+        const num = prime * (2 ** Math.max(0, a)) * (3 ** Math.max(0, b))
+        const denom = (2 ** Math.max(0, -a)) * (3 ** Math.max(0, -b))
+        commaObject[prime] = [num, denom, b]
+      }
+    }
+    state.prime.commas = commaObject
+
     state.prime.upToDate = true
-    console.log(`Primes now ${state.prime.array}`)
   }
 
 }
