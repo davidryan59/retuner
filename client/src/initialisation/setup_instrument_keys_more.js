@@ -1,12 +1,12 @@
 import calculateNeighbouringKeys from '../physics/calculate_neighbouring_keys'
-import findPrimesOnInstrumentKeys from '../calculations/find_primes_on_instrument_keys'
+import checkPrimeInfo from '../calculations/check_prime_info'
 
 const setupInstrumentKeysMore = (state) => {
 
   // Earlier, each key fraction was factorised
   // Find out globally which primes are present
   // on any factorisation.
-  findPrimesOnInstrumentKeys(state)
+  checkPrimeInfo(state)
 
   // Keys interact with nearby keys
   calculateNeighbouringKeys(state)

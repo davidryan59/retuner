@@ -5,6 +5,43 @@ import reduceFraction from "../../maths/reduce_fraction"
 import factoriseFraction from "../../maths/factorise_fraction"
 import freqToRGBA from "../../calculations/freq_to_rgba"
 
+const setNumDenom = (state, key, inputNum, inputDenom) => {
+  const [num, denom] = reduceFraction(inputNum, inputDenom)
+  const keyTransposes = key.transposes
+  keyTransposes.num = num
+  keyTransposes.denom = denom
+  keyTransposes.factor = num / denom
+  keyTransposes.text = num + "/" + denom
+  keyTransposes.complexity = num * denom
+  keyTransposes.factors = factoriseFraction(num, denom)
+  state.prime.upToDate = false
+}
+
+const defaultNextFreqRel = (state, key) => {
+  // Things like bounding by min and max are done here.
+  const keyTransposes = key.transposes
+  const keyFreq = keyTransposes.factor
+  const baseFreqHz = state.params.baseFrequencyHz
+  const instrumentFreq = state.freqs.current.freq
+  const maxFreq = state.freqs.maxFreq
+  const minFreq = state.freqs.minFreq
+  let actualNextFreq = keyFreq * instrumentFreq
+  actualNextFreq = Math.min(maxFreq, actualNextFreq)
+  actualNextFreq = Math.max(minFreq, actualNextFreq)
+  return actualNextFreq
+}
+
+const defaultNextFreqAbsHz = (state, key) => {
+  const baseFreqHz = state.params.baseFrequencyHz
+  const nextFreqRel = key.nextFreqRel(state, key)
+  return baseFreqHz * nextFreqRel
+}
+
+const defaultFillStyle = (state, key) => {
+  const contrast = state.slider.keyColourContrast.getFraction()
+  return freqToRGBA(key.nextFreqRel(state, key), 0.8, contrast)
+}
+
 const defaultStrokeStyle = (state, key) => {
   if (key.keyState) {
     return 'rgba(170, 20, 20, 0.9)'
@@ -41,10 +78,17 @@ const defaultLabelArray = (state, key) => {
 
 const setupNotePlayingInstrumentKey = (state, key, options) => {
 
+  const inputFraction = options.fraction
+  const inputNum = inputFraction.num
+  const inputDenom = inputFraction.denom
+
   key.runOnPress = instrumentKeyPress
   key.runOnRelease = instrumentKeyRelease
 
-  key.fillStyle = null                // its defined below based on the fraction
+  key.nextFreqRel = defaultNextFreqRel
+  key.nextFreqAbsHz = defaultNextFreqAbsHz
+
+  key.fillStyle = defaultFillStyle
   key.strokeStyle = defaultStrokeStyle
   key.lineWidth = defaultLineWidth
   key.textColour = defaultTextColour
@@ -52,17 +96,13 @@ const setupNotePlayingInstrumentKey = (state, key, options) => {
   key.font = defaultFont
   key.labelArray = defaultLabelArray
 
-  const fractionObject = options.fraction
-
   key.transposes = {}
   const keyTransposes = key.transposes
-  const [num, denom] = reduceFraction(fractionObject.num, fractionObject.denom)
-  keyTransposes.num = num
-  keyTransposes.denom = denom
-  keyTransposes.factor = num / denom
-  keyTransposes.text = num + "/" + denom
-  keyTransposes.complexity = num * denom
-  keyTransposes.factors = factoriseFraction(num, denom)
+  keyTransposes.set = setNumDenom
+  // This function carries out all checking of input
+  // and setting of various cached variables
+  // and invalidating the global prime list
+  keyTransposes.set(state, key, inputNum, inputDenom)
 
   // Make sure radius of transposing keys is related to
   // their musical importance, which means low complexity
@@ -71,30 +111,6 @@ const setupNotePlayingInstrumentKey = (state, key, options) => {
   const theFactor = 10
   currentCoords.r += 1 + 4 * theFactor * (1 / (theFactor + keyTransposes.complexity))
   anchorCoords.r = currentCoords.r
-
-  key.nextFreqRel = (state, key) => {
-    // Things like bounding by min and max are done here.
-    const keyFreq = keyTransposes.factor
-    const baseFreqHz = state.params.baseFrequencyHz
-    const instrumentFreq = state.freqs.current.freq
-    const maxFreq = state.freqs.maxFreq
-    const minFreq = state.freqs.minFreq
-    let actualNextFreq = keyFreq * instrumentFreq
-    actualNextFreq = Math.min(maxFreq, actualNextFreq)
-    actualNextFreq = Math.max(minFreq, actualNextFreq)
-    return actualNextFreq
-  }
-
-  key.nextFreqAbsHz = (state, key) => {
-    const baseFreqHz = state.params.baseFrequencyHz
-    const nextFreqRel = key.nextFreqRel(state, key)
-    return baseFreqHz * nextFreqRel
-  }
-
-  key.fillStyle = (state, key) => {
-    const contrast = state.slider.keyColourContrast.getFraction()
-    return freqToRGBA(key.nextFreqRel(state, key), 0.8, contrast)
-  }
 
 }
 

@@ -1,6 +1,7 @@
 const setupImportantParameters = (state) => {
 
   // Some important state object structure
+  state.prime = {}
   state.context = {}
   state.slider = {}
   state.slider.array = []

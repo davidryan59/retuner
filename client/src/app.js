@@ -9,6 +9,7 @@ import windowResizeHandler from './views/window_resize_handler'
 import updateTimingInfo from './calculations/update_timing_info'
 import calculateForces from './physics/calculate_forces'
 import moveKeys from './physics/move_keys'
+import checkPrimeInfo from './calculations/check_prime_info'
 import calculateNeighbouringKeys from './physics/calculate_neighbouring_keys'
 import findModelCoordBounds from './calculations/find_model_coord_bounds'
 import storeModelToCanvasCoords from './calculations/convert_coords/store_model_to_canvas_coords'
@@ -63,6 +64,7 @@ const runApp = () => {
     updateTimingInfo(state, timeLoopStart)
     calculateForces(state)
     moveKeys(state)
+    checkPrimeInfo(state)
     // Recalculate the neighbours not every loop since
     // there are 65 * 64 / 2 = 2080 pairs to check
     if (state.control.loopsSinceTimeout % state.params.recalcNeighbours === 0) {
