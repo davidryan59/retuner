@@ -8,6 +8,7 @@ import cycleWaveform from "../../controllers/keys/cycle_waveform"
 import resetCentralFreq from "../../controllers/keys/reset_central_freq"
 import volumeDecrease from "../../controllers/keys/volume_decrease"
 import volumeIncrease from "../../controllers/keys/volume_increase"
+import randomRetune from "../../controllers/keys/random_retune"
 
 const defaultFillStyle = (state, key) => {
   if (key.keyState) {
@@ -88,6 +89,9 @@ const setupGeneralInstrumentKey = (state, key, options) => {
       break
     case "change_transposing_option":
       key.runOnPress = toggleTransposing
+      break
+    case "random_retune":
+      key.runOnPress = randomRetune
       break
     case "pause":
       key.runOnPress = pauseApp

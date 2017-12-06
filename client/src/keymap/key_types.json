@@ -22,6 +22,9 @@
    "change_transposing_option":{
       "functionLabel":"Transpose"
    },
+   "random_retune":{
+      "functionLabel":"Rand"
+   },
    "pause":{
       "functionLabel":"Pause"
    },

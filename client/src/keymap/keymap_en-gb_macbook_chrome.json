@@ -381,7 +381,7 @@
             "x":138,
             "y":30
          },
-         "type":"not_used"
+         "type":"random_retune"
       },
       "Tab*":{
          "symbol":"TAB",

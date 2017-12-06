@@ -16,7 +16,7 @@ const checkPrimeInfo = (state) => {
     const primeArray = extractAllPrimeFactors(fractionFactorArray)
     state.prime.array = primeArray
     state.prime.upToDate = true
-    console.log("Prime info has been updated")
+    console.log(`Primes now ${state.prime.array}`)
   }
 
 }
