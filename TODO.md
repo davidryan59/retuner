@@ -88,6 +88,10 @@ Want to output two channels in stereo
 Function to add reverb or at least one or two delays
 Want individual notes to be played in stereo. Possibly move them around depending on their position on the keyboard. Possibly alter the reverb delays based on how far they are from the 2 edges!
 
+## Accuracy of central frequency
+- state.freqs.current.freq is decimal, inexact
+- state.freqs.current.fractionObject is integer hash, exact
+- Every 100 to 10000 key presses, should reset .freq to a value obtained from .fractionObject
 
 ## Top Quote
 - Half the time, have the instrument text.

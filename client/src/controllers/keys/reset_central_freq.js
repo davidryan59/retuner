@@ -6,6 +6,7 @@ const resetCentralFreq = (state, key) => {
     baseFreqHz.toFixed(2), "Hz"
   )
   stateFreqs.current.freq = 1
+  stateFreqs.current.fractionObject = {}
 }
 
 export default resetCentralFreq

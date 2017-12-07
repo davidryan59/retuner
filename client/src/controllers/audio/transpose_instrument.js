@@ -1,6 +1,9 @@
+import multiplyFractionBy from '../../maths/fraction_object/multiply_fraction_by'
+
 const transposeInstrument = (state, key) => {
 
   const freqFactor = key.transposes.factor
+  const fractionObject = key.transposes.factors
   const freqTextRelative = key.transposes.text
 
   // Get the relevant state object
@@ -19,6 +22,8 @@ const transposeInstrument = (state, key) => {
   }
   // Do the change
   stateFreqs.current.freq = newFreq
+  multiplyFractionBy(stateFreqs.current.fractionObject, fractionObject)
+
   // Logging
   const baseFreqHz = state.params.baseFrequencyHz
   console.log(

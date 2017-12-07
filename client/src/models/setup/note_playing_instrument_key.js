@@ -6,6 +6,21 @@ import fractionToObject from "../../maths/fraction_object/fraction_to_object"
 import updateNotation from "../../maths/commas/update_notation"
 import freqToRGBA from "../../calculations/freq_to_rgba"
 
+const allowKeyActivation = (state, key) => {
+  const stateFreq = state.freqs
+  const minFreq = stateFreq.minFreq
+  const maxFreq = stateFreq.maxFreq
+  const currentFreq = stateFreq.current.freq
+  const newFreq = currentFreq * key.transposes.factor
+  if (newFreq < minFreq) {
+    return false
+  }
+  if (maxFreq < newFreq) {
+    return false
+  }
+  return true
+}
+
 const setNumDenom = (state, key, inputNum, inputDenom) => {
   const [num, denom] = reduceFraction(inputNum, inputDenom)
   const keyTransposes = key.transposes
@@ -48,8 +63,12 @@ const defaultNextFreqAbsHz = (state, key) => {
 }
 
 const defaultFillStyle = (state, key) => {
-  const contrast = state.slider.keyColourContrast.getFraction()
-  return freqToRGBA(key.nextFreqRel(state, key), 0.8, contrast)
+  if (key.activates(state, key)) {
+    const contrast = state.slider.keyColourContrast.getFraction()
+    return freqToRGBA(key.nextFreqRel(state, key), 0.8, contrast)
+  } else {
+    return 'rgba(220, 220, 220, 0.25)'
+  }
 }
 
 const defaultStrokeStyle = (state, key) => {
@@ -87,8 +106,10 @@ const defaultFont = (state, key) => {
 const defaultLabelArray = (state, key) => {
   const buttonTextArray = [key.symbol || key.keyboardCode]
   const freq = key.nextFreqAbsHz(state, key)
-  const freqText = freq.toFixed(2) + "Hz"
-  buttonTextArray.push(freqText)
+  if (key.activates(state, key)) {
+    const freqText = freq.toFixed(2) + "Hz"
+    buttonTextArray.push(freqText)
+  }
   buttonTextArray.push("\u00d7 " + key.transposes.text) // Multiplication symbol
   return buttonTextArray
 }
@@ -99,6 +120,7 @@ const setupNotePlayingInstrumentKey = (state, key, options) => {
   const inputNum = inputFraction.num
   const inputDenom = inputFraction.denom
 
+  key.activates = allowKeyActivation
   key.runOnPress = instrumentKeyPress
   key.runOnRelease = instrumentKeyRelease
 

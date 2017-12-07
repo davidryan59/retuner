@@ -6,11 +6,17 @@ import setupNotePlayingInstrumentKey from "./setup/note_playing_instrument_key"
 
 import freqToRGBA from "../calculations/freq_to_rgba"
 
+const functionReturnsTrue = () => true
+
 class InstrumentKey {
   constructor(state, specifiedOptions) {
 
     // 12 digit numeric ID for comparing 2 InstrumentKeys
     this._id = Math.round(1e12 + 9e12 * Math.random())
+
+    // Sometimes want to deactivate keys.
+    // Default is to always allow activation
+    this.activates = functionReturnsTrue
 
     // Make sure specifiedOptions is an object
     if (!specifiedOptions) {

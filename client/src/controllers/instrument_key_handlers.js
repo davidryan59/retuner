@@ -6,13 +6,15 @@ const instrumentKeyDownHandler = (state, keyDown) => {
     keyDown.keyState = 1
     // Want to set key state to 2 after the
     // key press has been dealt with
-    const keyDownFunction = keyDown.runOnPress
-    if (keyDownFunction) {
-      keyDownFunction(state, keyDown)
+    if (keyDown.activates(state, keyDown)) {
+      const keyDownFunction = keyDown.runOnPress
+      if (keyDownFunction) {
+        keyDownFunction(state, keyDown)
+      }
+      state.control.totalKeyActivations++
+      keyDown.countActivations++
+      animateInstrumentKey(state, keyDown)
     }
-    state.control.totalKeyActivations++
-    keyDown.countActivations++
-    animateInstrumentKey(state, keyDown)
   }
 }
 
