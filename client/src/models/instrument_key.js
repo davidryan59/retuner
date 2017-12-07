@@ -9,6 +9,9 @@ import freqToRGBA from "../calculations/freq_to_rgba"
 class InstrumentKey {
   constructor(state, specifiedOptions) {
 
+    // 12 digit numeric ID for comparing 2 InstrumentKeys
+    this._id = Math.round(1e12 + 9e12 * Math.random())
+
     // Make sure specifiedOptions is an object
     if (!specifiedOptions) {
       specifiedOptions = {}
@@ -63,7 +66,7 @@ class InstrumentKey {
     }
 
     // Count number of times this key is pressed
-    this.countPresses = 0
+    this.countActivations = 0
 
     // Run type-based setup
     if (type === "play_note") {

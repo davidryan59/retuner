@@ -6,8 +6,8 @@ import InstrumentKey from '../models/instrument_key'
 const setupInstrumentKeys = (state) => {
 
   const stateKey = state.key
-  stateKey.lastPressed = null
-  stateKey.lastMoused = null
+  stateKey.tempPressed = null
+  stateKey.tempMoused = null
   stateKey.indexOrderArray = []
   stateKey.array = []
   const instrumentKeyArray = stateKey.array

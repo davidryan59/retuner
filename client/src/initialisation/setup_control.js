@@ -8,7 +8,7 @@ const setupControl = (state) => {
   // General control
   state.control = {}
   const stateControl = state.control
-  stateControl.totalKeyPresses = 0
+  stateControl.totalKeyActivations = 0
   stateControl.stopMainLoop = false
   stateControl.loopsSinceTimeout = 0
   stateControl.timeoutAfterLoops = secondsToTimeout * approxBrowserFrameRate

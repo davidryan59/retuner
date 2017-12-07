@@ -20,8 +20,8 @@ const moveKeys = (state) => {
     // Deal with radius specific factors
     const currentR = keyLocation.r
     const anchorR = keyAnchor.r
-    const keyPresses = key.countPresses
-    const totalPresses = state.control.totalKeyPresses
+    const keyPresses = key.countActivations
+    const totalPresses = state.control.totalKeyActivations
     const keyPressFactor = pxFromPress * ( keyPresses / (100 + totalPresses))
     keyLocation.r -= restoreFactorR * (currentR - (anchorR + keyPressFactor))
 
