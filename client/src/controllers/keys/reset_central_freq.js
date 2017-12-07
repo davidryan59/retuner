@@ -1,3 +1,5 @@
+import recalcAllFactorsAndNotations from '../../notation/recalc_all_factors_and_notations'
+
 const resetCentralFreq = (state, key) => {
   const stateFreqs = state.freqs
   const baseFreqHz = state.params.baseFrequencyHz
@@ -7,6 +9,7 @@ const resetCentralFreq = (state, key) => {
   )
   stateFreqs.current.freq = 1
   stateFreqs.current.fractionObject = {}
+  recalcAllFactorsAndNotations(state)
 }
 
 export default resetCentralFreq

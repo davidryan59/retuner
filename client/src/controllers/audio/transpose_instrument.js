@@ -1,4 +1,5 @@
-import multiplyFractionBy from '../../maths/fraction_object/multiply_fraction_by'
+import multiplyFractionBy from '../../notation/multiply_fraction_by'
+import recalcAllFactorsAndNotations from '../../notation/recalc_all_factors_and_notations'
 
 const transposeInstrument = (state, key) => {
 
@@ -23,6 +24,7 @@ const transposeInstrument = (state, key) => {
   // Do the change
   stateFreqs.current.freq = newFreq
   multiplyFractionBy(stateFreqs.current.fractionObject, fractionObject)
+  recalcAllFactorsAndNotations(state)
 
   // Logging
   const baseFreqHz = state.params.baseFrequencyHz

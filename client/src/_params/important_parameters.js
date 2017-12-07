@@ -1,7 +1,8 @@
 const setupImportantParameters = (state) => {
 
   // Some important state object structure
-  state.prime = {}
+  state.commas = {}
+  state.notation = {}
   state.context = {}
   state.slider = {}
   state.slider.array = []
@@ -31,8 +32,12 @@ const setupImportantParameters = (state) => {
   stateParams.secondsToTimeout = 600
   stateParams.approxBrowserFrameRate = 50
 
+  // Whether or not to use Cp = B#, Dbbd = Cb
+  state.notation.usePythagoreanCommas = true
+
   // Some of the other initialisation parameters could go here?
 
+  console.dir(state)
   console.log("Setup some important parameters first")
 
 }

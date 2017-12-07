@@ -2,8 +2,9 @@ import instrumentKeyPress from "../../controllers/keys/instrument_key_press"
 import instrumentKeyRelease from "../../controllers/keys/instrument_key_release"
 
 import reduceFraction from "../../maths/reduce_fraction"
-import fractionToObject from "../../maths/fraction_object/fraction_to_object"
-import updateNotation from "../../maths/commas/update_notation"
+import fractionToObject from "../../notation/fraction_to_object"
+import addCommasForFractObj from "../../notation/add_commas_for_fract_obj"
+import recalcFactorAndNotation from "../../notation/recalc_factor_and_notation"
 import freqToRGBA from "../../calculations/freq_to_rgba"
 
 const allowKeyActivation = (state, key) => {
@@ -30,16 +31,14 @@ const setNumDenom = (state, key, inputNum, inputDenom) => {
   keyTransposes.text = num + "/" + denom
   keyTransposes.complexity = num * denom
   keyTransposes.factors = fractionToObject(num, denom)
+  addCommasForFractObj(state, keyTransposes.factors)
+  recalcFactorAndNotation(state, key)
 
   // Redefine anchor radius of transposing keys in terms of
   // their musical importance, which means low complexity
   const c = 10
   key.coords.model.anchor.r = 7.5 + 4 * c * (1 / (c + keyTransposes.complexity))
 
-  // Invalidate the global primes list, forcing a recalculation on next loop
-  state.prime.upToDate = false
-  keyTransposes.notation = null
-  // Do this after state.prime is updated
 }
 
 const defaultNextFreqRel = (state, key) => {
@@ -109,6 +108,7 @@ const defaultLabelArray = (state, key) => {
   if (key.activates(state, key)) {
     const freqText = freq.toFixed(2) + "Hz"
     buttonTextArray.push(freqText)
+    buttonTextArray.push(key.transposes.notation)
   }
   buttonTextArray.push("\u00d7 " + key.transposes.text) // Multiplication symbol
   return buttonTextArray
@@ -138,7 +138,6 @@ const setupNotePlayingInstrumentKey = (state, key, options) => {
   key.transposes = {}
   const keyTransposes = key.transposes
   keyTransposes.set = setNumDenom
-  keyTransposes.updateNotation = updateNotation
   // This function carries out all checking of input
   // and setting of various cached variables
   // and invalidating the global prime list
