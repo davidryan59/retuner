@@ -1,20 +1,23 @@
 import extractAllPrimeFactors from './extract_all_prime_factors'
-import commaRcnDr from '../maths/commas/rcn_dr'
+import commaRcnDr from '../maths/commas/comma_rcn_dr'
+
+// const extractAllPrimeFactors = require('./extract_all_prime_factors')
+// const commaRcnDr = require()'../maths/commas/rcn_dr')
 
 const checkPrimeInfo = (state) => {
 
   if (!state.prime.upToDate) {
-    const fractionFactorArray = []
+    const arrayOfFractionObjects = []
 
     for (const key of state.key.array) {
       if (key.transposes) {
         if (key.transposes.factors) {
-          fractionFactorArray.push(key.transposes.factors)
+          arrayOfFractionObjects.push(key.transposes.factors)
         }
       }
     }
 
-    const primeArray = extractAllPrimeFactors(fractionFactorArray)
+    const primeArray = extractAllPrimeFactors(arrayOfFractionObjects)
     state.prime.array = primeArray
     console.log(`Primes now ${primeArray}`)
 

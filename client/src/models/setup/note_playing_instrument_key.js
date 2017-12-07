@@ -2,7 +2,7 @@ import instrumentKeyPress from "../../controllers/keys/instrument_key_press"
 import instrumentKeyRelease from "../../controllers/keys/instrument_key_release"
 
 import reduceFraction from "../../maths/reduce_fraction"
-import factoriseFraction from "../../maths/factorise_fraction"
+import fractionToObject from "../../maths/fraction_object/fraction_to_object"
 import updateNotation from "../../maths/commas/update_notation"
 import freqToRGBA from "../../calculations/freq_to_rgba"
 
@@ -14,7 +14,7 @@ const setNumDenom = (state, key, inputNum, inputDenom) => {
   keyTransposes.factor = num / denom
   keyTransposes.text = num + "/" + denom
   keyTransposes.complexity = num * denom
-  keyTransposes.factors = factoriseFraction(num, denom)
+  keyTransposes.factors = fractionToObject(num, denom)
 
   // Redefine anchor radius of transposing keys in terms of
   // their musical importance, which means low complexity
@@ -23,7 +23,8 @@ const setNumDenom = (state, key, inputNum, inputDenom) => {
 
   // Invalidate the global primes list, forcing a recalculation on next loop
   state.prime.upToDate = false
-  keyTransposes.notation = null  // Do this after state.prime is updated
+  keyTransposes.notation = null
+  // Do this after state.prime is updated
 }
 
 const defaultNextFreqRel = (state, key) => {

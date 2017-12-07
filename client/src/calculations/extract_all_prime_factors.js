@@ -1,5 +1,6 @@
-const extractAllPrimeFactors = (array1) => {
+const extractAllPrimeFactors = (inputArray) => {
   // Input array is of things like
+  // {'2':1, '3':-1} to represent 2/3
   // [[2, 1], [3, -1]]
   // which represents 2/3 = 2^1 * 3^-1
   // This contains the primes 2, 3
@@ -13,9 +14,10 @@ const extractAllPrimeFactors = (array1) => {
   const primesFound = []
   let thePrime = null
 
-  for (const array2 of array1) {
-    for (const array3 of array2) {
-      thePrime = array3[0]
+  for (const fractionObject of inputArray) {
+    for (const key of Object.keys(fractionObject)) {
+      // In this object, primes are keys, exponents are values!
+      thePrime = parseInt(key)
       if (!primesFound.includes(thePrime)) {
         primesFound.push(thePrime)
       }

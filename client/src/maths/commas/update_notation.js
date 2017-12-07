@@ -4,7 +4,7 @@ const updateNotation = (state, key) => {
   // prime comma list has been updated
   const factorDoubleArray = key.transposes.factors
 
-  console.log(`Notation update not yet implemented on ${key}`)
+  console.log(`Notation update not yet implemented on ${key}`) 
 
 }
 
