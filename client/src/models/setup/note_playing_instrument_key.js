@@ -29,7 +29,7 @@ const setNumDenom = (state, key, inputNum, inputDenom) => {
   keyTransposes.denom = denom
   keyTransposes.decimalCentreCurrent = num / denom
   keyTransposes.textFraction = num + "/" + denom
-  keyTransposes.complexity = num * denom
+  keyTransposes.complexityRel = num * denom
   keyTransposes.fractRel = fractionToFract(num, denom)
   addCommasForFract(state, keyTransposes.fractRel)
   recalcKeyNotations(state, key)
@@ -37,7 +37,7 @@ const setNumDenom = (state, key, inputNum, inputDenom) => {
   // Redefine anchor radius of transposing keys in terms of
   // their musical importance, which means low complexity
   const c = 10
-  key.coords.model.anchor.r = 7.5 + 4 * c * (1 / (c + keyTransposes.complexity))
+  key.coords.model.anchor.r = 7.5 + 4 * c * (1 / (c + keyTransposes.complexityRel))
 
 }
 
