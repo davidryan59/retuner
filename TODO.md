@@ -8,6 +8,14 @@
 - If the keymap is updated, want the instrument functions to automatically update live.
 - Want user to be able to modify keymap, e.g. to DAVE the keys
 
+## TUNES!
+- Translate some popular tunes into ReTuner **key sequences**
+- Three Blind Mice. Happy Birthday. etc
+- Tune only available if all the right keys are on the keyboard! (If any keys have been retuned, its the retuned fractions which matter... complicated!)
+- Have ability to play key sequences over time
+- Have ability to play **relative note sequence** over time (these are not the same!)
+- Have ability to record either of these too.
+
 ## Bitcoin
 - Does it work if TWO payments are made in a row? to the same address? Worst case scenario, the 2nd person to try and donate sees a message saying 'thank you for your donation'!
 
