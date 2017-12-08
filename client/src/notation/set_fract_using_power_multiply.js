@@ -1,7 +1,7 @@
-const multiplyFractionBy = (objectToSet, objectToMultiplyBy, power) => {
+const setFractUsingPowerMultiply = (objectToSet, objectToMultiplyBy, power) => {
 
   // Each of the objects should be in output format
-  // of fractionToObject, e.g. 2/3 would be {2:1, 3:-1}
+  // of fractionToFract, e.g. 2/3 would be {2:1, 3:-1}
 
   // If a third parameter is supplied, it is used to raise
   // objectToMultiplyBy to a specific power.
@@ -31,8 +31,8 @@ const multiplyFractionBy = (objectToSet, objectToMultiplyBy, power) => {
 // const obj2 = {2:-1, 3:5, 5:1}
 // console.log(obj1)
 // console.log(obj2)
-// const result = multiplyFractionBy(obj1, obj2)
+// const result = setFractUsingPowerMultiply(obj1, obj2)
 // console.log(result)
 // console.log(obj1)    // These two the same!
 
-export default multiplyFractionBy
+export default setFractUsingPowerMultiply

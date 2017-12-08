@@ -90,8 +90,8 @@ Want individual notes to be played in stereo. Possibly move them around dependin
 
 ## Accuracy of central frequency
 - state.freqs.current.freq is decimal, inexact
-- state.freqs.current.fractionObject is integer hash, exact
-- Every 100 to 10000 key presses, should reset .freq to a value obtained from .fractionObject
+- state.freqs.current.fractCentralAbs is integer hash, exact
+- Every 100 to 10000 key presses, should reset .freq to a value obtained from .fractCentralAbs
 
 ## Top Quote
 - Half the time, have the instrument text.

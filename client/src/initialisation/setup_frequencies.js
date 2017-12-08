@@ -18,8 +18,8 @@ const setupFrequencies = (state) => {
   // Current frequency stuff
   stateFreqs.current = {}
   stateFreqs.current.freq = 1
-  stateFreqs.current.fractionObject = {}
-  // .freq is the decimal, .fractionObject is the prime/exponent representation
+  stateFreqs.current.fractCentralAbs = {}
+  // .freq is the decimal, .fractCentralAbs is the prime/exponent representation
 
   console.log("Frequencies initialised")
 }

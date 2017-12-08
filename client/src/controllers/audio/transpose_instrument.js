@@ -1,10 +1,10 @@
-import multiplyFractionBy from '../../notation/multiply_fraction_by'
-import recalcAllFactorsAndNotations from '../../notation/recalc_all_factors_and_notations'
+import setFractUsingPowerMultiply from '../../notation/set_fract_using_power_multiply'
+import recalcAllNotations from '../../notation/recalc_all_notations'
 
 const transposeInstrument = (state, key) => {
 
   const freqFactor = key.transposes.factor
-  const fractionObject = key.transposes.factors
+  const transposingFract = key.transposes.fractRel
   const freqTextRelative = key.transposes.text
 
   // Get the relevant state object
@@ -23,8 +23,8 @@ const transposeInstrument = (state, key) => {
   }
   // Do the change
   stateFreqs.current.freq = newFreq
-  multiplyFractionBy(stateFreqs.current.fractionObject, fractionObject)
-  recalcAllFactorsAndNotations(state)
+  setFractUsingPowerMultiply(stateFreqs.current.fractCentralAbs, transposingFract)
+  recalcAllNotations(state)
 
   // Logging
   const baseFreqHz = state.params.baseFrequencyHz

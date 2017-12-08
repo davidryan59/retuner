@@ -1,4 +1,4 @@
-import recalcAllFactorsAndNotations from '../../notation/recalc_all_factors_and_notations'
+import recalcAllNotations from '../../notation/recalc_all_notations'
 
 const resetCentralFreq = (state, key) => {
   const stateFreqs = state.freqs
@@ -8,8 +8,8 @@ const resetCentralFreq = (state, key) => {
     baseFreqHz.toFixed(2), "Hz"
   )
   stateFreqs.current.freq = 1
-  stateFreqs.current.fractionObject = {}
-  recalcAllFactorsAndNotations(state)
+  stateFreqs.current.fractCentralAbs = {}
+  recalcAllNotations(state)
 }
 
 export default resetCentralFreq

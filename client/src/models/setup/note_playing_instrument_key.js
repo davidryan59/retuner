@@ -2,9 +2,9 @@ import instrumentKeyPress from "../../controllers/keys/instrument_key_press"
 import instrumentKeyRelease from "../../controllers/keys/instrument_key_release"
 
 import reduceFraction from "../../maths/reduce_fraction"
-import fractionToObject from "../../notation/fraction_to_object"
-import addCommasForFractObj from "../../notation/add_commas_for_fract_obj"
-import recalcFactorAndNotation from "../../notation/recalc_factor_and_notation"
+import fractionToFract from "../../notation/fraction_to_fract"
+import addCommasForFract from "../../notation/add_commas_for_fract"
+import recalcKeyNotations from "../../notation/recalc_key_notations"
 import freqToRGBA from "../../calculations/freq_to_rgba"
 
 const allowKeyActivation = (state, key) => {
@@ -30,9 +30,9 @@ const setNumDenom = (state, key, inputNum, inputDenom) => {
   keyTransposes.factor = num / denom
   keyTransposes.text = num + "/" + denom
   keyTransposes.complexity = num * denom
-  keyTransposes.factors = fractionToObject(num, denom)
-  addCommasForFractObj(state, keyTransposes.factors)
-  recalcFactorAndNotation(state, key)
+  keyTransposes.fractRel = fractionToFract(num, denom)
+  addCommasForFract(state, keyTransposes.fractRel)
+  recalcKeyNotations(state, key)
 
   // Redefine anchor radius of transposing keys in terms of
   // their musical importance, which means low complexity

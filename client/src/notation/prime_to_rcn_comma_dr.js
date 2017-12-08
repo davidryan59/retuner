@@ -1,4 +1,4 @@
-const commaRcnDr = (p) => {
+const primeToRcnCommaDr = (p) => {
   // See https://arxiv.org/pdf/1612.01860.pdf
 
   const logp = Math.log(p)  // Natural logs
@@ -49,4 +49,4 @@ const commaRcnDr = (p) => {
   return [aFinal, bFinal]
 }
 
-export default commaRcnDr
+export default primeToRcnCommaDr

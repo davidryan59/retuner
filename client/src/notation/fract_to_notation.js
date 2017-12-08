@@ -1,4 +1,4 @@
-import multiplyFractionBy from './multiply_fraction_by'
+import setFractUsingPowerMultiply from './set_fract_using_power_multiply'
 
 const textFromPythagItem = (item) => {
   const label = item[0]
@@ -98,7 +98,7 @@ const useSimplifiers = (residualObject, simplifierArray) => {
       if (above < exp3) {
         const countUses = Math.ceil((exp3 - above) / reducesBy)
         pythagoreanLabels.push([label, countUses])
-        multiplyFractionBy(residualObject, fract, -countUses)
+        setFractUsingPowerMultiply(residualObject, fract, -countUses)
         // exp3 = getFract(residualObject, 3)
       }
     }
@@ -106,7 +106,7 @@ const useSimplifiers = (residualObject, simplifierArray) => {
       if (exp3 < below) {
         const countUses = Math.ceil((below - exp3) / reducesBy)
         pythagoreanLabels.push([label, countUses])
-        multiplyFractionBy(residualObject, fract, -countUses)
+        setFractUsingPowerMultiply(residualObject, fract, -countUses)
         // exp3 = getFract(residualObject, 3)
       }
     }
@@ -145,7 +145,7 @@ const fractToNotation = (state, fractionObject) => {
     if (prime > 3) {
       const comma = commaInfo[key]
       higherPrimeCommasObject[key] = exponent
-      multiplyFractionBy(residualObject, comma, -exponent)
+      setFractUsingPowerMultiply(residualObject, comma, -exponent)
     }
   }
 
@@ -167,7 +167,7 @@ const fractToNotation = (state, fractionObject) => {
   const label = noteName.label
   const fract = noteName.fract
   pythagLabelArray.unshift([label, 1])      // Unshift - Add at start!
-  multiplyFractionBy(residualObject, fract, -1)
+  setFractUsingPowerMultiply(residualObject, fract, -1)
   // exp3 = getFract(residualObject, 3) // should now be 0
 
   // 2-exponent now determines the octave number

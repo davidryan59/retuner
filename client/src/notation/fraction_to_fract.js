@@ -12,7 +12,7 @@ const increment = (object, key, increment) => {
   }
 }
 
-const fractionToObject = (num, denom) => {
+const fractionToFract = (num, denom) => {
   // Output object with prime: exponent pairsarray of [prime, exponent]
   // e.g. 21/20 => {2: -2, 3: 1, 5: -1, 7: 1}
   // and 42/40 will have the same output. Common factors cancel each other.
@@ -63,8 +63,8 @@ const fractionToObject = (num, denom) => {
 // // Node Testing
 // const num = 10
 // const den = 14
-// const result = fractionToObject(num, den)
+// const result = fractionToFract(num, den)
 // console.log(`${num}/${den} =>`)
 // console.log(result)
 
-export default fractionToObject
+export default fractionToFract
