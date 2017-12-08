@@ -1,23 +1,24 @@
 # TO DO LIST
 
+## Alternative Keymaps
+- Want to present at least a Simple, Medium and Full keymap to users
+- On startup, select a keymap at random from Simple, Medium and Full (could prompt user? can this choice be saved for future sessions?)
+- Could do a Pythag, 5-limit, 7-limit and 13-limit keymaps
+- Want to be able to select from several keymaps in a list
+- If the keymap is updated, want the instrument functions to automatically update live.
+- Want user to be able to modify keymap, e.g. to DAVE the keys
+
 ## Bitcoin
 - Does it work if TWO payments are made in a row? to the same address? Worst case scenario, the 2nd person to try and donate sees a message saying 'thank you for your donation'!
 
-## Getting RCN installed in ReTuner
-- How to do it?
-
-## Note naming options (for chord only? for this sequencer?)
-- Note names using commas
-- Whole numbers
-- Reciprocal whole numbers
-- Fractions with specified note as 1/1
+## Switches
+- Want to be able to switch on and off the different components of the key
+- Essential: Fraction, RCN
+- Maybe - other bits
 
 # Buttons
 - Button setup is still a bit flaky. Probably ought to have keys which are transposing/playing keys having a separate setup method later.
-- The relative fraction is very important. Probably display it in larger font as (e.g.) 'x4/3' or 'x 4/3' (can I find the ASCII character for x?)
-- Need all button calculations to be installed on buttons as callbacks
-- The definitions are currently in the initialise_a_key directory,
-- factor them out onto subdirectories, e.g. Key Setup
+- The relative fraction is very important. Probably display it in larger font?
 - Need to model button radius properly.
 - Might depend on any or all of these things:
 - Basic button size (e.g. 3px)
@@ -29,9 +30,17 @@
 - All the above should affect the basic button size.
 - The basic button size should push nearby buttons out of the way.
 - extra factor for being recently pressed, should not push nearby buttons out of the way
+- Ideally, note text can expand and contract (text resizes) with the radius of the key
+- If note text doesn't fit, hide less important elements (which ones? how?)-
+- calculate every statistic of importance
+- have a default importance (e.g. 100 for 3/2, 90 for 9/8, etc. Make it related to the stats derived earlier.)
+- have a current importance, increasing when button is pressed more
+- button radius increases with current importance
+- Highlight (brighter colours?) keys with simpler prime vector. E.g. when 3/2 has been pressed, 2/3 will have the most vivid colour, others less so. Can use the Tenney Height of each of the keys to calculate which keys are brighter and less bright.
 
 ## Graphical Display of Waveform
 - Want a graphical display of the sound output waveform.
+- Could have a switch to toggle this on and off
 
 ## Page Loading
 - Make the app start up fast, and only query external services after important parts of page have loaded.
@@ -45,12 +54,6 @@
 ## Browser testing
 - Tested in: Mac Safari, Mac Chrome
 - Not tested in: (others)
-
-## History
-- (This has been started, however not quite finished. Record note was previously implemented on the key press, but has been removed since its not implemented well. This is a slightly tricky feature, and makes me wonder if the earlier things are implemented correctly...)
-- Maintain a forwards and backwards history list for instrument notes played.
-- If stuff is available in that list, play it on keys Y and U
-- If stuff is not available, repeat the same note (without altering frequency)
 
 ## Domain
 - Do www.retuner...
@@ -82,6 +85,13 @@
 - If app is paused (or timed out) need to highlight this key
 - Then user knows to restart the app
 - Probably want to draw 1 more animation frame after stopping main loop, so this highlighting is visible.
+
+## RESET button
+- Make it brighter! More obvious
+
+## SPACE button
+- Since this contains instrument central frequency, try highlighting it
+- Try a dotted border?
 
 ## Stereo/Reverb/Delay
 Want to output two channels in stereo
@@ -125,46 +135,12 @@ Need a new type of score which converts absolute note melody into relative melod
 ## Slider keyboard handling
 - Some buttons (such as volume sliders) want to keep going up or down as they are held down. Need different keyboard handling for this? Might also want to set up a keyboard repeat period which is independent of the operating system repeat period, and happens at a constant rate (rather than with a gap at front)
 
-## Buttons / (Instrument) Keys
-- All drawing methods needs to be assigned to the keys themselves.
-- Keys need to be assigned a function (if they are not a note)
-- Keys which don't work (FN, CAPS LOCK, TAB) should be a different colour, e.g. greyed out
-- Keys which have a function should be a darker colour than those which don't.
-- Note text needs to be actually centred vertically and horizontally
-- Ideally, note text can expand and contract (text resizes) with the radius of the key
-- If note text doesn't fit, hide less important elements (which ones? how?)-
-- Keys should know what next frequency they represent.
-- - This should link directly to the colour they display.
-- - It should be capped by the min/max freqs so when you approach the limit
-- - all the keys on one side are red (1/1)
-- calculate every statistic of importance
-- have a default importance (e.g. 100 for 3/2, 90 for 9/8, etc. Make it related to the stats derived earlier.)
-- have a current importance, increasing when button is pressed more
-- button radius increases with current importance
-
-## Button colours
-- Highlight (brighter colours?) keys with simpler prime vector. E.g. when 3/2 has been pressed, 2/3 will have the most vivid colour, others less so. Can use the Tenney Height of each of the keys to calculate which keys are brighter and less bright.
-
-## Primes
-App should keep track of all primes on all keys.
-
-## Button text
-From most important to least important:
-- Full Note Name e.g. C4 (subscript), E'5, Bb[7]2, (use RCN. For 7-limit I think all the comma choice variants DR / SAG / (KG1) / KG2 are equivalent, but use DR variant if in any doubt)
-- Keyboard Symbol 'KeyO' (use the full keyboard code to avoid confusion with note names)
-- Relative frequency in fraction (e.g. 320 Hz to 256 Hz would display as '5/4')
-- Absolute frequency in Hertz '320 Hz'
-- Prime factorisation '2^-2 5^1' but using superscripts
-- This might be toggled to [-2 0 1] or [-2 0 1 0] if keys are all 5 or 7 limit. Any higher limit, don't allow the toggle.
-
 ## Customising keyboard / locales / frequency
 - Could open up full customisation of the keyboard
 - E.g. any rational number to any keyboard key
-- Or possibly only a (7-limit) shortlist of rational numbers
+- Or a special function from the list
 - Would be useful for different locales / keyboard layouts
 - Need to be able to save the configuration
-- If any integer can be inputted, recalculate set of primes across keyboard
-- Might need to switch off toggling to prime exponent vector [2 0... 1] if higher than 7 limit
 - If higher than 7 limit, might want to be able to toggle the RCN notation between variants DR, SAG, (KG1), KG2
 
 ## Waveform / choice of voices
@@ -214,6 +190,12 @@ https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_wi
 - Or maybe a demo?
 - You could probably program one in.
 - Or do one on YouTube!
+
+## History - Abandoned for now
+- (This has been started, however not quite finished. Record note was previously implemented on the key press, but has been removed since its not implemented well. This is a slightly tricky feature, and makes me wonder if the earlier things are implemented correctly...)
+- Maintain a forwards and backwards history list for instrument notes played.
+- If stuff is available in that list, play it on keys Y and U
+- If stuff is not available, repeat the same note (without altering frequency)
 
 
 ------------
