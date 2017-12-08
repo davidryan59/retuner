@@ -1,74 +1,79 @@
 import setFractUsingPowerMultiply from './set_fract_using_power_multiply'
+import fractToNumDenom from './fract_to_num_denom'
 
-const textFromPythagItem = (item) => {
-  const label = item[0]
-  const repeats = item[1]
-  if (repeats > 4) {
-    return `[${label}${repeats}]`
+const textFromLabel = (label, repeats, iGroupRepeats, iFirstChar, iLastChar) => {
+  if (label && repeats > 0) {
+    const groupRepeats = (!iGroupRepeats) ? 4 : parseInt(iGroupRepeats)
+    const firstChar = (!iFirstChar) ? "(" : iFirstChar
+    const lastChar = (!iLastChar) ? ")" : iLastChar
+    if (repeats >= groupRepeats) {
+      return `${firstChar}${label}${repeats}${lastChar}`
+    } else {
+      return label.repeat(repeats)
+    }
   } else {
-    return label.repeat(repeats)
+    return ""
   }
+}
+
+const textsFromLabelAndExponent = (exponent) => {
+  if (exponent === 0) {
+    return ["", "", ""]
+  }
+  let label = "'"
+  let exp = exponent
+  if (exponent < 0) {
+    label = "."
+    exp = -exp
+  }
+  if (exp < 4) {
+    return [label.repeat(exp), "", ""]
+  }
+  let numText = ""
+  let denomText = ""
+  if (exponent < 0) {
+    denomText = `5^${-exponent}`
+  } else {
+    numText = `5^${exponent}`
+  }
+  return ["", numText, denomText]
 }
 
 const textFromOctaveNumber = (octaveNum) => {
   if (octaveNum < 0) {
-    return `(${octaveNum})`
+    return `(O${octaveNum})`
   } else {
     return `${octaveNum}`
   }
 }
 
-const commaTextFromHigherPrimes = (higherPrimesObject) => {
-  // Make a prime comma notation here
-  let exp5 = 0
-  let num = 1
-  let denom = 1
-  for (const key of Object.keys(higherPrimesObject)) {
-    const prime = parseInt(key)
-    const exponent = higherPrimesObject[key]
-    if (prime === 5) {
-      exp5 = exponent
-    } else {
-      num *= Math.max(1, prime ** exponent)
-      denom *= Math.max(1, prime ** -exponent)
-    }
+const commaTextFromHigherPrimes = (fractObj, prime) => {
+  let [numText, denomText] = fractToNumDenom(fractObj, prime)
+  if (!numText && !denomText) {
+    return ""
   }
-  let exp5Text = ""
-  if (exp5 > 0) {
-    exp5Text = "'".repeat(exp5)
-  } else if (exp5 < 0) {
-    exp5Text = ".".repeat(-exp5)
+  if (!numText) {
+    return ` /${denomText}/`
   }
-  const denomText = (denom > 1) ? `/${denom}` : ""
-  const commaText = (num * denom > 1) ? `[${num}${denomText}]` : ""
-  // For large num, denom, ought to switch to an exponential form...
-  return `${exp5Text}${commaText}`
+  if (!denomText) {
+  return ` [${numText}]`
+  }
+  return ` [${numText} / ${denomText}]`
 }
 
-const getFract = (fractionObject, prime) => {
-  const result = fractionObject[prime]
+const getFract = (fractObj, prime) => {
+  const result = fractObj[prime]
   return (result) ? result : 0
 }
 
-// These are optional
-// Can have something on the state to turn these on and off
-const pythagoreanSimplifiers = [
-  {
-    label: "p",
-    above: 19,                 // 10 = above A#, from E# = Fp onwards
-    fract: {2: -19, 3: 12},    // 531441 / 524288
-    name: "Pythagorean Comma"
-  },
-  {
-    label: "d",
-    below: -15,                 // -6 = below Gb, from Cb = Bd onwards
-    fract: {2: 19, 3: -12},    // 524288 / 531441
-    name: "Inverse Pythagorean Comma"
-  }
-]
-
-// These are mandatory
-// Need them to cover all 3-exponents
+// Simplifiers given for +7, -7 powers of 3.
+// These are mandatory, note names won't work otherwise
+// It would be possible to do simplifiers for Pythagorean commas 3^12
+// and potentially higher commas, such as 3^53, 3^665
+// (see denominators of convergents for log2(3)
+// expressed as a continued fraction in OEIS 2016, A005664)
+// But these haven't been implemented for now since
+// its tricky figuring out how to format the text...
 const sharpFlatSimplifiers = [
   {
     label: "#",
@@ -84,8 +89,8 @@ const sharpFlatSimplifiers = [
   }
 ]
 
-const useSimplifiers = (residualObject, simplifierArray) => {
-  let exp3 = getFract(residualObject, 3)
+const useSimplifiers = (residualFract, simplifierArray) => {
+  let exp3 = getFract(residualFract, 3)
   const pythagoreanLabels = []
   for (const obj of simplifierArray) {
     const label = obj.label
@@ -98,16 +103,16 @@ const useSimplifiers = (residualObject, simplifierArray) => {
       if (above < exp3) {
         const countUses = Math.ceil((exp3 - above) / reducesBy)
         pythagoreanLabels.push([label, countUses])
-        setFractUsingPowerMultiply(residualObject, fract, -countUses)
-        // exp3 = getFract(residualObject, 3)
+        setFractUsingPowerMultiply(residualFract, fract, -countUses)
+        // exp3 = getFract(residualFract, 3)
       }
     }
     if (below) {
       if (exp3 < below) {
         const countUses = Math.ceil((below - exp3) / reducesBy)
         pythagoreanLabels.push([label, countUses])
-        setFractUsingPowerMultiply(residualObject, fract, -countUses)
-        // exp3 = getFract(residualObject, 3)
+        setFractUsingPowerMultiply(residualFract, fract, -countUses)
+        // exp3 = getFract(residualFract, 3)
       }
     }
   }
@@ -124,7 +129,7 @@ const noteNames = [
   {label: "B", fract: {2: -7, 3: 5}}     // 243/128
 ]
 
-const fractToNotation = (state, fractionObject) => {
+const fractToNotation = (state, fractObj) => {
   // Assuming that the list of commas on the state
   // is up to date. Otherwise this method will fail.
 
@@ -133,59 +138,69 @@ const fractToNotation = (state, fractionObject) => {
 
   // Build up a notation by breaking down a residual
   // which starts as the original fraction
+  // This object is for primes 5 and above.
   const higherPrimeCommasObject = {}
-  const residualObject = {}
-  Object.assign(residualObject, fractionObject)
+  const residualFract = {}
+  Object.assign(residualFract, fractObj)
 
   // Primes 5 and above are independent in this scheme
   // Can cancel them out independently
-  for (const key of Object.keys(residualObject)) {
+  for (const key of Object.keys(residualFract)) {
     const prime = parseInt(key)
-    const exponent = residualObject[key]
+    const exponent = residualFract[key]
     if (prime > 3) {
       const comma = commaInfo[key]
       higherPrimeCommasObject[key] = exponent
-      setFractUsingPowerMultiply(residualObject, comma, -exponent)
+      setFractUsingPowerMultiply(residualFract, comma, -exponent)
     }
   }
 
-  // OK UP TO HERE
-  // DEBUG THE BELOW
-
-  const pythagLabelArray = []
-  if (state.notation.usePythagoreanCommas) {
-    // Optionally add labels from Pythagorean simplifiers
-    pythagLabelArray.push(...useSimplifiers(residualObject, pythagoreanSimplifiers))
-  }
   // Add sharp and flat labels
-  pythagLabelArray.push(...useSimplifiers(residualObject, sharpFlatSimplifiers))
+  // After deducting this out, there should only be
+  // 7 choices of 3-exponent left, in range -1 to 5
+  let [labelSF, expSF] = ["", 0]
+  const returnedArray = useSimplifiers(residualFract, sharpFlatSimplifiers)
+  if (returnedArray.length) {
+    [labelSF, expSF] = returnedArray[0]
+  }
 
-  // 3-exponent of residualObject should now be in the range -1 to 5
   // Find the note name
-  const exp3 = getFract(residualObject, 3)
-  const noteName = noteNames[exp3 + 1]
-  const label = noteName.label
-  const fract = noteName.fract
-  pythagLabelArray.unshift([label, 1])      // Unshift - Add at start!
-  setFractUsingPowerMultiply(residualObject, fract, -1)
-  // exp3 = getFract(residualObject, 3) // should now be 0
+  const exp3 = getFract(residualFract, 3)
+  const noteNameArray = noteNames[exp3 + 1]
+  const noteName = noteNameArray.label
+  const fract = noteNameArray.fract
+  setFractUsingPowerMultiply(residualFract, fract, -1)
+  // exp3 = getFract(residualFract, 3) // should now be 0
 
   // 2-exponent now determines the octave number
-  const exp2 = getFract(residualObject, 2)
+  const exp2 = getFract(residualFract, 2)
   const octaveNumber = exp2 + 4        // C4 = 1/1
 
+  // Finished breaking down residualFract!
+  // Now use stats obtained so far to construct a full note name.
+
+  // Special notation for comma of prime 5.
+  // Count these separately
+  let exp5 = getFract(fractObj, 5)
+  const label5 = (exp5 > 0) ? "'" : "."
+  exp5 = Math.abs(exp5)
+
+  // Get notation for commas of prime 7 and above
+  const commaText = commaTextFromHigherPrimes(fractObj, 7)
+
   // Now have:
-  // - pythagLabelArray
-  // - higherPrimeCommasObject
-  // - octaveNumber
+  // noteName (F, C, G...)
+  // labelSF, expSF (#, b)
+  // label5, exp5   (prime 5 uses ' and . )
+  // octaveNumber
+  // commaText      (7, 11, 13, 17...)
   // Put them together into a single text field
 
-  let notationText = ""
-  for (const item of pythagLabelArray) {
-    notationText += textFromPythagItem(item)
-  }
-  notationText += commaTextFromHigherPrimes(higherPrimeCommasObject)
+  let notationText = noteName
+  notationText += textFromLabel(labelSF, expSF, 5)
+  notationText += textFromLabel(label5, exp5, 4)
   notationText += textFromOctaveNumber(octaveNumber)
+  notationText += commaText
 
   return notationText
 }

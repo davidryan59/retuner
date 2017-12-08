@@ -19,7 +19,7 @@ const fractionToFract = (num, denom) => {
   // Currently num, denom are limited to < 127 * 127 - 1 = 16128
   // Since in this app it is anticipated that numerator
   // and denominator will be smaller than this, its OK!
-  const factorObject = {}
+  const fractObj = {}
   let residualNum = Math.round(Math.abs(num))
   let residualDenom = Math.round(Math.abs(denom))
   let primeIndex = 0
@@ -40,7 +40,7 @@ const fractionToFract = (num, denom) => {
     }
     if (!primeUsed) {
       if (!(currentPrimeHeight===0)) {
-        increment(factorObject, prime, currentPrimeHeight)
+        increment(fractObj, prime, currentPrimeHeight)
       }
       currentPrimeHeight = 0
       primeIndex++
@@ -49,15 +49,15 @@ const fractionToFract = (num, denom) => {
   if (!(currentPrimeHeight===0)) {
     // Last iteration, while loop exits before doing this
     // Repeat it here.
-    increment(factorObject, prime, currentPrimeHeight)
+    increment(fractObj, prime, currentPrimeHeight)
   }
   if (residualNum > 1) {
-    increment(factorObject, residualNum, 1)
+    increment(fractObj, residualNum, 1)
   }
   if (residualDenom > 1) {
-    increment(factorObject, residualDenom, -1)
+    increment(fractObj, residualDenom, -1)
   }
-  return factorObject
+  return fractObj
 }
 
 // // Node Testing

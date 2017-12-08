@@ -2,7 +2,6 @@ const setupImportantParameters = (state) => {
 
   // Some important state object structure
   state.comma = {}
-  state.notation = {}
   state.context = {}
   state.slider = {}
   state.key = {}
@@ -30,9 +29,6 @@ const setupImportantParameters = (state) => {
   // Parameters related to timeout
   stateParam.secondsToTimeout = 600
   stateParam.approxBrowserFrameRateHz = 50
-
-  // Whether or not to use Cp = B#, Dbbd = Cb
-  state.notation.usePythagoreanCommas = true
 
   // Some of the other initialisation parameters could go here?
 

@@ -90,7 +90,9 @@ const defaultLineWidth = (state, key) => {
 }
 
 const defaultTextColour = (state, key) => {
-  return 'rgba(30, 0, 30, 0.95)'
+  // return 'rgba(30, 0, 30, 0.95)'
+  // Need maximum clarity on the keys!
+  return 'rgba(0, 0, 0, 1)'
 }
 
 const defaultFontHeight = (state, key) => {
@@ -108,6 +110,7 @@ const defaultLabelArray = (state, key) => {
   if (key.getAllowActivation(state, key)) {
     const freqText = freq.toFixed(2) + "Hz"
     buttonTextArray.push(freqText)
+    buttonTextArray.push(key.transposes.textFract)
     buttonTextArray.push(key.transposes.textNotation)
   }
   buttonTextArray.push("\u00d7 " + key.transposes.textFraction) // Multiplication symbol
