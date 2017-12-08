@@ -9,8 +9,7 @@ import setupHtmlPageElts from './setup_html_page_elts'
 import setupGraphicsContext from './setup_graphics_context'
 import setupFrequencies from './setup_frequencies'
 import setupInstrumentKeys from './setup_instrument_keys'
-import setupInstrumentKeysMore from './setup_instrument_keys_more'
-import setupRecording from './setup_recording'
+import setupKeyInteractions from './setup_key_interactions'
 import setupWaveform from './setup_waveform'
 import setupAudioContext from './setup_audio_context'
 
@@ -36,8 +35,7 @@ const initialiseState = (state) => {
   setupInstrumentKeys(state)
   console.log("Here is a sample key:")
   console.dir(state.key.array[16])       // Log the 'V' key
-  setupInstrumentKeysMore(state)
-  setupRecording(state)
+  setupKeyInteractions(state)
   setupWaveform(state)
   setupAudioContext(state)
 

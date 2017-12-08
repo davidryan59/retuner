@@ -11,8 +11,7 @@ const setupKeySpacing = (state) => {
     max: 11
   })
 
-  state.slider.array.push(slider)
-  state.slider.keySpacing = slider
+  state.slider.keySize = slider
 
   console.log(`${slider}`)
 }

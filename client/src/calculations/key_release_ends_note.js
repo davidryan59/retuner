@@ -1,6 +1,6 @@
 const keyReleaseEndsNote = (state, key) => {
   // console.log("Running 'key release ends note'")
-  return state.freqs.keyReleaseEndsNote
+  return state.freq.keyReleaseEndsNote
 }
 
 export default keyReleaseEndsNote

@@ -1,7 +1,7 @@
 const setupGraphicsContext = (state) => {
 
   // Context
-  const canvasElt = state.pageElts.canvas
+  const canvasElt = state.pageElt.canvas
   const context = canvasElt.getContext('2d')
   state.context.graphics = context
 

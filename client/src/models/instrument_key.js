@@ -16,7 +16,7 @@ class InstrumentKey {
 
     // Sometimes want to deactivate keys.
     // Default is to always allow activation
-    this.activates = functionReturnsTrue
+    this.getAllowActivation = functionReturnsTrue
 
     // Make sure specifiedOptions is an object
     if (!specifiedOptions) {

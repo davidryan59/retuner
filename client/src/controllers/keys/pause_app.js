@@ -1,12 +1,11 @@
 const pauseApp = (state, key) => {
-  if (!state.control.stopMainLoop) {
-    state.control.stopMainLoop = true
-    console.log("Paused app")
+  if (!state.control.mainLoopPaused) {
+    state.control.mainLoopPaused = true
   } else {
-    state.control.stopMainLoop = false
+    state.control.mainLoopPaused = false
     state.control.loopsSinceTimeout = 0
-    state.control.timing.thisLoopStart = window.performance.now()  // Make total time correct
-    console.log("Resumed app")
+    state.control.timing.loopStartThis = window.performance.now()  // Make total time correct
+    console.log("App has resumed")
     window.requestAnimationFrame(mainLoop)
   }
 }

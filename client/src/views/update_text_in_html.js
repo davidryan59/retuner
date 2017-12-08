@@ -4,14 +4,14 @@ let drawnVersionNumber = false;
 
 const updateTextInHtml = (state) => {
   // Only update this every N frames
-  const pageElts = state.pageElts
-  if (state.control.loopsSinceTimeout % state.params.updateHtmlText === 0) {
+  const pageElts = state.pageElt
+  if (state.control.loopsSinceTimeout % state.param.loopsToUpdateHtmlText === 0) {
     const stateTiming = state.control.timing
-    pageElts.totalTimeS.innerText = stateTiming.totalTimeS.toFixed(1)
-    pageElts.renderTimeMinMS.innerText = stateTiming.renderTimeMinMS.toFixed(1)
-    pageElts.renderTimeMaxMS.innerText = stateTiming.renderTimeMaxMS.toFixed(1)
-    stateTiming.renderTimeMinMS = 10000
-    stateTiming.renderTimeMaxMS = 0
+    pageElts.timeTotalS.innerText = stateTiming.timeTotalS.toFixed(1)
+    pageElts.timeRenderMinMS.innerText = stateTiming.timeRenderMinMS.toFixed(1)
+    pageElts.timeRenderMaxMS.innerText = stateTiming.timeRenderMaxMS.toFixed(1)
+    stateTiming.timeRenderMinMS = 10000
+    stateTiming.timeRenderMaxMS = 0
   }
   if (!drawnVersionNumber) {
     pageElts.versionNumber.innerText = state.version.number
@@ -32,8 +32,8 @@ const updateTextInHtml = (state) => {
     sliderModel.redraw = false
   }
   // Key colour contrast slider
-  sliderModel = state.slider.keyColourContrast
-  sliderView = pageElts.sliders.contrast
+  sliderModel = state.slider.colourContrast
+  sliderView = pageElts.sliders.colourContrast
   if (sliderModel.redraw) {
     currentValue = sliderModel.current
     sliderView.slider.value = currentValue
@@ -41,8 +41,8 @@ const updateTextInHtml = (state) => {
     sliderModel.redraw = false
   }
   // Key spacing slider
-  sliderModel = state.slider.keySpacing
-  sliderView = pageElts.sliders.spacing
+  sliderModel = state.slider.keySize
+  sliderView = pageElts.sliders.keySize
   if (sliderModel.redraw) {
     currentValue = sliderModel.current
     sliderView.slider.value = currentValue

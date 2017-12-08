@@ -1,7 +1,7 @@
 const toggleTransposing = (state, key) => {
 
-  state.freqs.transposing = (state.freqs.transposing === true) ? false : true
-  console.log("Transposing is now", state.freqs.transposing)
+  state.freq.transposing = (state.freq.transposing === true) ? false : true
+  console.log("Transposing is now", state.freq.transposing)
 
 }
 

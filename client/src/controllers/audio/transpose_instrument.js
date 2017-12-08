@@ -3,18 +3,18 @@ import recalcAllNotations from '../../notation/recalc_all_notations'
 
 const transposeInstrument = (state, key) => {
 
-  const freqFactor = key.transposes.factor
+  const freqDecimalRel = key.transposes.decimalCentreCurrent
   const transposingFract = key.transposes.fractRel
-  const freqTextRelative = key.transposes.text
+  const freqTextRelative = key.transposes.textFraction
 
   // Get the relevant state object
-  const stateFreqs = state.freqs
+  const stateFreq = state.freq
   // Retrieve relevant state variables
-  const minFreq = stateFreqs.minFreq
-  const currentFreq = stateFreqs.current.freq
-  const maxFreq = stateFreqs.maxFreq
+  const minFreq = stateFreq.decimalCentreMin
+  const instrumentFreqDecimalCentre = stateFreq.decimalCentreCurrent
+  const maxFreq = stateFreq.decimalCentreMax
   // Calculate the new frequency, bounded
-  let newFreq = currentFreq * freqFactor
+  let newFreq = instrumentFreqDecimalCentre * freqDecimalRel
   if (newFreq < minFreq) {
     newFreq = minFreq
   }
@@ -22,16 +22,16 @@ const transposeInstrument = (state, key) => {
     newFreq = maxFreq
   }
   // Do the change
-  stateFreqs.current.freq = newFreq
-  setFractUsingPowerMultiply(stateFreqs.current.fractCentralAbs, transposingFract)
+  stateFreq.decimalCentreCurrent = newFreq
+  setFractUsingPowerMultiply(stateFreq.fractCentre, transposingFract)
   recalcAllNotations(state)
 
   // Logging
-  const baseFreqHz = state.params.baseFrequencyHz
+  const baseFreqHz = state.param.baseFrequencyHz
   console.log(
     "Instrument central frequency changed by", freqTextRelative,
-    "from", (baseFreqHz*currentFreq).toFixed(2), "Hz",
-    "to", (baseFreqHz*newFreq).toFixed(2), "Hz"
+    "from", (baseFreqHz * instrumentFreqDecimalCentre).toFixed(2), "Hz",
+    "to", (baseFreqHz * newFreq).toFixed(2), "Hz"
   )
 }
 

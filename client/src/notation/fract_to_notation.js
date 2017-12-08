@@ -128,7 +128,7 @@ const fractToNotation = (state, fractionObject) => {
   // Assuming that the list of commas on the state
   // is up to date. Otherwise this method will fail.
 
-  const commaInfo = state.commas
+  const commaInfo = state.comma
   // Prime is the key, comma fraction object the value
 
   // Build up a notation by breaking down a residual

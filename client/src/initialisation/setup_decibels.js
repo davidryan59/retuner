@@ -11,7 +11,6 @@ const setupDecibels = (state) => {
     max: 11
   })
 
-  state.slider.array.push(slider)
   state.slider.volume = slider
 
   console.log(`${slider}`)

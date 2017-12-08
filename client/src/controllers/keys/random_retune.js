@@ -17,7 +17,7 @@ const randomRetune = (state, key) => {
       const newDenom = Math.round(retuneFactor * (1 + Math.random()))
       keyToRetune.transposes.set(state, keyToRetune, newNum, newDenom)
       retunes = true
-      console.log(`Randomly retuned ${keyToRetune.symbol} to ${keyToRetune.transposes.text}`)
+      console.log(`Randomly retuned ${keyToRetune.symbol} to ${keyToRetune.transposes.textFraction}`)
     }
   }
 

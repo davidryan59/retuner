@@ -1,15 +1,14 @@
 const setupImportantParameters = (state) => {
 
   // Some important state object structure
-  state.commas = {}
+  state.comma = {}
   state.notation = {}
   state.context = {}
   state.slider = {}
-  state.slider.array = []
   state.key = {}
   const stateKey = state.key
-  state.params = {}
-  const stateParams = state.params
+  state.param = {}
+  const stateParam = state.param
 
   // // DOESN'T YET WORK - VARYING KEYMAP BASED ON LOCALE ETC...
   // // JS file in JSON format.
@@ -21,16 +20,16 @@ const setupImportantParameters = (state) => {
   // // ... some problems with importing JSON on WebPack.
 
   // Tuning of the whole instrument
-  stateParams.baseFrequencyHz = 256
+  stateParam.baseFrequencyHz = 256
 
   // Every N loops (var = N) do the following:
-  stateParams.redrawCanvas = 2         // Redraw frame
-  stateParams.recalcNeighbours = 47    // Recalculate which neighbours are buttons
-  stateParams.updateHtmlText = 13      // Update HTML Text
+  stateParam.loopsToRedrawCanvas = 2         // Redraw frame
+  stateParam.loopsToRecalcNeighbours = 47    // Recalculate which neighbours are buttons
+  stateParam.loopsToUpdateHtmlText = 13      // Update HTML Text
 
   // Parameters related to timeout
-  stateParams.secondsToTimeout = 600
-  stateParams.approxBrowserFrameRate = 50
+  stateParam.secondsToTimeout = 600
+  stateParam.approxBrowserFrameRateHz = 50
 
   // Whether or not to use Cp = B#, Dbbd = Cb
   state.notation.usePythagoreanCommas = true

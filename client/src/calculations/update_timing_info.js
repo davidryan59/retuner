@@ -1,11 +1,11 @@
 const updateTimingInfo = (state, timeLoopStart) => {
-  const prevLoopStart = state.control.timing.thisLoopStart
+  const prevLoopStart = state.control.timing.loopStartThis
   const thisLoopStart = timeLoopStart
-  const loopTimeMS = thisLoopStart - prevLoopStart
-  state.control.timing.prevLoopStart = prevLoopStart
-  state.control.timing.thisLoopStart = thisLoopStart
-  state.control.timing.loopTimeMS = loopTimeMS
-  state.control.timing.totalTimeS += 0.001 * loopTimeMS
+  const timeBetweenLoopsMS = thisLoopStart - prevLoopStart
+  state.control.timing.loopStartPrev = prevLoopStart
+  state.control.timing.loopStartThis = thisLoopStart
+  state.control.timing.timeLoopMS = timeBetweenLoopsMS
+  state.control.timing.timeTotalS += 0.001 * timeBetweenLoopsMS
 }
 
 export default updateTimingInfo

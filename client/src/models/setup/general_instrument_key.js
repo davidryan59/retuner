@@ -59,13 +59,13 @@ const setupGeneralInstrumentKey = (state, key, options) => {
 
   const type = options.type
 
-  key.fillStyle = defaultFillStyle
-  key.strokeStyle = defaultStrokeStyle
-  key.lineWidth = defaultLineWidth
-  key.textColour = defaultTextColour
-  key.fontHeight = defaultFontHeight
-  key.font = defaultFont
-  key.labelArray = defaultLabelArray
+  key.getFillStyle = defaultFillStyle
+  key.getStrokeStyle = defaultStrokeStyle
+  key.getLineWidth = defaultLineWidth
+  key.getTextColour = defaultTextColour
+  key.getFontHeight = defaultFontHeight
+  key.getFontStyle = defaultFont
+  key.getLabelArray = defaultLabelArray
 
   // Set key function on pressing
   switch (type) {

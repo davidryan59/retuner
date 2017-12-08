@@ -25,10 +25,10 @@ const setupWaveform = (state) => {
   state.waveform = {}
   const stateWaveform = state.waveform
   stateWaveform.adsrOnPressNote = adsrOnPressNote
-  stateWaveform.types = waveformTypes
+  stateWaveform.allTypes = waveformTypes
   stateWaveform.index = waveformIndex
-  stateWaveform.type = state => state.waveform.types[state.waveform.index]
-  console.log("Waveform initialised to", stateWaveform.type(state), "with various parameters")
+  stateWaveform.getType = state => state.waveform.allTypes[state.waveform.index]
+  console.log("Waveform initialised to", stateWaveform.getType(state), "with various parameters")
 }
 
 export default setupWaveform

@@ -6,15 +6,15 @@
 
 const setupHtmlPageElts = (state) => {
 
-  state.pageElts = {}
-  const pageElts = state.pageElts
+  state.pageElt = {}
+  const pageElts = state.pageElt
 
   pageElts.canvas = document.querySelector("#main-canvas")
   pageElts.versionNumber = document.querySelector("#version-number")
   pageElts.versionDate = document.querySelector("#version-date")
-  pageElts.totalTimeS = document.querySelector("#total-time-s")
-  pageElts.renderTimeMinMS = document.querySelector("#render-time-min-ms")
-  pageElts.renderTimeMaxMS = document.querySelector("#render-time-max-ms")
+  pageElts.timeTotalS = document.querySelector("#total-time-s")
+  pageElts.timeRenderMinMS = document.querySelector("#render-time-min-ms")
+  pageElts.timeRenderMaxMS = document.querySelector("#render-time-max-ms")
 
   pageElts.sliders = {}
   const pageEltSliders = pageElts.sliders
@@ -37,12 +37,12 @@ const setupHtmlPageElts = (state) => {
   sliderView.value = sliderModel.current
 
   // Setup the key contrast slider
-  pageEltSliders.contrast = {}
-  pageEltSliders.contrast.slider = document.querySelector("#contrast-slider")
-  pageEltSliders.contrast.display = document.querySelector("#contrast-display")
+  pageEltSliders.colourContrast = {}
+  pageEltSliders.colourContrast.slider = document.querySelector("#contrast-slider")
+  pageEltSliders.colourContrast.display = document.querySelector("#contrast-display")
 
-  sliderView = pageEltSliders.contrast.slider
-  sliderModel = state.slider.keyColourContrast
+  sliderView = pageEltSliders.colourContrast.slider
+  sliderModel = state.slider.colourContrast
 
   sliderView.min = sliderModel.min
   sliderView.step = sliderModel.step
@@ -50,12 +50,12 @@ const setupHtmlPageElts = (state) => {
   sliderView.value = sliderModel.current
 
   // Setup the key spacing slider
-  pageEltSliders.spacing = {}
-  pageEltSliders.spacing.slider = document.querySelector("#spacing-slider")
-  pageEltSliders.spacing.display = document.querySelector("#spacing-display")
+  pageEltSliders.keySize = {}
+  pageEltSliders.keySize.slider = document.querySelector("#spacing-slider")
+  pageEltSliders.keySize.display = document.querySelector("#spacing-display")
 
-  sliderView = pageEltSliders.spacing.slider
-  sliderModel = state.slider.keySpacing
+  sliderView = pageEltSliders.keySize.slider
+  sliderModel = state.slider.keySize
 
   sliderView.min = sliderModel.min
   sliderView.step = sliderModel.step

@@ -1,27 +1,27 @@
 const setupControl = (state) => {
 
   // Input vars
-  const stateParams = state.params
+  const stateParams = state.param
   const secondsToTimeout = stateParams.secondsToTimeout
-  const approxBrowserFrameRate = stateParams.approxBrowserFrameRate
+  const approxBrowserFrameRate = stateParams.approxBrowserFrameRateHz
 
   // General control
   state.control = {}
   const stateControl = state.control
   stateControl.totalKeyActivations = 0
-  stateControl.stopMainLoop = false
+  stateControl.mainLoopPaused = false
   stateControl.loopsSinceTimeout = 0
-  stateControl.timeoutAfterLoops = secondsToTimeout * approxBrowserFrameRate
+  stateControl.loopsToTimeout = secondsToTimeout * approxBrowserFrameRate
 
   // Timing control
   stateControl.timing = {}
   const stateTiming = stateControl.timing
-  stateTiming.prevLoopStart = 0
-  stateTiming.thisLoopStart = 0
-  stateTiming.loopTimeMS = 0
-  stateTiming.renderTimeMinMS = 10000
-  stateTiming.renderTimeMaxMS = 0
-  stateTiming.totalTimeS = 0
+  stateTiming.loopStartPrev = 0
+  stateTiming.loopStartThis = 0
+  stateTiming.timeLoopMS = 0
+  stateTiming.timeRenderMinMS = 10000
+  stateTiming.timeRenderMaxMS = 0
+  stateTiming.timeTotalS = 0
   console.log("Control state and timing initialised")
 }
 

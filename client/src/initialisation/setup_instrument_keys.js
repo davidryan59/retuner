@@ -19,12 +19,12 @@ const setupInstrumentKeys = (state) => {
   // const keyMapFile = stateKey.file
   // const jsonKeyMapData = require("../../" + keyMapFile)
   // const keymap = JSON.parse(jsonKeyMapData)
-  stateKey.map = keyMap.map
+  stateKey.importMap = keyMap.map
 
   // For each keymap entry, construct an InstrumentKey
-  const keyMapKeyArray = Object.keys(stateKey.map)
+  const keyMapKeyArray = Object.keys(stateKey.importMap)
   for (const key of keyMapKeyArray) {
-    const instrumentKeySetup = stateKey.map[key]
+    const instrumentKeySetup = stateKey.importMap[key]
     instrumentKeySetup.keyboardCode = key     // Add the key itself to the object!
     instrumentKeyArray.push(new InstrumentKey(state, instrumentKeySetup))
   }

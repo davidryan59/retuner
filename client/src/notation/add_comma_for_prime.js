@@ -7,7 +7,7 @@ const addCommaForPrime = (state, prime) => {
     commaObject[2] = a
     commaObject[3] = b
     commaObject[prime] = 1
-    state.commas[prime] = commaObject
+    state.comma[prime] = commaObject
   }
 }
 

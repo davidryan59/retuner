@@ -1,6 +1,6 @@
 const keyEndsPreviousPress = (state, key) => {
   // console.log("Running 'key ends previous press'")
-  return state.freqs.keyEndsPreviousPress
+  return state.freq.keyEndsPreviousPress
 }
 
 export default keyEndsPreviousPress

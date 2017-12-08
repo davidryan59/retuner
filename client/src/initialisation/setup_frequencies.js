@@ -8,18 +8,17 @@ const setupFrequencies = (state) => {
   const keyReleaseEndsNote = false     // false means keys are sustained
   const keyEndsPreviousPress = false   // false means one key can generate multiple tones
   // Save them into the state
-  state.freqs = {}
-  const stateFreqs = state.freqs
-  stateFreqs.minFreq = minFreq
-  stateFreqs.maxFreq = maxFreq
-  stateFreqs.transposing = transposing
-  stateFreqs.keyReleaseEndsNote = keyReleaseEndsNote
-  stateFreqs.keyEndsPreviousPress = keyEndsPreviousPress
-  // Current frequency stuff
-  stateFreqs.current = {}
-  stateFreqs.current.freq = 1
-  stateFreqs.current.fractCentralAbs = {}
-  // .freq is the decimal, .fractCentralAbs is the prime/exponent representation
+  state.freq = {}
+  const stateFreq = state.freq
+  stateFreq.decimalCentreMin = minFreq
+  stateFreq.decimalCentreMax = maxFreq
+  stateFreq.transposing = transposing
+  stateFreq.keyReleaseEndsNote = keyReleaseEndsNote
+  stateFreq.keyEndsPreviousPress = keyEndsPreviousPress
+  // Centre frequency stuff
+  stateFreq.decimalCentreCurrent = 1
+  stateFreq.fractCentre = {}
+  // .freq is the decimal, .fractCentre is the prime/exponent representation
 
   console.log("Frequencies initialised")
 }

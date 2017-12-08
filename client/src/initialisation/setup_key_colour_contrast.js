@@ -11,8 +11,7 @@ const setupKeyColourContrast = (state) => {
     max: 11
   })
 
-  state.slider.array.push(slider)
-  state.slider.keyColourContrast = slider
+  state.slider.colourContrast = slider
 
   console.log(`${slider}`)
 }

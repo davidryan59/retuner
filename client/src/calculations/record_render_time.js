@@ -1,13 +1,13 @@
 const recordRenderTime = (state, timeLoopStart) => {
   const timeRenderEnd = window.performance.now()
   const renderTimeMS = timeRenderEnd - timeLoopStart
-  state.control.timing.renderTimeMinMS = Math.min(
+  state.control.timing.timeRenderMinMS = Math.min(
     renderTimeMS,
-    state.control.timing.renderTimeMinMS
+    state.control.timing.timeRenderMinMS
   )
-  state.control.timing.renderTimeMaxMS = Math.max(
+  state.control.timing.timeRenderMaxMS = Math.max(
     renderTimeMS,
-    state.control.timing.renderTimeMaxMS
+    state.control.timing.timeRenderMaxMS
   )
 }
 

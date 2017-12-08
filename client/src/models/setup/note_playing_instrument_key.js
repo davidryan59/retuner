@@ -8,11 +8,11 @@ import recalcKeyNotations from "../../notation/recalc_key_notations"
 import freqToRGBA from "../../calculations/freq_to_rgba"
 
 const allowKeyActivation = (state, key) => {
-  const stateFreq = state.freqs
-  const minFreq = stateFreq.minFreq
-  const maxFreq = stateFreq.maxFreq
-  const currentFreq = stateFreq.current.freq
-  const newFreq = currentFreq * key.transposes.factor
+  const stateFreq = state.freq
+  const minFreq = stateFreq.decimalCentreMin
+  const maxFreq = stateFreq.decimalCentreMax
+  const currentFreq = stateFreq.decimalCentreCurrent
+  const newFreq = currentFreq * key.transposes.decimalCentreCurrent
   if (newFreq < minFreq) {
     return false
   }
@@ -27,8 +27,8 @@ const setNumDenom = (state, key, inputNum, inputDenom) => {
   const keyTransposes = key.transposes
   keyTransposes.num = num
   keyTransposes.denom = denom
-  keyTransposes.factor = num / denom
-  keyTransposes.text = num + "/" + denom
+  keyTransposes.decimalCentreCurrent = num / denom
+  keyTransposes.textFraction = num + "/" + denom
   keyTransposes.complexity = num * denom
   keyTransposes.fractRel = fractionToFract(num, denom)
   addCommasForFract(state, keyTransposes.fractRel)
@@ -44,11 +44,11 @@ const setNumDenom = (state, key, inputNum, inputDenom) => {
 const defaultNextFreqRel = (state, key) => {
   // Things like bounding by min and max are done here.
   const keyTransposes = key.transposes
-  const keyFreq = keyTransposes.factor
-  const baseFreqHz = state.params.baseFrequencyHz
-  const instrumentFreq = state.freqs.current.freq
-  const maxFreq = state.freqs.maxFreq
-  const minFreq = state.freqs.minFreq
+  const keyFreq = keyTransposes.decimalCentreCurrent
+  const baseFreqHz = state.param.baseFrequencyHz
+  const instrumentFreq = state.freq.decimalCentreCurrent
+  const maxFreq = state.freq.decimalCentreMax
+  const minFreq = state.freq.decimalCentreMin
   let actualNextFreq = keyFreq * instrumentFreq
   actualNextFreq = Math.min(maxFreq, actualNextFreq)
   actualNextFreq = Math.max(minFreq, actualNextFreq)
@@ -56,15 +56,15 @@ const defaultNextFreqRel = (state, key) => {
 }
 
 const defaultNextFreqAbsHz = (state, key) => {
-  const baseFreqHz = state.params.baseFrequencyHz
-  const nextFreqRel = key.nextFreqRel(state, key)
+  const baseFreqHz = state.param.baseFrequencyHz
+  const nextFreqRel = key.getNextFreqRel(state, key)
   return baseFreqHz * nextFreqRel
 }
 
 const defaultFillStyle = (state, key) => {
-  if (key.activates(state, key)) {
-    const contrast = state.slider.keyColourContrast.getFraction()
-    return freqToRGBA(key.nextFreqRel(state, key), 0.8, contrast)
+  if (key.getAllowActivation(state, key)) {
+    const contrast = state.slider.colourContrast.getFraction()
+    return freqToRGBA(key.getNextFreqRel(state, key), 0.8, contrast)
   } else {
     return 'rgba(220, 220, 220, 0.25)'
   }
@@ -86,7 +86,7 @@ const defaultStrokeStyle = (state, key) => {
 }
 
 const defaultLineWidth = (state, key) => {
-  return 4 * (2 / key.transposes.factor)
+  return 4 * (2 / key.transposes.decimalCentreCurrent)
 }
 
 const defaultTextColour = (state, key) => {
@@ -97,20 +97,20 @@ const defaultFontHeight = (state, key) => {
   return 10
 }
 
-const defaultFont = (state, key) => {
+const defaultFontStyle = (state, key) => {
   const fontHeight = defaultFontHeight(state, key)
   return `${fontHeight}px sans-serif`
 }
 
 const defaultLabelArray = (state, key) => {
   const buttonTextArray = [key.symbol || key.keyboardCode]
-  const freq = key.nextFreqAbsHz(state, key)
-  if (key.activates(state, key)) {
+  const freq = key.getNextFreqAbsHz(state, key)
+  if (key.getAllowActivation(state, key)) {
     const freqText = freq.toFixed(2) + "Hz"
     buttonTextArray.push(freqText)
-    buttonTextArray.push(key.transposes.notation)
+    buttonTextArray.push(key.transposes.textNotation)
   }
-  buttonTextArray.push("\u00d7 " + key.transposes.text) // Multiplication symbol
+  buttonTextArray.push("\u00d7 " + key.transposes.textFraction) // Multiplication symbol
   return buttonTextArray
 }
 
@@ -120,20 +120,20 @@ const setupNotePlayingInstrumentKey = (state, key, options) => {
   const inputNum = inputFraction.num
   const inputDenom = inputFraction.denom
 
-  key.activates = allowKeyActivation
+  key.getAllowActivation = allowKeyActivation
   key.runOnPress = instrumentKeyPress
   key.runOnRelease = instrumentKeyRelease
 
-  key.nextFreqRel = defaultNextFreqRel
-  key.nextFreqAbsHz = defaultNextFreqAbsHz
+  key.getNextFreqRel = defaultNextFreqRel
+  key.getNextFreqAbsHz = defaultNextFreqAbsHz
 
-  key.fillStyle = defaultFillStyle
-  key.strokeStyle = defaultStrokeStyle
-  key.lineWidth = defaultLineWidth
-  key.textColour = defaultTextColour
-  key.fontHeight = defaultFontHeight
-  key.font = defaultFont
-  key.labelArray = defaultLabelArray
+  key.getFillStyle = defaultFillStyle
+  key.getStrokeStyle = defaultStrokeStyle
+  key.getLineWidth = defaultLineWidth
+  key.getTextColour = defaultTextColour
+  key.getFontHeight = defaultFontHeight
+  key.getFontStyle = defaultFontStyle
+  key.getLabelArray = defaultLabelArray
 
   key.transposes = {}
   const keyTransposes = key.transposes

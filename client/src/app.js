@@ -34,39 +34,39 @@ const runApp = () => {
   // Make window respond to mouse presses
   // window.addEventListener('mousedown', event => {mouseDownHandler(state, event)})
   // window.addEventListener('mouseup', event => {mouseUpHandler(state, event)})
-  state.pageElts.canvas.addEventListener('mousedown', event => {mouseDownHandler(state, event)})
-  state.pageElts.canvas.addEventListener('mouseup', event => {mouseUpHandler(state, event)})
+  state.pageElt.canvas.addEventListener('mousedown', event => {mouseDownHandler(state, event)})
+  state.pageElt.canvas.addEventListener('mouseup', event => {mouseUpHandler(state, event)})
 
   // If window resizes, may need to change canvas
   window.addEventListener('resize', event => {windowResizeHandler(state, event)})
 
   // Put event listeners on sliders
-  state.pageElts.sliders.volume.slider.addEventListener('input', event => {volumeSliderHandler(state, event)})
-  state.pageElts.sliders.contrast.slider.addEventListener('input', event => {contrastSliderHandler(state, event)})
-  state.pageElts.sliders.spacing.slider.addEventListener('input', event => {spacingSliderHandler(state, event)})
+  state.pageElt.sliders.volume.slider.addEventListener('input', event => {volumeSliderHandler(state, event)})
+  state.pageElt.sliders.colourContrast.slider.addEventListener('input', event => {contrastSliderHandler(state, event)})
+  state.pageElt.sliders.keySize.slider.addEventListener('input', event => {spacingSliderHandler(state, event)})
   // (Previously 'change' listeners, now 'input' listeners. 1st Dec 2017)
 
   window.mainLoop = timeLoopStart => {
     // timeLoopStart is a decimal number, a time precise to 0.005ms :)
-    if (state.control.timeoutAfterLoops < state.control.loopsSinceTimeout ) {
+    if (state.control.loopsToTimeout < state.control.loopsSinceTimeout ) {
       console.log("App timed out")
-      state.control.stopMainLoop = true
+      state.control.mainLoopPaused = true
     }
-    if (!state.control.stopMainLoop) {
+    if (!state.control.mainLoopPaused) {
       window.requestAnimationFrame(mainLoop)
       // This makes mainLoop run once per browser frame
     } else {
-      console.log("Main loop ended. State:")
+      console.log("App has paused. State:")
       console.dir(state)
     }
 
     updateTimingInfo(state, timeLoopStart)
     calculateForces(state)
     moveKeys(state)
-    if (state.control.loopsSinceTimeout % state.params.recalcNeighbours === 0) {
+    if (state.control.loopsSinceTimeout % state.param.loopsToRecalcNeighbours === 0) {
       calculateNeighbouringKeys(state)
     }
-    if (state.control.loopsSinceTimeout % state.params.redrawCanvas === 0) {
+    if (state.control.loopsSinceTimeout % state.param.loopsToRedrawCanvas === 0) {
       findModelCoordBounds(state)
       storeModelToCanvasCoords(state)
       drawCanvas(state)

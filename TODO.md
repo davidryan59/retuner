@@ -47,7 +47,7 @@
 - Not tested in: (others)
 
 ## History
-- (This has been started, however not quite finished. Record note has been implemented on the key press. This is a slightly tricky feature, and makes me wonder if the earlier things are implemented correctly...)
+- (This has been started, however not quite finished. Record note was previously implemented on the key press, but has been removed since its not implemented well. This is a slightly tricky feature, and makes me wonder if the earlier things are implemented correctly...)
 - Maintain a forwards and backwards history list for instrument notes played.
 - If stuff is available in that list, play it on keys Y and U
 - If stuff is not available, repeat the same note (without altering frequency)
@@ -89,9 +89,9 @@ Function to add reverb or at least one or two delays
 Want individual notes to be played in stereo. Possibly move them around depending on their position on the keyboard. Possibly alter the reverb delays based on how far they are from the 2 edges!
 
 ## Accuracy of central frequency
-- state.freqs.current.freq is decimal, inexact
-- state.freqs.current.fractCentralAbs is integer hash, exact
-- Every 100 to 10000 key presses, should reset .freq to a value obtained from .fractCentralAbs
+- state.freq.decimalCentreCurrent is decimal, inexact
+- state.freq.fractCentre is integer hash, exact
+- Every 100 to 10000 key presses, should reset .freq to a value obtained from .fractCentre
 
 ## Top Quote
 - Half the time, have the instrument text.

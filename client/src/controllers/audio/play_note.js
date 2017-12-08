@@ -8,7 +8,7 @@ const playNote = (state, key, extraFreqFactor=1) => {
   // Retrieve relevant state objects
   const audioContext = state.context.audio
   const waveform = state.waveform
-  const stateFreqs = state.freqs
+  const stateFreq = state.freq
   const adsrPress = state.waveform.adsrOnPressNote
 
   // Create oscillator and gain nodes, and connect them to audio context
@@ -21,11 +21,11 @@ const playNote = (state, key, extraFreqFactor=1) => {
 
   // Specify the oscillator frequency and type
   const currentTime = audioContext.currentTime
-  const baseFreqHz = state.params.baseFrequencyHz
-  const instrumentFreq = stateFreqs.current.freq
-  const theFreq = baseFreqHz * instrumentFreq * extraFreqFactor
-  nodeOscillator.frequency.setValueAtTime(theFreq, currentTime)
-  nodeOscillator.type = waveform.type(state)
+  const baseFreqHz = state.param.baseFrequencyHz
+  const instrumentCentralFreqDecimalRel = stateFreq.decimalCentreCurrent
+  const noteFreqHz = baseFreqHz * instrumentCentralFreqDecimalRel * extraFreqFactor
+  nodeOscillator.frequency.setValueAtTime(noteFreqHz, currentTime)
+  nodeOscillator.type = waveform.getType(state)
 
   // Setup the gain node amplitude
   nodeGainVolControl.gain.value = decibelToAmplitude(state.slider.volume.current)
@@ -38,8 +38,8 @@ const playNote = (state, key, extraFreqFactor=1) => {
   nodeOscillator.stop(currentTime + adsrPress.duration)
 
   // Provide logging
-  // const theFreqText = theFreq.toFixed(2)
-  // console.log("Playing note", key.transposes.text, "at", theFreqText, "Hz")
+  // const theFreqText = noteFreqHz.toFixed(2)
+  // console.log("Playing note", key.transposes.textFraction, "at", theFreqText, "Hz")
   nodeOscillator.onended = function() {
     // console.log("Note at", theFreqText, "Hz ended")
   }
