@@ -14,9 +14,9 @@ const drawInstrumentKeys = (state) => {
       const y = canvasCoords.y
       const r = canvasCoords.r
 
-      context.fillStyle = key.getFillStyle(state, key)
-      context.strokeStyle = key.getStrokeStyle(state, key)
-      context.lineWidth = key.getLineWidth(state, key)
+      context.fillStyle = key.graphics.getFillStyle(state, key)
+      context.strokeStyle = key.graphics.getStrokeStyle(state, key)
+      context.lineWidth = key.graphics.getLineWidth(state, key)
       context.beginPath()
       context.arc(x, y, r, 0, 2*Math.PI);
       context.stroke();
@@ -26,10 +26,10 @@ const drawInstrumentKeys = (state) => {
       context.textAlign = "center"
       context.textBaseline = "middle"
       // Centering in y direction is manual, see yText below
-      context.font = key.getFontStyle(state, key)
-      context.fillStyle = key.getTextColour(state, key)
-      const buttonTextArray = key.getLabelArray(state, key)
-      const fontHeight = key.getFontHeight(state, key)
+      context.font = key.graphics.getFontStyle(state, key)
+      context.fillStyle = key.graphics.getTextColour(state, key)
+      const buttonTextArray = key.graphics.getLabelArray(state, key)
+      const fontHeight = key.graphics.getFontHeight(state, key)
       const lineHeight = fontHeight + lineSpacing
       const maxI = buttonTextArray.length - 1
       for (const i in buttonTextArray) {

@@ -1,7 +1,10 @@
-import keyMap from "../keymap/keymap_en-gb_macbook_chrome.json"
-console.log("Imported keymap into instrument key setup:", keyMap)
+// import keyMap from "../keymap/keymap_en-gb_macbook_chrome.json"
+import mapKeyPositions from "../keymap/key_positions_en-gb_macbook.json"
+console.log("Imported keymap into instrument key setup:", mapKeyPositions)
+import mapFunctionKeys from "../keymap/function_keys.json"
 
 import InstrumentKey from '../models/instrument_key'
+import overwriteWithKeymapInfo from '../keymap/overwrite_with_keymap_info'
 
 const setupInstrumentKeys = (state) => {
 
@@ -16,20 +19,24 @@ const setupInstrumentKeys = (state) => {
   // // (Note - it doesn't seem possible to have a variable file name yet...
   // // so for other browsers, computers or locales they will have to load
   // // the default keymap. Hopefully find a way to over-ride that later...)
-  // const keyMapFile = stateKey.file
-  // const jsonKeyMapData = require("../../" + keyMapFile)
+  // const mapKeyPositionsFile = stateKey.file
+  // const jsonKeyMapData = require("../../" + mapKeyPositionsFile)
   // const keymap = JSON.parse(jsonKeyMapData)
-  stateKey.importMap = keyMap.map
+  const mainMap = mapKeyPositions.map
+  stateKey.mainMap = mainMap
 
   // For each keymap entry, construct an InstrumentKey
-  const keyMapKeyArray = Object.keys(stateKey.importMap)
-  for (const key of keyMapKeyArray) {
-    const instrumentKeySetup = stateKey.importMap[key]
+  for (const key of Object.keys(mainMap)) {
+    const instrumentKeySetup = mainMap[key]
     instrumentKeySetup.keyboardCode = key     // Add the key itself to the object!
-    instrumentKeyArray.push(new InstrumentKey(state, instrumentKeySetup))
+    const newInstrumentKey = new InstrumentKey(state, instrumentKeySetup)
+    instrumentKeyArray.push(newInstrumentKey)
+    mainMap[key].instrumentKey = newInstrumentKey
   }
+  console.log("The instrument has been set up with", instrumentKeyArray.length, "blank keys")
 
-  console.log("The instrument has been set up with", instrumentKeyArray.length, "keys")
+  overwriteWithKeymapInfo(state, mapFunctionKeys, "function keys")
+
 }
 
 export default setupInstrumentKeys
