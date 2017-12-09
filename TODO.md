@@ -1,10 +1,14 @@
 # TO DO LIST
 
+## Main Keymap File
+- Redo it so its a partial and loads all the keys into the setup
+
 ## Physics
 - Make sure none of the physics methods work if physics is switched off.
 - It would make the key disappear from the screen, but still respond to keyboard.
 
 ## Alternative Keymaps
+- MENU SYSTEM for many things, in particular, selecting (and overwriting) a keymap
 - Want to present at least a Simple, Medium and Full keymap to users
 - On startup, select a keymap at random from Simple, Medium and Full (could prompt user? can this choice be saved for future sessions?)
 - Could do a Pythag, 5-limit, 7-limit and 13-limit keymaps
