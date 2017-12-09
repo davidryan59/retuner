@@ -1,4 +1,4 @@
-import keyTypeInfo from "../keymap/key_types.json"
+import keyTypeInfo from "../../keymap/key_types.json"
 console.log("Imported key types into InstrumentKey model:", keyTypeInfo)
 
 import setupGeneralKey from "./setup/setup_general_key"

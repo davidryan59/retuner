@@ -3,8 +3,8 @@ import nextFreqRel from "../transposing/next_freq_rel"
 import nextFreqAbsHz from "../transposing/next_freq_abs_hz"
 
 import allowKeyActivation from "../transposing/allow_key_activation"
-import instrumentKeyPress from "../../controllers/keys/instrument_key_press"
-import instrumentKeyRelease from "../../controllers/keys/instrument_key_release"
+import instrumentKeyPress from "../../../controllers/keys/instrument_key_press"
+import instrumentKeyRelease from "../../../controllers/keys/instrument_key_release"
 
 import fillStyleTransposing from "../graphics/fill_style_transposing"
 import strokeStyleTransposing from "../graphics/stroke_style_transposing"

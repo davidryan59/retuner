@@ -1,27 +1,30 @@
 import fillStyleDefault from "../graphics/fill_style_default"
+import fillStyleInactive from "../graphics/fill_style_inactive"
+import fillStyleTransposeToggle from "../graphics/fill_style_transpose_toggle"
 import strokeStyleDefault from "../graphics/stroke_style_default"
 import lineWidthDefault from "../graphics/line_width_default"
 import textColourDefault from "../graphics/text_colour_default"
 import fontHeightDefault from "../graphics/font_height_default"
 import fontStyleDefault from "../graphics/font_style_default"
 import labelArrayDefault from "../graphics/label_array_default"
+import labelArrayVoice from "../graphics/label_array_voice"
 
-import pauseApp from "../../controllers/keys/pause_app"
-import logState from "../../controllers/keys/log_state"
-import toggleTransposing from "../../controllers/keys/toggle_transposing"
-import cycleSustainOptions from "../../controllers/keys/cycle_sustain_options"
-import cycleWaveform from "../../controllers/keys/cycle_waveform"
-import resetCentralFreq from "../../controllers/keys/reset_central_freq"
-import volumeDecrease from "../../controllers/keys/volume_decrease"
-import volumeIncrease from "../../controllers/keys/volume_increase"
-import randomRetune from "../../controllers/keys/random_retune"
+import pauseApp from "../../../controllers/keys/pause_app"
+import logState from "../../../controllers/keys/log_state"
+import toggleTransposing from "../../../controllers/keys/toggle_transposing"
+import cycleSustainOptions from "../../../controllers/keys/cycle_sustain_options"
+import cycleWaveform from "../../../controllers/keys/cycle_waveform"
+import resetCentralFreq from "../../../controllers/keys/reset_central_freq"
+import volumeDecrease from "../../../controllers/keys/volume_decrease"
+import volumeIncrease from "../../../controllers/keys/volume_increase"
+import randomRetune from "../../../controllers/keys/random_retune"
 
 const functionReturnsTrue = () => true
 
 const setupGeneralKey = (state, key) => {
 
   key.transposes = null
-  
+
   const keyActivation = key.activation
   const keyGraphics = key.graphics
 
@@ -44,6 +47,7 @@ const setupGeneralKey = (state, key) => {
       break
     case "change_voice":
       keyActivation.press = cycleWaveform
+      keyGraphics.getLabelArray = labelArrayVoice
       break
     case "change_sustain_option":
       keyActivation.press = cycleSustainOptions
@@ -59,12 +63,19 @@ const setupGeneralKey = (state, key) => {
       break
     case "change_transposing_option":
       keyActivation.press = toggleTransposing
+      keyGraphics.getFillStyle = fillStyleTransposeToggle
       break
     case "random_retune":
       keyActivation.press = randomRetune
       break
     case "pause":
       keyActivation.press = pauseApp
+      break
+    case "not_used":
+      keyGraphics.getFillStyle = fillStyleInactive
+      break
+    case "trapping_key_fails":
+      keyGraphics.getFillStyle = fillStyleInactive
       break
     default:
       // console.log(`Key type ${type} not recognised`)
