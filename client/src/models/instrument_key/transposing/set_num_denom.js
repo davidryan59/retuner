@@ -21,7 +21,7 @@ const setNumDenom = (state, key, inputNum, inputDenom) => {
   // Redefine anchor radius of transposing keys in terms of
   // their musical importance, which means low complexity
   const c = 10
-  key.coords.model.anchor.r = 7.5 + 4 * c * (1 / (c + keyTransposes.complexityRel))
+  key.coords.model.anchor.r = 5.5 + 2.5 * c * (1 / (c + keyTransposes.complexityRel))
 
 }
 

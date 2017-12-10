@@ -29,9 +29,9 @@
       "functionLabel":"Pause"
    },
    "not_used":{
-     "incrementRadius":-2
+     "incrementRadius":-0.5
    },
    "trapping_key_fails":{
-     "incrementRadius":-3.5
+     "incrementRadius":-2
    }
 }

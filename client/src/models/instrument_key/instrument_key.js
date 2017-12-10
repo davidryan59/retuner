@@ -79,7 +79,7 @@ class InstrumentKey {
 
     // Radius setup (changes if type changed)
     const incrementRadius = allOptions.incrementRadius || 0
-    anchorCoords.r = currentCoords.r = 6.5 + incrementRadius + 0.1 * Math.random()
+    anchorCoords.r = currentCoords.r = 5.5 + incrementRadius + 0.1 * Math.random()
 
     // x, y setup (if keys reset, don't need to supply x, y)
     const location = allOptions.location

@@ -16,7 +16,8 @@ const storeModelToCanvasCoords = (state) => {
   const viewObjectCentreY = modelStats.centreY
   const viewObjectZoom = modelStats.zoom
 
-  const spacingR = 0.5 * (1 + state.slider.keySize.getFraction())
+  const baseFactor = 0.7
+  const spacingR = baseFactor + (1 - baseFactor) * state.slider.keySize.getFraction()
 
   for (const keyIndex of stateKey.indexOrderArray) {
 
