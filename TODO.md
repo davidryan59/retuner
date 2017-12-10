@@ -7,6 +7,12 @@
 - Make sure none of the physics methods work if physics is switched off.
 - It would make the key disappear from the screen, but still respond to keyboard.
 
+## Frame Rate
+- Alternate between 60Hz, 30Hz, 20Hz depending on how long frame calculation takes
+- Less than 5ms - 60Hz
+- 5ms to 12ms - 30Hz
+- Otherwise, 20Hz
+
 ## Alternative Keymaps
 - MENU SYSTEM for many things, in particular, selecting (and overwriting) a keymap
 - Want to present at least a Simple, Medium and Full keymap to users

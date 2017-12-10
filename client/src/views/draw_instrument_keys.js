@@ -14,9 +14,21 @@ const drawInstrumentKeys = (state) => {
       const y = canvasCoords.y
       const r = canvasCoords.r
 
+      // Setup fill
       context.fillStyle = key.graphics.getFillStyle(state, key)
-      context.strokeStyle = key.graphics.getStrokeStyle(state, key)
+
+      // Setup border
       context.lineWidth = key.graphics.getLineWidth(state, key)
+      context.strokeStyle = key.graphics.getStrokeStyle(state, key)
+      // Options for dashed border below:
+      context.lineCap = "round"
+      context.setLineDash(key.graphics.getLineDash(state, key))
+      // context.setLineDash([])  // Solid line!
+      // Dashed line, 1px on, 12px off
+      // (lineCap of "round" increases coverage of "on" part)
+      // context.setLineDash([1, 12])
+
+      // Do drawing
       context.beginPath()
       context.arc(x, y, r, 0, 2*Math.PI);
       context.stroke();

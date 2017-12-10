@@ -1,14 +1,12 @@
-import fillStyleDefault from './fill_style_default'
+import fillStyleButton from './fill_style_button'
 
 const fillStyleTransposeToggle = (state, key) => {
   if (state.freq.transposing) {
-    return fillStyleDefault(state, key)
+    // Transposing ON, default
+    return fillStyleButton(state, key, 0)
   } else {
-    if (key.keyState) {
-      return 'rgba(0, 0, 45, 0.8)'
-    } else {
-      return 'rgba(0, 0, 90, 0.5)'
-    }
+    // Transposing OFF
+    return fillStyleButton(state, key, 1)
   }
 }
 

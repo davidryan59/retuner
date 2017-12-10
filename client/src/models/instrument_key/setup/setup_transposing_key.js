@@ -9,6 +9,7 @@ import instrumentKeyRelease from "../../../controllers/keys/instrument_key_relea
 import fillStyleTransposing from "../graphics/fill_style_transposing"
 import strokeStyleTransposing from "../graphics/stroke_style_transposing"
 import lineWidthTransposing from "../graphics/line_width_transposing"
+import lineDashTransposing from "../graphics/line_dash_transposing"
 import textColourTransposing from "../graphics/text_colour_transposing"
 import fontHeightTransposing from "../graphics/font_height_transposing"
 import fontStyleTransposing from "../graphics/font_style_transposing"
@@ -33,6 +34,7 @@ const setupTransposingKey = (state, key, num, denom) => {
   keyGraphics.getFillStyle = fillStyleTransposing
   keyGraphics.getStrokeStyle = strokeStyleTransposing
   keyGraphics.getLineWidth = lineWidthTransposing
+  keyGraphics.getLineDash = lineDashTransposing
   keyGraphics.getTextColour = textColourTransposing
   keyGraphics.getFontHeight = fontHeightTransposing
   keyGraphics.getFontStyle = fontStyleTransposing

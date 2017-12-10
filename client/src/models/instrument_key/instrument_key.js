@@ -100,9 +100,15 @@ class InstrumentKey {
     }
   }
 
-  // toString() {
-  //   return `Not yet implemented`
-  // }
+  toString() {
+    if (this.graphics) {
+      if (this.graphics.getLabelArray) {
+        const labelArray = this.graphics.getLabelArray(this.state, this)
+        return `Instrument Key ${labelArray[0]} ${labelArray[1]}`
+      }
+    }
+    return `Instrument Key for ${this.symbol || this.keyboardCode}`
+  }
 
 }
 

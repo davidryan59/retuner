@@ -56,6 +56,8 @@ const runApp = () => {
       window.requestAnimationFrame(mainLoop)
       // This makes mainLoop run once per browser frame
     } else {
+      // Redraw one more time before pausing, e.g. pause button animation
+      drawCanvas(state)
       console.log("App has paused. State:")
       console.dir(state)
     }
