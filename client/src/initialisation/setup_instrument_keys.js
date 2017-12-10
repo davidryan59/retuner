@@ -3,7 +3,7 @@ import mapKeyPositions from "../keymap/key_positions_en-gb_macbook.json"
 console.log("Imported keymap into instrument key setup:", mapKeyPositions)
 import mapFunctionKeys from "../keymap/function_keys.json"
 // import mapTransposingKeys from "../keymap/transposing_3-limit_simple_pythag.json"
-import mapTransposingKeys from "../keymap/transposing_5-limit_simple.json"
+import mapTransposingKeys from "../keymap/transposing_5-limit_medium.json"
 
 import InstrumentKey from '../models/instrument_key/instrument_key'
 import overwriteWithKeymapInfo from '../keymap/overwrite_with_keymap_info'
