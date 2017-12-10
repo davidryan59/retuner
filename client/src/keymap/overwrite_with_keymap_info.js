@@ -2,7 +2,7 @@ const overwriteWithKeymapInfo = (state, keymapFromJson, logInfo) => {
 
   // Set the function keys
   for (const key of Object.keys(keymapFromJson)) {
-    const keyInfo = state.key.mainMap[key]
+    const keyInfo = state.map.main.map[key]
     if (keyInfo) {
       const instrumentKey = keyInfo.instrumentKey
       if (instrumentKey) {

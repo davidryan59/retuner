@@ -8,6 +8,7 @@ import setupKeySpacing from './setup_key_spacing'
 import setupHtmlPageElts from './setup_html_page_elts'
 import setupGraphicsContext from './setup_graphics_context'
 import setupFrequencies from './setup_frequencies'
+import setupKeymaps from './setup_keymaps'
 import setupInstrumentKeys from './setup_instrument_keys'
 import setupKeyInteractions from './setup_key_interactions'
 import setupWaveform from './setup_waveform'
@@ -32,6 +33,7 @@ const initialiseState = (state) => {
   setupHtmlPageElts(state)
   setupGraphicsContext(state)
   setupFrequencies(state)
+  setupKeymaps(state)
   setupInstrumentKeys(state)
   console.log("Here is a sample key:")
   console.dir(state.key.array[16])       // Log the 'V' key

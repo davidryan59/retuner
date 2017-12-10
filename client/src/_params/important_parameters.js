@@ -4,6 +4,7 @@ const setupImportantParameters = (state) => {
   state.comma = {}
   state.context = {}
   state.slider = {}
+  state.map = {}
   state.key = {}
   const stateKey = state.key
   state.param = {}

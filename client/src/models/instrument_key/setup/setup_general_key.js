@@ -1,6 +1,7 @@
 import fillStyleDefault from "../graphics/fill_style_default"
 import fillStyleInactive from "../graphics/fill_style_inactive"
 import fillStyleSustain from "../graphics/fill_style_sustain"
+import fillStyleKeymap from "../graphics/fill_style_keymap"
 import fillStyleTransposeToggle from "../graphics/fill_style_transpose_toggle"
 import fillStylePause from "../graphics/fill_style_pause"
 import strokeStyleDefault from "../graphics/stroke_style_default"
@@ -14,6 +15,7 @@ import fontStyleDefault from "../graphics/font_style_default"
 import labelArrayDefault from "../graphics/label_array_default"
 import labelArrayVoice from "../graphics/label_array_voice"
 import labelArraySustain from "../graphics/label_array_sustain"
+import labelArrayKeymap from "../graphics/label_array_keymap"
 import labelArrayTransposeToggle from "../graphics/label_array_transpose_toggle"
 import labelArrayPause from "../graphics/label_array_pause"
 
@@ -22,6 +24,7 @@ import logState from "../../../controllers/keys/log_state"
 import toggleTransposing from "../../../controllers/keys/toggle_transposing"
 import cycleSustainType from "../../../controllers/keys/cycle_sustain_type"
 import cycleWaveform from "../../../controllers/keys/cycle_waveform"
+import cycleKeymap from "../../../controllers/keys/cycle_keymap"
 import resetCentralFreq from "../../../controllers/keys/reset_central_freq"
 import volumeDecrease from "../../../controllers/keys/volume_decrease"
 import volumeIncrease from "../../../controllers/keys/volume_increase"
@@ -62,6 +65,11 @@ const setupGeneralKey = (state, key) => {
       keyActivation.press = cycleSustainType
       keyGraphics.getFillStyle = fillStyleSustain
       keyGraphics.getLabelArray = labelArraySustain
+      break
+    case "change_keymap_option":
+      keyActivation.press = cycleKeymap
+      keyGraphics.getFillStyle = fillStyleKeymap
+      keyGraphics.getLabelArray = labelArrayKeymap
       break
     case "increase_volume":
       keyActivation.press = volumeIncrease

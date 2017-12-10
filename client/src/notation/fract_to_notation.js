@@ -53,7 +53,7 @@ const commaTextFromHigherPrimes = (fractObj, prime) => {
     return ""
   }
   if (!numText) {
-    return ` /${denomText}/`
+    return ` [1 / ${denomText}]`
   }
   if (!denomText) {
   return ` [${numText}]`

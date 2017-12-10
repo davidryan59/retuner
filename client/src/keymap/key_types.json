@@ -1,8 +1,8 @@
 {
    "play_note":{
    },
-   "log_state":{
-      "functionLabel":"Log State"
+   "change_keymap_option":{
+      "functionLabel":"Keymap"
    },
    "change_voice":{
       "functionLabel":"Voice"
@@ -22,11 +22,14 @@
    "change_transposing_option":{
       "functionLabel":"Transpose"
    },
-   "random_retune":{
-      "functionLabel":"Rand"
-   },
    "pause":{
       "functionLabel":"Pause"
+   },
+   "log_state":{
+     "functionLabel":"Log State"
+   },
+   "random_retune":{
+     "functionLabel":"Rand"
    },
    "not_used":{
      "incrementRadius":-0.5
