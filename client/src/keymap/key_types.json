@@ -22,6 +22,9 @@
    "change_transposing_option":{
       "functionLabel":"Transpose"
    },
+   "change_demo_option":{
+      "functionLabel":"Demo"
+   },
    "pause":{
       "functionLabel":"Pause"
    },

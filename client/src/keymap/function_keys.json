@@ -15,6 +15,9 @@
     "Tab*":{
        "type":"trapping_key_fails"
     },
+    "Backslash":{
+       "type":"change_demo_option"
+    },
     "Enter":{
        "type":"increase_volume"
     },
