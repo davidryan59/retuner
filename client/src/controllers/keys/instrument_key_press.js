@@ -15,7 +15,7 @@ const instrumentKeyPress = (state, key) => {
     transposeInstrument(state, key)
     playNote(state, key)
   } else {
-    const freqFactor = key.transposes.decimalCentreCurrent
+    const freqFactor = key.transposes.decimalRel
     playNote(state, key, freqFactor)
   }
 

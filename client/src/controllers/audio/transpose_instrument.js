@@ -3,7 +3,7 @@ import recalcAllNotations from '../../notation/recalc_all_notations'
 
 const transposeInstrument = (state, key) => {
 
-  const freqDecimalRel = key.transposes.decimalCentreCurrent
+  const freqDecimalRel = key.transposes.decimalRel
   const transposingFract = key.transposes.fractRel
   const freqTextRelative = key.transposes.textFraction
 

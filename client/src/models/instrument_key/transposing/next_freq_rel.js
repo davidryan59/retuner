@@ -1,7 +1,7 @@
 const nextFreqRel = (state, key) => {
   // Things like bounding by min and max are done here.
   const baseFreqHz = state.param.baseFrequencyHz
-  const keyFreq = key.transposes.decimalCentreCurrent
+  const keyFreq = key.transposes.decimalRel
 
   const stateFreq = state.freq
   const instrumentFreq = stateFreq.decimalCentreCurrent

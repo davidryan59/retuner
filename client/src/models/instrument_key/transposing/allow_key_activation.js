@@ -3,7 +3,7 @@ const allowKeyActivation = (state, key) => {
   const minFreq = stateFreq.decimalCentreMin
   const maxFreq = stateFreq.decimalCentreMax
   const currentFreq = stateFreq.decimalCentreCurrent
-  const newFreq = currentFreq * key.transposes.decimalCentreCurrent
+  const newFreq = currentFreq * key.transposes.decimalRel
   if (newFreq < minFreq) {
     return false
   }

@@ -11,7 +11,7 @@ const setNumDenom = (state, key, inputNum, inputDenom) => {
   const keyTransposes = key.transposes
   keyTransposes.num = num
   keyTransposes.denom = denom
-  keyTransposes.decimalCentreCurrent = num / denom
+  keyTransposes.decimalRel = num / denom
   keyTransposes.textFraction = num + "/" + denom
   keyTransposes.complexityRel = num * denom
   keyTransposes.fractRel = fractionToFract(num, denom)

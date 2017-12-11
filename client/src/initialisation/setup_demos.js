@@ -16,7 +16,9 @@ const setupDemos = (state) => {
   // Place to store current demo info
   stateDemo.current = {}
   const currentDemo = stateDemo.current
-  currentDemo.notes = []
+  currentDemo.notesLeft = []
+  currentDemo.notesPlaying = []
+  currentDemo.name = ""
   currentDemo.nextTime = null     // Time of the next note to play
 
 }
