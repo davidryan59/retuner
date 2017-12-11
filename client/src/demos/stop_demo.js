@@ -1,7 +1,8 @@
+import finishAllDemoNotes from './finish_all_demo_notes'
+
 const stopDemo = (state, key) => {
 
-  // Stop all the notes currently playing due to the demo
-  // These are stored in notesPlaying
+  finishAllDemoNotes(state)
 
   const stateDemo = state.demo
   stateDemo.playing = false
@@ -12,7 +13,7 @@ const stopDemo = (state, key) => {
   current.notesLeft.length = 0     // Quick clear array!
   current.notesPlaying.length = 0  // Quick clear array!
 
-  console.log(`Demo stopped (NEED TO STOP ALL NOTES IN THIS SCRIPT)`)
+  console.log(`Demo stopped`)
 }
 
 export default stopDemo
