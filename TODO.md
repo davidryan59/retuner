@@ -1,7 +1,16 @@
 # TO DO LIST
 
-## Main Keymap File
-- Redo it so its a partial and loads all the keys into the setup
+## Demo
+- Load more demos into the default file
+- Make demo selection onto what? slider probably not good enough?
+- Make the 'beats per minute' onto a Slider! (Might want 2x2 on flex)
+- Make a key which twitches each beat (or on/off fill every half beat), changing with slider
+- User can record demos
+- User can truncate demos to whole number of beats
+- User can save demos - to computer as JSON - to online store
+- User can load demos from computer or online store
+- (Using text editor, user can edit JSON sequenced files)
+- Anything else for demo area?
 
 ## Physics
 - Make sure none of the physics methods work if physics is switched off.
