@@ -5,7 +5,6 @@ const keyboardDownHandler = (state, event) => {
   const keyDownCode = event.code
   const keyDown = findKeyByKeyboardCode(state, keyDownCode)
   if (keyDown) {
-    state.key.moveToTop = keyDown
     state.key.lastPressed = keyDown
     state.key.tempPressed = keyDown
     instrumentKeyDownHandler(state, keyDown)

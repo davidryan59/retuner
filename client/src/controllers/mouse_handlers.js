@@ -6,7 +6,6 @@ const mouseDownHandler = (state, event) => {
   const canvasY = event.offsetY
   const keyDown = findKeyByMousePosition(state, canvasX, canvasY)
   if (keyDown) {
-    state.key.moveToTop = keyDown
     state.key.lastMoused = keyDown
     state.key.tempMoused = keyDown
     instrumentKeyDownHandler(state, keyDown)

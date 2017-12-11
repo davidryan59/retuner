@@ -7,6 +7,7 @@ import {mouseDownHandler, mouseUpHandler} from './controllers/mouse_handlers'
 import {volumeSliderHandler, contrastSliderHandler, spacingSliderHandler} from './controllers/slider_handlers'
 import windowResizeHandler from './views/window_resize_handler'
 import updateTimingInfo from './calculations/update_timing_info'
+import checkDemoActivity from './demos/check_demo_activity'
 import calculateForces from './physics/calculate_forces'
 import moveKeys from './physics/move_keys'
 import calculateNeighbouringKeys from './physics/calculate_neighbouring_keys'
@@ -63,6 +64,7 @@ const runApp = () => {
     }
 
     updateTimingInfo(state, timeLoopStart)
+    checkDemoActivity(state)
     calculateForces(state)
     moveKeys(state)
     if (state.control.loopsSinceTimeout % state.param.loopsToRecalcNeighbours === 0) {

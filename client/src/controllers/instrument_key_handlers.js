@@ -3,6 +3,7 @@ import animateInstrumentKey from '../physics/animate_instrument_key'
 const instrumentKeyDownHandler = (state, keyDown) => {
   const keyDownState = keyDown.keyState
   if (keyDownState !== 1 && keyDownState !== 2) {
+    state.key.moveToTop = keyDown
     keyDown.keyState = 1
     // Want to set key state to 2 after the
     // key press has been dealt with
