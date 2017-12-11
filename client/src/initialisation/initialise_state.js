@@ -11,6 +11,7 @@ import setupFrequencies from './setup_frequencies'
 import setupKeymaps from './setup_keymaps'
 import setupInstrumentKeys from './setup_instrument_keys'
 import setupKeyInteractions from './setup_key_interactions'
+import setupDemos from './setup_demos'
 import setupWaveform from './setup_waveform'
 import setupAudioContext from './setup_audio_context'
 
@@ -38,6 +39,7 @@ const initialiseState = (state) => {
   console.log("Here is a sample key:")
   console.dir(state.key.array[16])       // Log the 'V' key
   setupKeyInteractions(state)
+  setupDemos(state)
   setupWaveform(state)
   setupAudioContext(state)
 

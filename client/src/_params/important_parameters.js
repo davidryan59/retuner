@@ -6,6 +6,7 @@ const setupImportantParameters = (state) => {
   state.slider = {}
   state.map = {}
   state.key = {}
+  state.demo = {}
   const stateKey = state.key
   state.param = {}
   const stateParam = state.param
