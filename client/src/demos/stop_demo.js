@@ -1,8 +1,8 @@
-import finishAllDemoNotes from './finish_all_demo_notes'
+import stopAllDemoNotes from './stop_all_demo_notes'
 
 const stopDemo = (state, key) => {
 
-  finishAllDemoNotes(state)
+  stopAllDemoNotes(state)
 
   const stateDemo = state.demo
   stateDemo.playing = false

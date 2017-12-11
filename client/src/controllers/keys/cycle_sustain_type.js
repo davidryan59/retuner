@@ -5,7 +5,7 @@ const cycleSustainType = (state, key) => {
   let numericOption = getSustainNumericOption(state, key)
   numericOption = (numericOption + 1 ) % 3
   setSustainNumericOption(state, key, numericOption)
-  `Sustain option cycled to ${numericOption}`
+  console.log(`Sustain option cycled to ${numericOption}`)
 }
 
 export default cycleSustainType
