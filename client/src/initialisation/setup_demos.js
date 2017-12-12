@@ -1,5 +1,6 @@
 import demo0 from "../demos/files/arpeggios.json"
-import demo1 from "../demos/files/happy_birthday.json"
+import demo1 from "../demos/files/prelude.json"
+import demo2 from "../demos/files/happy_birthday.json"
 
 const setupDemos = (state) => {
 
@@ -7,7 +8,7 @@ const setupDemos = (state) => {
 
   // Store demos loaded from file
   stateDemo.list = [
-    demo0, demo1
+    demo0, demo1, demo2
   ]
 
   // Choose one to start with

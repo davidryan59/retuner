@@ -1,4 +1,4 @@
-import {instrumentKeyDownHandler} from '../controllers/instrument_key_handlers'
+import {instrumentKeyDownHandler, instrumentKeyUpHandler} from '../controllers/instrument_key_handlers'
 
 const secondsPerBeat = 0.13
 
@@ -27,8 +27,11 @@ const startNextNote = (state) => {
   // - Amend the start time of the next note
   current.nextTime = currentTime + secondsPerBeat * nextBeats
 
-  // - Use the key handler to actually play the note (via its key)
+  // - Use the key handlers to actually play the note (via its key)
   console.log(`Started a note ${keyName} ${keyFract}`)
+  // If (for any reason) its already pressed, unpress it
+  instrumentKeyUpHandler(state, key)
+  // Press the key
   instrumentKeyDownHandler(state, key)
 
 }
