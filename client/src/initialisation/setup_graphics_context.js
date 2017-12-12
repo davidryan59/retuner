@@ -1,9 +1,22 @@
+const getPixelRatio = (context) => {
+  const backingStore = context.webkitBackingStorePixelRatio ||
+        context.mozBackingStorePixelRatio ||
+        context.msBackingStorePixelRatio ||
+        context.oBackingStorePixelRatio ||
+        context.backingStorePixelRatio || 1
+  return (window.devicePixelRatio || 1) / backingStore
+}
+
 const setupGraphicsContext = (state) => {
 
   // Context
   const canvasElt = state.pageElt.canvas
   const context = canvasElt.getContext('2d')
   state.context.graphics = context
+
+  // Work in progress - get pixel ratio
+  // Needed for high DPI screens, e.g. Mac Retina
+  console.log(`WORK IN PROGRESS: Pixel ratio is ${getPixelRatio(context)}`)
 
   // Graphics info
   const boundLeft = 0

@@ -1,6 +1,20 @@
 # TO DO LIST
 
+## Pixel Ratio
+- See log function installed on startup. Is it 2 on high DPI and 1 on normal DPI? If so, proceed.
+- Retina screen has ratio 2!
+- Non-retina screen has ratio 1!
+- See new code on setup_graphics_context
+- New function getPixelRatio, determined from current browser settings
+- See:
+- https://github.com/jondavidjohn/hidpi-canvas-polyfill
+- https://www.html5rocks.com/en/tutorials/canvas/hidpi/
+- Idea is to make canvas width/height larger by getPixelRatio
+- And then scale down canvas style width/heigh by same amount
+- Result is crisp display on high DPI, without sending unnecessary info in normal DPI.
+
 ## Demo
+- If keymap is changed in the middle of playing a demo file, errors result. Fix this.
 - Load more demos into the default file
 - Make demo selection onto what? slider probably not good enough?
 - Make the 'beats per minute' onto a Slider! (Might want 2x2 on flex)
