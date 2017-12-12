@@ -3,6 +3,8 @@
 ## Graphical Display of Waveform
 - Want a graphical display of the sound output waveform.
 - Could have a switch to toggle this on and off
+- Had a quick look at this. Basically, it needs an Analyser, which has to sit between notes (all of them, which are playing simultaneously!) and the AudioDestination. Now the AudioDestination acts as an infinite merge, allowing a seemingly unlimited set of audio nodes to merge in at the same time. It would have to be replaced by a merging node with a finite number of inputs, say 30, and these could be cycled and replaced. Then, place the Analyser after the merge, and use that to draw the graph
+- The graph would be drawn after clearing the canvas and before drawing the buttons.
 
 ## Top Quote
 - Half the time, have the instrument text.
