@@ -1,4 +1,5 @@
 import stopAllDemoNotes from './stop_all_demo_notes'
+import goToNextDemo from './go_to_next_demo'
 
 const stopDemo = (state, key) => {
 
@@ -14,6 +15,7 @@ const stopDemo = (state, key) => {
   current.notesPlaying.length = 0  // Quick clear array!
 
   console.log(`Demo stopped`)
+  goToNextDemo(state)
 }
 
 export default stopDemo

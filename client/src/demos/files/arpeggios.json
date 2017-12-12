@@ -1,0 +1,309 @@
+{
+  "name":"Arpeggio",
+  "demo":[
+    {
+      "freqRel": {
+        "num": 1,
+        "denom": 1
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 1,
+        "denom": 1
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 5,
+        "denom": 4
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 6,
+        "denom": 5
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 4,
+        "denom": 3
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 1,
+        "denom": 1
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 3,
+        "denom": 4
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 5,
+        "denom": 6
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 4,
+        "denom": 5
+      },
+      "beats": 0.5,
+      "delay": -0.5
+    },
+    {
+      "freqRel": {
+        "num": 4,
+        "denom": 5
+      },
+      "beats": 0.5,
+      "delay": -0.5
+    },
+    {
+      "freqRel": {
+        "num": 4,
+        "denom": 3
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 1,
+        "denom": 1
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 5,
+        "denom": 4
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 6,
+        "denom": 5
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 4,
+        "denom": 3
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 1,
+        "denom": 1
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 3,
+        "denom": 4
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 5,
+        "denom": 6
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 4,
+        "denom": 5
+      },
+      "beats": 0.5,
+      "delay": -0.5
+    },
+    {
+      "freqRel": {
+        "num": 9,
+        "denom": 8
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 1,
+        "denom": 1
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 5,
+        "denom": 4
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 6,
+        "denom": 5
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 4,
+        "denom": 3
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 1,
+        "denom": 1
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 3,
+        "denom": 4
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 5,
+        "denom": 6
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 4,
+        "denom": 5
+      },
+      "beats": 0.5,
+      "delay": -0.5
+    },
+    {
+      "freqRel": {
+        "num": 2,
+        "denom": 3
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 1,
+        "denom": 1
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 5,
+        "denom": 4
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 6,
+        "denom": 5
+      },
+      "beats": 2,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 4,
+        "denom": 3
+      },
+      "beats": 8,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 1,
+        "denom": 2
+      },
+      "beats": 9,
+      "delay": -6
+    },
+    {
+      "freqRel": {
+        "num": 5,
+        "denom": 4
+      },
+      "beats": 6,
+      "delay": -3
+    },
+    {
+      "freqRel": {
+        "num": 6,
+        "denom": 5
+      },
+      "beats": 3,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 4,
+        "denom": 3
+      },
+      "beats": 7,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 1,
+        "denom": 2
+      },
+      "beats": 0.5,
+      "delay": 0
+    }
+  ]
+}

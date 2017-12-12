@@ -1,13 +1,14 @@
-import testDemo from "../demos/test_demo.json"
+import demo0 from "../demos/files/arpeggios.json"
+import demo1 from "../demos/files/happy_birthday.json"
 
 const setupDemos = (state) => {
 
   const stateDemo = state.demo
 
-  stateDemo.list = []
-  const demos = stateDemo.list
-  // Put all demos into the list
-  demos.push(testDemo)
+  // Store demos loaded from file
+  stateDemo.list = [
+    demo0, demo1
+  ]
 
   // Choose one to start with
   stateDemo.index = 0
