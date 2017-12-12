@@ -1,9 +1,5 @@
 # TO DO LIST
 
-## Physics
-- Make sure none of the physics methods work if physics is switched off.
-- It would make the key disappear from the screen, but still respond to keyboard.
-
 ## Graphical Display of Waveform
 - Want a graphical display of the sound output waveform.
 - Could have a switch to toggle this on and off

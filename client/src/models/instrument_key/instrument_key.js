@@ -37,7 +37,6 @@ class InstrumentKey {
   initialiseBasicVariables() {
     this._id = Math.round(1e12 + 9e12 * Math.random())
     this.activation.count = 0
-    this.physicsSwitchedOn = false     // Make this 'true' when coords are set
   }
 
   initialiseCoordsToZero() {
@@ -84,8 +83,6 @@ class InstrumentKey {
     // x, y setup (if keys reset, don't need to supply x, y)
     const location = allOptions.location
     if (location) {
-      // Will interact with other keys and draw to canvas
-      this.physicsSwitchedOn = true
       anchorCoords.x = currentCoords.x = location.x + 0.1 * Math.random()
       anchorCoords.y = currentCoords.y = location.y + 0.1 * Math.random()
       // Start radius as slightly randomised, due to sorting on r later
