@@ -1,5 +1,20 @@
 # TO DO LIST
 
+## Domain / Sharing
+- All links - correct domain when its available
+- Facebook link - get the right photo
+- Do www.retuner...
+- suffixes: .uk .co.uk .net .org
+- Make .net the main one
+- Log in, and link them to the Firebase account
+- Also update the README at this point.
+- Perhaps external links should open in a new tab? Don't really want people navigating away from the page :)
+
+## Keymap Bug
+- On Safari the ~ and ± keys are switched! This affects the keymap and volume functions...
+- ... how to fix reliably?
+- Need to test on other browsers too, and PCs...
+
 ## Pixel Ratio
 - See log function installed on startup. Is it 2 on high DPI and 1 on normal DPI? If so, proceed.
 - Retina screen has ratio 2!
@@ -99,16 +114,6 @@
 ## Browser testing
 - Tested in: Mac Safari, Mac Chrome
 - Not tested in: (others)
-
-## Domain
-- Do www.retuner...
-- suffixes: .uk .co.uk .net .org
-- Make .net the main one
-- Log in, and link them to the Firebase account
-- Also update the README at this point.
-
-## External links
-- Perhaps should open in a new tab? Don't really want people navigating away from the page :)
 
 ## Voice button
 - Its (currently) got 4 states
