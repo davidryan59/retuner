@@ -1,15 +1,5 @@
 # TO DO LIST
 
-## Domain / Sharing
-- All links - correct domain when its available
-- Facebook link - get the right photo
-- Do www.retuner...
-- suffixes: .uk .co.uk .net .org
-- Make .net the main one
-- Log in, and link them to the Firebase account
-- Also update the README at this point.
-- Perhaps external links should open in a new tab? Don't really want people navigating away from the page :)
-
 ## Keymap Bug
 - On Safari the ~ and ± keys are switched! This affects the keymap and volume functions...
 - ... how to fix reliably?
@@ -28,7 +18,7 @@
 - And then scale down canvas style width/heigh by same amount
 - Result is crisp display on high DPI, without sending unnecessary info in normal DPI.
 
-## Demo
+## Recording / Demos
 - If keymap is changed in the middle of playing a demo file, errors result. Fix this.
 - Load more demos into the default file
 - Make demo selection onto what? slider probably not good enough?
@@ -40,6 +30,23 @@
 - User can load demos from computer or online store
 - (Using text editor, user can edit JSON sequenced files)
 - Anything else for demo area?
+- Be able to record note presses into a demo, and add to the demo list
+- Be able to name the demo (start with default name)
+- Three Blind Mice.
+
+## Menu System
+- There are a LOT of menu systems out there!
+- Pure HTML / CSS can be used
+- but also Javascript
+- jQuery was often used.
+- Pick one and set up some vertical dropdown menus as the top
+
+## Local Storage
+- User to be able to read / write local keymaps
+- User to be able to read / write local demos
+- Need a file browser for this.
+- Or was Shared Preferences a good idea?
+- Also some kind of global sharing marketplace?
 
 ## Physics
 - Make sure none of the physics methods work if physics is switched off.
@@ -53,20 +60,8 @@
 
 ## Alternative Keymaps
 - MENU SYSTEM for many things, in particular, selecting (and overwriting) a keymap
-- Want to present at least a Simple, Medium and Full keymap to users
-- On startup, select a keymap at random from Simple, Medium and Full (could prompt user? can this choice be saved for future sessions?)
-- Could do a Pythag, 5-limit, 7-limit and 13-limit keymaps
-- Want to be able to select from several keymaps in a list
 - If the keymap is updated, want the instrument functions to automatically update live.
 - Want user to be able to modify keymap, e.g. to DAVE the keys
-
-## TUNES!
-- Translate some popular tunes into ReTuner **key sequences**
-- Three Blind Mice. Happy Birthday. etc
-- Tune only available if all the right keys are on the keyboard! (If any keys have been retuned, its the retuned fractions which matter... complicated!)
-- Have ability to play key sequences over time
-- Have ability to play **relative note sequence** over time (these are not the same!)
-- Have ability to record either of these too.
 
 ## Bitcoin
 - Does it work if TWO payments are made in a row? to the same address? Worst case scenario, the 2nd person to try and donate sees a message saying 'thank you for your donation'!
@@ -75,6 +70,16 @@
 - Want to be able to switch on and off the different components of the key
 - Essential: Fraction, RCN
 - Maybe - other bits
+
+## Domain / Sharing
+- All links - correct domain when its available. In particular, index.html
+- Facebook link - get the right photo (a better one has been uploaded - is it OK?)
+- Main one is www.retuner.net
+- Other four are .co.uk, .uk, .online, .info
+- Link .net to Firebase account
+- Forward other four to .net
+- Also update the README at this point.
+- Perhaps external links should open in a new tab? Don't really want people navigating away from the page :)
 
 # Buttons
 - Button setup is still a bit flaky. Probably ought to have keys which are transposing/playing keys having a separate setup method later.
@@ -111,6 +116,17 @@
 - This slows down the page starting up. Run these off a different place after the main app has started.
 - Don't run them at all if not connected to the internet
 
+## Persistent Storage
+- Use:
+- localStorage.setItem(key, value)
+- const value = localStorage.getItem(key)
+- Probably ought to save into a base object, e.g. key = retuner
+- When its running on the net, this won't matter. But locally, its under 'file://' so it matters.
+- These will persist values across multiple user sessions on the same browser
+- Can set up an object consisting of everything which should be synchronised with local storage
+- User might also want to save/load files to local disk/SSD/HD
+- User might also want to share these settings with other users.
+
 ## Browser testing
 - Tested in: Mac Safari, Mac Chrome
 - Not tested in: (others)
@@ -135,13 +151,6 @@
 - If app is paused (or timed out) need to highlight this key
 - Then user knows to restart the app
 - Probably want to draw 1 more animation frame after stopping main loop, so this highlighting is visible.
-
-## RESET button
-- Make it brighter! More obvious
-
-## SPACE button
-- Since this contains instrument central frequency, try highlighting it
-- Try a dotted border?
 
 ## Stereo/Reverb/Delay
 Want to output two channels in stereo

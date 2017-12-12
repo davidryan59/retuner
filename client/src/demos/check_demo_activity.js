@@ -26,6 +26,9 @@ const checkDemoActivity = (state) => {
     // 3) Finish demo if all notes have stopped
     if (!(notesLeft.length) && !(notesPlaying.length)) {
       stateDemo.playing = false
+      const current = stateDemo.current
+      current.name = ""
+      current.nextTime = null
       console.log(`Demo finished`)
       goToNextDemo(state)
     }
