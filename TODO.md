@@ -1,5 +1,54 @@
 # TO DO LIST
 
+## Physics
+- Make sure none of the physics methods work if physics is switched off.
+- It would make the key disappear from the screen, but still respond to keyboard.
+
+## Graphical Display of Waveform
+- Want a graphical display of the sound output waveform.
+- Could have a switch to toggle this on and off
+
+## Top Quote
+- Half the time, have the instrument text.
+- At other times, alternate 20 to 50 quotes at random (Andrew's idea!)
+- Or, rather than quotes, can have tips.
+- Give a half second in between texts where its blank
+
+## Customising keyboard / locales / frequency
+- Be able to modify the fraction on each transposing key
+- Could open up full customisation of the keyboard
+- E.g. any rational number to any keyboard key
+- Or a special function from the list
+- Would be useful for different locales / keyboard layouts
+- Need to be able to save the configuration
+- If higher than 7 limit, might want to be able to toggle the RCN notation between variants DR, SAG, (KG1), KG2
+
+## Recording
+- Be able to record a sequence of fractions into a new demo
+- Be able to remove a recorded demo (but not an original demo)
+- (Playback is via the demo system)
+
+## Stereo/Reverb/Delay
+Want to output two channels in stereo
+Function to add reverb or at least one or two delays
+Want individual notes to be played in stereo. Possibly move them around depending on their position on the keyboard. Possibly alter the reverb delays based on how far they are from the 2 edges!
+
+## Recording / Demos
+- If keymap is changed in the middle of playing a demo file, errors result. Fix this.
+- Load more demos into the default file
+- Make demo selection onto what? slider probably not good enough?
+- Make the 'beats per minute' onto a Slider! (Might want 2x2 on flex)
+- Make a key which twitches each beat (or on/off fill every half beat), changing with slider
+- User can record demos
+- User can truncate demos to whole number of beats
+- User can save demos - to computer as JSON - to online store
+- User can load demos from computer or online store
+- (Using text editor, user can edit JSON sequenced files)
+- Anything else for demo area?
+- Be able to record note presses into a demo, and add to the demo list
+- Be able to name the demo (start with default name)
+- Three Blind Mice.
+
 ## Keymap Bug
 - On Safari the ~ and ± keys are switched! This affects the keymap and volume functions...
 - ... how to fix reliably?
@@ -18,39 +67,32 @@
 - And then scale down canvas style width/heigh by same amount
 - Result is crisp display on high DPI, without sending unnecessary info in normal DPI.
 
-## Recording / Demos
-- If keymap is changed in the middle of playing a demo file, errors result. Fix this.
-- Load more demos into the default file
-- Make demo selection onto what? slider probably not good enough?
-- Make the 'beats per minute' onto a Slider! (Might want 2x2 on flex)
-- Make a key which twitches each beat (or on/off fill every half beat), changing with slider
-- User can record demos
-- User can truncate demos to whole number of beats
-- User can save demos - to computer as JSON - to online store
-- User can load demos from computer or online store
-- (Using text editor, user can edit JSON sequenced files)
-- Anything else for demo area?
-- Be able to record note presses into a demo, and add to the demo list
-- Be able to name the demo (start with default name)
-- Three Blind Mice.
-
 ## Menu System
 - There are a LOT of menu systems out there!
 - Pure HTML / CSS can be used
 - but also Javascript
 - jQuery was often used.
 - Pick one and set up some vertical dropdown menus as the top
+- Select a keymap, name each one
+- Select a demo, name each one
+- Editing / renaming etc of any recorded demos
+- Editing / renaming of keymaps. User customised keymaps
+- Switching on and off things, such as Fraction, RCN on each key
+- Potentially switching between different comma algorithms.
+- Main point - need to be able to hide and control all of the less important options from some kind of menu.
 
 ## Local Storage
 - User to be able to read / write local keymaps
 - User to be able to read / write local demos
-- Need a file browser for this.
-- Or was Shared Preferences a good idea?
-- Also some kind of global sharing marketplace?
-
-## Physics
-- Make sure none of the physics methods work if physics is switched off.
-- It would make the key disappear from the screen, but still respond to keyboard.
+- Can use:
+- localStorage.setItem(key, value)
+- const value = localStorage.getItem(key)
+- Probably ought to save into a base object, e.g. key = retuner
+- When its running on the net, this won't matter. But locally, its under 'file://' so it matters.
+- These will persist values across multiple user sessions on the same browser
+- Can set up an object consisting of everything which should be synchronised with local storage
+- User might also want to save/load files to local disk/SSD/HD
+- User might also want to share these settings with other users.
 
 ## Frame Rate
 - Alternate between 60Hz, 30Hz, 20Hz depending on how long frame calculation takes
@@ -58,22 +100,12 @@
 - 5ms to 12ms - 30Hz
 - Otherwise, 20Hz
 
-## Alternative Keymaps
-- MENU SYSTEM for many things, in particular, selecting (and overwriting) a keymap
-- If the keymap is updated, want the instrument functions to automatically update live.
-- Want user to be able to modify keymap, e.g. to DAVE the keys
-
 ## Bitcoin
 - Does it work if TWO payments are made in a row? to the same address? Worst case scenario, the 2nd person to try and donate sees a message saying 'thank you for your donation'!
 
-## Switches
-- Want to be able to switch on and off the different components of the key
-- Essential: Fraction, RCN
-- Maybe - other bits
 
 ## Domain / Sharing
 - All links - correct domain when its available. In particular, index.html
-- Facebook link - get the right photo (a better one has been uploaded - is it OK?)
 - Main one is www.retuner.net
 - Other four are .co.uk, .uk, .online, .info
 - Link .net to Firebase account
@@ -82,8 +114,8 @@
 - Perhaps external links should open in a new tab? Don't really want people navigating away from the page :)
 
 # Buttons
-- Button setup is still a bit flaky. Probably ought to have keys which are transposing/playing keys having a separate setup method later.
-- The relative fraction is very important. Probably display it in larger font?
+- Button labels - each row to have its own font size (theres also a default) - redo vertical positioning calc
+- Emphasise certain things: keyboard code, 'x 4/3' fraction
 - Need to model button radius properly.
 - Might depend on any or all of these things:
 - Basic button size (e.g. 3px)
@@ -96,16 +128,13 @@
 - The basic button size should push nearby buttons out of the way.
 - extra factor for being recently pressed, should not push nearby buttons out of the way
 - Ideally, note text can expand and contract (text resizes) with the radius of the key
+- This may be important if the high-DPI version (factor=2) is installed
 - If note text doesn't fit, hide less important elements (which ones? how?)-
 - calculate every statistic of importance
 - have a default importance (e.g. 100 for 3/2, 90 for 9/8, etc. Make it related to the stats derived earlier.)
 - have a current importance, increasing when button is pressed more
 - button radius increases with current importance
 - Highlight (brighter colours?) keys with simpler prime vector. E.g. when 3/2 has been pressed, 2/3 will have the most vivid colour, others less so. Can use the Tenney Height of each of the keys to calculate which keys are brighter and less bright.
-
-## Graphical Display of Waveform
-- Want a graphical display of the sound output waveform.
-- Could have a switch to toggle this on and off
 
 ## Page Loading
 - Make the app start up fast, and only query external services after important parts of page have loaded.
@@ -116,59 +145,14 @@
 - This slows down the page starting up. Run these off a different place after the main app has started.
 - Don't run them at all if not connected to the internet
 
-## Persistent Storage
-- Use:
-- localStorage.setItem(key, value)
-- const value = localStorage.getItem(key)
-- Probably ought to save into a base object, e.g. key = retuner
-- When its running on the net, this won't matter. But locally, its under 'file://' so it matters.
-- These will persist values across multiple user sessions on the same browser
-- Can set up an object consisting of everything which should be synchronised with local storage
-- User might also want to save/load files to local disk/SSD/HD
-- User might also want to share these settings with other users.
-
 ## Browser testing
 - Tested in: Mac Safari, Mac Chrome
 - Not tested in: (others)
-
-## Voice button
-- Its (currently) got 4 states
-- Show these states graphically on the button
-- Have some accompanying text, e.g. SQ, SAW, SINE, TRI
-- Use callbacks
-
-## Sustain button
-- Its got 3 states
-- Show these states graphically on the button
-- Use callbacks
-
-## Transpose button
-- Its got 2 states
-- Show these states graphically on the button
-- Use callbacks
-
-## Pause button
-- If app is paused (or timed out) need to highlight this key
-- Then user knows to restart the app
-- Probably want to draw 1 more animation frame after stopping main loop, so this highlighting is visible.
-
-## Stereo/Reverb/Delay
-Want to output two channels in stereo
-Function to add reverb or at least one or two delays
-Want individual notes to be played in stereo. Possibly move them around depending on their position on the keyboard. Possibly alter the reverb delays based on how far they are from the 2 edges!
 
 ## Accuracy of central frequency
 - state.freq.decimalCentreCurrent is decimal, inexact
 - state.freq.fractCentre is integer hash, exact
 - Every 100 to 10000 key presses, should reset .freq to a value obtained from .fractCentre
-
-## Top Quote
-- Half the time, have the instrument text.
-- At other times, alternate 20 to 50 quotes at random (Andrew's idea!)
-
-## Menu system
-- Need to be able to hide and control all of the less important options from some kind of menu.
-- How to do this? Don’t want main screen to be too cluttered.
 
 ## Scoring
 Need a new type of score which converts absolute note melody into relative melody.  (A simple way would be to put key name and fraction factor on each note.) Do this for a few simple melodies so people can play something familiar.
@@ -193,14 +177,6 @@ Need a new type of score which converts absolute note melody into relative melod
 
 ## Slider keyboard handling
 - Some buttons (such as volume sliders) want to keep going up or down as they are held down. Need different keyboard handling for this? Might also want to set up a keyboard repeat period which is independent of the operating system repeat period, and happens at a constant rate (rather than with a gap at front)
-
-## Customising keyboard / locales / frequency
-- Could open up full customisation of the keyboard
-- E.g. any rational number to any keyboard key
-- Or a special function from the list
-- Would be useful for different locales / keyboard layouts
-- Need to be able to save the configuration
-- If higher than 7 limit, might want to be able to toggle the RCN notation between variants DR, SAG, (KG1), KG2
 
 ## Waveform / choice of voices
 Add any periodic waves?
