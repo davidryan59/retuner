@@ -3,10 +3,9 @@
 ## LAUNCH - Check first
 - Check every element on the live website works correctly, including
 - Image link in top left
-- Facebook link
-- Twitter link
+- Facebook link (it seems not to be picking up the image or the info - why?)
+- Twitter link (can I get a picture? Use 'pic.twitter.com/D3bm2lfULp')
 - https://www.retuner.net opens on a new browser without any certificate errors
-- Some instructions are given in the top section about how to use ReTuner
 - Beats per minute is available on a slider (shorten the sliders? Make them in 2x2 sections for flex?)
 - Give a longer and more impressive demo
 - TO LAUNCH:
@@ -25,12 +24,6 @@
 https://developer.mozilla.org/en-US/docs/Web/API/ChannelMergerNode
 https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode
 https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
-
-## Top Quote
-- Half the time, have the instrument text.
-- At other times, alternate 20 to 50 quotes at random (Andrew's idea!)
-- Or, rather than quotes, can have tips.
-- Give a half second in between texts where its blank
 
 ## Customising keyboard / locales / frequency
 - Be able to modify the fraction on each transposing key

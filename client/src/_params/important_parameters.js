@@ -7,6 +7,7 @@ const setupImportantParameters = (state) => {
   state.map = {}
   state.key = {}
   state.demo = {}
+  state.text = {}
   const stateKey = state.key
   state.param = {}
   const stateParam = state.param
@@ -27,6 +28,7 @@ const setupImportantParameters = (state) => {
   stateParam.loopsToRedrawCanvas = 2         // Redraw frame
   stateParam.loopsToRecalcNeighbours = 47    // Recalculate which neighbours are buttons
   stateParam.loopsToUpdateHtmlText = 13      // Update HTML Text
+  stateParam.loopsToUpdateTopText = 61 * 59  // Update top text once a minute, e.g. tips and help
 
   // Parameters related to timeout
   stateParam.secondsToTimeout = 600

@@ -18,6 +18,23 @@ const updateTextInHtml = (state) => {
     pageElts.versionDate.innerText = state.version.date
     drawnVersionNumber = true
   }
+
+  // Do top texts. (The +1 and +31, rather than +0 and +30, are to not do it on startup)
+  // Clear it 30 frames before setting it
+  if ((state.control.loopsSinceTimeout + 31) % state.param.loopsToUpdateTopText === 0) {
+    pageElts.topText.innerHTML = ""
+  }
+  // Set it later
+  if ((state.control.loopsSinceTimeout + 1) % state.param.loopsToUpdateTopText === 0) {
+    const stateText = state.text
+    const array = stateText.array
+    const newIndex = Math.floor(array.length * Math.random())
+    const newText = array[newIndex]
+    stateText.index = newIndex                                               // Random
+    // stateText.index = ( stateText.index + 1 ) % stateText.array.length    // Sequential
+    pageElts.topText.innerHTML = newText  // May include <br /> so innerText doesn't work!
+  }
+
   // Do sliders
   let sliderModel = null
   let sliderView = null

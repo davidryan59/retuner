@@ -53,6 +53,10 @@ div.text-div {
   margin: 12px 4px;
 }
 
+div.page-logo-div {
+  padding: 3px 0px;
+}
+
 div.page-subtitle-div {
   font-family: serif;
   font-size: 120%;

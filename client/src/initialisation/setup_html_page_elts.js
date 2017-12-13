@@ -9,6 +9,7 @@ const setupHtmlPageElts = (state) => {
   state.pageElt = {}
   const pageElts = state.pageElt
 
+  pageElts.topText = document.querySelector("#top-text")
   pageElts.canvas = document.querySelector("#main-canvas")
   pageElts.versionNumber = document.querySelector("#version-number")
   pageElts.versionDate = document.querySelector("#version-date")

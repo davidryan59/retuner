@@ -1,0 +1,12 @@
+[
+  "The Keymap button switches between<br />different keyboard layouts",
+  "The Voice button cycles between<br />different instrument sounds",
+  "The Demo button plays melodies on the instrument.<br />Each demo is only in tune for certain keymaps.",
+  "The Sustain button toggles between three options<br />If sustain is off, key release ends note.<br />The middle option controls repeated notes.",
+  "To play a fixed JI scale without retuning,<br />toggle the Transpose button to the OFF position.",
+  "To retune the instrument to the<br />original frequency, use the RESET button",
+  "Graphical animation can use a lot of processor power.<br />To pause animation, press the Esc button.",
+  "Pressing 2 or 3 keys repeatedly will make an arpeggio.<br />Most key combinations will also cause a fixed key change.",
+  "Keys on opposite sides of the instrument produce<br />opposite key changes. To prevent excessive key changing,<br />find sequences of notes which end in the same key they started.",
+  ""
+]
