@@ -9,6 +9,11 @@
   "Graphical animation can use a lot of processor power.<br />To pause animation, press the Esc button.",
   "Pressing 2 or 3 keys repeatedly will make an arpeggio.<br />Most key combinations will also cause a fixed key change.",
   "Keys on opposite sides of the instrument produce<br />opposite key changes. To prevent excessive key changing,<br />find sequences of notes which end in the same key they started.",
+  "If you click a slider, some browsers will<br />let you adjust it using the arrow keys",
+  "The volume slider controls how<br />loud or quiet the instrument is",
+  "The contrast slider controls how<br />colourful or how black-and-white the transposing keys are",
+  "The size slider controls how large<br />the instrument keys are, and the degree of overlap",
+  "Happy Birthday has quite a lot of intervals in it.<br />It will only sound good in a keymap with lots of notes!",
 
   "This is not a musical instrument.<br />It is some nice browser text above a musical instrument."
 ]

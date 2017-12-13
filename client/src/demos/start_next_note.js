@@ -1,8 +1,9 @@
 import {instrumentKeyDownHandler, instrumentKeyUpHandler} from '../controllers/instrument_key_handlers'
 
-const secondsPerBeat = 0.13
-
 const startNextNote = (state) => {
+
+  const beatsPerMinute = state.slider.bpm.current
+  const secondsPerBeat = Math.max(0.02, Math.min(5, 60 / (beatsPerMinute || 1)))
 
   const currentTime = state.control.timing.timeTotalS
   const current = state.demo.current
@@ -28,7 +29,7 @@ const startNextNote = (state) => {
   current.nextTime = currentTime + secondsPerBeat * nextBeats
 
   // - Use the key handlers to actually play the note (via its key)
-  console.log(`Started a note ${keyName} ${keyFract}`)
+  console.log(`Started a note ${keyName} at rel freq ${keyFract} for ${beats} beat${(beats===1) ? "" : "s"}`)
   // If (for any reason) its already pressed, unpress it
   instrumentKeyUpHandler(state, key)
   // Press the key

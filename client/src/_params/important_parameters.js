@@ -23,6 +23,7 @@ const setupImportantParameters = (state) => {
 
   // Tuning of the whole instrument
   stateParam.baseFrequencyHz = 256
+  stateParam.startBPM = 160
 
   // Every N loops (var = N) do the following:
   stateParam.loopsToRedrawCanvas = 2         // Redraw frame

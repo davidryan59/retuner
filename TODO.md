@@ -12,6 +12,16 @@
 - Post on my LinkedIn
 - Post on various Facebook groups
 
+## Stroke Style BPM
+- Flashing of bpm is not in time with demo!
+- See strokeStyleBPM file
+- Why? Fix it.
+
+## BPM slider
+- Look at making it logarithmic from say 40 to 400
+
+## CSS
+- When flex goes from row to column, it no longer covers the whole width available. Fix this. It particularly looks bad on sliders.
 
 ## Graphical Display of Waveform
 - Want a graphical display of the sound output waveform.

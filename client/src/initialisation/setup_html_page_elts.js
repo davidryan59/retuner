@@ -50,6 +50,19 @@ const setupHtmlPageElts = (state) => {
   sliderView.max = sliderModel.max
   sliderView.value = sliderModel.current
 
+  // Setup the speed slider
+  pageEltSliders.bpm = {}
+  pageEltSliders.bpm.slider = document.querySelector("#bpm-slider")
+  pageEltSliders.bpm.display = document.querySelector("#bpm-display")
+
+  sliderView = pageEltSliders.bpm.slider
+  sliderModel = state.slider.bpm
+
+  sliderView.min = sliderModel.min
+  sliderView.step = sliderModel.step
+  sliderView.max = sliderModel.max
+  sliderView.value = sliderModel.current
+
   // Setup the key spacing slider
   pageEltSliders.keySize = {}
   pageEltSliders.keySize.slider = document.querySelector("#spacing-slider")

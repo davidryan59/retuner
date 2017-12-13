@@ -2,11 +2,17 @@ const updateSliderModelFromView = (model, view) => {
   model.setCurrent(parseFloat(view.value))
 }
 
-
 const volumeSliderHandler = (state, event) => {
   updateSliderModelFromView(
     state.slider.volume,
     state.pageElt.sliders.volume.slider
+  )
+}
+
+const bpmSliderHandler = (state, event) => {
+  updateSliderModelFromView(
+    state.slider.bpm,
+    state.pageElt.sliders.bpm.slider
   )
 }
 
@@ -25,4 +31,4 @@ const contrastSliderHandler = (state, event) => {
 }
 
 
-export {volumeSliderHandler, spacingSliderHandler, contrastSliderHandler}
+export {volumeSliderHandler, bpmSliderHandler, spacingSliderHandler, contrastSliderHandler}

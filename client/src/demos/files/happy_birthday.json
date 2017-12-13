@@ -1,12 +1,13 @@
 {
   "name":"Birthday",
+  "bpm":160,
   "demo":[
     {
       "freqRel": {
         "num": 3,
         "denom": 4
       },
-      "beats": 2,
+      "beats": 0.66666667,
       "delay": 0
     },
     {
@@ -14,7 +15,7 @@
         "num": 1,
         "denom": 1
       },
-      "beats": 1,
+      "beats": 0.33333333,
       "delay": 0
     },
     {
@@ -22,7 +23,7 @@
         "num": 9,
         "denom": 8
       },
-      "beats": 3,
+      "beats": 1,
       "delay": 0
     },
     {
@@ -30,7 +31,7 @@
         "num": 8,
         "denom": 9
       },
-      "beats": 3,
+      "beats": 1,
       "delay": 0
     },
     {
@@ -38,7 +39,7 @@
         "num": 4,
         "denom": 3
       },
-      "beats": 3,
+      "beats": 1,
       "delay": 0
     },
     {
@@ -46,7 +47,7 @@
         "num": 15,
         "denom": 16
       },
-      "beats": 6,
+      "beats": 2,
       "delay": 0
     },
     {
@@ -54,7 +55,7 @@
         "num": 4,
         "denom": 5
       },
-      "beats": 2,
+      "beats": 0.66666667,
       "delay": 0
     },
     {
@@ -62,7 +63,7 @@
         "num": 1,
         "denom": 1
       },
-      "beats": 1,
+      "beats": 0.33333333,
       "delay": 0
     },
     {
@@ -70,7 +71,7 @@
         "num": 9,
         "denom": 8
       },
-      "beats": 3,
+      "beats": 1,
       "delay": 0
     },
     {
@@ -78,7 +79,7 @@
         "num": 8,
         "denom": 9
       },
-      "beats": 3,
+      "beats": 1,
       "delay": 0
     },
     {
@@ -86,7 +87,7 @@
         "num": 3,
         "denom": 2
       },
-      "beats": 3,
+      "beats": 1,
       "delay": 0
     },
     {
@@ -94,7 +95,7 @@
         "num": 8,
         "denom": 9
       },
-      "beats": 6,
+      "beats": 2,
       "delay": 0
     },
     {
@@ -102,7 +103,7 @@
         "num": 3,
         "denom": 4
       },
-      "beats": 2,
+      "beats": 0.66666667,
       "delay": 0
     },
     {
@@ -110,7 +111,7 @@
         "num": 1,
         "denom": 1
       },
-      "beats": 1,
+      "beats": 0.33333333,
       "delay": 0
     },
     {
@@ -118,7 +119,7 @@
         "num": 2,
         "denom": 1
       },
-      "beats": 3,
+      "beats": 1,
       "delay": 0
     },
     {
@@ -126,45 +127,13 @@
         "num": 5,
         "denom": 6
       },
-      "beats": 3,
+      "beats": 1,
       "delay": 0
     },
     {
       "freqRel": {
         "num": 4,
         "denom": 5
-      },
-      "beats": 3,
-      "delay": 0
-    },
-    {
-      "freqRel": {
-        "num": 15,
-        "denom": 16
-      },
-      "beats": 3,
-      "delay": 0
-    },
-    {
-      "freqRel": {
-        "num": 9,
-        "denom": 10
-      },
-      "beats": 3,
-      "delay": 0
-    },
-    {
-      "freqRel": {
-        "num": 8,
-        "denom": 5
-      },
-      "beats": 2,
-      "delay": 0
-    },
-    {
-      "freqRel": {
-        "num": 1,
-        "denom": 1
       },
       "beats": 1,
       "delay": 0
@@ -174,7 +143,39 @@
         "num": 15,
         "denom": 16
       },
-      "beats": 3,
+      "beats": 1,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 9,
+        "denom": 10
+      },
+      "beats": 1,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 8,
+        "denom": 5
+      },
+      "beats": 0.66666667,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 1,
+        "denom": 1
+      },
+      "beats": 0.33333333,
+      "delay": 0
+    },
+    {
+      "freqRel": {
+        "num": 15,
+        "denom": 16
+      },
+      "beats": 1,
       "delay": 0
     },
     {
@@ -182,7 +183,7 @@
         "num": 4,
         "denom": 5
       },
-      "beats": 3,
+      "beats": 1,
       "delay": 0
     },
     {
@@ -190,7 +191,7 @@
         "num": 9,
         "denom": 8
       },
-      "beats": 3,
+      "beats": 1,
       "delay": 0
     },
     {
@@ -198,7 +199,7 @@
         "num": 8,
         "denom": 9
       },
-      "beats": 6,
+      "beats": 2,
       "delay": 0
     }
   ]

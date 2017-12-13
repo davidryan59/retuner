@@ -7,6 +7,7 @@ import fillStyleDemoToggle from "../graphics/fill_style_demo_toggle"
 import fillStylePause from "../graphics/fill_style_pause"
 import strokeStyleDefault from "../graphics/stroke_style_default"
 import strokeStyleHighlight from "../graphics/stroke_style_highlight"
+import strokeStyleBPM from "../graphics/stroke_style_bpm"
 import lineWidthDefault from "../graphics/line_width_default"
 import lineDashDefault from "../graphics/line_dash_default"
 import lineDashDashed from "../graphics/line_dash_dashed"
@@ -91,6 +92,7 @@ const setupGeneralKey = (state, key) => {
       break
     case "change_demo_option":
       keyActivation.press = toggleDemo
+      keyGraphics.getStrokeStyle = strokeStyleBPM
       keyGraphics.getFillStyle = fillStyleDemoToggle
       keyGraphics.getLabelArray = labelArrayDemoToggle
       break

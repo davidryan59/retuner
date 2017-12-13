@@ -4,6 +4,7 @@ import setupImportantParameters from '../_params/important_parameters'
 import setupControl from './setup_control'
 import setupTopTexts from './setup_top_texts'
 import setupDecibels from './setup_decibels'
+import setupBPM from './setup_bpm'
 import setupKeyColourContrast from './setup_key_colour_contrast'
 import setupKeySpacing from './setup_key_spacing'
 import setupHtmlPageElts from './setup_html_page_elts'
@@ -31,6 +32,7 @@ const initialiseState = (state) => {
   setupControl(state)
   setupTopTexts(state)
   setupDecibels(state)
+  setupBPM(state)
   setupKeyColourContrast(state)
   setupKeySpacing(state)
   setupHtmlPageElts(state)

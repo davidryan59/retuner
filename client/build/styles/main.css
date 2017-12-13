@@ -77,6 +77,12 @@ div.row-sliders {
   /*border: 1px solid yellow;*/
 }
 
+div.row-sliders-inner {
+  /*Testing*/
+  /*border: 1px solid blue;*/
+  display: flex;
+}
+
 div.slider-div {
   display: flex;
   flex-direction: row;
@@ -84,6 +90,10 @@ div.slider-div {
   justify-content: center;
   /*Testing*/
   /*border: 1px solid green;*/
+}
+
+input.slider-elt {
+  width: 90px;
 }
 
 div.blockchain-btn {

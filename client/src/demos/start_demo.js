@@ -9,8 +9,17 @@ const startDemo = (state, key) => {
   const index = stateDemo.index
   const file = stateDemo.list[index]
   const name = file.name
+  const bpm = file.bpm
   const notes = file.demo
 
+  // Change speed to be right value for this demo
+  if (bpm) {
+    state.slider.bpm.setCurrent(bpm)
+  }
+
+  // Make bpm flash in time with this demo
+  state.slider.bpm.timeOffset = state.control.timing.timeTotalS
+  
   // Setup name, notes and note keys of demo to start
   const current = stateDemo.current
   current.name = name

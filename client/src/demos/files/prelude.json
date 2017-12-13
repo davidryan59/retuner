@@ -1,285 +1,286 @@
 {
   "name":"Prelude",
+  "bpm":120,
   "demo":[
     {
       "freqRel": {
         "num": 1,
         "denom": 1
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 5,
         "denom": 4
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 6,
         "denom": 5
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 4,
         "denom": 3
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 5,
         "denom": 4
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 4,
         "denom": 5
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 3,
         "denom": 4
       },
-      "beats": 4,
-      "delay": -2
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 5,
         "denom": 6
       },
-      "beats": 2,
-      "delay": 0
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 4,
         "denom": 5
       },
-      "beats": 0.5,
-      "delay": -0.5
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 10,
         "denom": 9
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 6,
         "denom": 5
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 5,
         "denom": 4
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 4,
         "denom": 3
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 6,
         "denom": 5
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 5,
         "denom": 6
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 3,
         "denom": 4
       },
-      "beats": 4,
-      "delay": -2
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 4,
         "denom": 5
       },
-      "beats": 2,
-      "delay": 0
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 5,
         "denom": 6
       },
-      "beats": 0.5,
-      "delay": -0.5
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 1,
         "denom": 1
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 4,
         "denom": 3
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 5,
         "denom": 4
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 6,
         "denom": 5
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 7,
         "denom": 6
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 6,
         "denom": 7
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 5,
         "denom": 6
       },
-      "beats": 4,
-      "delay": -2
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 4,
         "denom": 5
       },
-      "beats": 2,
-      "delay": 0
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 3,
         "denom": 4
       },
-      "beats": 0.5,
-      "delay": -0.5
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 9,
         "denom": 10
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 5,
         "denom": 4
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 6,
         "denom": 5
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 4,
         "denom": 3
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 5,
         "denom": 4
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 4,
         "denom": 5
       },
-      "beats": 6,
-      "delay": -4
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 3,
         "denom": 4
       },
-      "beats": 4,
-      "delay": -2
+      "beats": 1,
+      "delay": -0.75
     },
     {
       "freqRel": {
         "num": 2,
         "denom": 3
       },
-      "beats": 2,
-      "delay": 0
+      "beats": 1,
+      "delay": -0.75
     }
   ]
 }

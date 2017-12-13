@@ -61,6 +61,15 @@ const updateTextInHtml = (state) => {
     sliderView.display.innerText = numToFixedTotalLength(currentValue, 3)
     sliderModel.redraw = false
   }
+  // BPM slider
+  sliderModel = state.slider.bpm
+  sliderView = pageElts.sliders.bpm
+  if (sliderModel.redraw) {
+    currentValue = sliderModel.current
+    sliderView.slider.value = currentValue
+    sliderView.display.innerText = numToFixedTotalLength(currentValue, 3)
+    sliderModel.redraw = false
+  }
   // Key colour contrast slider
   sliderModel = state.slider.colourContrast
   sliderView = pageElts.sliders.colourContrast

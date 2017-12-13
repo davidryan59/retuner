@@ -5,7 +5,7 @@ import initialiseState from './initialisation/initialise_state'
 import topTextHandler from './controllers/top_text_handler'
 import {keyboardDownHandler, keyboardUpHandler} from './controllers/keyboard_handlers'
 import {mouseDownHandler, mouseUpHandler} from './controllers/mouse_handlers'
-import {volumeSliderHandler, contrastSliderHandler, spacingSliderHandler} from './controllers/slider_handlers'
+import {volumeSliderHandler, bpmSliderHandler, contrastSliderHandler, spacingSliderHandler} from './controllers/slider_handlers'
 import windowResizeHandler from './views/window_resize_handler'
 import updateTimingInfo from './calculations/update_timing_info'
 import checkDemoActivity from './demos/check_demo_activity'
@@ -47,6 +47,7 @@ const runApp = () => {
 
   // Put event listeners on sliders
   state.pageElt.sliders.volume.slider.addEventListener('input', event => {volumeSliderHandler(state, event)})
+  state.pageElt.sliders.bpm.slider.addEventListener('input', event => {bpmSliderHandler(state, event)})
   state.pageElt.sliders.colourContrast.slider.addEventListener('input', event => {contrastSliderHandler(state, event)})
   state.pageElt.sliders.keySize.slider.addEventListener('input', event => {spacingSliderHandler(state, event)})
   // (Previously 'change' listeners, now 'input' listeners. 1st Dec 2017)

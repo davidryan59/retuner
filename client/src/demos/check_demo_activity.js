@@ -2,8 +2,6 @@ import stopFinishedNotes from './stop_finished_notes'
 import startNextNote from './start_next_note'
 import goToNextDemo from './go_to_next_demo'
 
-const secondsPerBeat = 0.3
-
 const checkDemoActivity = (state) => {
   const stateDemo = state.demo
   if (stateDemo.playing) {
