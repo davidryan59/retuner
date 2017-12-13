@@ -2,10 +2,8 @@
 
 ## LAUNCH - Check first
 - Check every element on the live website works correctly, including
-- Image link in top left
 - Facebook link (it seems not to be picking up the image or the info - why?)
-- Twitter link (can I get a picture? Use 'pic.twitter.com/D3bm2lfULp')
-- https://www.retuner.net opens on a new browser without any certificate errors
+- Twitter link
 - Beats per minute is available on a slider (shorten the sliders? Make them in 2x2 sections for flex?)
 - Give a longer and more impressive demo
 - TO LAUNCH:

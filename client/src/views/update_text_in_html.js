@@ -20,19 +20,32 @@ const updateTextInHtml = (state) => {
   }
 
   // Do top texts. (The +1 and +31, rather than +0 and +30, are to not do it on startup)
+  // Offset can be set to specific value to cause a reset of the text below
+  const loopOffset = state.text.loopOffset
+  const loopsSinceTimeout = state.control.loopsSinceTimeout
+  const loopsToUpdate = state.param.loopsToUpdateTopText
+  const loopDelay = state.text.loopDelay
+  const topTextElt = pageElts.topText
   // Clear it 30 frames before setting it
-  if ((state.control.loopsSinceTimeout + 31) % state.param.loopsToUpdateTopText === 0) {
-    pageElts.topText.innerHTML = ""
+  if ((loopsSinceTimeout + 1 + loopDelay + loopOffset) % loopsToUpdate === 0) {
+    topTextElt.innerHTML = ""
   }
   // Set it later
-  if ((state.control.loopsSinceTimeout + 1) % state.param.loopsToUpdateTopText === 0) {
+  if ((loopsSinceTimeout + 1 + loopOffset) % loopsToUpdate === 0) {
     const stateText = state.text
     const array = stateText.array
-    const newIndex = Math.floor(array.length * Math.random())
+    const oldIndex = stateText.index
+    let newIndex = oldIndex
+    let tries = 0
+    while (oldIndex === newIndex && tries<20) {
+      newIndex = Math.floor(array.length * Math.random())
+      tries++
+    }
+    // console.log(oldIndex, newIndex, tries)
     const newText = array[newIndex]
     stateText.index = newIndex                                               // Random
     // stateText.index = ( stateText.index + 1 ) % stateText.array.length    // Sequential
-    pageElts.topText.innerHTML = newText  // May include <br /> so innerText doesn't work!
+    topTextElt.innerHTML = newText  // May include <br /> so innerText doesn't work!
   }
 
   // Do sliders

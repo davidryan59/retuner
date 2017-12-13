@@ -2,6 +2,7 @@
 // import Slider from './models/slider'
 
 import initialiseState from './initialisation/initialise_state'
+import topTextHandler from './controllers/top_text_handler'
 import {keyboardDownHandler, keyboardUpHandler} from './controllers/keyboard_handlers'
 import {mouseDownHandler, mouseUpHandler} from './controllers/mouse_handlers'
 import {volumeSliderHandler, contrastSliderHandler, spacingSliderHandler} from './controllers/slider_handlers'
@@ -31,6 +32,9 @@ const runApp = () => {
   // Make window respond to key presses
   window.addEventListener('keydown', event => {keyboardDownHandler(state, event)})
   window.addEventListener('keyup', event => {keyboardUpHandler(state, event)})
+
+  // Top Text switching
+  state.pageElt.topText.addEventListener('mouseup', event => {topTextHandler(state, event)})
 
   // Make window respond to mouse presses
   // window.addEventListener('mousedown', event => {mouseDownHandler(state, event)})

@@ -63,6 +63,7 @@ div.page-subtitle-div {
   color: #777;
   font-style: italic;
   letter-spacing: 0.04em;
+  cursor: pointer;
 }
 
 div.page-sharing-div {
