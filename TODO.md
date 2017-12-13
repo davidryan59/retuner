@@ -1,16 +1,18 @@
 # TO DO LIST
 
 ## LAUNCH - Check first
-- Check every element on the live website works correctly, including
-- Facebook link (it seems not to be picking up the image or the info - why?)
-- Twitter link
-- Beats per minute is available on a slider (shorten the sliders? Make them in 2x2 sections for flex?)
-- Give a longer and more impressive demo
+- Check Facebook link has image?
 - TO LAUNCH:
 - Post on my Facebook
-- Do a Tweet too!
 - Post on my LinkedIn
 - Post on various Facebook groups
+
+## Demos
+- Give a longer and more impressive demo
+
+## Chrome / Safari keyboard error
+- ~ and ± keys wrong way round on Safari!
+- Make sure this is fixed. Soon.
 
 ## Stroke Style BPM
 - Flashing of bpm is not in time with demo!
