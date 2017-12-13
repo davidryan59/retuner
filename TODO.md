@@ -1,5 +1,21 @@
 # TO DO LIST
 
+## LAUNCH - Check first
+- Check every element on the live website works correctly, including
+- Image link in top left
+- Facebook link
+- Twitter link
+- https://www.retuner.net opens on a new browser without any certificate errors
+- Some instructions are given in the top section about how to use ReTuner
+- Beats per minute is available on a slider (shorten the sliders? Make them in 2x2 sections for flex?)
+- Give a longer and more impressive demo
+- TO LAUNCH:
+- Post on my Facebook
+- Do a Tweet too!
+- Post on my LinkedIn
+- Post on various Facebook groups
+
+
 ## Graphical Display of Waveform
 - Want a graphical display of the sound output waveform.
 - Could have a switch to toggle this on and off
@@ -107,12 +123,9 @@ Want individual notes to be played in stereo. Possibly move them around dependin
 
 
 ## Domain / Sharing
-- All links - correct domain when its available. In particular, index.html
-- Main one is www.retuner.net
-- Other four are .co.uk, .uk, .online, .info
-- Link .net to Firebase account
-- Forward other four to .net
-- Also update the README at this point.
+- https://www.retuner.net is now working!
+- Check that it goes straight there without a warning, on a new browser? Need this for launch
+- Also check the .co.uk .uk .info .online domains are forwarding correctly
 - Perhaps external links should open in a new tab? Don't really want people navigating away from the page :)
 
 # Buttons

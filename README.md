@@ -1,4 +1,4 @@
-- Firebase live app: https://retuner-bdf49.firebaseapp.com/
+- Firebase live app: https://www.retuner.net
 - GitHub source code: https://github.com/daveryan23/retuner_musical_instrument
 
 # Brief / Scope of Project
@@ -19,6 +19,7 @@ absolute position / pitch of note.
 - Express
 - Webpack
 - Firebase
+- Web Hosting
 
 # Result
 Some melodies become a lot easier to play, e.g. arpeggios, since all that is
