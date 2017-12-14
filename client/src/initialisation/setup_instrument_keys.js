@@ -11,9 +11,9 @@ const setupInstrumentKeys = (state) => {
   stateKey.array = []
   const instrumentKeyArray = stateKey.array
 
-  // For each keymap entry, construct an InstrumentKey
+  // For the main keymap, construct instrument keys
   const mainMap = state.map.main.map
-  console.log(state.map)
+  console.log(mainMap)
   for (const key of Object.keys(mainMap)) {
     const instrumentKeySetup = mainMap[key]
     instrumentKeySetup.keyboardCode = key     // Add the key itself to the object!
@@ -21,7 +21,7 @@ const setupInstrumentKeys = (state) => {
     instrumentKeyArray.push(newInstrumentKey)
     mainMap[key].instrumentKey = newInstrumentKey
   }
-  console.log("The instrument has been set up with", instrumentKeyArray.length, "blank keys")
+  console.log("The instrument has been set up with", instrumentKeyArray.length, "keys")
 
   const functionKeys = state.map.functions.map
   overwriteWithKeymapInfo(state, functionKeys, "function keys")

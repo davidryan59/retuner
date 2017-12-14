@@ -1,0 +1,21 @@
+{
+  "name": "Option 1 - Safari",
+  "map":{
+    "IntlBackslash":{
+      "symbol":"- +",
+      "location":{
+         "x":10,
+         "y":44
+      },
+      "type":"decrease_volume"
+    },
+    "Backquote":{
+      "symbol":"` ~",
+      "location":{
+         "x":23,
+         "y":20
+      },
+      "type":"change_keymap_option"
+    }
+  }
+}

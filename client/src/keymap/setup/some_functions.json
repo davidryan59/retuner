@@ -1,28 +1,11 @@
 {
+  "name": "Common function keys",
   "map":{
-    "Function*":{
-       "type":"trapping_key_fails"
-    },
-    "IntlBackslash":{
-       "type":"change_keymap_option"
-    },
-    "CapsLock*":{
-       "type":"trapping_key_fails"
-    },
     "KeyH":{
        "type":"change_voice"
     },
-    "Tab*":{
-       "type":"trapping_key_fails"
-    },
-    "Backslash":{
-       "type":"change_demo_option"
-    },
     "Enter":{
        "type":"increase_volume"
-    },
-    "Backquote":{
-       "type":"decrease_volume"
     },
     "Digit1":{
        "type":"decrease_volume"

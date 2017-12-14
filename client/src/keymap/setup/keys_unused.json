@@ -1,0 +1,29 @@
+{
+  "name": "Unused Keys",
+  "map":{
+    "Function*":{
+      "symbol":"FN",
+      "location":{
+         "x":10,
+         "y":10
+      },
+      "type":"trapping_key_fails"
+    },
+    "CapsLock*":{
+      "symbol":"CAP",
+      "location":{
+         "x":10,
+         "y":28
+      },
+      "type":"trapping_key_fails"
+    },
+    "Tab*":{
+      "symbol":"TAB",
+      "location":{
+         "x":10,
+         "y":35
+      },
+      "type":"trapping_key_fails"
+    }
+  }
+}

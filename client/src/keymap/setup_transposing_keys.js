@@ -1,4 +1,5 @@
 import overwriteWithKeymapInfo from './overwrite_with_keymap_info'
+import getKeymapIndex from './get_keymap_index'
 
 const setupTransposingKeys = (state) => {
 
@@ -8,7 +9,7 @@ const setupTransposingKeys = (state) => {
   overwriteWithKeymapInfo(state, mapReset, `reset`)
 
   // Install the current transposing keys
-  const mapIndex = state.map.transposeIndex
+  const mapIndex = getKeymapIndex(state)
   const keymapNotes = state.map.transposeSetups[mapIndex]
   const mapNotes = keymapNotes.map
   const name = keymapNotes.name  ||  "Transposing"

@@ -1,0 +1,40 @@
+{
+  "name": "Option 2 - Default",
+  "map":{
+    "Backspace":{
+       "symbol":"BACK",
+       "location":{
+          "x":145,
+          "y":50
+       }
+    },
+    "MetaLeft":{
+       "symbol":"APP-L",
+       "location":{
+          "x":42,
+          "y":10
+       }
+    },
+    "MetaRight":{
+       "symbol":"APP-R",
+       "location":{
+          "x":105,
+          "y":10
+       }
+    },
+    "Slash":{
+       "symbol":"/ ?",
+       "location":{
+          "x":123,
+          "y":20
+       }
+    },
+    "Quote":{
+       "symbol":"' \"",
+       "location":{
+          "x":128,
+          "y":30
+       }
+    }
+  }
+}
