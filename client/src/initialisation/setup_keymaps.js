@@ -1,5 +1,5 @@
-import keyPositions from "../keymap/key_positions_en-gb_macbook.json"
-import functionKeys from "../keymap/function_keys.json"
+import keyPositions from "../keymap/key_positions_en-gb_macbook_all.json"
+import functionKeys from "../keymap/function_keys_all.json"
 
 // Need a keymap specifically to wipe out previous transposing keymap info
 

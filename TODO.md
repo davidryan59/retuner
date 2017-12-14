@@ -1,5 +1,14 @@
 # TO DO LIST
 
+## Keymap / Browsers
+- See 'issues' file in keymap dir
+- Change implementation of keymaps into 4 distinct areas
+- Switch which is chosen based on browser evidence
+- Check that all keys work on 4 browsers, and that all normal functions are available
+- Check what happens in Firefox - do the other 5 keys deactivate correctly?
+- Put a message in top_text saying not to use Firefox due to keyboard and also power usage!
+
+
 ## LAUNCH - Check first
 - Check Facebook link has image?
 - TO LAUNCH:
@@ -9,10 +18,6 @@
 
 ## Demos
 - Give a longer and more impressive demo
-
-## Chrome / Safari keyboard error
-- ~ and ± keys wrong way round on Safari!
-- Make sure this is fixed. Soon.
 
 ## Stroke Style BPM
 - Flashing of bpm is not in time with demo!

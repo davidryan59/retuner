@@ -3,6 +3,7 @@ import {instrumentKeyDownHandler, instrumentKeyUpHandler} from './instrument_key
 
 const keyboardDownHandler = (state, event) => {
   const keyDownCode = event.code
+  console.log(`Key down ${keyDownCode}`)
   const keyDown = findKeyByKeyboardCode(state, keyDownCode)
   if (keyDown) {
     state.key.lastPressed = keyDown
@@ -13,6 +14,7 @@ const keyboardDownHandler = (state, event) => {
 
 const keyboardUpHandler = (state, event) => {
   const keyUpCode = event.code
+  console.log(`Key up ${keyUpCode}`)
   const keyUp = findKeyByKeyboardCode(state, keyUpCode)
   if (keyUp) {
     state.key.tempPressed = null

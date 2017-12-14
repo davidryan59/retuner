@@ -1,16 +1,22 @@
+import detectBrowser from '../browser/detect_browser'
+
 const setupImportantParameters = (state) => {
 
   // Some important state object structure
+  state.browser = {}
   state.comma = {}
   state.context = {}
-  state.slider = {}
-  state.map = {}
-  state.key = {}
   state.demo = {}
+  state.key = {}
+  state.map = {}
+  state.param = {}
+  state.slider = {}
   state.text = {}
   const stateKey = state.key
-  state.param = {}
   const stateParam = state.param
+
+  // Get browser info
+  detectBrowser(state)
 
   // // DOESN'T YET WORK - VARYING KEYMAP BASED ON LOCALE ETC...
   // // JS file in JSON format.
@@ -37,8 +43,8 @@ const setupImportantParameters = (state) => {
 
   // Some of the other initialisation parameters could go here?
 
+  console.log("Setup some important parameters first. Here's the state object:")
   console.dir(state)
-  console.log("Setup some important parameters first")
 
 }
 

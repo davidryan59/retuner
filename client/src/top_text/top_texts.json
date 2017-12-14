@@ -13,7 +13,7 @@
   "The volume slider controls how<br />loud or quiet the instrument is",
   "The contrast slider controls how<br />colourful or how black-and-white the transposing keys are",
   "The size slider controls how large<br />the instrument keys are, and the degree of overlap",
-  "Happy Birthday has quite a lot of intervals in it.<br />It will only sound good in a keymap with lots of notes!",
+  "Happy Birthday uses a surprisingly large number of intervals!<br />Listen to it in a full keymap, otherwise its going to be out of tune.",
   "You can use either the keyboard or<br />the mouse to click instrument keys",
   "Two keys pressed simultaneously will play in random order!<br />This is definitely a feature of a non-commutative keyboard,<br />and not a bug.",
 
