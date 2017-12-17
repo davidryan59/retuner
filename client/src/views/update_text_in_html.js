@@ -1,5 +1,13 @@
 let drawnVersionNumber = false;
 
+const updateSliderViewFromModel = (sliderView, sliderModel) => {
+  if (sliderModel.redraw) {
+    sliderView.slider.value = sliderModel.getLinearValue()
+    sliderView.display.innerText = sliderModel.getText()
+    sliderModel.redraw = false
+  }
+}
+
 const updateTextInHtml = (state) => {
   // Only update this every N frames
   const pageElts = state.pageElt
@@ -47,41 +55,12 @@ const updateTextInHtml = (state) => {
   }
 
   // Do sliders
-  let sliderModel = null
-  let sliderView = null
-  let currentValue = null
-  // Volume slider
-  sliderModel = state.slider.volume
-  sliderView = pageElts.sliders.volume
-  if (sliderModel.redraw) {
-    sliderView.slider.value = sliderModel.getLinearValue()
-    sliderView.display.innerText = sliderModel.getText()
-    sliderModel.redraw = false
-  }
-  // BPM slider
-  sliderModel = state.slider.bpm
-  sliderView = pageElts.sliders.bpm
-  if (sliderModel.redraw) {
-    sliderView.slider.value = sliderModel.getLinearValue()
-    sliderView.display.innerText = sliderModel.getText()
-    sliderModel.redraw = false
-  }
-  // Key colour contrast slider
-  sliderModel = state.slider.colourContrast
-  sliderView = pageElts.sliders.colourContrast
-  if (sliderModel.redraw) {
-    sliderView.slider.value = sliderModel.getLinearValue()
-    sliderView.display.innerText = sliderModel.getText()
-    sliderModel.redraw = false
-  }
-  // Key spacing slider
-  sliderModel = state.slider.keySize
-  sliderView = pageElts.sliders.keySize
-  if (sliderModel.redraw) {
-    sliderView.slider.value = sliderModel.getLinearValue()
-    sliderView.display.innerText = sliderModel.getText()
-    sliderModel.redraw = false
-  }
+  const pageSlider = pageElts.sliders    // Views
+  const stateSlider = state.slider       // Models
+  updateSliderViewFromModel(pageSlider.volume, stateSlider.volume)
+  updateSliderViewFromModel(pageSlider.bpm, stateSlider.bpm)
+  updateSliderViewFromModel(pageSlider.colourContrast, stateSlider.colourContrast)
+  updateSliderViewFromModel(pageSlider.keySize, stateSlider.keySize)
 }
 
 export default updateTextInHtml
