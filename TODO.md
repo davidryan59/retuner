@@ -1,38 +1,16 @@
 # TO DO LIST
 
-- Revise this document - many items have been done
-- Link to Facebook group from the page
-- Put in a 6,7,8,9,10,11 diamond too (call this one 11-limit, prev one 7-limit)
-
 ## USER REQUESTS
-
 - Want to be able to vary the Sustain. A fifth slider?
 - Want to be able to change the numerator and denominator on any note
 - Ideally, to be able to save the above changes!
-- Transposing within the octave only
+- Transposing within the octave only (maybe do this off existing min/max, map into range via octaves?)
 - Lorus Aranus - Wants to 'see this in VST form to use within DAWs'
 - Subhraag Singh wants to hook up his 'Infinitone'. Needs numeric/digital output from program
 
 
 ## BUG REPORTS
-- Sustain not working - turns everything off (Safari 10.1.7. The sustain mode is working, but when I turn it off, all sound goes off. Macbook pro 2014)
-
-
-## Keymap / Browsers
-- See 'issues' file in keymap dir
-- Change implementation of keymaps into 4 distinct areas
-- Switch which is chosen based on browser evidence
-- Check that all keys work on 4 browsers, and that all normal functions are available
-- Check what happens in Firefox - do the other 5 keys deactivate correctly?
-- Put a message in top_text saying not to use Firefox due to keyboard and also power usage!
-
-
-## LAUNCH - Check first
-- Check Facebook link has image?
-- TO LAUNCH:
-- Post on my Facebook
-- Post on my LinkedIn
-- Post on various Facebook groups
+- Sustain not working - turns everything off (Safari 10.1.7. The sustain mode is working, but when I turn it off, all sound goes off. Macbook pro 2014. Recommended to upgrade to Safari 11. Awaiting if that fixes?)
 
 ## Demos
 - Give a longer and more impressive demo
@@ -146,13 +124,6 @@ Want individual notes to be played in stereo. Possibly move them around dependin
 
 ## Bitcoin
 - Does it work if TWO payments are made in a row? to the same address? Worst case scenario, the 2nd person to try and donate sees a message saying 'thank you for your donation'!
-
-
-## Domain / Sharing
-- https://www.retuner.net is now working!
-- Check that it goes straight there without a warning, on a new browser? Need this for launch
-- Also check the .co.uk .uk .info .online domains are forwarding correctly
-- Perhaps external links should open in a new tab? Don't really want people navigating away from the page :)
 
 # Buttons
 - Button labels - each row to have its own font size (theres also a default) - redo vertical positioning calc

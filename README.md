@@ -1,4 +1,5 @@
 - Firebase live app: https://www.retuner.net
+- Facebook support group: https://www.facebook.com/groups/retuner
 - GitHub source code: https://github.com/daveryan23/retuner_musical_instrument
 
 # Brief / Scope of Project
