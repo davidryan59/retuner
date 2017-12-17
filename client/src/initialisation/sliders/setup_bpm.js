@@ -4,7 +4,7 @@ const setupBPM = (state) => {
 
   const slider = new Slider({
     id: "bpm",
-    name: "Speed",
+    label: "Speed",
     unit: "bpm",
     initial: state.param.startBPM,
     min: 30,
@@ -12,10 +12,6 @@ const setupBPM = (state) => {
     max: 500,
     logScale: true
   })
-
-  // state.slider.bpm = slider
-  //
-  // console.log(`${slider}`)
 
   return slider
 }

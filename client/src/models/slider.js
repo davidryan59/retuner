@@ -8,7 +8,7 @@ class Slider {
     }
 
     this.id = options.id               || ""  // Prevents controller creation
-    this.name = options.name           || "Generic slider"
+    this.label = options.label           || "Value"
     this.min = options.min             || 0
     this.step = options.step           || 1
     this.max = options.max             || 9
@@ -36,7 +36,7 @@ class Slider {
 
   toString() {
     const unitText = (this.unit) ? " " + this.unit : ""
-    return `${this.name} is at position `
+    return `${this.label} is at position `
       + `${this.getValue().toFixed(1)}${unitText}, `
       + `fraction ${this.getLinearFraction().toFixed(3)}`
   }
@@ -103,7 +103,7 @@ class Slider {
   }
 
   getLabelText() {
-    return `${this.name}\u00a0`
+    return this.label
   }
 
 }

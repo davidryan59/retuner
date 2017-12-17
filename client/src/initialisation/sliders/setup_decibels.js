@@ -4,17 +4,13 @@ const setupDecibels = (state) => {
 
   const slider = new Slider({
     id: "volume",
-    name: "Volume",
+    label: "Volume",
     unit: "dB",
     initial: 1,
     min: -21,
     step: 1,
     max: 11
   })
-
-  // state.slider.volume = slider
-  //
-  // console.log(`${slider}`)
 
   return slider
 

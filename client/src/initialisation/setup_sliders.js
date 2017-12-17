@@ -21,8 +21,6 @@ const setupSliders = (state) => {
     setupMaxFreq(state),
     setupSustain(state)
   ]
-  // console.log(sliderModelTempArray);
-
 
   const sliderModels = state.slider
   const sliderViews = state.pageElt.sliders = {}

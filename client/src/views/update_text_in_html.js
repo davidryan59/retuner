@@ -54,19 +54,12 @@ const updateTextInHtml = (state) => {
     topTextElt.innerHTML = newText  // May include <br /> so innerText doesn't work!
   }
 
-  // Do sliders NEW
+  // Update Sliders
   const sliderControllerArray = state.controller.sliders
   for (const controller of sliderControllerArray) {
     controller.updateView()
   }
 
-  // // Do sliders OLD
-  // const pageSlider = pageElts.sliders    // Views
-  // const stateSlider = state.slider       // Models
-  // updateSliderViewFromModel(pageSlider.volume, stateSlider.volume)
-  // updateSliderViewFromModel(pageSlider.bpm, stateSlider.bpm)
-  // updateSliderViewFromModel(pageSlider.colourContrast, stateSlider.colourContrast)
-  // updateSliderViewFromModel(pageSlider.keySize, stateSlider.keySize)
 }
 
 export default updateTextInHtml
