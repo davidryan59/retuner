@@ -45,12 +45,15 @@ const runApp = () => {
   // If window resizes, may need to change canvas
   window.addEventListener('resize', event => {windowResizeHandler(state, event)})
 
-  // Put event listeners on sliders
-  state.pageElt.sliders.volume.slider.addEventListener('input', event => {volumeSliderHandler(state, event)})
-  state.pageElt.sliders.bpm.slider.addEventListener('input', event => {bpmSliderHandler(state, event)})
-  state.pageElt.sliders.colourContrast.slider.addEventListener('input', event => {contrastSliderHandler(state, event)})
-  state.pageElt.sliders.keySize.slider.addEventListener('input', event => {spacingSliderHandler(state, event)})
-  // (Previously 'change' listeners, now 'input' listeners. 1st Dec 2017)
+  // Event listeners on sliders set up via the Slider Controllers (NEW)
+
+  // // Put event listeners on sliders (OLD)
+  // const stateSlider = state.pageElt.sliders
+  // stateSlider.volume.slider.addEventListener('input', event => {volumeSliderHandler(state, event)})
+  // stateSlider.bpm.slider.addEventListener('input', event => {bpmSliderHandler(state, event)})
+  // stateSlider.colourContrast.slider.addEventListener('input', event => {contrastSliderHandler(state, event)})
+  // stateSlider.keySize.slider.addEventListener('input', event => {spacingSliderHandler(state, event)})
+  // // (Previously 'change' listeners, now 'input' listeners. 1st Dec 2017)
 
   window.mainLoop = timeLoopStart => {
     // timeLoopStart is a decimal number, a time precise to 0.005ms :)

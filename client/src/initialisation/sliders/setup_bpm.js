@@ -3,6 +3,7 @@ import Slider from '../../models/slider'
 const setupBPM = (state) => {
 
   const slider = new Slider({
+    id: "bpm",
     name: "Speed",
     unit: "bpm",
     initial: state.param.startBPM,
@@ -12,9 +13,11 @@ const setupBPM = (state) => {
     logScale: true
   })
 
-  state.slider.bpm = slider
+  // state.slider.bpm = slider
+  //
+  // console.log(`${slider}`)
 
-  console.log(`${slider}`)
+  return slider
 }
 
 export default setupBPM

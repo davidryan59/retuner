@@ -3,6 +3,7 @@ import Slider from '../../models/slider'
 const setupMaxFreq = (state) => {
 
   const slider = new Slider({
+    id: "maxFreq",
     name: "Max freq",
     unit: "Hz",
     initial: state.param.currentMaxHz,
@@ -12,9 +13,13 @@ const setupMaxFreq = (state) => {
     logScale: true
   })
 
-  state.slider.maxFreq = slider
+  // state.slider.maxFreq = slider
+  //
+  // console.log(`${slider}`)
 
-  console.log(`${slider}`)
+
+  return slider
+
 }
 
 export default setupMaxFreq

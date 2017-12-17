@@ -3,6 +3,7 @@ import Slider from '../../models/slider'
 const setupKeyColourContrast = (state) => {
 
   const slider = new Slider({
+    id: "colourContrast",
     name: "Contrast",
     unit: "",
     initial: 10,
@@ -11,9 +12,12 @@ const setupKeyColourContrast = (state) => {
     max: 11
   })
 
-  state.slider.colourContrast = slider
+  // state.slider.colourContrast = slider
+  //
+  // console.log(`${slider}`)
 
-  console.log(`${slider}`)
+  return slider
+
 }
 
 export default setupKeyColourContrast

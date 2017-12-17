@@ -5,10 +5,12 @@ const setupImportantParameters = (state) => {
   // Some important state object structure
   state.browser = {}
   state.comma = {}
+  state.controller = {}
   state.context = {}
   state.demo = {}
   state.key = {}
   state.map = {}
+  state.pageElt = {}
   state.param = {}
   state.slider = {}
   state.text = {}

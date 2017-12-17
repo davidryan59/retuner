@@ -3,6 +3,7 @@ import Slider from '../../models/slider'
 const setupMinFreq = (state) => {
 
   const slider = new Slider({
+    id: "minFreq",
     name: "Min freq",
     unit: "Hz",
     initial: state.param.currentMinHz,
@@ -12,9 +13,13 @@ const setupMinFreq = (state) => {
     logScale: true
   })
 
-  state.slider.minFreq = slider
+  // state.slider.minFreq = slider
+  //
+  // console.log(`${slider}`)
 
-  console.log(`${slider}`)
+
+  return slider
+
 }
 
 export default setupMinFreq

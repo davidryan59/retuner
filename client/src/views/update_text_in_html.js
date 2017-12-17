@@ -3,7 +3,7 @@ let drawnVersionNumber = false;
 const updateSliderViewFromModel = (sliderView, sliderModel) => {
   if (sliderModel.redraw) {
     sliderView.slider.value = sliderModel.getLinearValue()
-    sliderView.display.innerText = sliderModel.getText()
+    sliderView.display.innerText = sliderModel.getDisplayText()
     sliderModel.redraw = false
   }
 }
@@ -54,13 +54,19 @@ const updateTextInHtml = (state) => {
     topTextElt.innerHTML = newText  // May include <br /> so innerText doesn't work!
   }
 
-  // Do sliders
-  const pageSlider = pageElts.sliders    // Views
-  const stateSlider = state.slider       // Models
-  updateSliderViewFromModel(pageSlider.volume, stateSlider.volume)
-  updateSliderViewFromModel(pageSlider.bpm, stateSlider.bpm)
-  updateSliderViewFromModel(pageSlider.colourContrast, stateSlider.colourContrast)
-  updateSliderViewFromModel(pageSlider.keySize, stateSlider.keySize)
+  // Do sliders NEW
+  const sliderControllerArray = state.controller.sliders
+  for (const controller of sliderControllerArray) {
+    controller.updateView()
+  }
+
+  // // Do sliders OLD
+  // const pageSlider = pageElts.sliders    // Views
+  // const stateSlider = state.slider       // Models
+  // updateSliderViewFromModel(pageSlider.volume, stateSlider.volume)
+  // updateSliderViewFromModel(pageSlider.bpm, stateSlider.bpm)
+  // updateSliderViewFromModel(pageSlider.colourContrast, stateSlider.colourContrast)
+  // updateSliderViewFromModel(pageSlider.keySize, stateSlider.keySize)
 }
 
 export default updateTextInHtml

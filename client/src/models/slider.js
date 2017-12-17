@@ -7,12 +7,13 @@ class Slider {
       options = {}
     }
 
-    this.name = options.name                 || "Generic slider"
-    this.min = options.min                   || 0
-    this.step = options.step                 || 1
-    this.max = options.max                   || 9
-    this.initial = options.initial           || 5
-    this.unit = options.unit                 || ""
+    this.id = options.id               || ""  // Prevents controller creation
+    this.name = options.name           || "Generic slider"
+    this.min = options.min             || 0
+    this.step = options.step           || 1
+    this.max = options.max             || 9
+    this.initial = options.initial     || 5
+    this.unit = options.unit           || ""
 
     const digitsMin = 1 + Math.floor(Math.log10(Math.abs(this.min))) + ((this.min < 0) ? 1 : 0);
     const digitsMax = 1 + Math.floor(Math.log10(Math.abs(this.max))) + ((this.max < 0) ? 1 : 0);
@@ -94,14 +95,16 @@ class Slider {
     }
   }
 
-  getText() {
+  getDisplayText() {
     // Non-breaking space here
     const unitText = (this.unit) ? "\u00a0" + this.unit : ""
     const theText = numToFixedTotalLength(this.getValue(), this.numLength)
     return `${theText}${unitText}`
   }
 
-
+  getLabelText() {
+    return `${this.name}\u00a0`
+  }
 
 }
 
