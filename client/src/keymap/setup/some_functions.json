@@ -1,6 +1,9 @@
 {
   "name": "Common function keys",
   "map":{
+    "Backslash":{
+       "type":"change_demo_option"
+    },
     "KeyH":{
        "type":"change_voice"
     },

@@ -11,7 +11,7 @@
   flex: 1.0;
   text-align: center;
   /*For testing only:*/
-  /* border: 1px solid #F88; */
+  border: 1px solid #F88;
 }
 
 @media (min-width: 680px) {
@@ -34,6 +34,12 @@
 
 @media (min-width: 450px) {
   .row-sliders-inner {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 850px) {
+  .row-num-input {
     flex-direction: row;
   }
 }

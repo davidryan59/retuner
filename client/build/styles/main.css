@@ -126,3 +126,16 @@ p.align-left {
 p.align-right {
   text-align: right;
 }
+
+
+/* NEW */
+div.row-num-input {
+  margin-top: 6px;
+  font-family: monospace;
+  /*Testing*/
+  border: 1px solid yellow;
+}
+input.num-input-elt {
+  width: 50px;
+  text-align: right;
+}
