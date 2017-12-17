@@ -1,5 +1,23 @@
 # TO DO LIST
 
+- Revise this document - many items have been done
+- Link to Facebook group from the page
+- Put in a 6,7,8,9,10,11 diamond too (call this one 11-limit, prev one 7-limit)
+
+## USER REQUESTS
+
+- Want to be able to vary the Sustain. A fifth slider?
+- Want to be able to change the numerator and denominator on any note
+- Ideally, to be able to save the above changes!
+- Transposing within the octave only
+- Lorus Aranus - Wants to 'see this in VST form to use within DAWs'
+- Subhraag Singh wants to hook up his 'Infinitone'. Needs numeric/digital output from program
+
+
+## BUG REPORTS
+- Sustain not working - turns everything off (Safari 10.1.7. The sustain mode is working, but when I turn it off, all sound goes off. Macbook pro 2014)
+
+
 ## Keymap / Browsers
 - See 'issues' file in keymap dir
 - Change implementation of keymaps into 4 distinct areas
