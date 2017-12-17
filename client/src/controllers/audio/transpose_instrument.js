@@ -1,3 +1,4 @@
+import getBoundedFrequencyModOctaves from '../../calculations/get_bounded_frequency_mod_octaves'
 import setFractUsingPowerMultiply from '../../notation/set_fract_using_power_multiply'
 import recalcAllNotations from '../../notation/recalc_all_notations'
 
@@ -14,16 +15,24 @@ const transposeInstrument = (state, key) => {
   const instrumentFreqDecimalCentre = stateFreq.decimalCentreCurrent
   const maxFreq = stateFreq.decimalCentreMax
   // Calculate the new frequency, bounded
-  let newFreq = instrumentFreqDecimalCentre * freqDecimalRel
-  if (newFreq < minFreq) {
-    newFreq = minFreq
-  }
-  if (maxFreq < newFreq) {
-    newFreq = maxFreq
-  }
+  const newFreq = instrumentFreqDecimalCentre * freqDecimalRel
+  const checkedNewFreq = getBoundedFrequencyModOctaves(minFreq, newFreq, maxFreq)
+  const octaveChange = Math.round(Math.log2(checkedNewFreq/newFreq))
+  // if (checkedNewFreq < minFreq) {
+  //   checkedNewFreq = minFreq
+  // }
+  // if (maxFreq < checkedNewFreq) {
+  //   checkedNewFreq = maxFreq
+  // }
   // Do the change
-  stateFreq.decimalCentreCurrent = newFreq
+  stateFreq.decimalCentreCurrent = checkedNewFreq
   setFractUsingPowerMultiply(stateFreq.fractCentre, transposingFract)
+  if (octaveChange) {
+    // The checked note isn't the same as the note
+    // Need to represent this both in the note (checkedNewFreq)
+    // and in the prime power representation (.fractCentre)
+    setFractUsingPowerMultiply(stateFreq.fractCentre, {2:octaveChange})
+  }
   recalcAllNotations(state)
 
   // Logging
@@ -31,7 +40,7 @@ const transposeInstrument = (state, key) => {
   console.log(
     "Instrument central frequency changed by", freqTextRelative,
     "from", (baseFreqHz * instrumentFreqDecimalCentre).toFixed(2), "Hz",
-    "to", (baseFreqHz * newFreq).toFixed(2), "Hz"
+    "to", (baseFreqHz * checkedNewFreq).toFixed(2), "Hz"
   )
 }
 

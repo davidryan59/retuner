@@ -31,6 +31,13 @@ const setupImportantParameters = (state) => {
   stateParam.baseFrequencyHz = 256
   stateParam.startBPM = 160
 
+  // Max and min frequencies
+  stateParam.currentMaxHz = 768
+  stateParam.currentMinHz = 160
+
+  stateParam.maxMaxHz = 4096
+  stateParam.minMinHz = 4.5
+
   // Every N loops (var = N) do the following:
   stateParam.loopsToRedrawCanvas = 2         // Redraw frame
   stateParam.loopsToRecalcNeighbours = 47    // Recalculate which neighbours are buttons
