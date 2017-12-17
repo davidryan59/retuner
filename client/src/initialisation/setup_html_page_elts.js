@@ -26,8 +26,8 @@ const setupHtmlPageElts = (state) => {
 
   // Setup the volume slider
   pageEltSliders.volume = {}
-  pageEltSliders.volume.slider = document.querySelector("#vol-slider")
-  pageEltSliders.volume.display = document.querySelector("#vol-display")
+  pageEltSliders.volume.slider = document.querySelector("#slider-vol")
+  pageEltSliders.volume.display = document.querySelector("#display-vol")
 
   sliderView = pageEltSliders.volume.slider
   sliderModel = state.slider.volume
@@ -39,8 +39,8 @@ const setupHtmlPageElts = (state) => {
 
   // Setup the key contrast slider
   pageEltSliders.colourContrast = {}
-  pageEltSliders.colourContrast.slider = document.querySelector("#contrast-slider")
-  pageEltSliders.colourContrast.display = document.querySelector("#contrast-display")
+  pageEltSliders.colourContrast.slider = document.querySelector("#slider-contrast")
+  pageEltSliders.colourContrast.display = document.querySelector("#display-contrast")
 
   sliderView = pageEltSliders.colourContrast.slider
   sliderModel = state.slider.colourContrast
@@ -52,8 +52,8 @@ const setupHtmlPageElts = (state) => {
 
   // Setup the speed slider
   pageEltSliders.bpm = {}
-  pageEltSliders.bpm.slider = document.querySelector("#bpm-slider")
-  pageEltSliders.bpm.display = document.querySelector("#bpm-display")
+  pageEltSliders.bpm.slider = document.querySelector("#slider-bpm")
+  pageEltSliders.bpm.display = document.querySelector("#display-bpm")
 
   sliderView = pageEltSliders.bpm.slider
   sliderModel = state.slider.bpm
@@ -65,8 +65,8 @@ const setupHtmlPageElts = (state) => {
 
   // Setup the key spacing slider
   pageEltSliders.keySize = {}
-  pageEltSliders.keySize.slider = document.querySelector("#spacing-slider")
-  pageEltSliders.keySize.display = document.querySelector("#spacing-display")
+  pageEltSliders.keySize.slider = document.querySelector("#slider-spacing")
+  pageEltSliders.keySize.display = document.querySelector("#display-spacing")
 
   sliderView = pageEltSliders.keySize.slider
   sliderModel = state.slider.keySize

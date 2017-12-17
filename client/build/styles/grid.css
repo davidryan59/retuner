@@ -38,12 +38,6 @@
   }
 }
 
-@media (min-width: 850px) {
-  .row-num-input {
-    flex-direction: row;
-  }
-}
-
 @media (min-width: 810px) {
   .row-below {
     flex-direction: row;
