@@ -14,12 +14,12 @@ const startDemo = (state, key) => {
 
   // Change speed to be right value for this demo
   if (bpm) {
-    state.slider.bpm.setCurrent(bpm)
+    state.slider.bpm.setValue(bpm)
   }
 
   // Make bpm flash in time with this demo
   state.slider.bpm.timeOffset = state.control.timing.timeTotalS
-  
+
   // Setup name, notes and note keys of demo to start
   const current = stateDemo.current
   current.name = name

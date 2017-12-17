@@ -9,7 +9,7 @@ const strokeStyleBPM = (state, key) => {
   return strokeStyleDefault(state, key)
 
 
-  // const secondsPerBeat = 60 / (state.slider.bpm.current || 1)
+  // const secondsPerBeat = 60 / (state.slider.bpm.getValue() || 1)
   // const offset = state.slider.bpm.timeOffset || 0
   // const totalTime = state.control.timing.timeTotalS
   // const fraction = ((totalTime - offset) % secondsPerBeat) / secondsPerBeat

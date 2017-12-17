@@ -2,7 +2,7 @@ import {instrumentKeyDownHandler, instrumentKeyUpHandler} from '../controllers/i
 
 const startNextNote = (state) => {
 
-  const beatsPerMinute = state.slider.bpm.current
+  const beatsPerMinute = state.slider.bpm.getValue()
   const secondsPerBeat = Math.max(0.02, Math.min(5, 60 / (beatsPerMinute || 1)))
 
   const currentTime = state.control.timing.timeTotalS

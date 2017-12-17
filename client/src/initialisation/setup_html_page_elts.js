@@ -35,7 +35,7 @@ const setupHtmlPageElts = (state) => {
   sliderView.min = sliderModel.min
   sliderView.step = sliderModel.step
   sliderView.max = sliderModel.max
-  sliderView.value = sliderModel.current
+  sliderView.value = sliderModel.getValue()
 
   // Setup the key contrast slider
   pageEltSliders.colourContrast = {}
@@ -48,7 +48,7 @@ const setupHtmlPageElts = (state) => {
   sliderView.min = sliderModel.min
   sliderView.step = sliderModel.step
   sliderView.max = sliderModel.max
-  sliderView.value = sliderModel.current
+  sliderView.value = sliderModel.getValue()
 
   // Setup the speed slider
   pageEltSliders.bpm = {}
@@ -61,7 +61,7 @@ const setupHtmlPageElts = (state) => {
   sliderView.min = sliderModel.min
   sliderView.step = sliderModel.step
   sliderView.max = sliderModel.max
-  sliderView.value = sliderModel.current
+  sliderView.value = sliderModel.getValue()
 
   // Setup the key spacing slider
   pageEltSliders.keySize = {}
@@ -74,7 +74,7 @@ const setupHtmlPageElts = (state) => {
   sliderView.min = sliderModel.min
   sliderView.step = sliderModel.step
   sliderView.max = sliderModel.max
-  sliderView.value = sliderModel.current
+  sliderView.value = sliderModel.getValue()
 
   console.log("DOM page elements initialised")
 }

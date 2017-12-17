@@ -5,7 +5,7 @@ const animateInstrumentKey = (state, key) => {
   // Called on any key press,
   // independent of any other function of key
 
-  const sizeFraction = state.slider.keySize.getFraction()
+  const sizeFraction = state.slider.keySize.getLinearFraction()
   const randomFraction = 0.3 + 0.7 * sizeFraction
   const keyLocation = key.coords.model.current
   keyLocation.x += randomEffect * randomFraction * (-0.5 + Math.random())

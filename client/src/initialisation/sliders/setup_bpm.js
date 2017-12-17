@@ -6,9 +6,10 @@ const setupBPM = (state) => {
     name: "Speed",
     unit: "bpm",
     initial: state.param.startBPM,
-    min: 40,
-    step: 1,
-    max: 300
+    min: 30,
+    step: 5,
+    max: 500,
+    logScale: true
   })
 
   state.slider.bpm = slider
