@@ -2,6 +2,8 @@ import setFractUsingPowerMultiply from "./set_fract_using_power_multiply"
 import absLogComplexity from "./abs_log_complexity"
 import fractToNumDenom from "./fract_to_num_denom"
 import fractToNotation from "./fract_to_notation"
+import fractToFreq from "./fract_to_freq"
+import getStateBoundedFrequencyModOctaves from "../calculations/get_state_bounded_frequency_mod_octaves"
 
 const getFractText = (key) => {
   const fractObj = key.transposes.fractAbs
@@ -32,6 +34,16 @@ const recalcKeyNotations = (state, key) => {
   keyTransposes.fractAbs = Object.assign({}, state.freq.fractCentre)
   // Multiply it by the key's relative factor. (Now correct value.)
   setFractUsingPowerMultiply(keyTransposes.fractAbs, keyTransposes.fractRel)
+
+  // Need to check if absolute frequency goes outside of instrument bounds
+  // and correct the abs fract before using it further
+  const theFreq = fractToFreq(keyTransposes.fractAbs)
+  const theCheckedFreq = getStateBoundedFrequencyModOctaves(state, theFreq)
+  if (theFreq !== theCheckedFreq) {
+    const exp2 = Math.round(Math.log2(theCheckedFreq/theFreq))
+    setFractUsingPowerMultiply(keyTransposes.fractAbs, {2:exp2})
+  }
+
   keyTransposes.complexityAbsLog = absLogComplexity(keyTransposes.fractAbs)
   // Calculate suitable notation for the key
   keyTransposes.textFract = getFractText(key)

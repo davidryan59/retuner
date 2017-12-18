@@ -1,4 +1,4 @@
-import getBoundedFrequencyModOctaves from '../../calculations/get_bounded_frequency_mod_octaves'
+import getStateBoundedFrequencyModOctaves from '../../calculations/get_state_bounded_frequency_mod_octaves'
 import setFractUsingPowerMultiply from '../../notation/set_fract_using_power_multiply'
 import recalcAllNotations from '../../notation/recalc_all_notations'
 
@@ -10,20 +10,11 @@ const transposeInstrument = (state, key) => {
 
   // Get the relevant state object
   const stateFreq = state.freq
-  // Retrieve relevant state variables
-  const minFreq = stateFreq.decimalCentreMin
   const instrumentFreqDecimalCentre = stateFreq.decimalCentreCurrent
-  const maxFreq = stateFreq.decimalCentreMax
-  // Calculate the new frequency, bounded
   const newFreq = instrumentFreqDecimalCentre * freqDecimalRel
-  const checkedNewFreq = getBoundedFrequencyModOctaves(minFreq, newFreq, maxFreq)
+  const checkedNewFreq = getStateBoundedFrequencyModOctaves(state, newFreq)
   const octaveChange = Math.round(Math.log2(checkedNewFreq/newFreq))
-  // if (checkedNewFreq < minFreq) {
-  //   checkedNewFreq = minFreq
-  // }
-  // if (maxFreq < checkedNewFreq) {
-  //   checkedNewFreq = maxFreq
-  // }
+
   // Do the change
   stateFreq.decimalCentreCurrent = checkedNewFreq
   setFractUsingPowerMultiply(stateFreq.fractCentre, transposingFract)

@@ -1,17 +1,13 @@
-import getBoundedFrequencyModOctaves from '../../../calculations/get_bounded_frequency_mod_octaves'
+import getStateBoundedFrequencyModOctaves from '../../../calculations/get_state_bounded_frequency_mod_octaves'
 
 const nextFreqRel = (state, key) => {
-  // Things like bounding by min and max are done here.
+
   const keyFreq = key.transposes.decimalRel
+  const instrumentFreq = state.freq.decimalCentreCurrent
+  const nextFreq = keyFreq * instrumentFreq
+  const checkedNextFreq = getStateBoundedFrequencyModOctaves(state, nextFreq)
+  return checkedNextFreq
 
-  const stateFreq = state.freq
-  const instrumentFreq = stateFreq.decimalCentreCurrent
-  const maxFreq = stateFreq.decimalCentreMax
-  const minFreq = stateFreq.decimalCentreMin
-
-  let result = keyFreq * instrumentFreq
-  result = getBoundedFrequencyModOctaves(minFreq, result, maxFreq)
-  return result
 }
 
 export default nextFreqRel
