@@ -1,8 +1,14 @@
 import recalcAllNotations from '../notation/recalc_all_notations'
+import setSustainAdsrFromSlider from '../models/sustain/set_sustain_adsr_from_slider'
 
-const checkFreqActivity = (state) => {
+const checkSliderActivity = (state) => {
 
-  // Get some stuff from central parameters
+  // If sustain slider has changed, update the ADSR
+  if (state.waveform.sustainValue !== state.slider.sustain.getValue()) {
+    setSustainAdsrFromSlider(state)
+  }
+
+  // If min/base/max freq sliders have changed, do some updates
   const stateSlider = state.slider
   const stateFreq = state.freq
 
@@ -31,4 +37,4 @@ const checkFreqActivity = (state) => {
 
 }
 
-export default checkFreqActivity
+export default checkSliderActivity

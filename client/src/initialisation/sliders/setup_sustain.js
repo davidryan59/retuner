@@ -5,13 +5,12 @@ const setupSustain = (state) => {
   const slider = new Slider({
     id: "sustain",
     label: "Sustain",
-    unit: "s/10",
-    numLength: 3,
-    initial: 30,
-    min: 3,
-    step: 2,
-    max: 300,
-    logScale: true
+    unit: "",
+    numLength: 2,
+    initial: 6,
+    min: 0,
+    step: 1,
+    max: 11
   })
 
   return slider

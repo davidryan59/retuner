@@ -16,6 +16,7 @@ const instrumentKeyDownHandler = (state, keyDown) => {
       keyDown.activation.count++
       animateInstrumentKey(state, keyDown)
     }
+    console.log(`Key Press ${keyDown.keyboardCode}`)
   }
 }
 
@@ -27,6 +28,7 @@ const instrumentKeyUpHandler = (state, keyUp) => {
     if (keyUpFunction) {
       keyUpFunction(state, keyUp)
     }
+    console.log(`Key Release ${keyUp.keyboardCode}`)
   }
 }
 

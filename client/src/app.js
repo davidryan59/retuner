@@ -9,7 +9,7 @@ import {volumeSliderHandler, bpmSliderHandler, contrastSliderHandler, spacingSli
 import windowResizeHandler from './views/window_resize_handler'
 import updateTimingInfo from './calculations/update_timing_info'
 import checkDemoActivity from './demos/check_demo_activity'
-import checkFreqActivity from './calculations/check_freq_activity'
+import checkSliderActivity from './calculations/check_slider_activity'
 import calculateForces from './physics/calculate_forces'
 import moveKeys from './physics/move_keys'
 import calculateNeighbouringKeys from './physics/calculate_neighbouring_keys'
@@ -74,7 +74,7 @@ const runApp = () => {
 
     updateTimingInfo(state, timeLoopStart)
     checkDemoActivity(state)
-    checkFreqActivity(state)
+    checkSliderActivity(state)
     calculateForces(state)
     moveKeys(state)
     if (state.control.loopsSinceTimeout % state.param.loopsToRecalcNeighbours === 0) {

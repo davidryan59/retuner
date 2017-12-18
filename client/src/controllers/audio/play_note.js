@@ -1,4 +1,4 @@
-import ADSREnvelope from "adsr-envelope"
+// import ADSREnvelope from "adsr-envelope"
 import decibelToAmplitude from "../../calculations/decibel_to_amplitude"
 
 const playNote = (state, key, extraFreqFactor=1) => {
@@ -29,7 +29,14 @@ const playNote = (state, key, extraFreqFactor=1) => {
   nodeOscillator.type = waveform.getType(state)
 
   // Setup the gain node amplitude
-  nodeGainVolControl.gain.value = decibelToAmplitude(state.slider.volume.getValue())
+
+  // // OLD VERSION - DEPRECATED
+  // nodeGainVolControl.gain.value = decibelToAmplitude(state.slider.volume.getValue())
+
+  // NEW VERSION
+  const newAmp = decibelToAmplitude(state.slider.volume.getValue())
+  const smallDelay = 0.01  //s
+  nodeGainVolControl.gain.setTargetAtTime(newAmp, audioContext.currentTime, smallDelay)
 
   // Apply the ADSR envelope
   adsrPress.applyTo(nodeGainADSR.gain, currentTime)
@@ -38,17 +45,17 @@ const playNote = (state, key, extraFreqFactor=1) => {
   nodeOscillator.start(currentTime)
   nodeOscillator.stop(currentTime + adsrPress.duration)
 
-  // Provide logging
-  // const theFreqText = noteFreqHz.toFixed(2)
-  // console.log("Playing note", key.transposes.textFraction, "at", theFreqText, "Hz")
-  nodeOscillator.onended = function() {
-    // console.log("Note at", theFreqText, "Hz ended")
-  }
-
   if (key) {
     key.currentOscNode = nodeOscillator
     key.currentAdsrGainNode = nodeGainADSR
-    // console.log("New note stored on", key.keyboardCode)
+    console.log("New note stored on", key.keyboardCode)
+    const theFreqText = noteFreqHz.toFixed(2)
+    console.log("Playing note", key.transposes.textFraction, "at", theFreqText, "Hz")
+    nodeOscillator.onended = (key) => {
+      console.log("Note at", theFreqText, "Hz ended")
+      key.currentOscNode = null
+      key.currentAdsrGainNote = null
+    }
   } else {
     console.log("*** Note storage FAILED ***")
   }
