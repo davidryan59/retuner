@@ -36,7 +36,8 @@ const transposeInstrument = (state, key) => {
   recalcAllNotations(state)
 
   // Logging
-  const baseFreqHz = state.param.baseFrequencyHz
+  // const baseFreqHz = state.param.baseFrequencyHz
+  const baseFreqHz = state.slider.baseFreq.getValue()
   console.log(
     "Instrument central frequency changed by", freqTextRelative,
     "from", (baseFreqHz * instrumentFreqDecimalCentre).toFixed(2), "Hz",

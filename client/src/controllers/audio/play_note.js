@@ -21,7 +21,8 @@ const playNote = (state, key, extraFreqFactor=1) => {
 
   // Specify the oscillator frequency and type
   const currentTime = audioContext.currentTime
-  const baseFreqHz = state.param.baseFrequencyHz
+  // const baseFreqHz = state.param.baseFrequencyHz
+  const baseFreqHz = state.slider.baseFreq.getValue()
   const instrumentCentralFreqDecimalRel = stateFreq.decimalCentreCurrent
   const noteFreqHz = baseFreqHz * instrumentCentralFreqDecimalRel * extraFreqFactor
   nodeOscillator.frequency.setValueAtTime(noteFreqHz, currentTime)

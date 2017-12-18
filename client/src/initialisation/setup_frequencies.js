@@ -2,9 +2,12 @@ const setupFrequencies = (state) => {
 
   // Get some stuff from central parameters
   const stateParam = state.param
-  const baseFrequencyHz = stateParam.baseFrequencyHz
-  const currentMaxHz = stateParam.currentMaxHz
-  const currentMinHz = stateParam.currentMinHz
+  // const currentBaseHz = stateParam.baseFrequencyHz
+  // const currentMaxHz = stateParam.currentMaxHz
+  // const currentMinHz = stateParam.currentMinHz
+  const currentBaseHz = state.slider.baseFreq.getValue()
+  const currentMaxHz = state.slider.maxFreq.getValue()
+  const currentMinHz = state.slider.minFreq.getValue()
 
   const transposing = true             // false disables transposing every key press
   const keyReleaseEndsNote = false     // false means keys are sustained
@@ -12,8 +15,8 @@ const setupFrequencies = (state) => {
 
   state.freq = {}
   const stateFreq = state.freq
-  stateFreq.decimalCentreMin = currentMinHz / baseFrequencyHz
-  stateFreq.decimalCentreMax = currentMaxHz / baseFrequencyHz
+  stateFreq.decimalCentreMin = currentMinHz / currentBaseHz
+  stateFreq.decimalCentreMax = currentMaxHz / currentBaseHz
   stateFreq.transposing = transposing
   stateFreq.keyReleaseEndsNote = keyReleaseEndsNote
   stateFreq.keyEndsPreviousPress = keyEndsPreviousPress
