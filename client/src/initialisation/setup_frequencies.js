@@ -13,7 +13,6 @@ const setupFrequencies = (state) => {
   const keyReleaseEndsNote = false     // false means keys are sustained
   const keyEndsPreviousPress = false   // false means one key can generate multiple tones
 
-  state.freq = {}
   const stateFreq = state.freq
   stateFreq.decimalCentreMin = currentMinHz / currentBaseHz
   stateFreq.decimalCentreMax = currentMaxHz / currentBaseHz

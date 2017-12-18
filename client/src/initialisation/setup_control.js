@@ -6,7 +6,6 @@ const setupControl = (state) => {
   const approxBrowserFrameRate = stateParams.approxBrowserFrameRateHz
 
   // General control
-  state.control = {}
   const stateControl = state.control
   stateControl.totalKeyActivations = 0
   stateControl.mainLoopPaused = false

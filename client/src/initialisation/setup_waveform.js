@@ -22,7 +22,6 @@ const setupWaveform = (state) => {
   const waveformIndex = 1
 
   // Save them into the state
-  state.waveform = {}
   const stateWaveform = state.waveform
   stateWaveform.adsrOnPressNote = adsrOnPressNote
   stateWaveform.allTypes = waveformTypes

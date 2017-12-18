@@ -24,7 +24,6 @@ const setupGraphicsContext = (state) => {
   const boundUp = 0
   const boundDown = canvasElt.height
 
-  state.graphics = {}
   const stateGraphics = state.graphics
 
   stateGraphics.modelInfo = {}

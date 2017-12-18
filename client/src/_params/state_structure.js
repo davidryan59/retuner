@@ -2,9 +2,12 @@ const setupStateStructure = (state) => {
 
   state.browser = {}
   state.comma = {}
+  state.control = {}
   state.controller = {}
   state.context = {}
   state.demo = {}
+  state.freq = {}
+  state.graphics = {}
   state.key = {}
   state.map = {}
   state.pageElt = {}
@@ -12,6 +15,7 @@ const setupStateStructure = (state) => {
   state.slider = {}
   state.text = {}
   state.version = {}
+  state.waveform = {}
 
 }
 
