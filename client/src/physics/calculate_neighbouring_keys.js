@@ -9,8 +9,6 @@ const calculateNeighbouringKeys = (state) => {
     // Clear array (without dereferencing) by
     // setting length attribute to 0!
     key.coords.model.force.neighbours.length = 0
-    // ^ NICE CODING!
-    // (even if I say so myself :) )
   }
 
   for (let i=0; i<maxKeys-1; i++) {

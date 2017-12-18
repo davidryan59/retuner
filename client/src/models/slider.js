@@ -68,13 +68,6 @@ class Slider {
     return (diff === 0) ? 0 : (this.current - this.min) / diff
   }
 
-  getLogFraction() {
-    if (0 < this.min && this.min < this.max) {
-      return Math.log(this.current / this.min) / Math.log(this.max / this.min)
-    }
-    return 0
-  }
-
   getLinearValue() {
     return this.current
   }

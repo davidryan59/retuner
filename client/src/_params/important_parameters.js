@@ -9,7 +9,7 @@ const setupImportantParameters = (state) => {
 
   // Frequencies
   stateParam.baseFrequencyHz = 256
-  stateParam.maxMaxHz = 6000          // Slider max
+  stateParam.maxMaxHz = 8000          // Slider max
   stateParam.currentMaxHz = 2048      // Slider value
   stateParam.currentMinHz = 64        // Slider value
   stateParam.minMinHz = 3             // Slider min

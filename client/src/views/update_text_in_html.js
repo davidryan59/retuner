@@ -9,7 +9,14 @@ const updateSliderViewFromModel = (sliderView, sliderModel) => {
 }
 
 const updateTextInHtml = (state) => {
-  // Only update this every N frames
+
+  // Sliders - delegated to controllers
+  const sliderControllerArray = state.controller.sliders
+  for (const controller of sliderControllerArray) {
+    controller.updateView()
+  }
+
+  // Page stats
   const pageElts = state.pageElt
   if (state.control.loopsSinceTimeout % state.param.loopsToUpdateHtmlText === 0) {
     const stateTiming = state.control.timing
@@ -52,12 +59,6 @@ const updateTextInHtml = (state) => {
     stateText.index = newIndex                                               // Random
     // stateText.index = ( stateText.index + 1 ) % stateText.array.length    // Sequential
     topTextElt.innerHTML = newText  // May include <br /> so innerText doesn't work!
-  }
-
-  // Update Sliders
-  const sliderControllerArray = state.controller.sliders
-  for (const controller of sliderControllerArray) {
-    controller.updateView()
   }
 
 }

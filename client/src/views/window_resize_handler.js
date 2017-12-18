@@ -1,5 +1,3 @@
-// const heightToWidthRatio = 0.375   // Original value
-// const heightToWidthRatio = 0.5
 const heightToWidthRatio = 0.4
 
 const windowResizeHandler = (state, event) => {

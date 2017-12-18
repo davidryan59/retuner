@@ -60,11 +60,4 @@ const fractionToFract = (num, denom) => {
   return fractObj
 }
 
-// // Node Testing
-// const num = 10
-// const den = 14
-// const result = fractionToFract(num, den)
-// console.log(`${num}/${den} =>`)
-// console.log(result)
-
 export default fractionToFract
