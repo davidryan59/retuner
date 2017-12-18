@@ -1,3 +1,4 @@
+import setupStateStructure from '../_params/state_structure'
 import setupCurrentVersion from '../_params/current_version'
 import setupImportantParameters from '../_params/important_parameters'
 
@@ -19,13 +20,10 @@ import windowResizeHandler from '../views/window_resize_handler'
 
 const initialiseState = (state) => {
 
-  // Setup version info
-  // Held in first src subdir
-  // for ease of access
+  setupStateStructure(state)
   setupCurrentVersion(state)
   setupImportantParameters(state)
 
-  // Setup state
   setupControl(state)
   setupTopTexts(state)
   setupSliders(state)
