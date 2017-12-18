@@ -122,7 +122,7 @@ const useSimplifiers = (residualFract, simplifierArray) => {
 const noteNames = [
   {label: "F", fract: {2: 2, 3: -1}},    // 4/3
   {label: "C", fract: {2: 0, 3: 0}},     // 1/1
-  {label: "G", fract: {2: -2, 3: 1}},    // 3/4
+  {label: "G", fract: {2: -1, 3: 1}},    // 3/2
   {label: "D", fract: {2: -3, 3: 2}},    // 9/8
   {label: "A", fract: {2: -4, 3: 3}},    // 27/16
   {label: "E", fract: {2: -6, 3: 4}},    // 81/64

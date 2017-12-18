@@ -1,10 +1,13 @@
 # TO DO LIST
 
+- Note - Fract (9/8) is wrong! fraction is incorrect if there's an octave correction
+- Note - cache the labels, only set when recalculating
+
+
 ## USER REQUESTS
 - Want to be able to vary the Sustain. A fifth slider?
 - Want to be able to change the numerator and denominator on any note
 - Ideally, to be able to save the above changes!
-- Transposing within the octave only (maybe do this off existing min/max, map into range via octaves?)
 - Lorus Aranus - Wants to 'see this in VST form to use within DAWs'
 - Subhraag Singh wants to hook up his 'Infinitone'. Needs numeric/digital output from program
 
