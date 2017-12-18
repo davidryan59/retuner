@@ -8,7 +8,7 @@ const setupMaxFreq = (state) => {
     unit: "Hz",
     initial: state.param.currentMaxHz,
     max: state.param.maxMaxHz,
-    step: 10,
+    step: 50,
     min: Math.round(state.param.baseFrequencyHz * 1.42),
     logScale: true
   })

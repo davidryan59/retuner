@@ -29,16 +29,15 @@ const setupImportantParameters = (state) => {
   // // since the file name is hard coded in the setup instrument keys...
   // // ... some problems with importing JSON on WebPack.
 
-  // Tuning of the whole instrument
-  stateParam.baseFrequencyHz = 256
+  // Speed (currently only of demos)
   stateParam.startBPM = 160
 
   // Max and min frequencies
-  stateParam.currentMaxHz = 768
-  stateParam.currentMinHz = 160
-
-  stateParam.maxMaxHz = 4096
-  stateParam.minMinHz = 4.5
+  stateParam.baseFrequencyHz = 256
+  stateParam.maxMaxHz = 6000          // Slider max
+  stateParam.currentMaxHz = 4096      // Slider value
+  stateParam.currentMinHz = 5         // Slider value
+  stateParam.minMinHz = 3             // Slider min
 
   // Every N loops (var = N) do the following:
   stateParam.loopsToRedrawCanvas = 2         // Redraw frame

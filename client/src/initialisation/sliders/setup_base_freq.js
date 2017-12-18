@@ -8,7 +8,7 @@ const setupBaseFreq = (state) => {
     unit: "Hz",
     initial: state.param.baseFrequencyHz,
     min: 254,
-    step: 0.1,
+    step: 1,
     max: 270
   })
 
