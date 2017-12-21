@@ -8,11 +8,11 @@ const setupImportantParameters = (state) => {
   detectBrowser(state)
 
   // Frequencies
-  stateParam.baseFrequencyHz = 256
-  stateParam.maxMaxHz = 8000          // Slider max
-  stateParam.currentMaxHz = 2048      // Slider value
-  stateParam.currentMinHz = 64        // Slider value
-  stateParam.minMinHz = 3             // Slider min
+  stateParam.minMinHz = 8             // Slider min
+  stateParam.currentMinHz = 64        // Min slider initial value
+  stateParam.baseFrequencyHz = 256    // Base freq slider initial value
+  stateParam.currentMaxHz = 2048      // Max slider initial value
+  stateParam.maxMaxHz = 8196          // Slider max
 
   // Speed
   stateParam.startBPM = 160

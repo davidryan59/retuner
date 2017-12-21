@@ -7,10 +7,10 @@ const setupBaseFreq = (state) => {
     label: "C4",
     unit: "Hz",
     initial: state.param.baseFrequencyHz,
-    min: Math.round(state.param.minMinHz * 2.12),
-    max: Math.round(state.param.maxMaxHz / 2.12),
+    min: Math.round(state.param.minMinHz),
+    max: Math.round(state.param.maxMaxHz),
     logScale: true,
-    points: 99
+    points: 1 + 12 * Math.log2(state.param.maxMaxHz / state.param.minMinHz)
   })
 
   return slider
