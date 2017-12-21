@@ -8,12 +8,21 @@ class Slider {
     }
 
     this.id = options.id               || ""  // Prevents controller creation
-    this.label = options.label           || "Value"
+    this.label = options.label         || "Value"
     this.min = options.min             || 0
-    this.step = options.step           || 1
     this.max = options.max             || 9
     this.initial = options.initial     || 5
     this.unit = options.unit           || ""
+
+    // Deal with discrete gradations
+    // Option 'step' is how big each step is
+    // OR Option 'points' is how many points there are
+    this.step = options.step
+    if (!this.step) {
+      this.points = options.points || 10                     // Default 10 points
+      this.points = Math.max(2, Math.round(this.points))     // No less than 2 points
+      this.step = (this.max - this.min) / (this.points - 1)  // Calculate step size from points
+    }
 
     const digitsMin = 1 + Math.floor(Math.log10(Math.abs(this.min))) + ((this.min < 0) ? 1 : 0);
     const digitsMax = 1 + Math.floor(Math.log10(Math.abs(this.max))) + ((this.max < 0) ? 1 : 0);

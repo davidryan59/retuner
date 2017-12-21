@@ -6,7 +6,7 @@ const setupDecibels = (state) => {
     id: "volume",
     label: "Volume",
     unit: "dB",
-    initial: 1,
+    initial: -6,
     min: -21,
     step: 1,
     max: 11

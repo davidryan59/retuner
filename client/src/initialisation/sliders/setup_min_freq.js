@@ -7,10 +7,10 @@ const setupMinFreq = (state) => {
     label: "Min",
     unit: "Hz",
     initial: state.param.currentMinHz,
-    min: state.param.minMinHz,
-    step: 3,
-    max: Math.round(state.param.baseFrequencyHz * 0.7),
-    logScale: true
+    min: Math.round(state.param.minMinHz),
+    max: Math.round(state.param.maxMaxHz / 4.5),
+    logScale: true,
+    points: 99
   })
 
   return slider
