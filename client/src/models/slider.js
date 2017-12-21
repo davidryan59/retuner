@@ -22,6 +22,7 @@ class Slider {
       this.points = options.points || 10                     // Default 10 points
       this.points = Math.max(2, Math.round(this.points))     // No less than 2 points
       this.step = (this.max - this.min) / (this.points - 1)  // Calculate step size from points
+      this.step -= 10e-8                                     // Make sure final point is available!
     }
 
     const digitsMin = 1 + Math.floor(Math.log10(Math.abs(this.min))) + ((this.min < 0) ? 1 : 0);
