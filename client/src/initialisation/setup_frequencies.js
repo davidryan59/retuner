@@ -21,7 +21,8 @@ const setupFrequencies = (state) => {
   stateFreq.keyEndsPreviousPress = keyEndsPreviousPress
 
   stateFreq.decimalCentreCurrent = 1
-  stateFreq.fractCentre = {}
+  stateFreq.fractCentre = {}         // Controls relative multiple of base frequency 
+  stateFreq.fractBase = {}           // Controls note name of base frequency
   // .freq is the decimal, .fractCentre is the prime/exponent representation
 
   console.log("Frequencies initialised")

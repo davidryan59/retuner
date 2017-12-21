@@ -10,7 +10,7 @@ const setupMinFreq = (state) => {
     min: Math.round(state.param.minMinHz),
     max: Math.round(state.param.maxMaxHz / 2),
     logScale: true,
-    points: 1 + 12 * Math.log2(state.param.maxMaxHz / (2 * state.param.minMinHz))
+    points: 1 + 240 * Math.log2(state.param.maxMaxHz / (2 * state.param.minMinHz))
   })
 
   return slider
