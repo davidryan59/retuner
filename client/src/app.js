@@ -1,5 +1,5 @@
 // DEBUG ONLY
-// import Slider from './models/slider'
+// (import the file to test in browser here)
 
 import initialiseState from './initialisation/initialise_state'
 import topTextHandler from './controllers/top_text_handler'
@@ -22,9 +22,8 @@ import recordRenderTime from './calculations/record_render_time'
 const runApp = () => {
   console.log("The app has started")
 
-  // // DEBUG ONLY
-  // // (console log the file to be tested)
-  // // console.dir("Nothing to test")
+  // DEBUG ONLY
+  // (console log the file to be tested)
 
   // Have a central place where all app state is stored
   const state = {}

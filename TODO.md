@@ -1,15 +1,14 @@
 # TO DO LIST
 
-- Note - Fract (9/8) is wrong! fraction is incorrect if there's an octave correction
-- Note - cache the labels, only set when recalculating
-
-
 ## USER REQUESTS
-- Want to be able to vary the Sustain. A fifth slider?
 - Want to be able to change the numerator and denominator on any note
 - Ideally, to be able to save the above changes!
 - Lorus Aranus - Wants to 'see this in VST form to use within DAWs'
 - Subhraag Singh wants to hook up his 'Infinitone'. Needs numeric/digital output from program
+- Bronson Coleman it would be cool if other keys controlled things like a flanger or filter like an lfo (as you hold the key the amount would go up and down).
+- David J. Adan would love to see this as a plugin so i can use it on ableton
+- Jack Hertz - Any plans for MIDI? (How? What kind of output?)
+- Jack Hertz - Is there a sequencing function, or we can only play notes? (Demos!)
 
 
 ## BUG REPORTS
@@ -23,11 +22,14 @@
 - See strokeStyleBPM file
 - Why? Fix it.
 
-## BPM slider
-- Look at making it logarithmic from say 40 to 400
-
 ## CSS
 - When flex goes from row to column, it no longer covers the whole width available. Fix this. It particularly looks bad on sliders.
+
+## Playing Notes
+- Want to have a limited set of playing notes, e.g. 2 to 30
+- If there is no room for a node, it should be stopped, removed from array, removed from its key
+- Want to merge them in a single node
+
 
 ## Graphical Display of Waveform
 - Want a graphical display of the sound output waveform.
