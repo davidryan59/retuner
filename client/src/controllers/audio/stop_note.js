@@ -2,11 +2,17 @@ const stopNote = (state, key) => {
   let prevOscNode = key.currentOscNode
   let prevAdsrGainNode = key.currentAdsrGainNode
   const currentTime = state.context.audio.currentTime
-  const delayStoppingTime = 0.1
-  const minAmplitude = 0.005
+  const delayStoppingTime = 0.3      // Must be greater than the ADSR final change!
+  const minAmplitude = 1e-5
 
   if (prevOscNode) {
-    prevOscNode.stop(currentTime + delayStoppingTime)
+
+    // // Taken this out
+    // // Worked on Chrome, didn't work on Safari!
+    // // Every osc node is started and given a stopping time
+    // // so it should stop anyway.
+    // prevOscNode.stop(currentTime + delayStoppingTime)
+
     prevAdsrGainNode.gain.exponentialRampToValueAtTime(minAmplitude, currentTime + delayStoppingTime)
     prevOscNode = null
     prevAdsrGainNode = null

@@ -34,7 +34,7 @@ const playNote = (state, key, extraFreqFactor=1) => {
   // Apply the ADSR envelope
   adsrPress.applyTo(nodeGainADSR.gain, currentTime)
 
-  // Play the note for 1 second
+  // Play the note for duration of ADSR
   nodeOscillator.start(currentTime)
   nodeOscillator.stop(currentTime + adsrPress.duration)
 

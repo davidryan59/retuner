@@ -12,8 +12,6 @@
 
 
 ## BUG REPORTS
-- I noticed that Sustain was not working on Safari - is this true?
-- Sustain not working - turns everything off (Safari 10.1.7. The sustain mode is working, but when I turn it off, all sound goes off. Macbook pro 2014. Recommended to upgrade to Safari 11. Awaiting if that fixes?)
 
 ## Demos
 - Give a longer and more impressive demo

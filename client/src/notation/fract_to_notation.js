@@ -143,6 +143,12 @@ const fractToNotation = (state, fractObj) => {
   const residualFract = {}
   Object.assign(residualFract, fractObj)
 
+  // Base frequency has a fract, which may not be {}
+  // if deviating significantly from 256 Hz = C4
+  // then take account of that effect here
+  const baseFreqFract = state.freq.fractBase
+  setFractUsingPowerMultiply(residualFract, baseFreqFract, 1)
+
   // Primes 5 and above are independent in this scheme
   // Can cancel them out independently
   for (const key of Object.keys(residualFract)) {

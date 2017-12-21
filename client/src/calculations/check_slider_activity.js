@@ -43,6 +43,7 @@ const checkSliderActivity = (state) => {
 
   // Edit changed values if they are outside bounds
   // Only allow one change per loop
+  // This is where the three sliders interact and bound each other!
   if (prevBaseHz !== baseHz) {
     boundSlider(baseSlider, baseHz, minHz, maxHz)
     baseHz = baseSlider.getValue()
