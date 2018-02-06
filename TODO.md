@@ -9,7 +9,9 @@
 - David J. Adan would love to see this as a plugin so i can use it on ableton
 - Jack Hertz - Any plans for MIDI? (How? What kind of output?)
 - Jack Hertz - Is there a sequencing function, or we can only play notes? (Demos!)
-
+- Jack Hertz I have written huge JS apps, but not in 10+ years. FWIW, there's a Web MIDI API already: https://webaudio.github.io/web-midi-api/
+- Jack Hertz Would this work? (In response to - the MIDI API is not on npm)
+https://www.npmjs.com/package/npm-web-api
 
 ## BUG REPORTS
 - Windows XP chrome 49.0.2623 - no JavaScript ran. No work. Windows Internet Explorer 8 - page didn't even load!
