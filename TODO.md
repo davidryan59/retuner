@@ -12,6 +12,7 @@
 
 
 ## BUG REPORTS
+- Windows XP chrome 49.0.2623 - no JavaScript ran. No work. Windows Internet Explorer 8 - page didn't even load!
 
 ## Demos
 - Give a longer and more impressive demo
