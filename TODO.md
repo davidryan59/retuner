@@ -13,6 +13,10 @@
 - Jack Hertz Would this work? (In response to - the MIDI API is not on npm)
 https://www.npmjs.com/package/npm-web-api
 
+## MIDI
+- Requires navigator.requestMIDIAccess to be a function
+- This works in Chrome, it doesn't work in Safari!
+
 ## BUG REPORTS
 - Windows XP chrome 49.0.2623 - no JavaScript ran. No work. Windows Internet Explorer 8 - page didn't even load!
 
