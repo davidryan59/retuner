@@ -7,15 +7,17 @@
 - Subhraag Singh wants to hook up his 'Infinitone'. Needs numeric/digital output from program
 - Bronson Coleman it would be cool if other keys controlled things like a flanger or filter like an lfo (as you hold the key the amount would go up and down).
 - David J. Adan would love to see this as a plugin so i can use it on ableton
-- Jack Hertz - Any plans for MIDI? (How? What kind of output?)
 - Jack Hertz - Is there a sequencing function, or we can only play notes? (Demos!)
+
+## MIDI
+- Jack Hertz - Any plans for MIDI? (How? What kind of output?)
 - Jack Hertz I have written huge JS apps, but not in 10+ years. FWIW, there's a Web MIDI API already: https://webaudio.github.io/web-midi-api/
 - Jack Hertz Would this work? (In response to - the MIDI API is not on npm)
 https://www.npmjs.com/package/npm-web-api
-
-## MIDI
 - Requires navigator.requestMIDIAccess to be a function
 - This works in Chrome, it doesn't work in Safari!
+- The 'WebMidi' package has been tested to provide MIDI services. However, it doesn't seem to be easy to have it open in the background and automatically connect to whatever MIDI outputs happen to be available.
+- For now (5th June 2018) the testing changes have been stashed.
 
 ## BUG REPORTS
 - Windows XP chrome 49.0.2623 - no JavaScript ran. No work. Windows Internet Explorer 8 - page didn't even load!
