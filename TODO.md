@@ -1,5 +1,13 @@
 # TO DO LIST
 
+----------------
+## feat/jinote
+- Use the 'peo' and 'ji-rcn' packages
+- Give a Jinote instance on every (transposing) key which represents the relative pitch of the key, and produces things like the key labels
+----------------
+
+
+
 ## USER REQUESTS
 - Want to be able to change the numerator and denominator on any note
 - Ideally, to be able to save the above changes!
