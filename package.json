@@ -1,6 +1,6 @@
 {
   "name": "retuner",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Making a musical instrument using JavaScript and a canvas in a web browser",
   "main": "./client/bundle.js",
   "scripts": {
