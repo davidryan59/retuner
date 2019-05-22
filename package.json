@@ -12,6 +12,10 @@
     "email": "davidryan1998@hotmail.com",
     "url": "https://github.com/davidryan59"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidryan59/retuner_musical_instrument.git"
+  },
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -19,8 +23,7 @@
     "webpack": "^3.8.1"
   },
   "dependencies": {
-    "adsr-envelope": "^1.0.0",
-    "express": "^4.16.2"
+    "adsr-envelope": "^1.0.0"
   },
   "keywords": [
     "fraction",
