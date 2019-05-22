@@ -53,15 +53,6 @@ const setupSliders = (state) => {
 
     }
   }
-
-
-
-
-
-
-
-
-
 }
 
 export default setupSliders

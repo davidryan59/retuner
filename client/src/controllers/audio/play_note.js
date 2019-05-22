@@ -1,5 +1,3 @@
-import decibelToAmplitude from "../../calculations/decibel_to_amplitude"
-
 const playNote = (state, key, extraFreqFactor=1) => {
   // Extra frequency factor used in some cases,
   // e.g. if transposition is switched off
@@ -13,10 +11,8 @@ const playNote = (state, key, extraFreqFactor=1) => {
   // Create oscillator and gain nodes, and connect them to audio context
   const nodeOscillator = audioContext.createOscillator();
   const nodeGainADSR = audioContext.createGain();
-  const nodeGainVolControl = audioContext.createGain();
   nodeOscillator.connect(nodeGainADSR)
-  nodeGainADSR.connect(nodeGainVolControl)
-  nodeGainVolControl.connect(audioContext.destination)
+  nodeGainADSR.connect(state.mixer)
 
   // Specify the oscillator frequency and type
   const currentTime = audioContext.currentTime
@@ -25,11 +21,6 @@ const playNote = (state, key, extraFreqFactor=1) => {
   const noteFreqHz = baseFreqHz * instrumentCentralFreqDecimalRel * extraFreqFactor
   nodeOscillator.frequency.setValueAtTime(noteFreqHz, currentTime)
   nodeOscillator.type = waveform.getType(state)
-
-  // Setup the gain node amplitude target
-  const newAmp = decibelToAmplitude(state.slider.volume.getValue())
-  const smallDelay = 0.01  //s
-  nodeGainVolControl.gain.setTargetAtTime(newAmp, audioContext.currentTime, smallDelay)
 
   // Apply the ADSR envelope
   adsrPress.applyTo(nodeGainADSR.gain, currentTime)

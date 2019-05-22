@@ -30,6 +30,7 @@ class Slider {
     this.numLength = options.numLength       || Math.max(digitsMin, digitsMax);
 
     this.redraw = true
+    if (options.onUpdate) this.onUpdate = options.onUpdate
 
     this.logScale = false
     const logScale = options.logScale

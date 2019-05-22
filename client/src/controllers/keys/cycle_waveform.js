@@ -1,5 +1,4 @@
 const cycleWaveform = (state, key) => {
-
   const stateWaveform = state.waveform
   const types = stateWaveform.allTypes
   const index = stateWaveform.index
@@ -8,7 +7,6 @@ const cycleWaveform = (state, key) => {
   const newType = stateWaveform.allTypes[newIndex]
   stateWaveform.index = newIndex
   console.log("New waveform is", newType)
-
 }
 
 export default cycleWaveform

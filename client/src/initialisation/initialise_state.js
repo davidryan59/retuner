@@ -14,6 +14,8 @@ import setupKeyInteractions from './setup_key_interactions'
 import setupDemos from './setup_demos'
 import setupWaveform from './setup_waveform'
 import setupAudioContext from './setup_audio_context'
+import setupMixer from './setupMixer'
+import updateSliders from './updateSliders'
 
 import windowResizeHandler from '../views/window_resize_handler'
 
@@ -38,6 +40,8 @@ const initialiseState = (state) => {
   setupDemos(state)
   setupWaveform(state)
   setupAudioContext(state)
+  setupMixer(state)
+  updateSliders(state)
 
   // Setup window
   windowResizeHandler(state)
