@@ -1,5 +1,8 @@
+.DS_Store
 node_modules
 bundle.js
 bundle.js.map
-removed
-.DS_Store
+credentials*.*
+removed*
+temp*.*
+devnotes
