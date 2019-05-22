@@ -5,12 +5,8 @@ import transposeInstrument from "../audio/transpose_instrument"
 import playNote from "../audio/play_note"
 
 const instrumentKeyPress = (state, key) => {
-
-  // console.log("Pressing", key.keyboardCode)
-
-  if (keyEndsPreviousPress(state, key)) {
-    stopNote(state, key)
-  }
+  if (keyEndsPreviousPress(state, key)) stopNote(state, key)
+  
   if (isTransposing(state, key)) {
     transposeInstrument(state, key)
     playNote(state, key)
@@ -18,7 +14,6 @@ const instrumentKeyPress = (state, key) => {
     const freqFactor = key.transposes.decimalRel
     playNote(state, key, freqFactor)
   }
-
 }
 
 export default instrumentKeyPress

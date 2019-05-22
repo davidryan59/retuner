@@ -1,3 +1,8 @@
+const timeCancelS = 0.01
+const timeSilentS = 0.02
+const timeStopS = 0.03
+const timeDisconnectS = 0.04
+
 const playNote = (state, key, extraFreqFactor=1) => {
   // Extra frequency factor used in some cases,
   // e.g. if transposition is switched off
@@ -9,40 +14,51 @@ const playNote = (state, key, extraFreqFactor=1) => {
   const adsrPress = state.waveform.adsrOnPressNote
 
   // Create oscillator and gain nodes, and connect them to audio context
-  const nodeOscillator = audioContext.createOscillator();
-  const nodeGainADSR = audioContext.createGain();
-  nodeOscillator.connect(nodeGainADSR)
-  nodeGainADSR.connect(state.mixer)
+  let nodeOsc = audioContext.createOscillator();
+  let nodeGain = audioContext.createGain();
+  nodeOsc.connect(nodeGain)
+  nodeGain.connect(state.mixer)
 
   // Specify the oscillator frequency and type
   const currentTime = audioContext.currentTime
   const baseFreqHz = state.slider.baseFreq.getValue()
   const instrumentCentralFreqDecimalRel = stateFreq.decimalCentreCurrent
   const noteFreqHz = baseFreqHz * instrumentCentralFreqDecimalRel * extraFreqFactor
-  nodeOscillator.frequency.setValueAtTime(noteFreqHz, currentTime)
-  nodeOscillator.type = waveform.getType(state)
+  const theFreqText = noteFreqHz.toFixed(2)
+  nodeOsc.frequency.setValueAtTime(noteFreqHz, currentTime)
+  nodeOsc.type = waveform.getType(state)
 
   // Apply the ADSR envelope
-  adsrPress.applyTo(nodeGainADSR.gain, currentTime)
+  adsrPress.applyTo(nodeGain.gain, currentTime)
+  const noteLength = adsrPress.duration
 
   // Play the note for duration of ADSR
-  nodeOscillator.start(currentTime)
-  nodeOscillator.stop(currentTime + adsrPress.duration)
-
-  if (key) {
-    key.currentOscNode = nodeOscillator
-    key.currentAdsrGainNode = nodeGainADSR
-    console.log("New note stored on", key.keyboardCode)
-    const theFreqText = noteFreqHz.toFixed(2)
-    console.log("Playing note", key.transposes.textFraction, "at", theFreqText, "Hz")
-    nodeOscillator.onended = (key) => {
-      console.log("Note at", theFreqText, "Hz ended")
-      key.currentOscNode = null
-      key.currentAdsrGainNote = null
+  nodeOsc.start(currentTime)
+  
+  // Write a function to stop the note
+  const stopNote = () => {
+    const timeS = audioContext.currentTime
+    try {
+      nodeGain.gain.cancelAndHoldAtTime(timeS + timeCancelS)
+      nodeGain.gain.linearRampToValueAtTime(0, timeS + timeSilentS)
+      nodeOsc.stop(timeS + timeStopS)
+    } catch(e) {
+      // console.log(`Already stopped note at ${theFreqText} Hz`)
+      return
     }
-  } else {
-    console.log("*** Note storage FAILED ***")
+    setTimeout( () => {
+      nodeOsc.disconnect()
+      nodeGain.disconnect() 
+      nodeOsc = null     
+      nodeGain = null     
+      key.stopNote = null
+      console.log(`Stopped and disconnected note at ${theFreqText} Hz`)
+    }, timeDisconnectS * 1000)
   }
+  key.stopNote = stopNote
+  setTimeout( () => stopNote(), noteLength * 1000)
+  
+  console.log(`Played note at ${theFreqText} Hz`)
 
 }
 
