@@ -1,4 +1,4 @@
-- Firebase live app: https://www.retuner.net
+- Firebase live app: https://www.retuner.net | https://retuner-bdf49.firebaseapp.com/ | https://retuner-bdf49.web.app
 - Facebook support group: https://www.facebook.com/groups/retuner
 - GitHub source code: https://github.com/davidryan59/retuner_musical_instrument
 
@@ -13,11 +13,11 @@ that music is played by intervals between subsequent notes, and not by
 absolute position / pitch of note.
 
 # Technologies I used
+- HTML
+- Canvas
 - Javascript (ES6)
 - Babel
-- ndm
-- Nodemon
-- Express
+- npm
 - Webpack
 - Firebase
 - Web Hosting
