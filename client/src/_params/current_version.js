@@ -1,7 +1,7 @@
 const setupCurrentVersion = (state) => {
 
-  state.version.number = "v1.3.5"
-  state.version.date = "22nd May 2019"
+  state.version.number = "v1.3.6"
+  state.version.date = "23rd May 2019"
   console.log(`Currently on ${state.version.number} (${state.version.date})`)
 
 }

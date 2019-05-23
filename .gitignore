@@ -1,4 +1,5 @@
 .DS_Store
+.firebase
 node_modules
 bundle.js
 bundle.js.map
