@@ -1,7 +1,6 @@
 class SliderController {
 
   constructor(options) {
-
     if (!options) {
       options = {}
     }
@@ -16,7 +15,6 @@ class SliderController {
       // input listener works as slider is being moved.
       // change listener doesn't! So use input listener.
     }
-
   }
   
   updateModel(value) {
@@ -24,7 +22,6 @@ class SliderController {
     // Do side effects, such as updating mixer gain
     if (this.model.onUpdate) this.model.onUpdate()
   }
-  
   
   increaseSliderUnits(unitsToIncrease) {
     this.updateModel(this.model.current + unitsToIncrease * this.model.step)
@@ -42,7 +39,6 @@ class SliderController {
       this.model.redraw = false
     }
   }
-
 }
 
 export default SliderController

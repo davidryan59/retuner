@@ -29,7 +29,6 @@ const setupSliders = state => {
         model: sliderModel,
         view: sliderView
       })
-
     }
   }
 }

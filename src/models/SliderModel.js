@@ -1,4 +1,4 @@
-import numToFixedTotalLength from '../calcs/num_to_fixed_total_length'
+import numToFixedTotalLength from '../calcs/numToFixedTotalLength'
 
 class SliderModel {
   constructor(options) {

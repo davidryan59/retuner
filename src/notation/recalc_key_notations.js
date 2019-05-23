@@ -3,7 +3,7 @@ import absLogComplexity from "./abs_log_complexity"
 import fractToNumDenom from "./fract_to_num_denom"
 import fractToNotation from "./fract_to_notation"
 import fractToFreq from "./fract_to_freq"
-import getStateBoundedFrequencyModOctaves from "../calcs/get_state_bounded_frequency_mod_octaves"
+import getStateBoundedFrequencyModOctaves from "../calcs/getStateBoundedFrequencyModOctaves"
 
 const getFractText = (key) => {
   const fractObj = key.transposes.fractAbs
