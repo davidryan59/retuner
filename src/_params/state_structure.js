@@ -1,4 +1,4 @@
-const setupStateStructure = (state) => {
+const setupStateStructure = state => {
 
   state.browser = {}
   state.comma = {}

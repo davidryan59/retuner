@@ -3,7 +3,7 @@ import ADSREnvelope from "adsr-envelope"
 // ADSR - see ADSR envelope module
 // https://github.com/mohayonao/adsr-envelope/blob/master/README.md
 
-const setSustainAdsrFromSlider = (state) => {
+const setSustainAdsrFromSlider = state => {
 
   const stateWaveform = state.waveform
   const sustainSlider = state.slider.sustain

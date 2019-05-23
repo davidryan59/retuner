@@ -1,4 +1,4 @@
-const findModelCoordBounds = (state) => {
+const findModelCoordBounds = state => {
 
   let modelLeft = 1000000
   let modelRight = -1000000

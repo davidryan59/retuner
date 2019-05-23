@@ -1,4 +1,4 @@
-import getStateBoundedFrequencyModOctaves from '../../../calculations/get_state_bounded_frequency_mod_octaves'
+import getStateBoundedFrequencyModOctaves from '../../../calcs/get_state_bounded_frequency_mod_octaves'
 
 const nextFreqRel = (state, key) => {
 

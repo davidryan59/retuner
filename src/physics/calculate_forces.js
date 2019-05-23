@@ -1,7 +1,7 @@
 const anchorForceFactor = 0.001
 const neighbourForceFactor = 0.01
 
-const calculateForces = (state) => {
+const calculateForces = state => {
 
   const keyArray = state.key.array
 

@@ -1,4 +1,4 @@
-const goToNextDemo = (state) => {
+const goToNextDemo = state => {
 
   const stateDemo = state.demo
 

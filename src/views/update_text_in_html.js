@@ -8,13 +8,12 @@ const updateSliderViewFromModel = (sliderView, sliderModel) => {
   }
 }
 
-const updateTextInHtml = (state) => {
+const updateTextInHtml = state => {
 
-  // Sliders - delegated to controllers
-  const sliderControllerArray = state.controller.sliders
-  for (const controller of sliderControllerArray) {
-    controller.updateView()
-  }
+  // Update slider views, including labels
+  Object.values(state.controller.slider).forEach(
+    sliderController => sliderController.updateViewFromModel()
+  )
 
   // Page stats
   const pageElts = state.pageElt

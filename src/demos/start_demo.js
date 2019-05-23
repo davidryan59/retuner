@@ -1,4 +1,4 @@
-import findClosestKeyToFraction from '../calculations/find_closest_key_to_fraction'
+import findClosestKeyToFraction from '../calcs/find_closest_key_to_fraction'
 
 const startDemo = (state, key) => {
 

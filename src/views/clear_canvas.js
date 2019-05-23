@@ -1,4 +1,4 @@
-const clearCanvas = (state) => {
+const clearCanvas = state => {
 
   const stateGraphics = state.graphics
   const canvasStats = stateGraphics.canvasInfo

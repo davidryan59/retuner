@@ -1,4 +1,4 @@
-import getStateBoundedFrequencyModOctaves from '../../calculations/get_state_bounded_frequency_mod_octaves'
+import getStateBoundedFrequencyModOctaves from '../../calcs/get_state_bounded_frequency_mod_octaves'
 import setFractUsingPowerMultiply from '../../notation/set_fract_using_power_multiply'
 import recalcAllNotations from '../../notation/recalc_all_notations'
 

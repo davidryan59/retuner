@@ -4,7 +4,7 @@ const restoreFactorR = 0.08
 const restoreFactorExtraR = 0.05
 const pxFromPress = 30       // Distributed across all keys, via press
 
-const moveKeys = (state) => {
+const moveKeys = state => {
 
   for (const key of state.key.array) {
 

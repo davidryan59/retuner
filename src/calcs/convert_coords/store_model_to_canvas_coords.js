@@ -1,4 +1,4 @@
-const storeModelToCanvasCoords = (state) => {
+const storeModelToCanvasCoords = state => {
 
   // Currently only the instrument keys
   // If other elements to calculate, split into multiple methods

@@ -1,7 +1,7 @@
 import overwriteWithKeymapInfo from './overwrite_with_keymap_info'
 import getKeymapIndex from './get_keymap_index'
 
-const setupTransposingKeys = (state) => {
+const setupTransposingKeys = state => {
 
   // Clear previous transposing keys
   const keymapReset = state.map.transposeReset

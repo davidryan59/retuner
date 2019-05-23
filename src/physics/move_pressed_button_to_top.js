@@ -1,4 +1,4 @@
-const movePressedButtonToTop = (state) => {
+const movePressedButtonToTop = state => {
 
   const stateKey = state.key
   const keyIndexArray = stateKey.indexOrderArray

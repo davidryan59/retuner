@@ -1,6 +1,6 @@
 import {instrumentKeyUpHandler} from '../controllers/instrument_key_handlers'
 
-const stopFinishedNotes = (state) => {
+const stopFinishedNotes = state => {
 
   const currentTime = state.control.timing.timeTotalS
   const notesPlaying = state.demo.current.notesPlaying

@@ -7,7 +7,7 @@ const getPixelRatio = (context) => {
   return (window.devicePixelRatio || 1) / backingStore
 }
 
-const setupGraphicsContext = (state) => {
+const setupGraphicsContext = state => {
 
   // Context
   const canvasElt = state.pageElt.canvas

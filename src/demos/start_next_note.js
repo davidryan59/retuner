@@ -1,6 +1,6 @@
 import {instrumentKeyDownHandler, instrumentKeyUpHandler} from '../controllers/instrument_key_handlers'
 
-const startNextNote = (state) => {
+const startNextNote = state => {
 
   const beatsPerMinute = state.slider.bpm.getValue()
   const secondsPerBeat = Math.max(0.02, Math.min(5, 60 / (beatsPerMinute || 1)))

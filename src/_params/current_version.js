@@ -1,4 +1,4 @@
-const setupCurrentVersion = (state) => {
+const setupCurrentVersion = state => {
 
   state.version.number = "v1.3.6"
   state.version.date = "23rd May 2019"

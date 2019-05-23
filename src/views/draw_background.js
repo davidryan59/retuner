@@ -1,4 +1,4 @@
-const drawBackground = (state) => {
+const drawBackground = state => {
 }
 
 export default drawBackground

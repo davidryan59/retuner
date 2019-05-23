@@ -1,4 +1,4 @@
-const setupAudioContext = (state) => {
+const setupAudioContext = state => {
   // Create web audio api context
   const AudioContext = window.AudioContext || window.webkitAudioContext
   state.context.audio = new AudioContext()

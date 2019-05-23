@@ -1,6 +1,6 @@
 import detectBrowser from '../browser/detect_browser'
 
-const setupImportantParameters = (state) => {
+const setupImportantParameters = state => {
 
   const stateParam = state.param
 

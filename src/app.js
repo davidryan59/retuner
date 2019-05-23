@@ -7,17 +7,17 @@ import {keyboardDownHandler, keyboardUpHandler} from './controllers/keyboard_han
 import {mouseDownHandler, mouseUpHandler} from './controllers/mouse_handlers'
 import {volumeSliderHandler, bpmSliderHandler, contrastSliderHandler, spacingSliderHandler} from './controllers/slider_handlers'
 import windowResizeHandler from './views/window_resize_handler'
-import updateTimingInfo from './calculations/update_timing_info'
+import updateTimingInfo from './calcs/update_timing_info'
 import checkDemoActivity from './demos/check_demo_activity'
-import checkSliderActivity from './calculations/check_slider_activity'
+import checkSliderActivity from './calcs/check_slider_activity'
 import calculateForces from './physics/calculate_forces'
 import moveKeys from './physics/move_keys'
 import calculateNeighbouringKeys from './physics/calculate_neighbouring_keys'
-import findModelCoordBounds from './calculations/find_model_coord_bounds'
-import storeModelToCanvasCoords from './calculations/convert_coords/store_model_to_canvas_coords'
+import findModelCoordBounds from './calcs/find_model_coord_bounds'
+import storeModelToCanvasCoords from './calcs/convert_coords/store_model_to_canvas_coords'
 import drawCanvas from './views/draw_canvas'
 import updateTextInHtml from './views/update_text_in_html'
-import recordRenderTime from './calculations/record_render_time'
+import recordRenderTime from './calcs/record_render_time'
 
 const runApp = () => {
   console.log("The app has started")
@@ -45,15 +45,7 @@ const runApp = () => {
   // If window resizes, may need to change canvas
   window.addEventListener('resize', event => {windowResizeHandler(state, event)})
 
-  // Event listeners on sliders set up via the Slider Controllers (NEW)
-
-  // // Put event listeners on sliders (OLD)
-  // const stateSlider = state.pageElt.sliders
-  // stateSlider.volume.slider.addEventListener('input', event => {volumeSliderHandler(state, event)})
-  // stateSlider.bpm.slider.addEventListener('input', event => {bpmSliderHandler(state, event)})
-  // stateSlider.colourContrast.slider.addEventListener('input', event => {contrastSliderHandler(state, event)})
-  // stateSlider.keySize.slider.addEventListener('input', event => {spacingSliderHandler(state, event)})
-  // // (Previously 'change' listeners, now 'input' listeners. 1st Dec 2017)
+  // Event listeners on sliders set up via SliderController
 
   window.mainLoop = timeLoopStart => {
     // timeLoopStart is a decimal number, a time precise to 0.005ms :)

@@ -1,4 +1,4 @@
-const setupHtmlPageElts = (state) => {
+const setupHtmlPageElts = state => {
 
   const pageElts = state.pageElt
 

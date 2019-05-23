@@ -1,4 +1,4 @@
-import findKeyByMousePosition from '../calculations/find_key_by_mouse_position'
+import findKeyByMousePosition from '../calcs/find_key_by_mouse_position'
 import {instrumentKeyDownHandler, instrumentKeyUpHandler} from './instrument_key_handlers'
 
 const mouseDownHandler = (state, event) => {

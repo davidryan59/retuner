@@ -2,7 +2,7 @@ import InstrumentKey from '../models/instrument_key/instrument_key'
 import overwriteWithKeymapInfo from '../keymap/overwrite_with_keymap_info'
 import setupTransposingKeys from '../keymap/setup_transposing_keys'
 
-const setupInstrumentKeys = (state) => {
+const setupInstrumentKeys = state => {
 
   const stateKey = state.key
   stateKey.tempPressed = null

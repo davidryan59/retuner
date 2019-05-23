@@ -1,4 +1,4 @@
-import findKeyByKeyboardCode from '../calculations/find_key_by_keyboard_code'
+import findKeyByKeyboardCode from '../calcs/find_key_by_keyboard_code'
 import {instrumentKeyDownHandler, instrumentKeyUpHandler} from './instrument_key_handlers'
 
 const keyboardDownHandler = (state, event) => {

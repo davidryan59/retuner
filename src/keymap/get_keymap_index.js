@@ -1,4 +1,4 @@
-const getKeymapIndex = (state) => {
+const getKeymapIndex = state => {
   return state.map.transposeIndex
 }
 

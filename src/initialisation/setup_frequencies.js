@@ -1,4 +1,4 @@
-const setupFrequencies = (state) => {
+const setupFrequencies = state => {
 
   // Get some stuff from central parameters
   const stateParam = state.param

@@ -4,7 +4,7 @@ import setupImportantParameters from '../_params/important_parameters'
 
 import setupControl from './setup_control'
 import setupTopTexts from './setup_top_texts'
-import setupSliders from './setup_sliders'
+import setupSliders from './setupSliders'
 import setupHtmlPageElts from './setup_html_page_elts'
 import setupGraphicsContext from './setup_graphics_context'
 import setupFrequencies from './setup_frequencies'
@@ -20,7 +20,7 @@ import updateSliders from './updateSliders'
 import windowResizeHandler from '../views/window_resize_handler'
 
 
-const initialiseState = (state) => {
+const initialiseState = state => {
 
   setupStateStructure(state)
   setupCurrentVersion(state)

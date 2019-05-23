@@ -1,6 +1,6 @@
-import keyEndsPreviousPress from "../../calculations/key_ends_previous_press"
+import keyEndsPreviousPress from "../../calcs/key_ends_previous_press"
 import stopNote from "../audio/stop_note"
-import isTransposing from "../../calculations/is_transposing"
+import isTransposing from "../../calcs/is_transposing"
 import transposeInstrument from "../audio/transpose_instrument"
 import playNote from "../audio/play_note"
 

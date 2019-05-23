@@ -30,8 +30,7 @@ import cycleSustainType from "../../../controllers/keys/cycle_sustain_type"
 import cycleWaveform from "../../../controllers/keys/cycle_waveform"
 import cycleKeymap from "../../../controllers/keys/cycle_keymap"
 import resetCentralFreq from "../../../controllers/keys/reset_central_freq"
-import volumeDecrease from "../../../controllers/keys/volume_decrease"
-import volumeIncrease from "../../../controllers/keys/volume_increase"
+import { volumeIncrease, volumeDecrease } from "../../../controllers/keys/volumeChanges"
 import randomRetune from "../../../controllers/keys/random_retune"
 
 const functionReturnsTrue = () => true

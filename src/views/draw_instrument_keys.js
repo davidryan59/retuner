@@ -1,6 +1,6 @@
 const lineSpacing = 2      // px between button text rows
 
-const drawInstrumentKeys = (state) => {
+const drawInstrumentKeys = state => {
 
   const context = state.context.graphics
   const stateKey = state.key

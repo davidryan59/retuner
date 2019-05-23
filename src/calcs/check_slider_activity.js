@@ -18,7 +18,7 @@ const boundSlider = (sliderModel, currentVal, minVal, maxVal) => {
   }
 }
 
-const checkSliderActivity = (state) => {
+const checkSliderActivity = state => {
 
   // If sustain slider has changed, update the ADSR
   if (state.waveform.sustainValue !== state.slider.sustain.getValue()) {

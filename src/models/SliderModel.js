@@ -1,6 +1,6 @@
-import numToFixedTotalLength from '../calculations/num_to_fixed_total_length'
+import numToFixedTotalLength from '../calcs/num_to_fixed_total_length'
 
-class Slider {
+class SliderModel {
   constructor(options) {
 
     if (!options) {
@@ -70,10 +70,6 @@ class Slider {
     }
   }
 
-  increaseBySteps(unitIncrease) {
-    this.setCurrent(this.current + unitIncrease * this.step)
-  }
-
   getLinearFraction() {
     const diff = this.max - this.min
     return (diff === 0) ? 0 : (this.current - this.min) / diff
@@ -119,4 +115,4 @@ class Slider {
 
 }
 
-export default Slider
+export default SliderModel

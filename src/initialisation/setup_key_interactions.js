@@ -1,6 +1,6 @@
 import calculateNeighbouringKeys from '../physics/calculate_neighbouring_keys'
 
-const setupKeyInteractions = (state) => {
+const setupKeyInteractions = state => {
 
   // Keys interact with nearby keys
   calculateNeighbouringKeys(state)

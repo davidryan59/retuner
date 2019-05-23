@@ -1,6 +1,6 @@
 import setSustainAdsrFromSlider from '../models/sustain/set_sustain_adsr_from_slider'
 
-const setupWaveform = (state) => {
+const setupWaveform = state => {
 
   setSustainAdsrFromSlider(state)
 

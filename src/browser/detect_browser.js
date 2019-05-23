@@ -1,4 +1,4 @@
-const detectBrowser = (state) => {
+const detectBrowser = state => {
 
   const userString = window.navigator.userAgent || ""
   let result = "Unknown"

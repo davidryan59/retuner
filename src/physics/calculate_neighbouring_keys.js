@@ -1,6 +1,6 @@
 const neighbourFactor = 1.3
 
-const calculateNeighbouringKeys = (state) => {
+const calculateNeighbouringKeys = state => {
 
   const keyArray = state.key.array
   const maxKeys = keyArray.length

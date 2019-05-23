@@ -1,4 +1,4 @@
-import reduceFraction from "../../../maths/reduce_fraction"
+import reduceFraction from "../../../calcs/reduceFraction"
 import fractionToFract from "../../../notation/fraction_to_fract"
 import addCommasForFract from "../../../notation/add_commas_for_fract"
 import recalcKeyNotations from "../../../notation/recalc_key_notations"

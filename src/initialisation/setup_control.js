@@ -1,4 +1,4 @@
-const setupControl = (state) => {
+const setupControl = state => {
 
   // Input vars
   const stateParams = state.param

@@ -1,4 +1,4 @@
-import freqToRGBA from "../../../calculations/freq_to_rgba"
+import freqToRGBA from "../../../calcs/freq_to_rgba"
 
 const fillStyleTransposing = (state, key) => {
   if (key.activation.allowed(state, key)) {

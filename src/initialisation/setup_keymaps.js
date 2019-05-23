@@ -21,7 +21,7 @@ import transpose4 from "../keymap/transposing/13-limit_full.json"
 import transpose5 from "../keymap/transposing/diamond_5-9.json"
 import transpose6 from "../keymap/transposing/diamond_6-11.json"
 
-const setupKeymaps = (state) => {
+const setupKeymaps = state => {
 
   const browser = state.browser.type
 

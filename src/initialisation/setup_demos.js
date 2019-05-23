@@ -2,7 +2,7 @@ import demo0 from "../demos/files/arpeggios.json"
 import demo1 from "../demos/files/prelude.json"
 import demo2 from "../demos/files/happy_birthday.json"
 
-const setupDemos = (state) => {
+const setupDemos = state => {
 
   const stateDemo = state.demo
 
