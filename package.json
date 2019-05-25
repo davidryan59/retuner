@@ -19,11 +19,13 @@
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.2",
-    "webpack": "^3.8.1"
+    "babel-loader": "^7.1.5",
+    "webpack": "^3.12.0"
   },
   "dependencies": {
-    "adsr-envelope": "^1.0.0"
+    "adsr-envelope": "^1.0.0",
+    "ji-rcn": "^9.0.0",
+    "peo": "^3.3.1"
   },
   "keywords": [
     "fraction",
