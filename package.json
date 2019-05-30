@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "adsr-envelope": "^1.0.0",
-    "ji-rcn": "^9.0.0",
-    "peo": "^3.3.1"
+    "ji-rcn": "^9.0.1",
+    "peo": "^3.4.0"
   },
   "keywords": [
     "fraction",
