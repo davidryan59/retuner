@@ -16,6 +16,7 @@ import transposeReset from "../keymap/transposing/reset.json"
 import transpose0 from "../keymap/transposing/3-limitMedium.json"
 import transpose1 from "../keymap/transposing/5-limitSimple.json"
 import transpose2 from "../keymap/transposing/5-limitMedium.json"
+import transpose2a from "../keymap/transposing/5-limitFull.json"
 import transpose3 from "../keymap/transposing/7-limitMedium.json"
 import transpose4 from "../keymap/transposing/13-limitFull.json"
 import transpose5 from "../keymap/transposing/diamond5-9.json"
@@ -54,11 +55,11 @@ const setupKeymaps = state => {
 
   // Keymap to set transposing keys to various options
   stateMap.transposeSetups = [
-    transpose0, transpose1, transpose2,
+    transpose0, transpose1, transpose2, transpose2a,
     transpose3, transpose4, transpose5,
     transpose6
   ]
-  stateMap.transposeIndex = 2
+  stateMap.transposeIndex = 3
 
   console.log(`Keymaps imported`)
 }
