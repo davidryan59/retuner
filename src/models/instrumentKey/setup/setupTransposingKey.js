@@ -14,23 +14,13 @@ import {
   instrumentKeyPress, instrumentKeyRelease
 } from "../../../controllers/keys/instrumentKeyPressAndRelease"
 
-
 const setupTransposingKey = (state, key, num, denom) => {
-
-  key.transposes = {}
-
-  const keyTransposes = key.transposes
+  // Reset two sets of functions on the key
   const keyActivation = key.activation
-  const keyGraphics = key.graphics
-
-  keyTransposes.setNumDenom = setNumDenom
-  keyTransposes.getNextFreqRel = nextFreqRel
-  keyTransposes.getNextFreqAbsHz = nextFreqAbsHz
-
   keyActivation.allowed = allowKeyActivation
   keyActivation.press = instrumentKeyPress
   keyActivation.release = instrumentKeyRelease
-
+  const keyGraphics = key.graphics
   keyGraphics.getFillStyle = fillStyleTransposing
   keyGraphics.getStrokeStyle = strokeStyleTransposing
   keyGraphics.getLineWidth = lineWidthTransposing
@@ -40,8 +30,12 @@ const setupTransposingKey = (state, key, num, denom) => {
   keyGraphics.getFontStyle = fontStyleTransposing
   keyGraphics.getLabelArray = labelArrayTransposing
 
-  // Use this function to change numerator and denominator
-  // and update all the dependencies
+  // Reset the transposing interval numerator and denominator
+  key.transposes = {}
+  const keyTransposes = key.transposes
+  keyTransposes.getNextFreqRel = nextFreqRel
+  keyTransposes.getNextFreqAbsHz = nextFreqAbsHz
+  keyTransposes.setNumDenom = setNumDenom
   keyTransposes.setNumDenom(state, key, num, denom)
 }
 

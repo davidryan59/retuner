@@ -1,7 +1,7 @@
 export const lineWidthDefault = (state, key) => 3
 
 
-export const lineWidthTransposing = (state, key) => 4 * (2 / key.transposes.decimalRel)
+export const lineWidthTransposing = (state, key) => 4 * (2 / key.transposes.ji.ratio())
 
 
 // Solid line

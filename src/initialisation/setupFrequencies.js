@@ -1,10 +1,6 @@
-const setupFrequencies = state => {
+import Peo from 'peo'
 
-  // Get some stuff from central parameters
-  const stateParam = state.param
-  // const currentBaseHz = stateParam.baseFrequencyHz
-  // const currentMaxHz = stateParam.currentMaxHz
-  // const currentMinHz = stateParam.currentMinHz
+const setupFrequencies = state => {
   const currentBaseHz = state.slider.baseFreq.getValue()
   const currentMaxHz = state.slider.maxFreq.getValue()
   const currentMinHz = state.slider.minFreq.getValue()
@@ -21,9 +17,8 @@ const setupFrequencies = state => {
   stateFreq.keyEndsPreviousPress = keyEndsPreviousPress
 
   stateFreq.decimalCentreCurrent = 1
-  stateFreq.fractCentre = {}         // Controls relative multiple of base frequency 
-  stateFreq.fractBase = {}           // Controls note name of base frequency
-  // .freq is the decimal, .fractCentre is the prime/exponent representation
+  stateFreq.peoCentre = new Peo(1)    // Controls relative multiple of base frequency 
+  stateFreq.peoBase = new Peo(1)      // Controls note name of base frequency
 
   console.log("Frequencies initialised")
 }

@@ -1,5 +1,3 @@
-import recalcAllNotations from '../../notation/recalc_all_notations'
-
 const resetCentralFreq = (state, key) => {
   const stateFreq = state.freq
   // const baseFreqHz = state.param.baseFrequencyHz
@@ -9,8 +7,7 @@ const resetCentralFreq = (state, key) => {
     baseFreqHz.toFixed(2), "Hz"
   )
   stateFreq.decimalCentreCurrent = 1
-  stateFreq.fractCentre = {}
-  recalcAllNotations(state)
+  stateFreq.peoCentre = new Peo(1)
 }
 
 export default resetCentralFreq

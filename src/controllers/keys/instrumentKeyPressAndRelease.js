@@ -11,7 +11,7 @@ export const instrumentKeyPress = (state, key) => {
     transposeInstrument(state, key)
     playNoteOnKey(state, key)
   } else {
-    const freqFactor = key.transposes.decimalRel
+    const freqFactor = key.transposes.ji.ratio()
     playNoteOnKey(state, key, freqFactor)
   }
 }

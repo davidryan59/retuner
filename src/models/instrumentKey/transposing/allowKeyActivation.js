@@ -9,7 +9,7 @@ const allowKeyActivation = (state, key) => {
   // const minFreq = stateFreq.decimalCentreMin
   // const maxFreq = stateFreq.decimalCentreMax
   // const currentFreq = stateFreq.decimalCentreCurrent
-  // const newFreq = currentFreq * key.transposes.decimalRel
+  // const newFreq = currentFreq * key.transposes.ji.ratio()
   // if (newFreq < minFreq) {
   //   return false
   // }

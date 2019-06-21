@@ -1,34 +1,27 @@
+import Peo from 'peo'
+
 import getStateBoundedFrequencyModOctaves from '../../calcs/getStateBoundedFrequencyModOctaves'
-import setFractUsingPowerMultiply from '../../notation/set_fract_using_power_multiply'
-import recalcAllNotations from '../../notation/recalc_all_notations'
 
 
 const transposeInstrument = (state, key) => {
-
-  const freqDecimalRel = key.transposes.decimalRel
-  const transposingFract = key.transposes.fractRel
-  const freqTextRelative = key.transposes.textFraction
-
-  // Get the relevant state object
   const stateFreq = state.freq
+  const keyJi = key.transposes.ji
+
+  const freqDecimalRel = keyJi.ratio()
+  const freqTextRelative = keyJi.ratioFractionText()
+  const peoTransposing = keyJi.ratioPeo()
+
   const instrumentFreqDecimalCentre = stateFreq.decimalCentreCurrent
   const newFreq = instrumentFreqDecimalCentre * freqDecimalRel
   const checkedNewFreq = getStateBoundedFrequencyModOctaves(state, newFreq)
-  const octaveChange = Math.round(Math.log2(checkedNewFreq/newFreq))
+  const octaveChange = Math.round(Math.log2(checkedNewFreq / newFreq))
 
-  // Do the change
+  let newPeo = stateFreq.peoCentre.mult(peoTransposing)
+  if (octaveChange) newPeo = newPeo.mult(new Peo({2:octaveChange}))
+  stateFreq.peoCentre = newPeo
   stateFreq.decimalCentreCurrent = checkedNewFreq
-  setFractUsingPowerMultiply(stateFreq.fractCentre, transposingFract)
-  if (octaveChange) {
-    // The checked note isn't the same as the note
-    // Need to represent this both in the note (checkedNewFreq)
-    // and in the prime power representation (.fractCentre)
-    setFractUsingPowerMultiply(stateFreq.fractCentre, {2:octaveChange})
-  }
-  recalcAllNotations(state)
 
   // Logging
-  // const baseFreqHz = state.param.baseFrequencyHz
   const baseFreqHz = state.slider.baseFreq.getValue()
   console.log(
     "Instrument central frequency changed by", freqTextRelative,

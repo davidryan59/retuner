@@ -1,28 +1,23 @@
-import reduceFraction from "../../../calcs/reduceFraction"
-import fractionToFract from "../../../notation/fraction_to_fract"
-import addCommasForFract from "../../../notation/add_commas_for_fract"
-import recalcKeyNotations from "../../../notation/recalc_key_notations"
+import { JInterval } from 'ji-rcn'
 
 const setNumDenom = (state, key, inputNum, inputDenom) => {
-
-  // Need to call this method to change num, denom
-  // It takes care of everything which should be updated.
-  const [num, denom] = reduceFraction(inputNum, inputDenom)
+  
+  // Setup transposing key with a new JInterval
   const keyTransposes = key.transposes
-  keyTransposes.num = num
-  keyTransposes.denom = denom
-  keyTransposes.decimalRel = num / denom
-  keyTransposes.textFraction = num + "/" + denom
-  keyTransposes.complexityRel = num * denom
-  keyTransposes.fractRel = fractionToFract(num, denom)
-  addCommasForFract(state, keyTransposes.fractRel)
-  recalcKeyNotations(state, key)
-
+  const newJi = new JInterval(inputNum, inputDenom)
+  keyTransposes.ji = newJi
+  console.log(newJi)
+  keyTransposes.complexityRel = newJi.ratioPeo().getBenedettiHeight()
+  
+  // Make sure the JInterval has a base frequency set
+  const instrumentFreq = state.freq.decimalCentreCurrent
+  keyTransposes.ji.setStartFreqHz(instrumentFreq)
+  
+  // IMPROVE: Surely this should go somewhere in the View?
   // Redefine anchor radius of transposing keys in terms of
   // their musical importance, which means low complexity
   const c = 10
   key.coords.model.anchor.r = 5.5 + 2.5 * c * (1 / (c + keyTransposes.complexityRel))
-
 }
 
 export default setNumDenom

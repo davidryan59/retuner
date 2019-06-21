@@ -1,7 +1,7 @@
 import setSustainAdsrFromSlider from '../models/sustain/setSustainAdsrFromSlider'
 
-import recalcAllNotations from '../notation/recalc_all_notations'
-import baseFreqToFract from '../notation/base_freq_to_fract'
+import updateAllIntervals from '../notation/updateAllIntervals'
+import baseFreqToPeo from '../notation/baseFreqToPeo'
 
 
 let prevMinHz = null
@@ -49,9 +49,9 @@ const checkSliderActivity = state => {
   if (prevBaseHz !== baseHz) {
     boundSlider(baseSlider, baseHz, minHz, maxHz)
     baseHz = baseSlider.getValue()
-    stateFreq.fractBase = baseFreqToFract(baseHz)  // Used for note names
-    console.log(`Base note 1/1 has frequency ${baseHz} Hz and note name from fract:`)
-    console.dir(stateFreq.fractBase)
+    stateFreq.peoBase = baseFreqToPeo(baseHz)  // Used for note names
+    console.log(`Base note 1/1 has frequency ${baseHz} Hz and note name from peo:`)
+    console.dir(stateFreq.peoBase)
   } else if (prevMinHz !== minHz) {
     boundSlider(minSlider, minHz, 10e-2, Math.min(baseHz, maxHz/2))
     minHz = minSlider.getValue()
@@ -79,7 +79,7 @@ const checkSliderActivity = state => {
     // Update decimal centres and notations
     stateFreq.decimalCentreMin = newMin
     stateFreq.decimalCentreMax = newMax
-    recalcAllNotations(state)
+    updateAllIntervals(state)
   }
 
 }

@@ -1,7 +1,6 @@
 const setupStateStructure = state => {
 
   state.browser = {}
-  state.comma = {}
   state.control = {}
   state.controller = {}
   state.context = {}

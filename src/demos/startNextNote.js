@@ -17,7 +17,7 @@ const startNextNote = state => {
   const nextBeats = beats + delay
   const key = note.key
   const keyName = key.keyboardCode
-  const keyFract = key.transposes.textFraction
+  const keyFract = key.transposes.ji.ratioFractionText()
 
   // - Give it an end time
   note.endTime = currentTime + secondsPerBeat * beats

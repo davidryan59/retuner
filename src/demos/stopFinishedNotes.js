@@ -13,7 +13,7 @@ const stopFinishedNotes = state => {
       // - Use key handler to stop the note
       const key = note.key
       const keyName = key.keyboardCode
-      const keyFract = key.transposes.textFraction
+      const keyFract = key.transposes.ji.ratioFractionText()
       console.log(`Stopped a note ${keyName} ${keyFract}`)
       instrumentKeyUpHandler(state, key)
       // - Remove it from the array, decrement counter

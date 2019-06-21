@@ -15,9 +15,7 @@ export const labelArrayDemoToggle = (state, key) => {
   const stateDemo = state.demo
   const playing = stateDemo.playing
   const name = stateDemo.list[stateDemo.index].name
-  if (name) {
-    buttonTextArray.push(name)
-  }
+  if (name) buttonTextArray.push(name)
   const demoToggleLabel = (playing) ? "ON" : "OFF"
   buttonTextArray.push(demoToggleLabel)
   return buttonTextArray
@@ -58,23 +56,25 @@ export const labelArrayTransposeToggle = (state, key) => {
 
 export const labelArrayTransposing = (state, key) => {
   const buttonTextArray = [key.symbol || key.keyboardCode]
-  const freq = key.transposes.getNextFreqAbsHz(state, key)
+  const keyTr = key.transposes
   if (key.activation.allowed(state, key)) {
+    const freq = keyTr.getNextFreqAbsHz(state, key)
     const freqText = freq.toFixed(2) + "Hz"
     buttonTextArray.push(freqText)
-    buttonTextArray.push(key.transposes.textFract)
-    buttonTextArray.push(key.transposes.textNotation)
+    // buttonTextArray.push(keyTr.textFract)
+    // buttonTextArray.push(keyTr.textNotation)
+    const startNotation = 
+    buttonTextArray.push(keyTr.ji.getEndPitchNotation())
+    buttonTextArray.push(keyTr.ji.ratioFractionText())
   }
-  buttonTextArray.push("\u00d7 " + key.transposes.textFraction) // Multiplication symbol
+  buttonTextArray.push("\u00d7 " + keyTr.ji.ratioFractionText()) // Multiplication symbol
   return buttonTextArray
 }
 
 
 export const labelArrayVoice = (state, key) => {
   const buttonTextArray = [key.symbol || key.keyboardCode]
-  if (key.functionLabel) {
-    buttonTextArray.push(key.functionLabel)
-  }
+  if (key.functionLabel) buttonTextArray.push(key.functionLabel)
   buttonTextArray.push(state.waveform.getType(state).toUpperCase())
   return buttonTextArray
 }
