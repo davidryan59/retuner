@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davidryan59/retuner_musical_instrument.git"
+    "url": "git+https://github.com/davidryan59/retuner.git"
   },
   "license": "ISC",
   "devDependencies": {

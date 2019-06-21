@@ -1,6 +1,6 @@
 - Firebase live app: https://retuner-bdf49.web.app
 - Facebook support group: https://www.facebook.com/groups/retuner
-- GitHub source code: https://github.com/davidryan59/retuner_musical_instrument
+- GitHub source code: https://github.com/davidryan59/retuner
 
 # Brief / Scope of Project
 Making a musical instrument in a web browser
