@@ -8,6 +8,7 @@ config = {
   resolve: {
     extensions: [ '.js', '.jsx' ]
   },
+  mode: 'production',
   module: {
     rules: [
       {
