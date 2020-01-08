@@ -1,9 +1,9 @@
 .DS_Store
-.firebase
 node_modules
+
 bundle.js
 bundle.js.map
-credentials*.*
+
 removed*
-temp*.*
-devnotes
+temp*
+.firebase
